@@ -2396,70 +2396,6 @@
 							"name": "Viewing All Events"
 						},
 						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1lUvZzu2Ec=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State1"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1lZiZ0TVOs=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State2"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1llhJ04EWg=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State3"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1ltxZ1dHEM=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State4"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1lzaZ2CEzk=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State5"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1l/F52nRK0=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State6"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1m4JZ30TnU=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State8"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1oLNZ56zII=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State10"
-						},
-						{
 							"_type": "UMLPseudostate",
 							"_id": "AAAAAAFmx1u/cJ+7X+w=",
 							"_parent": {
@@ -2474,22 +2410,6 @@
 								"$ref": "AAAAAAFmx0ylxJxCzyk="
 							},
 							"name": "Filter Event"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1yg3Z/2X10=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State7"
-						},
-						{
-							"_type": "UMLState",
-							"_id": "AAAAAAFmx1yqi6AbnTQ=",
-							"_parent": {
-								"$ref": "AAAAAAFmx0ylxJxCzyk="
-							},
-							"name": "State9"
 						},
 						{
 							"_type": "UMLState",
