@@ -372,12 +372,12 @@
 										"$ref": "AAAAAAFm4XZ7aBctSRU="
 									},
 									"font": "Arial;13;0",
-									"left": 219,
-									"top": 263,
-									"width": 162.6142578125,
+									"left": 184,
+									"top": 248,
+									"width": 243.546875,
 									"height": 13,
-									"alpha": -4.635617853820839,
-									"distance": 13.038404810405298,
+									"alpha": 1.4337298140949932,
+									"distance": 29.274562336608895,
 									"hostEdge": {
 										"$ref": "AAAAAAFm4XZ7aBcuN88="
 									},
@@ -476,7 +476,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -592,
-											"top": 112,
+											"top": 96,
 											"height": 13
 										},
 										{
@@ -487,7 +487,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 53,
-											"top": 471,
+											"top": 463,
 											"width": 170.4599609375,
 											"height": 13,
 											"text": "Send Reminder Notification"
@@ -501,7 +501,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -592,
-											"top": 112,
+											"top": 96,
 											"width": 38.27001953125,
 											"height": 13,
 											"text": "(from )"
@@ -515,14 +515,14 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -592,
-											"top": 112,
+											"top": 96,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 48,
-									"top": 464,
+									"top": 456,
 									"width": 180.4599609375,
 									"height": 25,
 									"stereotypeLabel": {
@@ -550,7 +550,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -296,
-									"top": 56,
+									"top": 48,
 									"width": 10,
 									"height": 10
 								},
@@ -566,7 +566,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -296,
-									"top": 56,
+									"top": 48,
 									"width": 10,
 									"height": 10
 								},
@@ -581,14 +581,14 @@
 									},
 									"font": "Arial;13;0",
 									"left": 48,
-									"top": 489,
+									"top": 481,
 									"width": 180.4599609375
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 48,
-							"top": 464,
+							"top": 456,
 							"width": 180.4599609375,
 							"height": 40,
 							"nameCompartment": {
@@ -606,75 +606,75 @@
 						},
 						{
 							"_type": "UMLTransitionView",
-							"_id": "AAAAAAFm9h3zu3oWdXs=",
+							"_id": "AAAAAAFnCgxClapOQWo=",
 							"_parent": {
 								"$ref": "AAAAAAFm4XHGDhXpwUE="
 							},
 							"model": {
-								"$ref": "AAAAAAFm9h3zu3oVjBI="
+								"$ref": "AAAAAAFnCgxClapNr7Q="
 							},
 							"subViews": [
 								{
 									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFm9h3zu3oXsUc=",
+									"_id": "AAAAAAFnCgxClapPT3Y=",
 									"_parent": {
-										"$ref": "AAAAAAFm9h3zu3oWdXs="
+										"$ref": "AAAAAAFnCgxClapOQWo="
 									},
 									"model": {
-										"$ref": "AAAAAAFm9h3zu3oVjBI="
+										"$ref": "AAAAAAFnCgxClapNr7Q="
 									},
 									"font": "Arial;13;0",
-									"left": 158,
-									"top": 416,
-									"width": 166.91162109375,
+									"left": 159,
+									"top": 432,
+									"width": 147.39892578125,
 									"height": 13,
-									"alpha": 1.2338322704058506,
-									"distance": 110.13627921806692,
+									"alpha": 1.036596427765795,
+									"distance": 110.98198051936178,
 									"hostEdge": {
-										"$ref": "AAAAAAFm9h3zu3oWdXs="
+										"$ref": "AAAAAAFnCgxClapOQWo="
 									},
 									"edgePosition": 1,
-									"text": "when event will start in 24hrs"
+									"text": "Event will occure in 24hrs"
 								},
 								{
 									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFm9h3zu3oYjAI=",
+									"_id": "AAAAAAFnCgxClapQqCU=",
 									"_parent": {
-										"$ref": "AAAAAAFm9h3zu3oWdXs="
+										"$ref": "AAAAAAFnCgxClapOQWo="
 									},
 									"model": {
-										"$ref": "AAAAAAFm9h3zu3oVjBI="
+										"$ref": "AAAAAAFnCgxClapNr7Q="
 									},
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 168,
-									"top": 377,
+									"top": 373,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
 									"hostEdge": {
-										"$ref": "AAAAAAFm9h3zu3oWdXs="
+										"$ref": "AAAAAAFnCgxClapOQWo="
 									},
 									"edgePosition": 1
 								},
 								{
 									"_type": "EdgeLabelView",
-									"_id": "AAAAAAFm9h3zu3oZYng=",
+									"_id": "AAAAAAFnCgxClapRfa4=",
 									"_parent": {
-										"$ref": "AAAAAAFm9h3zu3oWdXs="
+										"$ref": "AAAAAAFnCgxClapOQWo="
 									},
 									"model": {
-										"$ref": "AAAAAAFm9h3zu3oVjBI="
+										"$ref": "AAAAAAFnCgxClapNr7Q="
 									},
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 124,
-									"top": 376,
+									"top": 372,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
 									"hostEdge": {
-										"$ref": "AAAAAAFm9h3zu3oWdXs="
+										"$ref": "AAAAAAFnCgxClapOQWo="
 									},
 									"edgePosition": 1
 								}
@@ -687,17 +687,43 @@
 								"$ref": "AAAAAAFm4XMXkhXvPMw="
 							},
 							"lineStyle": 1,
-							"points": "141:304;137:463",
+							"points": "141:304;137:455",
 							"showVisibility": true,
 							"nameLabel": {
-								"$ref": "AAAAAAFm9h3zu3oXsUc="
+								"$ref": "AAAAAAFnCgxClapPT3Y="
 							},
 							"stereotypeLabel": {
-								"$ref": "AAAAAAFm9h3zu3oYjAI="
+								"$ref": "AAAAAAFnCgxClapQqCU="
 							},
 							"propertyLabel": {
-								"$ref": "AAAAAAFm9h3zu3oZYng="
+								"$ref": "AAAAAAFnCgxClapRfa4="
 							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFnCg0V+aplPy4=",
+							"_parent": {
+								"$ref": "AAAAAAFm4XHGDhXpwUE="
+							},
+							"font": "Arial;13;0",
+							"left": 216,
+							"top": 392,
+							"width": 60,
+							"height": 38,
+							"text": "Time Event"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFnCg1pkKprHJA=",
+							"_parent": {
+								"$ref": "AAAAAAFm4XHGDhXpwUE="
+							},
+							"font": "Arial;13;0",
+							"left": 280,
+							"top": 208,
+							"width": 60,
+							"height": 38,
+							"text": "Signial Event"
 						}
 					]
 				}
@@ -774,7 +800,7 @@
 						},
 						{
 							"_type": "UMLTransition",
-							"_id": "AAAAAAFm9h3zu3oVjBI=",
+							"_id": "AAAAAAFnCgxClapNr7Q=",
 							"_parent": {
 								"$ref": "AAAAAAFm4XHGDhXoSlY="
 							},
@@ -787,11 +813,11 @@
 							"triggers": [
 								{
 									"_type": "UMLEvent",
-									"_id": "AAAAAAFm9h5oU3oqKMQ=",
+									"_id": "AAAAAAFnCgygGKpflGk=",
 									"_parent": {
-										"$ref": "AAAAAAFm9h3zu3oVjBI="
+										"$ref": "AAAAAAFnCgxClapNr7Q="
 									},
-									"name": "when event will start in 24hrs"
+									"name": "Event will occure in 24hrs"
 								}
 							]
 						}
