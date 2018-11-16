@@ -1,0 +1,222 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Untitled",
+	"ownedElements": [
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Model",
+			"ownedElements": [
+				{
+					"_type": "UMLClassDiagram",
+					"_id": "AAAAAAFF+qBtyKM79qY=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Main",
+					"defaultDiagram": true,
+					"ownedViews": [
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3aUGIoBSes=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;15;0",
+							"left": 24,
+							"top": 72,
+							"width": 369,
+							"height": 42,
+							"text": "Decision Tree - Reviewing Event / Organizer"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3fkt4oLxdA=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 16,
+							"top": 224,
+							"width": 177,
+							"height": 41,
+							"text": "Did this person attend this event?"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3gDxIoRQD8=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 128,
+							"top": 312,
+							"width": 185,
+							"height": 51,
+							"text": "Prompt with a text screen/box - \"You cannot review this event.\""
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3jBeYobybw=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 296,
+							"top": 144,
+							"width": 161,
+							"height": 51,
+							"text": "Can this person review events? (Flagged accounts cannot)"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFmx3lTu4oscaA=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFmx3jBeYobybw="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmx3fkt4oLxdA="
+							},
+							"lineStyle": 1,
+							"points": "180:223;295:191"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFmx3lp2IowZVM=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFmx3gDxIoRQD8="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmx3fkt4oLxdA="
+							},
+							"lineStyle": 1,
+							"points": "130:265;188:311"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3l1QIo0tXg=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 168,
+							"top": 264,
+							"width": 60,
+							"height": 27,
+							"text": "No"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3mlroo8734=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 216,
+							"top": 176,
+							"width": 60,
+							"height": 25,
+							"text": "Yes"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3nzBYpDqbw=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 584,
+							"top": 128,
+							"width": 193,
+							"height": 40,
+							"text": "Rate the Event (1-5 Stars)\nRate the Organizer (1-5 Stars)"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFmx3rDn4pN88U=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFmx3nzBYpDqbw="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmx3jBeYobybw="
+							},
+							"lineStyle": 1,
+							"points": "457:163;583:154"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3rUQopTHdI=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 496,
+							"top": 128,
+							"width": 60,
+							"height": 25,
+							"text": "Yes"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3r4popZSyA=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 488,
+							"top": 288,
+							"width": 241,
+							"height": 41,
+							"text": "Prompt with \"Thank you for attending the event!\""
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFmx3tObopiXDU=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFmx3r4popZSyA="
+							},
+							"tail": {
+								"$ref": "AAAAAAFmx3jBeYobybw="
+							},
+							"lineStyle": 1,
+							"points": "419:195;573:287"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFmx3t9LYpqeeM=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 472,
+							"top": 208,
+							"width": 60,
+							"height": 25,
+							"text": "No"
+						}
+					]
+				}
+			]
+		}
+	]
+}
