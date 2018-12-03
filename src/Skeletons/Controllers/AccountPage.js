@@ -1,0 +1,5 @@
+class AccountPage {
+    requestOrganizerStatus() {}
+
+    addPreferredEvents() {}
+}
