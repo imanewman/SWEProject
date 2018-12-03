@@ -1,6 +1,6 @@
 class Rec {
 	
-	constructor(location, duration, startTime, tags, draft, eventType, contactInfo, websiteLink, newFields, description) {
+	constructor(location, duration, startTime, tags, draft, eventType, contactInfo, websiteLink, newFields, title, id, description, rules) {
 		this.location = location;
 		this.duration =	duration;
 		this.startTime = startTime;
@@ -10,7 +10,10 @@ class Rec {
 		this.contactInfo = contactInfo;
 		this.websiteLink = websiteLink;
 		this.newFields = newFields;
+		this.title = title;
+		this.id = id;
 		this.description = description;
+		this.rules = rules;
 	}
 
     setLocation(location) {
@@ -25,7 +28,7 @@ class Rec {
 		this.startTime = startTime;
     }
 
-    setTags(tags) {
+    addTags(tags) {
 		this.tags = tags;
     }
 
@@ -41,16 +44,32 @@ class Rec {
 		this.contactInfo = contactInfo;
     }
 
-    setWebsiteLink(websiteLink) {
-		this.websiteLink = websiteLink;
+    setLink(link) {
+		this.websiteLink = link;
     }
 
-    setNewFields(newFields) {
-		this.newFields = newFields;
+    addNewFields(newFields) {
+
+    }
+
+    deleteNewFields(newFields) {
+
+    }
+
+    setTitle(title) {
+	    this.title = title;
+    }
+
+    setId(id) {
+	    this.id = id;
     }
 
     setDescription(description) {
 		this.description = description;
+    }
+
+    setRules(rules) {
+	    this.rules = rules;
     }
 
     getLocation() {
@@ -69,6 +88,10 @@ class Rec {
 		return this.tags;
     }
 
+    removeTags(tags) {
+
+    }
+
     getDraft() {
 		return this.draft;
     }
@@ -81,7 +104,7 @@ class Rec {
 		return this.contactInfo;
     }
 
-    getWebsiteLink() {
+    getLink() {
 		return this.websiteLink;
     }
 
@@ -89,8 +112,20 @@ class Rec {
 		return this.newFields;
     }
 
+    getTitle() {
+	    return this.title;
+    }
+
+    getId() {
+	    return this.id;
+    }
+
     getDescription() {
 		return this.description;
+    }
+
+    getRules() {
+	    return this.rules;
     }
 
 	generateCalendarObj() {

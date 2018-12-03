@@ -11,50 +11,56 @@ class User {
 
 
 	setId(id) {
-
+		this.id = id;
 	}
 
 	setEmail(email) {
-
+		this.email = email;
 	}
 
 	setName(name) {
-
+		this.fullName = name;
 	}
 
-	setPassword(password) {
-
+	setPassword(passwordHash) {
+		//TODO
+		this.passwordHash = passwordHash;
 	}
 
     getId() {
-
+		return this.id;
     }
 
     getEmail() {
-
+		return this.email;
     }
 
     getName() {
-
+		return this.fullName;
     }
 
-    getPassword() {
-
+    getPasswordHash() {
+		return this.passwordHash;
     }
 
 	watchEvent(recEvent) {
 
 	}
 
-	isAdmin() {
-
+	setAdmin() {
+		this.adminPrivilege = true;
 	}
 
-	setAdmin(adminPrivilege) {
-		
-	}
-
-    getAdmin() {
-
+    isAdmin() {
+		return this.adminPrivilege;
     }
+
+	addPreferredEvents(events) {
+		this.preferredEvents = events;
+	}
+
+	getPreferredEvents() {
+		return this.preferredEvents;
+	}
+
 }
