@@ -26,6 +26,22 @@ class User {
 
 	}
 
+    getId() {
+
+    }
+
+    getEmail() {
+
+    }
+
+    getName() {
+
+    }
+
+    getPassword() {
+
+    }
+
 	watchEvent(recEvent) {
 
 	}
@@ -37,4 +53,8 @@ class User {
 	setAdmin(adminPrivilege) {
 		
 	}
+
+    getAdmin() {
+
+    }
 }
