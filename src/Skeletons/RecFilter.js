@@ -1,0 +1,4 @@
+class RecFilter {
+    Filter(filterlist);
+}
+
