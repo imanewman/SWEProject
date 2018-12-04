@@ -2978,7 +2978,7 @@
 											"top": 944,
 											"width": 109.458984375,
 											"height": 13,
-											"text": "+createRec(String)",
+											"text": "+createRec()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2996,7 +2996,7 @@
 											"top": 959,
 											"width": 109.458984375,
 											"height": 13,
-											"text": "+editRec(String)",
+											"text": "+editRec()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3202,7 +3202,7 @@
 											"top": 736,
 											"width": 108.748046875,
 											"height": 13,
-											"text": "+deleteRec(String)",
+											"text": "+deleteRec()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3408,7 +3408,7 @@
 											"top": 800,
 											"width": 123.2080078125,
 											"height": 13,
-											"text": "+rsvp(String, String)",
+											"text": "+rsvp()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3426,7 +3426,7 @@
 											"top": 815,
 											"width": 123.2080078125,
 											"height": 13,
-											"text": "+report(String)",
+											"text": "+report()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3930,7 +3930,7 @@
 											"font": "Arial;13;1",
 											"left": 341,
 											"top": 583,
-											"width": 184.60888671875,
+											"width": 185.326171875,
 											"height": 13,
 											"text": "RecListComponent"
 										},
@@ -3968,7 +3968,7 @@
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 576,
-									"width": 194.60888671875,
+									"width": 195.326171875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFnGg+lSYFZn8U="
@@ -4006,9 +4006,9 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 606,
-											"width": 184.60888671875,
+											"width": 185.326171875,
 											"height": 13,
-											"text": "+currentRecs: ArrayList<Rec>",
+											"text": "+currentRecs: ArrayList<String>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4016,7 +4016,7 @@
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 601,
-									"width": 194.60888671875,
+									"width": 195.326171875,
 									"height": 23
 								},
 								{
@@ -4042,7 +4042,7 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 629,
-											"width": 184.60888671875,
+											"width": 185.326171875,
 											"height": 13,
 											"text": "+gatherRecs(Boolean)",
 											"horizontalAlignment": 0
@@ -4060,7 +4060,7 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 644,
-											"width": 184.60888671875,
+											"width": 185.326171875,
 											"height": 13,
 											"text": "+manageFilters()",
 											"horizontalAlignment": 0
@@ -4078,9 +4078,9 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 659,
-											"width": 184.60888671875,
+											"width": 185.326171875,
 											"height": 13,
-											"text": "+watchRec(String)",
+											"text": "+watchRec()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4088,7 +4088,7 @@
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 624,
-									"width": 194.60888671875,
+									"width": 195.326171875,
 									"height": 53
 								},
 								{
@@ -4131,7 +4131,7 @@
 							"containerChangeable": true,
 							"left": 336,
 							"top": 576,
-							"width": 194.60888671875,
+							"width": 195.326171875,
 							"height": 103,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnGg+lSYFYljQ="
@@ -7110,7 +7110,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 463,
+									"left": 464,
 									"top": 442,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -7152,7 +7152,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 492,
+									"left": 493,
 									"top": 449,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -7173,7 +7173,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 438,
+									"left": 439,
 									"top": 540,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -7194,7 +7194,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 425,
+									"left": 426,
 									"top": 534,
 									"height": 13,
 									"alpha": 0.7853981633974483,
@@ -7215,7 +7215,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 463,
+									"left": 464,
 									"top": 551,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -7322,7 +7322,7 @@
 								"$ref": "AAAAAAFnGg+lSYFXHIo="
 							},
 							"lineStyle": 1,
-							"points": "446:575;511:330",
+							"points": "447:575;511:330",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFnV9SXZiPQfjo="
@@ -22218,18 +22218,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnGgmqz3hStkM="
 							},
-							"name": "createRec",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnGgoTzHjd1LA=",
-									"_parent": {
-										"$ref": "AAAAAAFnGgnbOni4zdY="
-									},
-									"name": "String",
-									"type": ""
-								}
-							]
+							"name": "createRec"
 						},
 						{
 							"_type": "UMLOperation",
@@ -22237,18 +22226,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnGgmqz3hStkM="
 							},
-							"name": "editRec",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnGgpNxXkorKk=",
-									"_parent": {
-										"$ref": "AAAAAAFnGgokPnkDxYw="
-									},
-									"name": "String",
-									"type": ""
-								}
-							]
+							"name": "editRec"
 						}
 					]
 				},
@@ -22266,18 +22244,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnGgppvnlI9lQ="
 							},
-							"name": "deleteRec",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnGgrRoXnmhiw=",
-									"_parent": {
-										"$ref": "AAAAAAFnGgqZJ3nBefc="
-									},
-									"name": "String",
-									"type": ""
-								}
-							]
+							"name": "deleteRec"
 						}
 					]
 				},
@@ -22355,27 +22322,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnGgteAXn6/VE="
 							},
-							"name": "rsvp",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnYkKuVQOTOtg=",
-									"_parent": {
-										"$ref": "AAAAAAFnYkJ/pgFhgHc="
-									},
-									"name": "String",
-									"type": ""
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnYkKuVQOUCXE=",
-									"_parent": {
-										"$ref": "AAAAAAFnYkJ/pgFhgHc="
-									},
-									"name": "String",
-									"type": ""
-								}
-							]
+							"name": "rsvp"
 						},
 						{
 							"_type": "UMLOperation",
@@ -22383,18 +22330,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnGgteAXn6/VE="
 							},
-							"name": "report",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnYkMNbQ7s3KY=",
-									"_parent": {
-										"$ref": "AAAAAAFnYkL9JAy6MyQ="
-									},
-									"name": "String",
-									"type": ""
-								}
-							]
+							"name": "report"
 						}
 					]
 				},
@@ -22582,7 +22518,7 @@
 								"$ref": "AAAAAAFnGg+lSYFVcR4="
 							},
 							"name": "currentRecs",
-							"type": "ArrayList<Rec>"
+							"type": "ArrayList<String>"
 						}
 					],
 					"operations": [
@@ -22619,18 +22555,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnGg+lSYFVcR4="
 							},
-							"name": "watchRec",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFnYiRa2HQx9wA=",
-									"_parent": {
-										"$ref": "AAAAAAFnYiQ503H/ddo="
-									},
-									"name": "String",
-									"type": ""
-								}
-							]
+							"name": "watchRec"
 						}
 					]
 				},
