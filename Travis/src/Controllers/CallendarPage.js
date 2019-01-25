@@ -1,0 +1,4 @@
+class CallendarPage {
+    loadCallendarData(UserId) {
+    }
+}
