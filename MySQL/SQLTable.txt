@@ -1,3 +1,4 @@
+Info
 User
 - Permission (TypeID) - Integer
 - Username - String
