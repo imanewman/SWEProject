@@ -1,0 +1,4 @@
+CREATE TABLE User(Permission INTEGER, Username VARCHAR(30), Password VARCHAR(30), Email VARCHAR(255), Ratings INTEGER);
+	- Still Need Foreign Key for PreferredEvent Type, RecIDs, and WatchedEvents
+
+CREATE TABLE Recs(RecID INTEGER, Name VARCHAR(60), Date DATE
