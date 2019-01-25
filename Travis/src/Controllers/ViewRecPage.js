@@ -1,0 +1,5 @@
+class ViewRecPage {
+    rsvp() {}
+
+    report() {}
+}
