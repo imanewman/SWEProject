@@ -1,0 +1,8 @@
+class PreviewRecPage {
+
+    confirmRec() {
+    }
+
+    editRec() {
+    }
+}
