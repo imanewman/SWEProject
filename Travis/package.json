@@ -7,6 +7,6 @@
     "jshint": "^2.9.7"
   },
   "scripts": {
-    "test": "jshint hello.js"
+    "test": echo "TEST"
   }
 }
