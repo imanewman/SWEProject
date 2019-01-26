@@ -13494,7 +13494,7 @@
 											"top": 1023,
 											"width": 123.220703125,
 											"height": 13,
-											"text": "NavbarComponent"
+											"text": "Navbar"
 										},
 										{
 											"_type": "LabelView",
@@ -23773,7 +23773,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "NavbarComponent",
+					"name": "Navbar",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
