@@ -2,16 +2,81 @@
 \ ******************************************************************************************************************** /
 / **** /                                                 The rec                                                \ **** \
 \ **** \                                             Header CSS Page                                            / **** /
-/ **** /                                                                                                        \ **** \
-\ **** \                                          Written By: Tim Newman                                        / **** /
+/ **** /                                          Written By: Tim Newman                                        \ **** \
+\ **** \                                           Edited By:                                                   / **** /
 / ******************************************************************************************************************** \
 \**********************************************************************************************************************/
 
-.header_bar {
+#header_bar_container {
     position: absolute;
 
     top: 0em;
 
     width: 100%;
-    height: 5em;
+    height: 4em;
+
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
 }
+
+#header_bar {
+    position: absolute;
+
+    top: 0.5em;
+
+    width: 100%;
+    height: 3em;
+
+    display: flex;
+    align-items: center;
+
+    border: black 0.2em;
+}
+
+.header_item {
+    display: flex;
+}
+
+/****************************************************** Logo **********************************************************/
+
+#logo {
+    width: 10em;
+    height: 100%;
+}
+
+#logo_text {
+    font-size: 2em;
+    font-weight: 1000;
+
+    transform: scale(1.2);
+
+    margin: auto;
+}
+
+/**************************************************** Nav Buttons *****************************************************/
+
+#nav_buttons {
+}
+
+.nav_button { margin-left: 0.8em; }
+
+#home_button {}
+
+#my_recs_button {}
+
+#all_recs_button {}
+
+#watchlist_button {}
+
+#my_posts_button {}
+
+.nav_button_text {}
+
+/**************************************************** Account Button **************************************************/
+
+#account {
+    position: absolute;
+
+    right: 2em;
+}
+
+#account_icon { transform: scale(2); }

@@ -7,6 +7,24 @@
 / ******************************************************************************************************************** \
 \**********************************************************************************************************************/
 
+/*Named Variables*/
+:root {
+    --light: #E8E8E8;
+    --dark: #3D3D3D;
+    --hover: #558BDA;
+    --active: #4B7FCB;
+}
+
+/*Entire Page*/
+html {
+    /*Page Visibility Transition*/
+    /*font-size: 12px;*/
+    /*visibility: hidden;*/
+    /*opacity: 0;*/
+    /*transition: opacity 0.1s;*/
+    /*width: 100vw;*/
+}
+
 /*Entire Body*/
 body {
     font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -16,7 +34,25 @@ body {
 
 /*Background Colors*/
 .bg-white { background-color: white; }
-.bg-light { background-color: #DEDEDE }
-.bg-dark { background-color: #3D3D3D }
+.bg-light { background-color: var(--light); }
+.bg-dark { background-color: var(--dark); }
 
 /*Titles*/
+h1 {  }
+h2 {  }
+h3 {  }
+
+/*Flexing*/
+flex-row { flex-direction: row; }
+flex-col { flex-direction: column; }
+flex-grow { flex-grow: 1; }
+
+/*Generally Common*/
+.center { margin: auto; }
+
+.hov {
+    cursor: pointer;
+    transition: color 0.1s;
+}
+.hov:hover { color: var(--hover); }
+.hov:active { color: var(--active); }
