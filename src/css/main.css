@@ -29,6 +29,8 @@ html {
 body {
     font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 /*Primary Colors*/
