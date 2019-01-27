@@ -1,6 +1,4 @@
 language: node_js
 node_js:
  - "node"
-before_script:
- - cd Travis
- - ./beforescript.sh
+before_script: cd Travis
