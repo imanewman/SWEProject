@@ -9,7 +9,7 @@
 
 /*Named Variables*/
 :root {
-    --light: #E8E8E8;
+    --light: #FAFAFA;
     --dark: #3D3D3D;
     --hover: #558BDA;
     --active: #4B7FCB;
@@ -28,6 +28,7 @@ html {
 /*Entire Body*/
 body {
     font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
 }
 
 /*Primary Colors*/
