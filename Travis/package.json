@@ -1,9 +1,12 @@
 {
-  "name": "learn-travis-YOURNAME",
-  "description": "Simple Travis-CI check for JSHint (Code Linting)",
-  "author": "your name here :-)",
+  "name": "the-rec-travis",
+  "description": "travis-ci checks for ESLint",
+  "author": "Michael Maramba",
   "version": "0.0.1",
   "devDependencies": {
-    "jshint": "^2.9.7"
+    "eslint": "^5.12.1"
+  },
+  "scripts": {
+    "test": "eslint hello.js"
   }
 }
