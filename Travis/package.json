@@ -7,6 +7,6 @@
     "eslint": "^5.12.1"
   },
   "scripts": {
-    "test": "eslint hello.js"
+    "test": "./node_modules/.bin/eslint hello.js"
   }
 }
