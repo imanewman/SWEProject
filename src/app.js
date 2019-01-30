@@ -1,3 +1,5 @@
+// No longer necessary, added to Database.js
+
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({

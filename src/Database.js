@@ -7,37 +7,24 @@ var client;
 
 var mysql = require('mysql');
 
+var connection = mysql.createConnection({
+    host     : "therec.chyktvr3gg46.us-east-1.rds.amazonaws.com",
+    user     : "TheRec",
+    password : "TheRec309",
+    port     : "3306"
+});
+
 function connect () {
-    var SQLClient = mysql.createConnection({
-        host: "localhost",
-        user: "yourusername",
-        password: "yourpassword"
+    connection.connect(function(err) {
+        if (err) {
+            console.error('Database connection failed: ' + err.stack);
+            return;
+        }
+
+        console.log('Connected to database.');
     });
-
-    SQLClient.connect(function(err, cli) {
-
-            if (err) {
-                throw "Error: could not connect to database";
-            }
-
-            console.log("Connection to database established");
-
-            client = cli;
-
-            client.on("error", function () {
-                console.log("Error: database connection error");
-            });
-
-            client.on("close", function () {
-                console.log("Error: database connection closed");
-            });
-
-            client.on("timeout", function () {
-                console.log("Error: database connection lost");
-            });
-        });
 }
 
 function disconnect () {
-    // if(client) client.close();
+    connection.end();
 }
