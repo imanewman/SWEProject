@@ -1,3 +1,6 @@
+import dbConnection from "../Database.js";
+import ObjectFactory from "./ObjectFactory";
+
 class PrivateDatabaseRetriever {
     contructor() {
         if(! PrivateDatabaseRetriever.instance){
@@ -7,13 +10,41 @@ class PrivateDatabaseRetriever {
         return PrivateDatabaseRetriever.instance;
     }
 
-    getRec(recId) {}
+    getRec(recId) {
+        let recObject = dbConnection.query("SELECT * FROM recs WHERE id = ${recId}",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
 
-    getRecs() {}
+        return ObjectFactory.initializeRec(recObject);
+    }
 
-    getUser(userId) {}
+    getRecs() {
+        let recsObject = dbConnection.query("SELECT * FROM recs",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
 
-    getPendingOrgaizers() {}
+        return ObjectFactory.initializeRecList(recsObject);
+    }
+
+    getUser(userId) {
+        let userObject = dbConnection.query("SELECT * FROM users WHERE id = ${userId}",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
+
+        return ObjectFactory.initializeUser(userObject);
+    }
+
+    getPendingOrgaizers() {
+        let pendingOrganizersObject = dbConnection.query("SELECT * FROM pendingOrganizers",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
+
+        return ObjectFactory.initializePendingOrganizerList(pendingOrganizersObject);
+    }
 }
 
 // Set up object as a Singleton

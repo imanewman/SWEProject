@@ -7,9 +7,13 @@ class PrivateObjectFactory {
         return PrivateObjectFactory.instance;
     }
 
-    initializeRec(recData) {}
+    initializeRec(recObject) {}
 
-    initializeUser(userData) {}
+    initializeRecList(recListObject) {}
+
+    initializeUser(userObject) {}
+
+    initializePendingOrganizerList(pendingOrganizerListObject) {}
 }
 
 // Set up object as a Singleton
