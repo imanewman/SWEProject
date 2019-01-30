@@ -10,7 +10,8 @@
     "mysql": "^2.16.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/eslint hello.js"
+    "test": "./node_modules/.bin/eslint hello.js",
+    "start": "newman run TheRec.postman_collection.json -e TheRec.postman_environment.json"
   },
   "dependencies": {}
 }
