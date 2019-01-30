@@ -1,4 +1,8 @@
+// No longer necessary, added to Database.js
+
 var mysql = require('mysql');
+
+console.log('hello');
 
 var connection = mysql.createConnection({
   host     : "therec.chyktvr3gg46.us-east-1.rds.amazonaws.com",
