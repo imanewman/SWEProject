@@ -1,0 +1,83 @@
+/**********************************************************************************************************************\
+\ ******************************************************************************************************************** /
+/ **** /                                                 The rec                                                \ **** \
+\ **** \                                             Header CSS Page                                            / **** /
+/ **** /                                          Written By: Tim Newman                                        \ **** \
+\ **** \                                           Edited By:                                                   / **** /
+/ ******************************************************************************************************************** \
+\**********************************************************************************************************************/
+
+#header_bar_container {
+    position: absolute;
+
+    top: 0em;
+
+    width: 100%;
+    height: 4em;
+
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+}
+
+#header_bar {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.header_item {
+    display: flex;
+}
+
+/****************************************************** Logo **********************************************************/
+
+#logo {
+    width: 10em;
+    height: 100%;
+    margin: 0 1em 0 1em;
+}
+
+#logo_text {
+    font-size: 2em;
+    font-weight: 1000;
+
+    transform: scale(1.2);
+
+    margin: auto;
+
+    cursor: pointer;
+}
+
+/**************************************************** Nav Buttons *****************************************************/
+
+#nav_buttons {
+    height: 100%;
+    margin-top: 2.5em;
+}
+
+.nav_button { margin-left: 1.2em; }
+
+#home_button {}
+
+#my_recs_button {}
+
+#all_recs_button {}
+
+#watchlist_button {}
+
+#my_posts_button {}
+
+.nav_button_text {}
+
+/**************************************************** Account Button **************************************************/
+
+#account {
+    position: absolute;
+
+    right: 2em;
+}
+
+#account_icon { transform: scale(2); }

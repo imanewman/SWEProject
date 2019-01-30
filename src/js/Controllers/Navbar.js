@@ -1,4 +1,4 @@
-class NavbarComponent {
+class Navbar {
     changePage(pageName) {
     }
 }
