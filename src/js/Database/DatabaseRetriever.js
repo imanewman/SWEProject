@@ -10,7 +10,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        dbConnection.query("SELECT ${recId} FROM recs", function (err, result, fields) {
+        dbConnection.query("SELECT * FROM recs WHERE id = ${recId}", function (err, result, fields) {
             if (err) throw err;
         });
     }
@@ -22,7 +22,7 @@ class PrivateDatabaseRetriever {
     }
 
     getUser(userId) {
-        dbConnection.query("SELECT ${userId} FROM users", function (err, result, fields) {
+        dbConnection.query("SELECT * FROM users WHERE id = ${userId}", function (err, result, fields) {
             if (err) throw err;
         });
     }
