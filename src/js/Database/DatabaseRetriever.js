@@ -10,25 +10,25 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        dbConnection.query("SELECT * FROM recs WHERE id = ${recId}", function (err, result, fields) {
+        return dbConnection.query("SELECT * FROM recs WHERE id = ${recId}", function (err, result, fields) {
             if (err) throw err;
         });
     }
 
     getRecs() {
-        dbConnection.query("SELECT * FROM recs", function (err, result, fields) {
+        return dbConnection.query("SELECT * FROM recs", function (err, result, fields) {
             if (err) throw err;
         });
     }
 
     getUser(userId) {
-        dbConnection.query("SELECT * FROM users WHERE id = ${userId}", function (err, result, fields) {
+        return dbConnection.query("SELECT * FROM users WHERE id = ${userId}", function (err, result, fields) {
             if (err) throw err;
         });
     }
 
     getPendingOrgaizers() {
-        dbConnection.query("SELECT * FROM pendingOrganizers", function (err, result, fields) {
+        return dbConnection.query("SELECT * FROM pendingOrganizers", function (err, result, fields) {
             if (err) throw err;
         });
     }
