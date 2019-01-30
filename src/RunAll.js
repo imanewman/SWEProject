@@ -6,7 +6,7 @@ var app = express();
 
 var PORT = 4000;
 
-// require("./RestServer.js")(app);
+require("./RestServer.js")(app);
 // require("./HttpServer.js")(app);
 
 app.listen(PORT, function () {
