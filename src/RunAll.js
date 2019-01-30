@@ -9,6 +9,10 @@ var PORT = 4000;
 require("./RestServer.js")(app);
 // require("./HttpServer.js")(app);
 
+
+app.get('/', (req, res) => res.send('Hello World!'));
+
+
 app.listen(PORT, function () {
 
 	console.log("Servers started on port " + PORT);
