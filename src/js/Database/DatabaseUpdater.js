@@ -26,4 +26,4 @@ const DatabaseUpdater = new PrivateDatabaseUpdater();
 
 Object.freeze(DatabaseUpdater);
 
-export default DatabaseUpdater;
+module.exports = DatabaseUpdater;
