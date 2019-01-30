@@ -11,7 +11,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        let recObject = dbConnection.query("SELECT * FROM recs WHERE id = ${recId}",
+        let recObject = dbConnection.query("SELECT * FROM Recs WHERE id = ${recId}",
             function (err, result, fields) {
                 if (err) throw err;
             });
@@ -20,7 +20,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRecs() {
-        let recsObject = dbConnection.query("SELECT * FROM recs",
+        let recsObject = dbConnection.query("SELECT * FROM Recs",
             function (err, result, fields) {
                 if (err) throw err;
             });
@@ -29,7 +29,7 @@ class PrivateDatabaseRetriever {
     }
 
     getUser(userId) {
-        let userObject = dbConnection.query("SELECT * FROM users WHERE id = ${userId}",
+        let userObject = dbConnection.query("SELECT * FROM Users WHERE id = ${userId}",
             function (err, result, fields) {
                 if (err) throw err;
             });
@@ -38,7 +38,7 @@ class PrivateDatabaseRetriever {
     }
 
     getPendingOrgaizers() {
-        let pendingOrganizersObject = dbConnection.query("SELECT * FROM pendingOrganizers",
+        let pendingOrganizersObject = dbConnection.query("SELECT * FROM PendingOrganizers",
             function (err, result, fields) {
                 if (err) throw err;
             });

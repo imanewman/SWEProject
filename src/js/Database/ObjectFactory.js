@@ -14,10 +14,10 @@ class PrivateObjectFactory {
             recObject.id,
             recObject.title || "",
             recObject.description || "",
-            recObject.location || "", // may be an object?
+            recObject.location || "",
             recObject.duration || 0,
             recObject.startTime || "",
-            recObject.tags || [], // may need to parse tags?
+            recObject.tags || [], // need to change, db has tagId and points to tag table
             recObject.draft || true,
             recObject.contactInfo || "",
             recObject.websiteLink || "",
