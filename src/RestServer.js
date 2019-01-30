@@ -1,14 +1,12 @@
 module.exports = function (app) {
 
     var express = require("express");
-    var cookieParser = require("cookie-parser");
-    // var database = require("./database.js");
+    // var cookieParser = require("cookie-parser");
+    var database = require("./Database.js");
 
-    // database.connect(function () {});
+    database.connect(function () {});
+
+    // var recOperations = require("./RestOperations/recs.js")(database);
+    // app.get("./api/recs/:recId", delegateResponseTo(recOperations));
 
 }
-
-/* An example request definition and delegation:
-var putProposedCourse = require("./rest_operations/putProposedCourse.js")(database);
-app.put("/api/v1/:school/proposedCourses/:proposedCourseId", delegateResponseTo(putProposedCourse, undefined, allowAll));
- */
