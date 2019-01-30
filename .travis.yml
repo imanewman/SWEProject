@@ -4,3 +4,5 @@ node_js:
 before_script: 
  - cd src
  - npm install -g eslint --save-dev
+ - npm install express --save
+ - npm install mysql
