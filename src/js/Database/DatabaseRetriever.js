@@ -1,3 +1,5 @@
+import dbConnection from "../Database.js"
+
 class PrivateDatabaseRetriever {
     contructor() {
         if(! PrivateDatabaseRetriever.instance){
@@ -7,13 +9,29 @@ class PrivateDatabaseRetriever {
         return PrivateDatabaseRetriever.instance;
     }
 
-    getRec(recId) {}
+    getRec(recId) {
+        dbConnection.query("SELECT ${recId} FROM recs", function (err, result, fields) {
+            if (err) throw err;
+        });
+    }
 
-    getRecs() {}
+    getRecs() {
+        dbConnection.query("SELECT * FROM recs", function (err, result, fields) {
+            if (err) throw err;
+        });
+    }
 
-    getUser(userId) {}
+    getUser(userId) {
+        dbConnection.query("SELECT ${userId} FROM users", function (err, result, fields) {
+            if (err) throw err;
+        });
+    }
 
-    getPendingOrgaizers() {}
+    getPendingOrgaizers() {
+        dbConnection.query("SELECT * FROM pendingOrganizers", function (err, result, fields) {
+            if (err) throw err;
+        });
+    }
 }
 
 // Set up object as a Singleton

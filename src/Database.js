@@ -1,13 +1,6 @@
-module.exports = {
-    connect: connect,
-    disconnect: disconnect,
-}
-
-var client;
-
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
+var dbConnection = mysql.createConnection({
     host     : "therec.chyktvr3gg46.us-east-1.rds.amazonaws.com",
     user     : "TheRec",
     password : "TheRec309",
@@ -15,7 +8,7 @@ var connection = mysql.createConnection({
 });
 
 function connect () {
-    connection.connect(function(err) {
+    dbConnection.connect(function(err) {
         if (err) {
             console.error('Database connection failed: ' + err.stack);
             return;
@@ -26,5 +19,11 @@ function connect () {
 }
 
 function disconnect () {
-    connection.end();
+    dbConnection.end();
+}
+
+module.exports = {
+    connect: connect,
+    disconnect: disconnect,
+    dbConnection: dbConnection
 }
