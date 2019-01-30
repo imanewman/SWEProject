@@ -1,4 +1,5 @@
-import dbConnection from "../Database.js"
+import dbConnection from "../Database.js";
+import ObjectFactory from "./ObjectFactory";
 
 class PrivateDatabaseRetriever {
     contructor() {
@@ -10,27 +11,39 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        return dbConnection.query("SELECT * FROM recs WHERE id = ${recId}", function (err, result, fields) {
-            if (err) throw err;
-        });
+        let recObject = dbConnection.query("SELECT * FROM recs WHERE id = ${recId}",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
+
+        return ObjectFactory.initializeRec(recObject);
     }
 
     getRecs() {
-        return dbConnection.query("SELECT * FROM recs", function (err, result, fields) {
-            if (err) throw err;
-        });
+        let recsObject = dbConnection.query("SELECT * FROM recs",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
+
+        return ObjectFactory.initializeRecList(recsObject);
     }
 
     getUser(userId) {
-        return dbConnection.query("SELECT * FROM users WHERE id = ${userId}", function (err, result, fields) {
-            if (err) throw err;
-        });
+        let userObject = dbConnection.query("SELECT * FROM users WHERE id = ${userId}",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
+
+        return ObjectFactory.initializeUser(userObject);
     }
 
     getPendingOrgaizers() {
-        return dbConnection.query("SELECT * FROM pendingOrganizers", function (err, result, fields) {
-            if (err) throw err;
-        });
+        let pendingOrganizersObject = dbConnection.query("SELECT * FROM pendingOrganizers",
+            function (err, result, fields) {
+                if (err) throw err;
+            });
+
+        return ObjectFactory.initializePendingOrganizerList(pendingOrganizersObject);
     }
 }
 
