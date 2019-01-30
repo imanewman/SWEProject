@@ -27,3 +27,5 @@ export default ObjectFactory;
 // I think this is the best way to create a singleton?
 // https://www.sitepoint.com/javascript-design-patterns-singleton/
 // other way: https://www.dofactory.com/javascript/singleton-design-pattern
+
+//Nick's "change"
