@@ -1,3 +1,5 @@
+import * from "../Model";
+
 class PrivateObjectFactory {
     contructor() {
         if(! PrivateObjectFactory.instance){
@@ -7,13 +9,47 @@ class PrivateObjectFactory {
         return PrivateObjectFactory.instance;
     }
 
-    initializeRec(recObject) {}
+    initializeRec(recObject) {
+        return new Rec(
+            recObject.id,
+            recObject.title || "",
+            recObject.description || "",
+            recObject.location || "", // may be an object?
+            recObject.duration || 0,
+            recObject.startTime || "",
+            recObject.tags || [], // may need to parse tags?
+            recObject.draft || true,
+            recObject.contactInfo || "",
+            recObject.websiteLink || "",
+            recObject.rules || "",
+            recObject.newFields || {}
+        );
+    }
 
-    initializeRecList(recListObject) {}
+    initializeRecList(recListObject) {
+        let recList = new RecList();
 
-    initializeUser(userObject) {}
+        for (let recObject in recListObject) {
+            let newRec = this.initializeRec(recObject);
+            recList.addRec(newRec);
+        }
 
-    initializePendingOrganizerList(pendingOrganizerListObject) {}
+        return recList;
+    }
+
+    initializeUser(userObject) {
+        return new User(
+            userObject.id,
+            userObject.email,
+            userObject.fullName || "",
+            userObject.passwordHash,
+            userObject.preferredEvents || [] // may need to parse list
+        )
+    }
+
+    initializePendingOrganizerList(pendingOrganizerListObject) {
+        return new PendingOrganizers(pendingOrganizerListObject); // may need to parse list
+    }
 }
 
 // Set up object as a Singleton

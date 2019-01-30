@@ -1,6 +1,6 @@
 class PendingOrganizers {
 
-    constructor(pendOrgs) {
+    constructor(pendOrgs = []) {
         this.pendingOrganizers = pendOrgs;
     }
 
