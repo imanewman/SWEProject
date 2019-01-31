@@ -54,11 +54,11 @@ class PrivateObjectFactory {
 
 // Set up object as a Singleton
 
-const ObjectFactory = new ObjectFactory();
+const ObjectFactory = new PrivateObjectFactory();
 
 Object.freeze(ObjectFactory);
 
-export default ObjectFactory;
+module.exports = ObjectFactory;
 
 
 

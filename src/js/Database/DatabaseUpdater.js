@@ -7,8 +7,7 @@ class PrivateDatabaseUpdater {
         return PrivateDatabaseUpdater.instance;
     }
 
-    putRec(rec) {
-    }
+    putRec(rec) {}
 
     deleteRec(recId) {}
 
@@ -27,4 +26,4 @@ const DatabaseUpdater = new PrivateDatabaseUpdater();
 
 Object.freeze(DatabaseUpdater);
 
-export default DatabaseUpdater;
+module.exports = DatabaseUpdater;
