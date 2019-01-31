@@ -1,5 +1,0 @@
-class RecVerifier {
-    verifyRecEvent(Rec)
-    {
-    }
-}

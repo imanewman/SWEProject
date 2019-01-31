@@ -1,12 +1,24 @@
 class Rec {
 	
-	constructor(location, duration, startTime, tags, draft, eventType, contactInfo, websiteLink, newFields, title, id, description, rules) {
+	constructor(
+	    id,
+	    title,
+	    description,
+	    location,
+        duration,
+        startTime,
+        tags,
+        draft,
+        contactInfo,
+        websiteLink,
+        rules,
+        newFields
+    ) {
 		this.location = location;
 		this.duration =	duration;
 		this.startTime = startTime;
 		this.tags = tags;
 		this.draft = draft;
-		this.eventType = eventType;
 		this.contactInfo = contactInfo;
 		this.websiteLink = websiteLink;
 		this.newFields = newFields;
@@ -34,10 +46,6 @@ class Rec {
 
     setDraft(draft) {
 		this.draft = draft;
-    }
-
-    setEventType(eventType) {
-		this.eventType = eventType;
     }
 
     setContactInfo(contactInfo) {
@@ -94,10 +102,6 @@ class Rec {
 
     getDraft() {
 		return this.draft;
-    }
-
-    getEventType() {
-		return this.eventType;
     }
 
     getContactInfo() {

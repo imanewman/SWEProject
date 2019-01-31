@@ -1,22 +1,17 @@
 class RecList {
 
-    constructor(recs) {
+    constructor(recs = []) {
         this.recs = recs;
     }
 
-    createRec(rec) {
-
+    addRec(newRec) {
+        this.recs.append(newRec);
     }
 
-    editRec(rec) {
-
+    deleteRec(recId) {
     }
 
-    deleteRec(rec) {
-
-    }
-
-    getRec(rec) {
+    getRec(recId) {
 
     }
 }
