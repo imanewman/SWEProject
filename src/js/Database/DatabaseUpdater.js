@@ -9,11 +9,11 @@ class PrivateDatabaseUpdater {
 
     putRec(rec) {}
 
-    deleteRec(rec) {}
+    deleteRec(recId) {}
 
     putUser(user) {}
 
-    deleteUser(user) {}
+    deleteUser(userId) {}
 
     putPendingOrganizer(userId) {}
 
@@ -26,4 +26,4 @@ const DatabaseUpdater = new PrivateDatabaseUpdater();
 
 Object.freeze(DatabaseUpdater);
 
-export default DatabaseUpdater;
+module.exports = DatabaseUpdater;

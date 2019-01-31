@@ -2,5 +2,7 @@ language: node_js
 node_js:
  - "node"
 before_script: 
- - cd Travis
+ - cd src
  - npm install -g eslint --save-dev
+ - npm install express --save
+ - npm install mysql
