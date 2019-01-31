@@ -1,5 +1,5 @@
-import dbConnection from "../Database.js";
-import ObjectFactory from "./ObjectFactory";
+const DatabaseConnector = require("../../Database.js");
+const ObjectFactory = require("./ObjectFactory");
 
 class PrivateDatabaseRetriever {
     contructor() {
@@ -11,7 +11,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        let recObject = dbConnection.query("SELECT * FROM Recs WHERE id = ${recId}",
+        let recObject = DatabaseConnector.query("SELECT * FROM Recs WHERE id = ${recId}",
             function (err, result, fields) {
                 if (err) throw err;
             });
@@ -20,7 +20,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRecs() {
-        let recsObject = dbConnection.query("SELECT * FROM Recs",
+        let recsObject = DatabaseConnector.query("SELECT * FROM Recs",
             function (err, result, fields) {
                 if (err) throw err;
             });
@@ -29,16 +29,16 @@ class PrivateDatabaseRetriever {
     }
 
     getUser(userId) {
-        let userObject = dbConnection.query("SELECT * FROM Users WHERE id = ${userId}",
+        let userObject = DatabaseConnector.query("SELECT * FROM Users WHERE id = ${userId}",
             function (err, result, fields) {
                 if (err) throw err;
             });
 
-        return ObjectFactory.initializeUser(userObject);
+        return ObjectFactory.initializeUser(userObject); //TODO: make different user types
     }
 
     getPendingOrgaizers() {
-        let pendingOrganizersObject = dbConnection.query("SELECT * FROM PendingOrganizers",
+        let pendingOrganizersObject = DatabaseConnector.query("SELECT * FROM PendingOrganizers",
             function (err, result, fields) {
                 if (err) throw err;
             });
@@ -53,4 +53,4 @@ const DatabaseRetriever = new PrivateDatabaseRetriever();
 
 Object.freeze(DatabaseRetriever);
 
-export default DatabaseRetriever;
+module.exports = DatabaseRetriever;
