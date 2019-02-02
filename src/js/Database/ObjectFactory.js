@@ -1,7 +1,7 @@
 import { Rec, User, PendingOrganizers } from "../Model";
 
 class PrivateObjectFactory {
-    contructor() {
+    constructor() {
         if(! PrivateObjectFactory.instance){
             PrivateObjectFactory.instance = this;
         }
@@ -27,11 +27,11 @@ class PrivateObjectFactory {
     }
 
     initializeRecList(recListObject) {
-        let recList = new RecList();
+        let recList = [];
 
         for (let recObject in recListObject) {
             let newRec = this.initializeRec(recObject);
-            recList.addRec(newRec);
+            recList.append(newRec);
         }
 
         return recList;
