@@ -1,4 +1,4 @@
-import * from "../Model";
+import { Rec, User, PendingOrganizers } from "../Model";
 
 class PrivateObjectFactory {
     contructor() {
