@@ -19869,7 +19869,7 @@
 										"$ref": "AAAAAAFokYDAYCHKPu0="
 									},
 									"edgePosition": 1,
-									"text": "+Creates Objects"
+									"text": "+Creates Class Objects"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -25241,7 +25241,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFokWU997v5aUo="
 							},
-							"name": "Creates Objects",
+							"name": "Creates Class Objects",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAFokYDAXyHH/EU=",

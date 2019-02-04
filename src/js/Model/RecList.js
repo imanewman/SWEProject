@@ -5,27 +5,15 @@ class PrivateRecList {
     constructor() {
         this.updater = DatabaseUpdater;
         this.retriever = DatabaseRetriever;
-
-        // this.recs = this.retriever.getRecs();
     }
 
-    add(newRec) {
-        this.updater.putRec(newRec);
+    add(newRec) { this.updater.putRec(newRec); }
 
-        // this.recs = this.retriever.getRecs();
-    }
+    delete(recId) { this.updater.deleteRec(recId); }
 
-    delete(recId) {
-        this.updater.deleteRec(recId);
+    get(recId) { return this.retriever.getRec(recId); }
 
-        // this.recs = this.retriever.getRecs();
-    }
-
-    get(recId) {
-        // this.recs = this.retriever.getRecs();
-
-        return this.retriever.getRec(recId);
-    }
+    getAll() { return this.retriever.getRecs(); }
 }
 
 //TODO: see if this is how we want to add recs through or not?

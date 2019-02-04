@@ -1,4 +1,6 @@
 class Rec {
+
+    //TODO: add functionality to auto update recs in database when edited
 	
 	constructor(
 	    id,

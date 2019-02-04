@@ -10,7 +10,10 @@
 /*Named Variables*/
 :root {
     --light: #FAFAFA;
-    --dark: #3D3D3D;
+    --lightish: #EFEFEF;
+    --darkish: #EAEAEA;
+    --dark: #585858;
+    --darker: #3D3D3D;
     --hover: #558BDA;
     --active: #4B7FCB;
 }
@@ -40,6 +43,24 @@ body {
 .bg-light { background-color: var(--light); }
 .bg-dark { background-color: var(--dark); }
 
+/*Hovering*/
+.hov-black,
+.hov-blue,
+.hov-bg-dark {
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.hov-blue:hover { color: var(--hover); }
+.hov-blue:active { color: var(--active); }
+
+
+.hov-black:hover { color: var(--darker); }
+.hov-black:active { color: black; }
+
+.hov-bg-dark:hover { background-color: var(--lightish); }
+.hov-bg-dark:active { background-color: var(--darkish); }
+
 /*Titles*/
 h1 {  }
 h2 {  }
@@ -53,9 +74,4 @@ flex-grow { flex-grow: 1; }
 /*Generally Common*/
 .center { margin: auto; }
 
-.hov {
-    cursor: pointer;
-    transition: color 0.1s;
-}
-.hov:hover { color: var(--hover); }
-.hov:active { color: var(--active); }
+.shadow { box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15); }
