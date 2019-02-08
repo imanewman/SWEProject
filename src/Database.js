@@ -31,15 +31,15 @@ class PrivateDatabaseConnector {
 
     query(queryString, cb = this.defaultErrorHandler) { this.connection.query(queryString, cb); }
 
-    get(paramName, id = "") {
+    get(paramName, element = "", value = "") {
         var queryString = `SELECT * FROM ${paramName}`;
 
-        if (id) queryString += ` WHERE id = ${id}`;
+        if (value && element) queryString += ` WHERE ${element} = ${value}`;
 
         return this.query(queryString);
     }
 
-    put(paramName, id) {
+    put(paramName) {
         // update: "UPDATE table_name SET field1 = new-value1, field2 = new-value2"
         // insert: "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')"
         let queryString = ``;
@@ -47,8 +47,8 @@ class PrivateDatabaseConnector {
         return this.query(queryString);
     }
 
-    delete(paramName, id) {
-        let queryString = `DELETE FROM ${paramName} WHERE id = ${id}`;
+    delete(paramName, element = "", value = "") {
+        let queryString = `DELETE FROM ${paramName} WHERE ${element} = ${value}`;
 
         return this.query(queryString);
     }

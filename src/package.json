@@ -11,7 +11,8 @@
     "newman": "^4.3.1"
   },
   "scripts": {
-    "test": "./node_modules/.bin/eslint hello.js",
+    "lint": "./node_modules/.bin/eslint hello.js",
+    "test": "./node_modules/.bin/mocha --reporter spec",
     "start": "newman run TheRec.postman_collection.json -e TheRec.postman_environment.json"
   },
   "dependencies": {}
