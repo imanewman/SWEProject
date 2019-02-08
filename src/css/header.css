@@ -45,7 +45,7 @@
     transform: scale(1.2);
 
     margin: auto;
-    padding-bottom: 0.1em;
+    /*padding-bottom: 0.1em;*/
 
     cursor: pointer;
 }
