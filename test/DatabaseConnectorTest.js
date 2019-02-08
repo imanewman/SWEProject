@@ -3,15 +3,17 @@ const DatabaseConnector = require("../src/Database.js");
 
 describe("Database Connector Tests", function() {
     describe("Test 'query' function", function() {
-        it("shows whole table", function() {
+        it("shows whole table", function(done) {
             DatabaseConnector.connect();
 
-            const actual = DatabaseConnector.query('SHOW TABLES;');
             const expected = [{"Tables_in_TheRec":"Recs"}];
 
-            console.log(JSON.stringify(actual));
+            var checkEquals = function(result) {
+                expect(result).to.equal(expected);
+                done();
+            }
 
-            expect(actual).to.equal(expected);
+            const actual = DatabaseConnector.query('SHOW TABLES;', checkEquals);
 
             DatabaseConnector.disconnect();
         });

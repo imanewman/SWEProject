@@ -25,14 +25,9 @@ class PrivateDatabaseConnector {
 
     disconnect() { this.connection.end(); }
 
-    query(queryString) {
+    query(queryString, callback = function(result) {} ) {
 
-        var res = 5;
-
-        var resultFunc = function(result) {
-            res = result;
-            //console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
-        };
+        var res = [];
 
         this.connection.query(queryString, function (err, result, fields) {
                 if (err) throw err;
@@ -40,13 +35,13 @@ class PrivateDatabaseConnector {
                 console.log(`query string: ${queryString}`);
                 console.log(`request result: ${JSON.stringify(result)}`);
 
-                resultFunc(result);
-                // console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
-                // res = result;
-                // console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
-            });
+                //result.forEach( (row) => { res += [row]; });
+                res = result;
 
-        // console.log(`res: ${JSON.stringify(res)}`);
+                callback(result);
+
+                console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
+            });
 
         return res;
     }
