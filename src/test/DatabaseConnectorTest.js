@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const DatabaseConnector = require("../src/DatabaseConnector.js");
+const DatabaseConnector = require("../src/Database.js");
 
 describe("Database Connector Tests", function() {
     describe("Test 'connect' function", function() {
