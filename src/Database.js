@@ -8,12 +8,6 @@ class PrivateDatabaseConnector {
             password: "TheRec309",
             port: "3306"
         });
-
-        this.defaultErrorHandler = function (err, result, fields) {
-            if (err) throw err;
-
-            console.log(`request result: ${result}`);
-        };
     }
 
     connect() {
@@ -25,16 +19,45 @@ class PrivateDatabaseConnector {
 
             console.log('Connected to database.');
         });
+
+        this.query("USE TheRec;");
     }
 
     disconnect() { this.connection.end(); }
 
-    query(queryString, cb = this.defaultErrorHandler) { this.connection.query(queryString, cb); }
+    query(queryString) {
+
+        var res = 5;
+
+        var resultFunc = function(result) {
+            res = result;
+            //console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
+        };
+
+        this.connection.query(queryString, function (err, result, fields) {
+                if (err) throw err;
+
+                console.log(`query string: ${queryString}`);
+                console.log(`request result: ${JSON.stringify(result)}`);
+
+                resultFunc(result);
+                // console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
+                // res = result;
+                // console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
+            });
+
+        // console.log(`res: ${JSON.stringify(res)}`);
+
+        return res;
+    }
 
     get(paramName, element = "", value = "") {
         var queryString = `SELECT * FROM ${paramName}`;
 
-        if (value && element) queryString += ` WHERE ${element} = ${value}`;
+        if (value && element)
+            queryString += ` WHERE ${element} = ${value};`;
+        else
+            queryString += ';';
 
         return this.query(queryString);
     }
@@ -48,7 +71,7 @@ class PrivateDatabaseConnector {
     }
 
     delete(paramName, element = "", value = "") {
-        let queryString = `DELETE FROM ${paramName} WHERE ${element} = ${value}`;
+        let queryString = `DELETE FROM ${paramName} WHERE ${element} = ${value};`;
 
         return this.query(queryString);
     }
