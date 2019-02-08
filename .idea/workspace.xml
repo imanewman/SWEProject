@@ -110,16 +110,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/DatabaseConnectorTest.js">
+        <entry file="file://$PROJECT_DIR$/test/DatabaseConnectorTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+            <state relative-caret-position="119">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/TestRunner.js">
+        <entry file="file://$PROJECT_DIR$/test/TestRunner.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
@@ -189,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/Database.js" />
         <option value="$PROJECT_DIR$/src/test/TestRunner.js" />
         <option value="$PROJECT_DIR$/src/test/DatabaseConnectorTest.js" />
+        <option value="$PROJECT_DIR$/test/DatabaseConnectorTest.js" />
       </list>
     </option>
   </component>
@@ -256,12 +257,6 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SWEProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SWEProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -273,7 +268,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549586490102" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549586779582" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -285,9 +280,9 @@
       <recent name="C:\Users\tjnew\Desktop\CalPoly\2018-2019\Fall\CSC308\SWEProject\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tjnew\Desktop\CalPoly\2018-2019\Fall\CSC308\SWEProject" />
       <recent name="C:\Users\tjnew\Desktop\CalPoly\2018-2019\Fall\CSC308\SWEProject\src\js\Algorithms" />
       <recent name="C:\Users\tjnew\Desktop\CalPoly\2018-2019\Fall\CSC308\SWEProject\src" />
-      <recent name="C:\Users\tjnew\Desktop\CalPoly\2018-2019\Fall\CSC308\SWEProject" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -319,7 +314,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43493000" />
+    <option name="totallyTimeSpent" value="43782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
@@ -546,17 +541,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/TestRunner.js">
+    <entry file="file://$PROJECT_DIR$/test/TestRunner.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/DatabaseConnectorTest.js">
+    <entry file="file://$PROJECT_DIR$/test/DatabaseConnectorTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
+        <state relative-caret-position="119">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
