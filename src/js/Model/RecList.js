@@ -1,17 +1,25 @@
-class RecList {
+const DatabaseUpdater = require("../Database/DatabaseUpdater.js");
+const DatabaseRetriever = require("../Database/DatabaseRetriever.js");
 
-    constructor(recs = []) {
-        this.recs = recs;
+class PrivateRecList {
+    constructor() {
+        this.updater = DatabaseUpdater;
+        this.retriever = DatabaseRetriever;
     }
 
-    addRec(newRec) {
-        this.recs.append(newRec);
-    }
+    add(newRec) { this.updater.putRec(newRec); }
 
-    deleteRec(recId) {
-    }
+    delete(recId) { this.updater.deleteRec(recId); }
 
-    getRec(recId) {
+    get(recId) { return this.retriever.getRec(recId); }
 
-    }
+    getAll() { return this.retriever.getRecs(); }
 }
+
+//TODO: see if this is how we want to add recs through or not?
+
+const RecList = new PrivateRecList();
+
+Object.freeze(RecList);
+
+module.exports = RecList;

@@ -1,5 +1,11 @@
+const DatabaseConnector = require("../../Database.js");
+const ObjectConverter = require("./ObjectConverter.js");
+
 class PrivateDatabaseUpdater {
-    contructor() {
+    constructor() {
+        this.database = DatabaseConnector;
+        this.converter = ObjectConverter;
+
         if(! PrivateDatabaseUpdater.instance){
             PrivateDatabaseUpdater.instance = this;
         }
@@ -7,17 +13,33 @@ class PrivateDatabaseUpdater {
         return PrivateDatabaseUpdater.instance;
     }
 
-    putRec(rec) {}
+    putRec(rec) {
+        let recObject = this.converter.convertRec(rec);
 
-    deleteRec(recId) {}
+        this.database.put("Rec", recObject);
+    }
 
-    putUser(user) {}
+    deleteRec(recId) {
+        this.database.delete("Rec", recId);
+    }
 
-    deleteUser(userId) {}
+    putUser(user) {
+        let userObject = this.converter.convertUser(user);
 
-    putPendingOrganizer(userId) {}
+        this.database.put("User", userObject);
+    }
 
-    deletePendingOrgaizer(userId) {}
+    deleteUser(userId) {
+        this.database.delete("User", userId);
+    }
+
+    putPendingOrganizer(pendingOrganizerId) {
+        this.database.put("PendingOrganizer", pendingOrganizerId);
+    }
+
+    deletePendingOrgaizer(userId) {
+        this.database.delete("PendingOrganizer", userId);
+    }
 }
 
 // Set up object as a Singleton

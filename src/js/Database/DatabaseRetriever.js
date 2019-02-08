@@ -1,8 +1,11 @@
 const DatabaseConnector = require("../../Database.js");
-const ObjectFactory = require("./ObjectFactory");
+const ObjectFactory = require("./ObjectFactory.js");
 
 class PrivateDatabaseRetriever {
-    contructor() {
+    constructor() {
+        this.database = DatabaseConnector;
+        this.factory = ObjectFactory;
+
         if(! PrivateDatabaseRetriever.instance){
             PrivateDatabaseRetriever.instance = this;
         }
@@ -11,39 +14,27 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        let recObject = DatabaseConnector.query("SELECT * FROM Recs WHERE id = ${recId}",
-            function (err, result, fields) {
-                if (err) throw err;
-            });
+        let recObject = this.database.get("Rec", recId);
 
-        return ObjectFactory.initializeRec(recObject);
+        return this.factory.initializeRec(recObject);
     }
 
     getRecs() {
-        let recsObject = DatabaseConnector.query("SELECT * FROM Recs",
-            function (err, result, fields) {
-                if (err) throw err;
-            });
+        let recsObject = this.database.get("Rec");
 
-        return ObjectFactory.initializeRecList(recsObject);
+        return this.factory.initializeRecList(recsObject);
     }
 
     getUser(userId) {
-        let userObject = DatabaseConnector.query("SELECT * FROM Users WHERE id = ${userId}",
-            function (err, result, fields) {
-                if (err) throw err;
-            });
+        let userObject = this.database.get("User", userId);
 
-        return ObjectFactory.initializeUser(userObject); //TODO: make different user types
+        return this.factory.initializeUser(userObject); //TODO: make different user types
     }
 
     getPendingOrgaizers() {
-        let pendingOrganizersObject = DatabaseConnector.query("SELECT * FROM PendingOrganizers",
-            function (err, result, fields) {
-                if (err) throw err;
-            });
+        let pendingOrganizersObject = this.database.get("PendingOrganizer");
 
-        return ObjectFactory.initializePendingOrganizerList(pendingOrganizersObject);
+        return this.factory.initializePendingOrganizerList(pendingOrganizersObject);
     }
 }
 

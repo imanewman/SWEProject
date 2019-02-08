@@ -1,4 +1,6 @@
 class Rec {
+
+    //TODO: add functionality to auto update recs in database when edited
 	
 	constructor(
 	    id,
@@ -28,111 +30,55 @@ class Rec {
 		this.rules = rules;
 	}
 
-    setLocation(location) {
-		this.location = location;
-    }
+    setLocation(location) { this.location = location; }
 
-    setDuration(duration) {
-		this.duration = duration;
-    }
+    setDuration(duration) { this.duration = duration; }
 
-    setStartTime(startTime) {
-		this.startTime = startTime;
-    }
+    setStartTime(startTime) { this.startTime = startTime; }
 
-    addTags(tags) {
-		this.tags = tags;
-    }
+    addTags(tags) { this.tags = tags; }
 
-    setDraft(draft) {
-		this.draft = draft;
-    }
+    setDraft(draft) { this.draft = draft; }
 
-    setContactInfo(contactInfo) {
-		this.contactInfo = contactInfo;
-    }
+    setContactInfo(contactInfo) { this.contactInfo = contactInfo; }
 
-    setLink(link) {
-		this.websiteLink = link;
-    }
+    setLink(link) { this.websiteLink = link; }
 
-    addNewFields(newFields) {
+    addNewField(fieldName, fieldValue) { this.newFields[fieldName] = fieldValue; }
 
-    }
+    deleteNewFields(filedName) { this.newFields.remove(fieldName); }
 
-    deleteNewFields(newFields) {
+    setTitle(title) { this.title = title; }
 
-    }
+    setDescription(description) { this.description = description; }
 
-    setTitle(title) {
-	    this.title = title;
-    }
+    setRules(rules) { this.rules = rules; }
 
-    setId(id) {
-	    this.id = id;
-    }
+    removeTag(tagName) { this.tags.remove(tagName); }
 
-    setDescription(description) {
-		this.description = description;
-    }
+    getLocation() { return this.location; }
 
-    setRules(rules) {
-	    this.rules = rules;
-    }
+    getDuration() { return this.duration; }
 
-    getLocation() {
-		return this.location;
-    }
+    getStartTime() { return this.startTime; }
 
-    getDuration() {
-		return this.duration;
-    }
+    getTags() { return this.tags; }
 
-    getStartTime() {
-		return this.startTime;
-    }
+    getDraft() { return this.draft; }
 
-    getTags() {
-		return this.tags;
-    }
+    getContactInfo() { return this.contactInfo; }
 
-    removeTags(tags) {
+    getLink() { return this.websiteLink; }
 
-    }
+    getNewFields() { return this.newFields; }
 
-    getDraft() {
-		return this.draft;
-    }
+    getTitle() { return this.title; }
 
-    getContactInfo() {
-		return this.contactInfo;
-    }
+    getId() { return this.id; }
 
-    getLink() {
-		return this.websiteLink;
-    }
+    getDescription() { return this.description; }
 
-    getNewFields() {
-		return this.newFields;
-    }
+    getRules() { return this.rules; }
 
-    getTitle() {
-	    return this.title;
-    }
-
-    getId() {
-	    return this.id;
-    }
-
-    getDescription() {
-		return this.description;
-    }
-
-    getRules() {
-	    return this.rules;
-    }
-
-	generateCalendarObj() {
-
-	}
+	generateCalendarObj() {}
 }
