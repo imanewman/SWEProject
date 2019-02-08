@@ -1,36 +1,40 @@
 const expect = require("chai").expect;
 const DatabaseConnector = require("../src/Database.js");
 
-describe("Database Connector Tests", function() {
-    describe("Test 'query' function", function() {
-        it("shows whole table", function(done) {
+describe("Database Connector Tests", () => {
+    describe("Test 'query' function", () => {
+        it("shows whole table", (done) => {
             DatabaseConnector.connect();
 
-            const expected = [{"Tables_in_TheRec":"Recs"}];
+            const expected = [ { Tables_in_TheRec: "Recs" } ];
 
-            var checkEquals = function(result) {
-                expect(result).to.equal(expected);
+            const checkEquals = (result) => {
+                expect(result.Tables_in_TheRec).to.equal(expected.Tables_in_TheRec);
+
                 done();
-            }
 
-            const actual = DatabaseConnector.query('SHOW TABLES;', checkEquals);
+                DatabaseConnector.disconnect();
+            };
 
-            DatabaseConnector.disconnect();
+            DatabaseConnector.query('SHOW TABLES;', checkEquals);
         });
     });
 
-    // describe("Test 'get' function", function() {
-    //     it("gets Recs from database", function() {
+    // describe("Test 'get' function", () => {
+    //     it("gets Recs from database", (done) => {
     //         DatabaseConnector.connect();
     //
-    //         const actual = DatabaseConnector.get('Recs');
     //         const expected = {};
     //
-    //         console.log(JSON.stringify(actual));
+    //         const checkEquals = (result) => {
+    //             expect(result).to.equal(expected);
     //
-    //         expect(actual).to.equal(expected);
+    //             done();
     //
-    //         DatabaseConnector.disconnect();
+    //             DatabaseConnector.disconnect();
+    //         };
+    //
+    //         DatabaseConnector.get('Recs', '', '', checkEquals);
     //     });
     // });
 });

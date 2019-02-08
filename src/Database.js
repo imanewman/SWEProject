@@ -25,28 +25,27 @@ class PrivateDatabaseConnector {
 
     disconnect() { this.connection.end(); }
 
-    query(queryString, callback = function(result) {} ) {
+    query(queryString, callback = undefined) {
 
-        var res = [];
+        let res = [];
 
-        this.connection.query(queryString, function (err, result, fields) {
-                if (err) throw err;
+        if (!callback) callback = (result) => { res = result };
 
-                console.log(`query string: ${queryString}`);
-                console.log(`request result: ${JSON.stringify(result)}`);
+        const queryCallback = (err, result, fields) => {
+            if (err) throw err;
 
-                //result.forEach( (row) => { res += [row]; });
-                res = result;
+            console.log(`query string: ${queryString}`);
+            console.log(`request result: ${JSON.stringify(result)}`);
 
-                callback(result);
+            callback(result);
+        };
 
-                console.log(`res: ${JSON.stringify(res)}, result: ${JSON.stringify(result)}`);
-            });
+        this.connection.query(queryString, queryCallback);
 
         return res;
     }
 
-    get(paramName, element = "", value = "") {
+    get(paramName, element = "", value = "", callback = undefined) {
         var queryString = `SELECT * FROM ${paramName}`;
 
         if (value && element)
@@ -54,21 +53,21 @@ class PrivateDatabaseConnector {
         else
             queryString += ';';
 
-        return this.query(queryString);
+        return this.query(queryString, callback);
     }
 
-    put(paramName) {
+    put(paramName, callback = undefined) {
         // update: "UPDATE table_name SET field1 = new-value1, field2 = new-value2"
         // insert: "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')"
         let queryString = ``;
 
-        return this.query(queryString);
+        return this.query(queryString, callback);
     }
 
-    delete(paramName, element = "", value = "") {
+    delete(paramName, element = "", value = "", callback = undefined) {
         let queryString = `DELETE FROM ${paramName} WHERE ${element} = ${value};`;
 
-        return this.query(queryString);
+        return this.query(queryString, callback);
     }
 }
 
