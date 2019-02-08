@@ -9,3 +9,4 @@ before_script:
  - npm install mocha --save
  - npm install chai --save
  - npm install request --save
+ - cd ..
