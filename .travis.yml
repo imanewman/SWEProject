@@ -1,4 +1,11 @@
 language: node_js
 node_js:
  - "node"
-before_script: cd Travis
+before_script: 
+ - cd src
+ - npm install -g eslint --save-dev
+ - npm install express --save
+ - npm install mysql
+ - npm install mocha --save
+ - npm install chai --save
+ - npm install request --save

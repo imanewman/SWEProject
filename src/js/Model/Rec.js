@@ -1,12 +1,26 @@
 class Rec {
+
+    //TODO: add functionality to auto update recs in database when edited
 	
-	constructor(location, duration, startTime, tags, draft, eventType, contactInfo, websiteLink, newFields, title, id, description, rules) {
+	constructor(
+	    id,
+	    title,
+	    description,
+	    location,
+        duration,
+        startTime,
+        tags,
+        draft,
+        contactInfo,
+        websiteLink,
+        rules,
+        newFields
+    ) {
 		this.location = location;
 		this.duration =	duration;
 		this.startTime = startTime;
 		this.tags = tags;
 		this.draft = draft;
-		this.eventType = eventType;
 		this.contactInfo = contactInfo;
 		this.websiteLink = websiteLink;
 		this.newFields = newFields;
@@ -16,119 +30,55 @@ class Rec {
 		this.rules = rules;
 	}
 
-    setLocation(location) {
-		this.location = location;
-    }
+    setLocation(location) { this.location = location; }
 
-    setDuration(duration) {
-		this.duration = duration;
-    }
+    setDuration(duration) { this.duration = duration; }
 
-    setStartTime(startTime) {
-		this.startTime = startTime;
-    }
+    setStartTime(startTime) { this.startTime = startTime; }
 
-    addTags(tags) {
-		this.tags = tags;
-    }
+    addTags(tags) { this.tags = tags; }
 
-    setDraft(draft) {
-		this.draft = draft;
-    }
+    setDraft(draft) { this.draft = draft; }
 
-    setEventType(eventType) {
-		this.eventType = eventType;
-    }
+    setContactInfo(contactInfo) { this.contactInfo = contactInfo; }
 
-    setContactInfo(contactInfo) {
-		this.contactInfo = contactInfo;
-    }
+    setLink(link) { this.websiteLink = link; }
 
-    setLink(link) {
-		this.websiteLink = link;
-    }
+    addNewField(fieldName, fieldValue) { this.newFields[fieldName] = fieldValue; }
 
-    addNewFields(newFields) {
+    deleteNewFields(filedName) { this.newFields.remove(fieldName); }
 
-    }
+    setTitle(title) { this.title = title; }
 
-    deleteNewFields(newFields) {
+    setDescription(description) { this.description = description; }
 
-    }
+    setRules(rules) { this.rules = rules; }
 
-    setTitle(title) {
-	    this.title = title;
-    }
+    removeTag(tagName) { this.tags.remove(tagName); }
 
-    setId(id) {
-	    this.id = id;
-    }
+    getLocation() { return this.location; }
 
-    setDescription(description) {
-		this.description = description;
-    }
+    getDuration() { return this.duration; }
 
-    setRules(rules) {
-	    this.rules = rules;
-    }
+    getStartTime() { return this.startTime; }
 
-    getLocation() {
-		return this.location;
-    }
+    getTags() { return this.tags; }
 
-    getDuration() {
-		return this.duration;
-    }
+    getDraft() { return this.draft; }
 
-    getStartTime() {
-		return this.startTime;
-    }
+    getContactInfo() { return this.contactInfo; }
 
-    getTags() {
-		return this.tags;
-    }
+    getLink() { return this.websiteLink; }
 
-    removeTags(tags) {
+    getNewFields() { return this.newFields; }
 
-    }
+    getTitle() { return this.title; }
 
-    getDraft() {
-		return this.draft;
-    }
+    getId() { return this.id; }
 
-    getEventType() {
-		return this.eventType;
-    }
+    getDescription() { return this.description; }
 
-    getContactInfo() {
-		return this.contactInfo;
-    }
+    getRules() { return this.rules; }
 
-    getLink() {
-		return this.websiteLink;
-    }
-
-    getNewFields() {
-		return this.newFields;
-    }
-
-    getTitle() {
-	    return this.title;
-    }
-
-    getId() {
-	    return this.id;
-    }
-
-    getDescription() {
-		return this.description;
-    }
-
-    getRules() {
-	    return this.rules;
-    }
-
-	generateCalendarObj() {
-
-	}
+	generateCalendarObj() {}
 }
