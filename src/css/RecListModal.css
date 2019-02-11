@@ -1,0 +1,144 @@
+/**********************************************************************************************************************\
+\ ******************************************************************************************************************** /
+/ **** /                                                 The Rec                                                \ **** \
+\ **** \                                         Rec List Modal CSS Page                                        / **** /
+/ **** /                                          Written By: Tim Newman                                        \ **** \
+\ **** \                                           Edited By:                                                   / **** /
+/ ******************************************************************************************************************** \
+\**********************************************************************************************************************/
+
+:root {
+    --rec_item_height: 10em;
+    --rec_item_width: 60em;
+}
+
+#rec_list_container {
+    width: 100vw;
+
+    margin-top: 4em;
+}
+
+#rec_list {
+    width: 70%;
+}
+
+#rec_list_title {
+    padding-left: 10%;
+}
+
+/****************************************************** Rec Items *****************************************************/
+
+#rec_list .rec_item:first-child {
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+#rec_list .rec_item:last-child {
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+.rec_item {
+    width: var(--rec_item_width);
+    height: var(--rec_item_height);
+
+    border: 2px solid var(--darkish);
+
+    transition: all 0.3s;
+
+    overflow: hidden;
+}
+
+.rec_item_active {
+    width: calc(var(--rec_item_width)*1.2);
+    height: 20em;
+
+    border-radius: 0.5em;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+}
+
+.rec_item_info {
+    display: flex;
+
+    height: 40%;
+
+    border-bottom: 1px solid var(--darkish);
+
+    margin-left: 1em;
+    margin-right: 1em;
+
+    padding-right: 14em;
+}
+
+.rec_item_info div {
+    margin-right: 1em;
+}
+
+.rec_item_button_dropdown i {
+    transform: scale(2.5);
+
+    margin-top: calc(var(--rec_item_height)*0.15);
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+
+    opacity: 0.7;
+}
+
+.rec_item_button_dropdown_active i {
+    transform: scale(2.5) rotate(90deg);
+}
+
+.rec_item_text_divider {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    opacity: 0.5;
+
+    font-weight: 600;
+}
+
+.rec_item_details {
+    width: 96%;
+    height: 40%;
+
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.rec_item_image i {
+    transform: scale(2);
+    margin-top: calc(var(--rec_item_height)*0.15);
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.rec_item_text_secondary {
+    display: flex;
+}
+
+.rec_item_text {
+    line-height: 10%;
+}
+
+.rec_item_text_secondary {
+    position: relative;
+    bottom: 1.1em;
+
+    opacity: 0.85;
+}
+
+.rec_item_buttons {
+    position: relative;
+    bottom: 3em;
+    left: 97%;
+}
+
+.rec_item_buttons i {
+    transform: scale(1.2);
+}

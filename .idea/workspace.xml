@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64139299-871f-41c1-bcb6-104bd910e68d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/_mocha" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/_mocha" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mocha" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mocha" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chai/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/chai/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mocha/bin/_mocha" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mocha/bin/_mocha" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mocha/bin/mocha" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mocha/bin/mocha" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mocha/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mocha/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mysql/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mysql/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/request/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/request/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/RecListModal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/html/RecListModal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,12 +20,39 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/test/DatabaseConnectorTest.js">
+          <leaf>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/css/Main.css">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="330">
-                    <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+                  <state relative-caret-position="255">
+                    <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/css/Navbar.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="735">
+                    <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/css/RecListModal.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="785">
+                    <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/css/Login.css">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="450">
+                    <caret line="30" column="15" lean-forward="true" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
                   </state>
                 </provider>
               </entry>
@@ -44,37 +66,54 @@
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/css/header.css">
+              <entry file="file://$PROJECT_DIR$/test/DatabaseConnectorTest.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="383">
-                    <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+                  <state relative-caret-position="330">
+                    <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/html/Navbar.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="570">
+                    <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="48" />
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/css/main.css">
+              <entry file="file://$PROJECT_DIR$/src/html/Login.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="870">
-                    <caret line="76" column="57" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
+                  <state relative-caret-position="255">
+                    <caret line="17" selection-start-line="17" selection-end-line="17" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/html/RecListModal.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="810">
+                    <caret line="90" column="7" lean-forward="true" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/js/Controllers/Navbar.js">
+              <entry file="file://$PROJECT_DIR$/src/html/material_design.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="60">
-                    <caret line="4" selection-start-line="4" selection-end-line="4" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/html/header.html">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="270">
-                    <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+                  <state relative-caret-position="345">
+                    <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="54" />
                   </state>
                 </provider>
               </entry>
@@ -88,20 +127,25 @@
     <session id="1604374862">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="28" />
+          <entry key="CSS" value="1284" />
+          <entry key="HTML" value="1277" />
           <entry key="JavaScript" value="729" />
           <entry key="YAML" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="10" />
+          <entry key="HTML" value="6" />
           <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -111,11 +155,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -137,7 +181,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Database.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="1020">
               <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
@@ -170,11 +214,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+            <state relative-caret-position="210">
+              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -185,6 +229,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -224,7 +269,6 @@
         <option value="$PROJECT_DIR$/src/js/Database/ObjectFactory.js" />
         <option value="$PROJECT_DIR$/src/js/Model/RecList.js" />
         <option value="$PROJECT_DIR$/src/js/Model/Rec.js" />
-        <option value="$PROJECT_DIR$/src/css/main.css" />
         <option value="$PROJECT_DIR$/src/package.json" />
         <option value="$PROJECT_DIR$/src/test/TestRunner.js" />
         <option value="$PROJECT_DIR$/src/test/DatabaseConnectorTest.js" />
@@ -232,7 +276,15 @@
         <option value="$PROJECT_DIR$/test/DatabaseConnectorTest.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/html/header.html" />
+        <option value="$PROJECT_DIR$/src/css/main.css" />
         <option value="$PROJECT_DIR$/src/css/header.css" />
+        <option value="$PROJECT_DIR$/src/css/login.css" />
+        <option value="$PROJECT_DIR$/src/html/login.html" />
+        <option value="$PROJECT_DIR$/src/css/RecListModal'.css" />
+        <option value="$PROJECT_DIR$/src/css/Navbar.css" />
+        <option value="$PROJECT_DIR$/src/css/Main.css" />
+        <option value="$PROJECT_DIR$/src/html/RecListModal.html" />
+        <option value="$PROJECT_DIR$/src/css/RecListModal.css" />
       </list>
     </option>
   </component>
@@ -250,6 +302,7 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/node_modules/@webcomponents/webcomponentsjs/package.json" />
       <path value="$PROJECT_DIR$/node_modules/accepts/package.json" />
       <path value="$PROJECT_DIR$/node_modules/ajv/package.json" />
       <path value="$PROJECT_DIR$/node_modules/array-flatten/package.json" />
@@ -323,6 +376,8 @@
       <path value="$PROJECT_DIR$/node_modules/json-schema/package.json" />
       <path value="$PROJECT_DIR$/node_modules/json-stringify-safe/package.json" />
       <path value="$PROJECT_DIR$/node_modules/jsprim/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lit-element/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/lit-html/package.json" />
       <path value="$PROJECT_DIR$/node_modules/media-typer/package.json" />
       <path value="$PROJECT_DIR$/node_modules/merge-descriptors/package.json" />
       <path value="$PROJECT_DIR$/node_modules/methods/package.json" />
@@ -381,10 +436,11 @@
       <path value="$PROJECT_DIR$/src/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="y" value="-1" />
-    <option name="width" value="1080" />
-    <option name="height" value="960" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1389" />
+    <option name="y" value="278" />
+    <option name="width" value="1070" />
+    <option name="height" value="958" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -394,6 +450,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -429,6 +487,13 @@
               <item name="SWEProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SWEProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="Database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -447,17 +512,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549652451145" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549847393393" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.10.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -499,17 +563,18 @@
       <workItem from="1548626385452" duration="5002000" />
       <workItem from="1548809156667" duration="29665000" />
       <workItem from="1549648482707" duration="2272000" />
+      <workItem from="1549836147794" duration="11016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55872000" />
+    <option name="totallyTimeSpent" value="66981000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1080" height="960" extended-state="4" />
+    <frame x="1389" y="278" width="1070" height="958" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26208898" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2705078" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -524,7 +589,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.38682634" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.18847539" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -654,10 +719,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/TestRunner.js" />
-    <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js">
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="-135">
+          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -670,6 +735,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Database/ObjectConverter.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RunAll.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -685,17 +764,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database.js">
+    <entry file="file://$PROJECT_DIR$/test/DatabaseConnectorTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="76" column="57" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
+        <state relative-caret-position="330">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -706,45 +778,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        <state relative-caret-position="210">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/DatabaseConnectorTest.js">
+    <entry file="file://$PROJECT_DIR$/src/html/Login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="50" lean-forward="true" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/header.html">
+    <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/header.css">
+    <entry file="file://$PROJECT_DIR$/src/css/Login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="450">
+          <caret line="30" column="15" lean-forward="true" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/Navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/material_design.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/Navbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/Main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/RecListModal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/RecListModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="90" column="7" lean-forward="true" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
         </state>
       </provider>
     </entry>
