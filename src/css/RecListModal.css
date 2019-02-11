@@ -19,7 +19,7 @@
 }
 
 #rec_list {
-    width: 70%;
+    width: 100%;
 }
 
 #rec_list_title {
@@ -61,12 +61,16 @@
     box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
 }
 
+.rec_item_info_container {
+    background-color: var(--lightish);
+}
+
 .rec_item_info {
     display: flex;
 
-    height: 40%;
+    height: 4em;
 
-    border-bottom: 1px solid var(--darkish);
+    border-bottom: 1px solid #DDDDDD;
 
     margin-left: 1em;
     margin-right: 1em;
@@ -81,7 +85,8 @@
 .rec_item_button_dropdown i {
     transform: scale(2.5);
 
-    margin-top: calc(var(--rec_item_height)*0.15);
+    /*margin-top: calc(var(--rec_item_height)*0.15);*/
+    margin-top: 1.5em;
 
     cursor: pointer;
 
@@ -104,8 +109,12 @@
 }
 
 .rec_item_details {
+    position: relative;
+
+    bottom: 1.5em;
+
     width: 96%;
-    height: 40%;
+    height: 4em;
 
     padding-left: 2%;
     padding-right: 2%;
@@ -113,9 +122,11 @@
 
 .rec_item_image i {
     transform: scale(2);
-    margin-top: calc(var(--rec_item_height)*0.15);
+    margin-top: 1.5em;
     margin-left: 1em;
     margin-right: 1em;
+
+    color: var(--hover);
 }
 
 .rec_item_text_secondary {
@@ -123,22 +134,61 @@
 }
 
 .rec_item_text {
-    line-height: 10%;
+    /*line-height: 10%;*/
 }
 
 .rec_item_text_secondary {
     position: relative;
-    bottom: 1.1em;
+    bottom: 2.5em;
 
     opacity: 0.85;
 }
 
 .rec_item_buttons {
+    display: flex;
+
     position: relative;
-    bottom: 3em;
-    left: 97%;
+
+    bottom: 3.5em;
+    left: 92%;
 }
 
-.rec_item_buttons i {
+.rec_item_button {
+    border-radius: 1em;
+
+    border: 1px solid var(--darkish);
+
+    margin-right: 1em;
+
     transform: scale(1.2);
+
+    width: 1.2em;
+    height: 1.2em;
+
+    transition: all 0.2s;
+}
+
+.rec_item_button:hover {
+    border: 1px solid #AAAA;
+    background-color: #CCCC;
+    color: var(--hover);
+}
+
+.rec_item_button:active {
+    background-color: var(--dark);
+    color: var(--active);
+}
+
+
+.bookmark_button i {
+    position: relative;
+    left: 0.22em;
+    top: 0.15em;
+
+}
+
+.map_button i {
+    position: relative;
+    left: 0.05em;
+    top: 0.1em;
 }
