@@ -11,11 +11,15 @@
 :root {
     --light: #FAFAFA;
     --lightish: #EFEFEF;
+    --dark-grey: #DDDDDD;
     --darkish: #EAEAEA;
     --dark: #585858;
     --darker: #3D3D3D;
     --hover: #558BDA;
     --active: #4B7FCB;
+    --blue: #4AB8FF;
+    --brighter-blue: #4ACBFF;
+    --darker-blue: #4AA7FF;
 }
 
 /*Entire Page*/
@@ -77,8 +81,41 @@ flex-grow { flex-grow: 1; }
 
 .shadow { box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15); }
 
-/****************************************************** Logo **********************************************************/
+/*Tooltips*/
+.tooltip {}
 
+.tooltiptext {
+    display: inline-flex;
+
+    position: relative;
+
+    bottom: 3.6em;
+
+    visibility: hidden;
+
+    background-color: var(--darker);
+    color: #fff;
+
+    text-align: center;
+
+    padding: 0.2em;
+
+    border-radius: 0.4em;
+
+    font-size: 0.7em;
+
+    opacity: 0.9;
+
+    transition: visibility 0.2s;
+    /*transition-delay: 1s;*/
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/*Logo*/
 #rec_logo_text {
     font-size: 2em;
     font-weight: 1000;
