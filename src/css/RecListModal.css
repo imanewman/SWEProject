@@ -1,0 +1,260 @@
+/**********************************************************************************************************************\
+\ ******************************************************************************************************************** /
+/ **** /                                                 The Rec                                                \ **** \
+\ **** \                                         Rec List Modal CSS Page                                        / **** /
+/ **** /                                          Written By: Tim Newman                                        \ **** \
+\ **** \                                           Edited By:                                                   / **** /
+/ ******************************************************************************************************************** \
+\**********************************************************************************************************************/
+
+:root {
+    --rec_item_height: 10em;
+    --rec_item_width: 60em;
+
+    --rec_item_height_active_factor: 5;
+    --rec_item_width_active_factor: 1.2;
+
+    --rec_item_active_height: calc(var(--rec_item_height)*var(--rec_item_height_active_factor));
+    --rec_item_active_width: calc(var(--rec_item_width)*var(--rec_item_width_active_factor));
+
+    --rec_item_active_details_indent: 20em;
+
+    --rec-transition-time: 0.3s;
+}
+
+#rec_list_container {
+    width: 100vw;
+
+    margin-top: 4em;
+}
+
+#rec_list {
+    width: 100%;
+}
+
+#rec_list_title {
+    padding-left: 10%;
+}
+
+/****************************************************** Rec Items *****************************************************/
+
+#rec_list .rec_item:first-child {
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+#rec_list .rec_item:last-child {
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+.rec_item {
+    width: var(--rec_item_width);
+    height: var(--rec_item_height);
+
+    border: 2px solid var(--darkish);
+
+    transition: all var(--rec-transition-time);
+
+    /*overflow: hidden;*/
+}
+
+.rec_item_active {
+    width: var(--rec_item_active_width);
+    height: var(--rec_item_active_height);
+
+    border-radius: 0.5em;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+}
+
+.rec_item_info_container {
+    background-color: var(--lightish);
+
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.rec_item_info {
+    display: flex;
+
+    height: 4em;
+
+    /*border-bottom: 1px solid #DDDDDD;*/
+
+    margin-left: 1em;
+    margin-right: 1em;
+
+    padding-right: 14em;
+}
+
+.rec_item_info div {
+    margin-right: 1em;
+}
+
+.rec_item_button_dropdown i {
+    transform: scale(2.5);
+
+    /*margin-top: calc(var(--rec_item_height)*0.15);*/
+    margin-top: 1.5em;
+
+    cursor: pointer;
+
+    transition: transform var(--rec-transition-time);
+
+    opacity: 0.7;
+}
+
+.rec_item_active .rec_item_button_dropdown i {
+    transform: scale(2.5) rotate(90deg);
+}
+
+.rec_item_text_divider {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    opacity: 0.5;
+
+    font-weight: 600;
+}
+
+.rec_item_details {
+    position: relative;
+
+    bottom: 1em;
+    left: 0em;
+
+    width: 96%;
+    height: calc(var(--rec_item_height)*0.5);
+
+    padding-left: 2%;
+    padding-right: 2%;
+
+    transition: left var(--rec-transition-time);
+
+    overflow: hidden;
+}
+
+.rec_item_active .rec_item_details {
+    border-left: 1px solid #DDDDDD;
+
+    left: var(--rec_item_active_details_indent);
+
+    width: calc(var(--rec_item_active_width) - var(--rec_item_active_details_indent) - 3em);/*68%;*/
+    height: calc(var(--rec_item_active_height)*0.88);
+}
+
+.rec_item_image i {
+    transform: scale(2);
+    margin-top: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+
+    color: var(--brighter-blue);
+}
+
+.rec_item_text_secondary {
+    display: flex;
+}
+
+.rec_item_text {
+    position: relative;
+    bottom: 0.4em;
+}
+
+.rec_item_text_secondary {
+    position: relative;
+    bottom: 2.2em;
+
+    opacity: 0.85;
+}
+
+.rec_item_buttons {
+    display: flex;
+
+    position: relative;
+
+    bottom: 3.5em;
+    left: calc(var(--rec_item_width)*0.89);
+
+    transition: left var(--rec-transition-time);
+}
+
+.rec_item_active .rec_item_buttons {
+    left: calc(var(--rec_item_width)*1.09);
+}
+
+.rec_item_button {
+    border-radius: 1em;
+
+    border: 1px solid var(--darkish);
+    border: 1px solid var(--darkish);
+
+    margin-right: 1em;
+
+    transform: scale(1.2);
+
+    width: 1.3em;
+    height: 1.3em;
+
+    transition: all 0.2s;
+
+    cursor: pointer;
+}
+
+.rec_item_button:hover {
+    border: 1px solid #AAAA;
+    background-color: #CCCC;
+    color: var(--brighter-blue);
+}
+
+.rec_item_button:active {
+    background-color: var(--dark);
+    color: var(--blue);
+}
+
+.save_button i {
+    position: relative;
+    left: 0.25em;
+    top: 0.15em;
+}
+
+.map_button i {
+    position: relative;
+    left: 0.07em;
+    top: 0.1em;
+}
+
+.report_button i {
+    position: relative;
+    left: 0.14em;
+    top: 0.1em;
+}
+
+.rec_item_bottom {
+    overflow: hidden;
+}
+
+.rec_item_side_pane {
+    visibility: hidden;
+}
+
+.rec_item_active .rec_item_side_pane {
+    visibility: visible;
+
+    position: relative;
+
+    bottom: calc(var(--rec_item_active_height) * 0.9); /*not the right way to calculate this*/
+}
+
+.rec_item_active .rec_item_picture {
+    width: var(--rec_item_active_details_indent);
+    height: var(--rec_item_active_details_indent);
+}
+
+.rec_item_active .rec_item_map {
+    width: var(--rec_item_active_details_indent);
+    height: var(--rec_item_active_details_indent);
+}

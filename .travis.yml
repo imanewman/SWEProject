@@ -9,4 +9,7 @@ before_script:
  - npm install mocha --save
  - npm install chai --save
  - npm install request --save
+ - npm install lit-element --save
+ - npm install lit-html --save
+ - npm i @webcomponents/webcomponentsjs
  - cd ..
