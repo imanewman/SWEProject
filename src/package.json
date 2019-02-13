@@ -1,6 +1,6 @@
 {
   "name": "the-rec-travis",
-  "description": "travis-ci checks for ESLint",
+  "description": "travis-ci",
   "author": "Michael Maramba",
   "version": "0.0.1",
   "devDependencies": {

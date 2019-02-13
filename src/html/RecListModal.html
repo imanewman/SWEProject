@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Rec - Rec List Modal</title>
+</head>
+
+<!------ Outside Extensions ------>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<!-- Material Components -->
+<script src="@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+<!-- Material Icons -->
+<script type="module" src="https://unpkg.com/@material/mwc-fab@^0.1.0/mwc-fab.js?module"></script>
+
+<!------ CSS Files ------>
+
+<link rel="stylesheet" type="text/css" href="../css/RecListModal.css"/>
+<link rel="stylesheet" type="text/css" href="../css/Main.css"/>
+
+<!------ JS Files ------>
+
+<!--<script src="../js/Controllers/login.js"></script>-->
+
+<!--TODO: if you spell "Rex" on the keyboard, it changes all 'Recs' to 'Rex'-->
+
+<body>
+<div id="rec_list_container">
+    <div id="rec_list" class="center-horizontal">
+        <div id="rec_list_title">
+            <h2 id="rec_list_title_text">Upcoming Recs</h2>
+        </div>
+
+        <div id="rec_items ">
+            <div class="rec_item center-horizontal">
+                <div class="rec_item_info_container">
+                    <div class="rec_item_info">
+                        <div class="rec_item_button_dropdown">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
+
+                        <div class="rec_item_image">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <!--<i class="fas fa-hamburger"></i>-->
+                            <!--<i class="fas fa-monument"></i>-->
+                        </div>
+
+                        <div class="rec_item_text">
+                            <div class="rec_item_title">
+                                <h3>Rec Title</h3>
+                            </div>
+
+                            <div class="rec_item_text_secondary">
+                                <div class="rec_item_time">
+                                    <h5>May 10, 2019, from 10:00 AM to 2:00 PM</h5>
+                                </div>
+
+                                <div class="rec_item_text_divider">|</div>
+
+                                <div class="rec_item_location">
+                                    <h5>Location</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rec_item_buttons">
+                    <!--<mwc-fab icon="explore" class="light"></mwc-fab>-->
+
+                    <div class="rec_item_button save_button tooltip">
+                        <i class="far fa-bookmark"></i><!--<i class="fas fa-bookmark"></i>-->
+                        <div class="tooltiptext">Save</div>
+                    </div>
+
+                    <div class="rec_item_button map_button tooltip">
+                        <i class="fas fa-map-marked-alt"></i><!--<i class="far fa-map"></i>-->
+                        <div class="tooltiptext">Location</div>
+                    </div>
+
+                    <div class="rec_item_button report_button tooltip">
+                        <i class="far fa-flag"></i><!--<i class="fas fa-flag"></i>-->
+                        <div class="tooltiptext">Report</div>
+                    </div>
+                </div>
+
+                <div class="rec_item_bottom">
+                    <div class="rec_item_details">
+                        <p>Details...</p>
+                    </div>
+
+                    <div class="rec_item_side_pane">
+                        <div class="rec_item_picture">
+
+                        </div>
+
+                        <div class="rec_item_map">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rec_item rec_item_active center-horizontal">
+                <div class="rec_item_info_container">
+                    <div class="rec_item_info">
+                        <div class="rec_item_button_dropdown">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
+
+                        <div class="rec_item_image">
+                            <i class="fas fa-monument"></i>
+                        </div>
+
+                        <div class="rec_item_text">
+                            <div class="rec_item_title">
+                                <h3>Rec Title</h3>
+                            </div>
+
+                            <div class="rec_item_text_secondary">
+                                <div class="rec_item_time">
+                                    <h5>May 10, 2019, from 10:00 AM to 2:00 PM</h5>
+                                </div>
+
+                                <div class="rec_item_text_divider">|</div>
+
+                                <div class="rec_item_location">
+                                    <h5>Location</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rec_item_buttons">
+                    <!--<mwc-fab icon="explore" class="light"></mwc-fab>-->
+
+                    <div class="rec_item_button save_button tooltip">
+                        <i class="far fa-bookmark"></i><!--<i class="fas fa-bookmark"></i>-->
+                        <div class="tooltiptext">Save</div>
+                    </div>
+
+                    <div class="rec_item_button map_button tooltip">
+                        <i class="fas fa-map-marked-alt"></i><!--<i class="far fa-map"></i>-->
+                        <div class="tooltiptext">Location</div>
+                    </div>
+
+                    <div class="rec_item_button report_button tooltip">
+                        <i class="far fa-flag"></i><!--<i class="fas fa-flag"></i>-->
+                        <div class="tooltiptext">Report</div>
+                    </div>
+                </div>
+
+                <div class="rec_item_bottom">
+                    <div class="rec_item_details">
+                        <p>Details...</p>
+                    </div>
+
+                    <div class="rec_item_side_pane">
+                        <div class="rec_item_picture">
+
+                        </div>
+
+                        <div class="rec_item_map">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rec_item center-horizontal">
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
