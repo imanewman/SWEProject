@@ -11,8 +11,13 @@
     --rec_item_height: 10em;
     --rec_item_width: 60em;
 
-    --rec_item_height-active_factor: 3;
-    --rec_item_width-active_factor: 1.2;
+    --rec_item_height_active_factor: 5;
+    --rec_item_width_active_factor: 1.2;
+
+    --rec_item_active_height: calc(var(--rec_item_height)*var(--rec_item_height_active_factor));
+    --rec_item_active_width: calc(var(--rec_item_width)*var(--rec_item_width_active_factor));
+
+    --rec_item_active_details_indent: 20em;
 
     --rec-transition-time: 0.3s;
 }
@@ -55,8 +60,8 @@
 }
 
 .rec_item_active {
-    width: calc(var(--rec_item_width)*var(--rec_item_width-active_factor));
-    height: calc(var(--rec_item_height)*var(--rec_item_height-active_factor));
+    width: var(--rec_item_active_width);
+    height: var(--rec_item_active_height);
 
     border-radius: 0.5em;
 
@@ -102,7 +107,7 @@
     opacity: 0.7;
 }
 
-.rec_item_button_dropdown_active i {
+.rec_item_active .rec_item_button_dropdown i {
     transform: scale(2.5) rotate(90deg);
 }
 
@@ -135,10 +140,10 @@
 .rec_item_active .rec_item_details {
     border-left: 1px solid #DDDDDD;
 
-    left: 20em;
+    left: var(--rec_item_active_details_indent);
 
-    width: 68%;
-    height: calc(var(--rec_item_height)*2.55);
+    width: calc(var(--rec_item_active_width) - var(--rec_item_active_details_indent) - 3em);/*68%;*/
+    height: calc(var(--rec_item_active_height)*0.88);
 }
 
 .rec_item_image i {
@@ -191,8 +196,8 @@
 
     transform: scale(1.2);
 
-    width: 1.2em;
-    height: 1.2em;
+    width: 1.3em;
+    height: 1.3em;
 
     transition: all 0.2s;
 
@@ -210,16 +215,46 @@
     color: var(--blue);
 }
 
-
-.bookmark_button i {
+.save_button i {
     position: relative;
-    left: 0.22em;
+    left: 0.25em;
     top: 0.15em;
-
 }
 
 .map_button i {
     position: relative;
-    left: 0.05em;
+    left: 0.07em;
     top: 0.1em;
+}
+
+.report_button i {
+    position: relative;
+    left: 0.14em;
+    top: 0.1em;
+}
+
+.rec_item_bottom {
+    overflow: hidden;
+}
+
+.rec_item_side_pane {
+    visibility: hidden;
+}
+
+.rec_item_active .rec_item_side_pane {
+    visibility: visible;
+
+    position: relative;
+
+    bottom: calc(var(--rec_item_active_height) * 0.9); /*not the right way to calculate this*/
+}
+
+.rec_item_active .rec_item_picture {
+    width: var(--rec_item_active_details_indent);
+    height: var(--rec_item_active_details_indent);
+}
+
+.rec_item_active .rec_item_map {
+    width: var(--rec_item_active_details_indent);
+    height: var(--rec_item_active_details_indent);
 }

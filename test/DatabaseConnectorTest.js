@@ -55,7 +55,37 @@ describe("Database Connector Tests", () => {
         });
 
         it("gets a User from database", (done) => {
+            const expected = [
+                {
+                    UserName: "Student1",
+                    Password: "Test3",
+                    Email: "student1@calpoly.edu",
+                    Rating: 0,
+                    RatingNum: 0
+                }
+            ];
 
+            const checkEquals = (result) => {
+                expect(result.length).to.equal(expected.length); // check that result is one row
+
+                for (var idx = 0; idx < result.length; idx++) {
+                    let resultRow = result[idx];
+                    let expectedRow = expected[idx];
+
+                    //console.log(`all keys: ${Object.keys(expectedRow)}`);
+
+                    Object.keys(expectedRow).forEach( (key) => {
+                        // console.log(`key: ${key}`);
+                        // console.log(`-> ${JSON.stringify(resultRow[key])}`);
+                        // console.log(`-> ${JSON.stringify(resultRow[key])}`);
+                        expect(resultRow[key]).to.equal(expectedRow[key]); // check each value matches
+                    });
+                }
+
+                done();
+            };
+
+            DatabaseConnector.get('Users', 'UserID', '00000003', checkEquals);
         });
     });
 });
