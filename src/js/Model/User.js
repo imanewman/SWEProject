@@ -1,12 +1,15 @@
 class User {
 	
-	constructor(id, email, fullName, passwordHash, preferredEvents) {
+	constructor(id, email, fullName, passwordHash, preferredEvents, createdRecIds, rating, ratingNum) {
 		this.id = id;
 		this.email = email;
 		this.fullName = fullName;
 		this.passwordHash = passwordHash;
 		this.adminPrivilege = false;
 		this.preferredEvents = preferredEvents;
+		this.createdRecIds = createdRecIds;
+		this.ratings = rating;
+		this.ratingNum = ratingNum;
 	}
 
 
