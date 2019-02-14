@@ -11,13 +11,13 @@
     --rec_item_height: 10em;
     --rec_item_width: 60em;
 
-    --rec_item_height_active_factor: 5;
+    --rec_item_height_active_factor: 4;
     --rec_item_width_active_factor: 1.2;
 
     --rec_item_active_height: calc(var(--rec_item_height)*var(--rec_item_height_active_factor));
     --rec_item_active_width: calc(var(--rec_item_width)*var(--rec_item_width_active_factor));
 
-    --rec_item_active_details_indent: 20em;
+    --rec_item_active_details_indent: 17em;
 
     --rec-transition-time: 0.3s;
 }
@@ -32,8 +32,63 @@
     width: 100%;
 }
 
-#rec_list_title {
-    padding-left: 10%;
+#rec_list_header {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2em;
+
+    border-bottom: 2px solid var(--dark-grey);
+}
+
+#rec_list_search_input {
+    width: 35em;
+    height: 2em;
+
+    padding-left: 0.5em;
+
+    border: 0.1em solid var(--darkish);
+    border-radius: 0.3em;
+
+    font-size: 1em;
+
+    background-color: var(--lightish);
+
+    transition: background-color 0.2s;
+}
+
+#rec_list_search_input:focus {
+    outline: none;
+    background-color: var(--lighter);
+}
+
+#rec_list_filter {
+    display: flex;
+}
+
+#rec_list_filter_text {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#rec_list_filter_checkboxes {
+    display: flex;
+}
+
+.rec_list_filter_checkbox {
+    display: flex;
+    margin-left:0.5em;
+}
+
+.rec_list_filter_checkbox_text {
+    margin-top: 1em;
+    margin-bottom: 0em;
+}
+
+.rec_list_filter_checkbox_button {
+    --mdc-theme-on-primary: white;
+    --mdc-theme-primary: var(--blue);
+    --mdc-theme-on-secondary: white;
+    --mdc-theme-secondary: var(--blue);
 }
 
 /****************************************************** Rec Items *****************************************************/
@@ -54,9 +109,11 @@
 
     border: 2px solid var(--darkish);
 
+    background-color: var(--lighter);
+
     transition: all var(--rec-transition-time);
 
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .rec_item_active {
@@ -172,14 +229,24 @@
 }
 
 .rec_item_buttons {
-    display: flex;
-
     position: relative;
 
     bottom: 3.5em;
     left: calc(var(--rec_item_width)*0.89);
 
+    width: 6.5em;
+
     transition: left var(--rec-transition-time);
+}
+
+.rec_item_buttons_public {
+    display: flex;
+
+    margin-bottom: 0.2em;
+}
+
+.rec_item_buttons_owner {
+    display: flex;
 }
 
 .rec_item_active .rec_item_buttons {
@@ -189,8 +256,7 @@
 .rec_item_button {
     border-radius: 1em;
 
-    border: 1px solid var(--darkish);
-    border: 1px solid var(--darkish);
+    border: 1px solid rgba(0,0,0,0);
 
     margin-right: 1em;
 
@@ -217,7 +283,7 @@
 
 .save_button i {
     position: relative;
-    left: 0.25em;
+    left: 0.27em;
     top: 0.15em;
 }
 
@@ -233,8 +299,36 @@
     top: 0.1em;
 }
 
+.edit_button i {
+    position: relative;
+    left: 0.14em;
+    top: 0.15em;
+}
+
+.delete_button i {
+    position: relative;
+    left: 0.22em;
+    top: 0.14em;
+}
+
+.hide_button i {
+    position: relative;
+    left: 0.15em;
+    top: 0.16em;
+}
+
 .rec_item_bottom {
     overflow: hidden;
+
+    height: calc(var(--rec_item_height)*0.5);
+
+    position: relative;
+
+    bottom: 2em;
+}
+
+.rec_item_active .rec_item_bottom {
+    height: calc(var(--rec_item_active_height)*0.88);
 }
 
 .rec_item_side_pane,
@@ -270,13 +364,20 @@
 .rec_item_active .rec_item_rsvp {
     position: relative;
 
-    bottom: 43.5em;
+    bottom: 38.4em;
     left: 68em;
 }
 
 .rec_item_rsvp_button {
     --mdc-theme-on-primary: white;
-    --mdc-theme-primary: var(--brighter-blue);
+    --mdc-theme-primary: var(--blue);
     --mdc-theme-on-secondary: white;
-    --mdc-theme-secondary: var(--brighter-blue);
+    --mdc-theme-secondary: var(--blue);
 }
+
+/*.rec_item_rsvp_text {*/
+    /*position: relative;*/
+    /*right: 3.4em;*/
+    /*bottom: 3.2em;*/
+/*}*/
+

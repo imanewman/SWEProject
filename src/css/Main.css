@@ -9,6 +9,7 @@
 
 /*Named Variables*/
 :root {
+    --lighter: #FCFCFC;
     --light: #FAFAFA;
     --lightish: #EFEFEF;
     --dark-grey: #DDDDDD;
