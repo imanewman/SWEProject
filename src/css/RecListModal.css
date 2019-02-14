@@ -113,7 +113,7 @@
 
     transition: all var(--rec-transition-time);
 
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .rec_item_active {
@@ -133,6 +133,8 @@
 
     border-bottom: 1px solid var(--dark-grey);
 }
+
+/* Rec Top - Header Info */
 
 .rec_item_info {
     display: flex;
@@ -177,32 +179,6 @@
     font-weight: 600;
 }
 
-.rec_item_details {
-    position: relative;
-
-    bottom: 1em;
-    left: 0em;
-
-    width: 96%;
-    height: calc(var(--rec_item_height)*0.5);
-
-    padding-left: 2%;
-    padding-right: 2%;
-
-    transition: left var(--rec-transition-time);
-
-    overflow: hidden;
-}
-
-.rec_item_active .rec_item_details {
-    border-left: 1px solid #DDDDDD;
-
-    left: var(--rec_item_active_details_indent);
-
-    width: calc(var(--rec_item_active_width) - var(--rec_item_active_details_indent) - 3em);/*68%;*/
-    height: calc(var(--rec_item_active_height)*0.88);
-}
-
 .rec_item_image i {
     transform: scale(2);
     margin-top: 1.5em;
@@ -228,11 +204,15 @@
     opacity: 0.85;
 }
 
+/* Rec Action Buttons */
+
 .rec_item_buttons {
+    display: flex;
+
     position: relative;
 
     bottom: 3.5em;
-    left: calc(var(--rec_item_width)*0.89);
+    left: calc(var(--rec_item_width)*0.9);
 
     width: 6.5em;
 
@@ -246,11 +226,12 @@
 }
 
 .rec_item_buttons_owner {
-    display: flex;
+    /*display: flex;*/
+    display: none;
 }
 
 .rec_item_active .rec_item_buttons {
-    left: calc(var(--rec_item_width)*1.09);
+    left: calc(var(--rec_item_width)*1.1);
 }
 
 .rec_item_button {
@@ -258,7 +239,7 @@
 
     border: 1px solid rgba(0,0,0,0);
 
-    margin-right: 1em;
+    margin-right: 0.5em;
 
     transform: scale(1.2);
 
@@ -272,8 +253,12 @@
 
 .rec_item_button:hover {
     border: 1px solid #AAAA;
-    background-color: #CCCC;
+
+    /*background-color: #CCCC;*/
+
     color: var(--brighter-blue);
+
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
 }
 
 .rec_item_button:active {
@@ -284,19 +269,19 @@
 .save_button i {
     position: relative;
     left: 0.27em;
-    top: 0.15em;
+    top: 0.16em;
 }
 
 .map_button i {
     position: relative;
-    left: 0.07em;
+    left: 0.08em;
     top: 0.1em;
 }
 
 .report_button i {
     position: relative;
-    left: 0.14em;
-    top: 0.1em;
+    left: 0.17em;
+    top: 0.16em;
 }
 
 .edit_button i {
@@ -317,6 +302,8 @@
     top: 0.16em;
 }
 
+/* Rec Bottom - Details */
+
 .rec_item_bottom {
     overflow: hidden;
 
@@ -324,10 +311,36 @@
 
     position: relative;
 
-    bottom: 2em;
+    bottom: 1em;
 }
 
 .rec_item_active .rec_item_bottom {
+    height: calc(var(--rec_item_active_height)*0.88);
+}
+
+.rec_item_details {
+    position: relative;
+
+    bottom: 1em;
+    left: 0em;
+
+    width: 96%;
+    height: calc(var(--rec_item_height)*0.5);
+
+    padding-left: 2%;
+    padding-right: 2%;
+
+    transition: left var(--rec-transition-time);
+
+    overflow: hidden;
+}
+
+.rec_item_active .rec_item_details {
+    border-left: 1px solid #DDDDDD;
+
+    left: var(--rec_item_active_details_indent);
+
+    width: calc(var(--rec_item_active_width) - var(--rec_item_active_details_indent) - 3em);/*68%;*/
     height: calc(var(--rec_item_active_height)*0.88);
 }
 
@@ -364,7 +377,7 @@
 .rec_item_active .rec_item_rsvp {
     position: relative;
 
-    bottom: 38.4em;
+    bottom: 38em;
     left: 68em;
 }
 
