@@ -7,7 +7,7 @@
 / ******************************************************************************************************************** \
 \**********************************************************************************************************************/
 
-#header_bar_container {
+.header_bar_container {
     position: fixed;
 
     top: 0;
@@ -16,6 +16,10 @@
     height: 4em;
 
     z-index: 100;
+
+    border-bottom: 1px solid var(--dark-grey);
+
+    box-shadow: 0 1px 2px rgba(7, 44, 104, 0.15);
 }
 
 #header_bar {
@@ -65,11 +69,11 @@
 
 .nav_button_underline {
     position: relative;
-    top: 1.1em;
+    top: 1.45em;
     right: 0.4em;
 
     width: 100%;
-    height: 0em;/*height: 0.25em; when expanded*/
+    height: 0;
 
     border-radius: 0.1em;
 
@@ -77,9 +81,14 @@
 
     padding-left: 0.4em;
     padding-right: 0.4em;
+
+    transition: all 0.2s;
 }
 
-.nav_button-current .nav_button_underline { height: 0.25em; }
+.nav_button-current .nav_button_underline {
+    top: 1.2em;
+    height: 0.25em;
+}
 
 .nav_divider {
     margin-left: 1em;
@@ -90,7 +99,7 @@
     opacity: 0.5;
 }
 
-/**************************************************** Account Button **************************************************/
+/****************************************************** Nav Search ****************************************************/
 
 #nav_search {
     display: none;
@@ -103,7 +112,6 @@
 #nav_search_icon { transform: scale(1.2); }
 
 #nav_search_input {
-
     position: absolute;
 
     right: 2em;
@@ -120,7 +128,6 @@
     background-color: var(--lightish);
 
     transition: background-color 0.2s;
-
 }
 
 #nav_search_input:focus {
@@ -128,7 +135,9 @@
     background-color: var(--lighter);
 }
 
-#nav_account_dropdown {
+/**************************************************** Account Button **************************************************/
+
+.nav_account_dropdown {
     position: absolute;
 
     right: -1em;
@@ -137,16 +146,33 @@
     background-color: var(--light);
 
     border-radius: .2em;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0);
 
-    display: none;
+    transition: border 0.2s;
 }
 
 .nav_account_dropdown_option {
     display: flex;
 
     width: 10em;
+    height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    transition: all 0.2s;
+}
+
+.nav_account_dropdown-open {
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+}
+
+.nav_account_dropdown-open .nav_account_dropdown_option {
     height: 2.5em;
+
+    opacity: 1;
 }
 
 .nav_account_dropdown_option div {
@@ -159,9 +185,6 @@
     margin-right: 0.5em;
     line-height: 2.5em;
 }
-
-/**************************************************** Account Button **************************************************/
-
 #nav_account {
     position: absolute;
 
