@@ -3,6 +3,9 @@ const DatabaseConnector = require("../src/Database.js");
 
 DatabaseConnector.connect();
 
+var totalTests = 3;
+var doneTests = 0;
+
 describe("Database Connector Tests", () => {
     describe("Test 'query' function", () => {
         it("shows whole table", (done) => {
@@ -13,6 +16,10 @@ describe("Database Connector Tests", () => {
                 expect(result.Tables_in_TheRec).to.equal(expected.Tables_in_TheRec);
 
                 done();
+
+                if (++doneTests == totalTests) {
+                    DatabaseConnector.disconnect();
+                }
             };
 
             DatabaseConnector.query('SHOW TABLES;', checkEquals);
@@ -49,6 +56,10 @@ describe("Database Connector Tests", () => {
                 }
 
                 done();
+
+                if (++doneTests == totalTests) {
+                    DatabaseConnector.disconnect();
+                }
             };
 
             DatabaseConnector.get('Recs', 'RecID', '00000001', checkEquals);
@@ -83,6 +94,10 @@ describe("Database Connector Tests", () => {
                 }
 
                 done();
+
+                if (++doneTests == totalTests) {
+                    DatabaseConnector.disconnect();
+                }
             };
 
             DatabaseConnector.get('Users', 'UserID', '00000003', checkEquals);

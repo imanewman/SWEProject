@@ -237,13 +237,21 @@
     overflow: hidden;
 }
 
-.rec_item_side_pane {
+.rec_item_side_pane,
+.rec_item_details_rules,
+.rec_item_rsvp  {
     visibility: hidden;
+
+    transition-delay: visibility var(--rec-transition-time);
+}
+
+.rec_item_active .rec_item_side_pane,
+.rec_item_active .rec_item_details_rules,
+.rec_item_active .rec_item_rsvp  {
+    visibility: visible;
 }
 
 .rec_item_active .rec_item_side_pane {
-    visibility: visible;
-
     position: relative;
 
     bottom: calc(var(--rec_item_active_height) * 0.9); /*not the right way to calculate this*/
@@ -257,4 +265,18 @@
 .rec_item_active .rec_item_map {
     width: var(--rec_item_active_details_indent);
     height: var(--rec_item_active_details_indent);
+}
+
+.rec_item_active .rec_item_rsvp {
+    position: relative;
+
+    bottom: 43.5em;
+    left: 68em;
+}
+
+.rec_item_rsvp_button {
+    --mdc-theme-on-primary: white;
+    --mdc-theme-primary: var(--brighter-blue);
+    --mdc-theme-on-secondary: white;
+    --mdc-theme-secondary: var(--brighter-blue);
 }
