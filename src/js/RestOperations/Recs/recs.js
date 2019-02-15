@@ -1,3 +1,4 @@
+/*
 // const recModel = require("../db/models/rec.js");
 
 function getRecs() {
@@ -22,3 +23,25 @@ module.exports = {
     putRec,
     deleteRec
 }
+*/
+
+var Express = require('express');
+var router = Express.Router({caseSensitive: true});
+var mysql = require('mysql');
+
+router.baseURL = '/Prss';
+
+// GET /Recs
+router.get('/', function(req, res) {
+   console.log('GET /Recs');
+   res.send("GET /Recs");
+   
+});
+
+// POST /Recs
+router.post('/', function(req, res) {
+   console.log('POST /Recs');
+   // do stuff here
+});
+
+module.exports = router;
