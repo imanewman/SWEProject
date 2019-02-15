@@ -1,4 +1,6 @@
-import { Rec, User, PendingOrganizers } from "../Model";
+const Rec = require("../Model/Rec.js");
+const User = require("../Model/User.js");
+//import { Rec, User, PendingOrganizers } from "../Model";
 
 class PrivateObjectFactory {
     constructor() {
@@ -47,9 +49,9 @@ class PrivateObjectFactory {
         )
     }
 
-    initializePendingOrganizerList(pendingOrganizerListObject) {
-        return new PendingOrganizers(pendingOrganizerListObject); // may need to parse list
-    }
+    //initializePendingOrganizerList(pendingOrganizerListObject) {
+      //  return new PendingOrganizers(pendingOrganizerListObject); // may need to parse list
+    //}
 }
 
 // Set up object as a Singleton
