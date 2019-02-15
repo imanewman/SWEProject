@@ -23,20 +23,16 @@ var router = Express.Router({caseSensitive: true});
 var mysql = require('mysql');
 var cnn = require('../../../Database.js')
 
-router.baseURL = '/Prss';
 
 // GET /Users
 router.get('/', function(req, res) {
-	cnn.connect();
 	
 	// handler that sends our response and releases connection
    var handler = function(result) {
-      res.send(result);
-      // figure out how to close connection
+      res.send(result);  
    };
    
    console.log('GET /Users');
-   //res.send("GET /Users");
    
    cnn.query("SELECT * FROM Users", handler);
 });
@@ -44,6 +40,15 @@ router.get('/', function(req, res) {
 // POST /Users
 router.post('/', function(req, res) {
    console.log('POST /Users');
+   
+	// handler that sends our response and releases connection
+   var handler = function(result) {
+      res.status(200).end();  
+   };
+   
+   console.log(req.body);
+   
+   handler();
    // do stuff here
 });
 

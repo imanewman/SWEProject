@@ -12,7 +12,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to the DB
-//require("./RestServer.js")(app);
+var cnn = require("./Database.js");
+
+cnn.connect();
 
 
 // Load all subroutes
@@ -22,12 +24,10 @@ app.use('/Users', require('./js/RestOperations/Users/users.js'));
 // Handler of last resort.  Print a stacktrace to console and send a 500 response.
 app.use(function(req, res) {
    res.status(404).end();
-   res.cnn.release();
 });
 
 app.use(function(err, req, res, next) {
    res.status(400).json(err);
-   req.cnn && req.cnn.release();
 });
 
 app.listen(PORT, function () {
