@@ -1,5 +1,6 @@
 const expect = require("chai").expect;
 const DatabaseConnector = require("../src/Database.js");
+const Helper = require("../HelperClasses/Helper.js")
 
 DatabaseConnector.connect();
 
@@ -39,7 +40,7 @@ describe("Database Connector Tests", () => {
             ];
 
             const checkEquals = (result) => {
-                expect(result.length).to.equal(expected.length); // check that result is one row
+                /*expect(result.length).to.equal(expected.length); // check that result is one row
 
                 for (var idx = 0; idx < result.length; idx++) {
                     let resultRow = result[idx];
@@ -53,8 +54,8 @@ describe("Database Connector Tests", () => {
                         // console.log(`-> ${JSON.stringify(resultRow[key])}`);
                         expect(resultRow[key]).to.equal(expectedRow[key]); // check each value matches
                     });
-                }
-
+                }*/
+                Helper.IterateFields(result, expected);
                 done();
 
                 if (++doneTests == totalTests) {
@@ -77,7 +78,7 @@ describe("Database Connector Tests", () => {
             ];
 
             const checkEquals = (result) => {
-                expect(result.length).to.equal(expected.length); // check that result is one row
+                /*expect(result.length).to.equal(expected.length); // check that result is one row
 
                 for (var idx = 0; idx < result.length; idx++) {
                     let resultRow = result[idx];
@@ -91,8 +92,8 @@ describe("Database Connector Tests", () => {
                         // console.log(`-> ${JSON.stringify(resultRow[key])}`);
                         expect(resultRow[key]).to.equal(expectedRow[key]); // check each value matches
                     });
-                }
-
+                }*/
+                Helper.IterateFields(result, expected);
                 done();
 
                 if (++doneTests == totalTests) {
