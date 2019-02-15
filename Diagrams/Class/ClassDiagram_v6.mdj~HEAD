@@ -3581,7 +3581,7 @@
 											"top": 679,
 											"width": 184.60888671875,
 											"height": 13,
-											"text": "RecListComponent"
+											"text": "RecListModal"
 										},
 										{
 											"_type": "LabelView",
@@ -20754,7 +20754,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "RecListComponent",
+					"name": "RecListModal",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",

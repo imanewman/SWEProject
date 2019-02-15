@@ -21,6 +21,8 @@
     --blue: #4AB8FF;
     --brighter-blue: #4ACBFF;
     --darker-blue: #4AA7FF;
+    --dark-blue: #3B87D0;
+    --darkest-blue: #3576B4;
 }
 
 /*Entire Page*/
@@ -124,4 +126,6 @@ flex-grow { flex-grow: 1; }
     transform: scale(1.2);
 
     margin: auto;
+
+    height: 1.6em;
 }
