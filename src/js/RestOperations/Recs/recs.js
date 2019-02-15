@@ -28,19 +28,33 @@ module.exports = {
 var Express = require('express');
 var router = Express.Router({caseSensitive: true});
 var mysql = require('mysql');
-
-router.baseURL = '/Prss';
+var cnn = require('../../../Database.js')
 
 // GET /Recs
 router.get('/', function(req, res) {
-   console.log('GET /Recs');
-   res.send("GET /Recs");
+
+	// handler that sends our response and releases connection
+   var handler = function(result) {
+      res.send(result);  
+   };
    
+   console.log('GET /Recs');
+   
+   cnn.query("SELECT * FROM Recs", handler);
 });
 
 // POST /Recs
 router.post('/', function(req, res) {
    console.log('POST /Recs');
+   
+	// handler that sends our response and releases connection
+   var handler = function(result) {
+      res.status(200).end();  
+   };
+   
+   console.log(req.body);
+   
+   handler();
    // do stuff here
 });
 
