@@ -3,14 +3,20 @@ class Navbar {
         $(document).ready( () => {
             $.get("./Navbar.html", (data) => {
                 $("body").append($(data));
+                this.attachFunctions();
             });
         });
     }
 
-    changePage(pageName) {
+    attachFunctions() {
+        $(".nav_button_text").click(this.changePage);
+    }
+
+    changePage() {
+        console.log(this);
     }
 }
 
 const navbar = new Navbar();
 
-// module.exports = navbar;
+module.exports = navbar;

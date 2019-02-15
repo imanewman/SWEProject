@@ -51,14 +51,16 @@
 
     font-size: 1em;
 
-    background-color: var(--lightish);
+    background-color: var(--lighter);
 
-    transition: background-color 0.2s;
+    transition: box-shadow var(--rec-transition-time);
+
+    outline: none;
 }
 
-#rec_list_search_input:focus {
-    outline: none;
-    background-color: var(--lighter);
+#rec_list_search_input:hover,
+#rec_list_search_input:active {
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
 }
 
 #rec_list_filter {
@@ -275,7 +277,7 @@
 .map_button i {
     position: relative;
     left: 0.08em;
-    top: 0.1em;
+    /*top: 0.1em;*/
 }
 
 .report_button i {

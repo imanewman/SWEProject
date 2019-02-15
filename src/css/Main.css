@@ -97,7 +97,7 @@ flex-grow { flex-grow: 1; }
     visibility: hidden;
 
     background-color: var(--darker);
-    color: #fff;
+    color: var(--lighter);
 
     text-align: center;
 
