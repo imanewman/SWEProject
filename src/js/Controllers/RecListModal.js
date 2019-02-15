@@ -1,7 +1,8 @@
 class RecListModal {
-    currentRecs = [];
 
     constructor() {
+        var currentRecs = [];
+
         $(document).ready( () => {
             $.get("./RecListModal.html", (data) => {
                 $("body").append($(data));

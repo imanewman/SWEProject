@@ -51,7 +51,9 @@
 
 #my_posts_button {}
 
-.nav_button_text {}
+.nav_button_text {
+    transition: color 0.2s;
+}
 
 .nav_button-current .nav_button_text { color: var(--darker-blue); }
 
