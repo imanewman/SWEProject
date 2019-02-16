@@ -1,5 +1,5 @@
 import Navbar from "./Navbar.js";
-import {RecListModal, REC_IMPORTS} from "./RecListModal";
+import { RecListModal, REC_IMPORTS } from "./RecListModal.js";
 
 class MainController {
     constructor() {
@@ -18,24 +18,33 @@ class MainController {
         // console.log("change page: ");
         // console.log($element);
 
-        let elementName = $element.text();
+        let elementName = $element.text().trim();
         let newScene = nameToSceneMap[elementName];
 
-        if (newScene) {
-            this.scene.remove();
-            this.scene = newScene();
+        let addNewScene = () => {
+            console.log("adding " + elementName);
+            if (newScene) this.scene = newScene();
+        };
+
+        if (this.scene) {
+            console.log("removing " + this.scene.title);
+            this.scene.remove(addNewScene);
+        } else {
+            addNewScene();
         }
+
+        //TODO: if converting from one rec list to another, dont need to make a new one
     }
 }
 
 const Main = new MainController();
 
 const nameToSceneMap = {
-    'home': null,
+    'home': () => { return null },
     'my recs': () => { return new RecListModal('My Recs', REC_IMPORTS.RECOMMENDED); },
-    'all recs': () => { return new RecListModal('My Recs', REC_IMPORTS.ALL); },
-    'watchlist': () => { return new RecListModal('My Recs', REC_IMPORTS.WATCHLIST); },
-    'my posts': () => { return new RecListModal('My Recs', REC_IMPORTS.OWNED); }
+    'all recs': () => { return new RecListModal('All Recs', REC_IMPORTS.ALL); },
+    'watchlist': () => { return new RecListModal('Rec Watchlist', REC_IMPORTS.WATCHLIST); },
+    'my posts': () => { return new RecListModal('My Posts', REC_IMPORTS.OWNED); }
 };
 
 export default Main;
