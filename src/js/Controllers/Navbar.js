@@ -1,7 +1,8 @@
 class Navbar {
-    constructor() {
-        var currentPage = null;
-        var didScroll = false;
+    constructor(mainController) {
+        this.main = mainController;
+        this.currentPage = null;
+        this.didScroll = false;
 
         this.attach();
 
@@ -37,7 +38,7 @@ class Navbar {
             let $element = $(e.currentTarget);
 
             // change page and animate change
-            this.changePage($element);
+            this.main.changePage($element);
             this.animateChangePage($element)
         });
 
@@ -69,12 +70,6 @@ class Navbar {
         });
 
 
-    }
-
-    // changes page based on which nav button is clicked on
-    changePage($element) {
-        // console.log("change page: ");
-        // console.log($element);
     }
 
     // animates change of page on navbar
@@ -132,8 +127,6 @@ class Navbar {
     }
 }
 
-const navbar = new Navbar();
-
-// module.exports = navbar;
+export default Navbar;
 
 //TODO: show log in button when logged out and vice versa

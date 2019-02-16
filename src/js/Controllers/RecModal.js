@@ -1,6 +1,6 @@
 class RecModal {
     constructor(rec) {
-
+        this.rec = rec;
     }
 
     //TODO: function for display, hide, expand
@@ -64,3 +64,5 @@ class RecModal {
         //TODO: rsvp to rec, also needs a new modal, will be more intensive
     }
 }
+
+export default RecModal;
