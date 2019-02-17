@@ -1,4 +1,4 @@
-class LoginPage {
+class LoginModal {
     login() {
     }
 }

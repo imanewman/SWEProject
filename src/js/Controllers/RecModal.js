@@ -1,12 +1,44 @@
 class RecModal {
     constructor(rec) {
         this.rec = rec;
+        this.recId = this.rec.getId();
+
+        this.attach();
     }
 
-    //TODO: function for display, hide, expand
-    //TODO: functions for each button
-    //TODO: functions for editing
-    //TODO: function for showing owner's edit buttons if user is owner
+    // attaches rec to rec list
+    attach() {
+        $(document).ready( () => {
+            $.get("./RecModal.html", (data) => {
+                let recElement = $(data);
+
+                // set rec elements id to the same
+                recElement.attr('id', this.recId);
+
+                $("#rec_items").append(recElement);
+                // recElement.hide();
+
+                // attach controller functions to elements
+                this.attachFunctions();
+
+                this.updateInfo();
+                this.display();
+            });
+        });
+    }
+
+    // attaches functions for controlling each button
+    attachFunctions() {
+        $("#" + this.recId + " .rec_item_button_dropdown i").click( () => {
+            this.toggleExpand();
+        });
+    }
+
+    // updates the rec information currently displayed
+    updateInfo() {
+        //TODO: update info in rec modal based on rec data
+        //TODO: make icon change based on event type
+    }
 
     // displays this rec
     display() {
@@ -18,9 +50,26 @@ class RecModal {
         //TODO: hide this rec, ie: when filtered out during search
     }
 
+    // toggles whether the rec is open
+    toggleExpand() {
+        if ($("#" + this.recId).hasClass("rec_item_active")) {
+            this.collapse();
+        } else {
+            this.expand();
+        }
+    }
+
     // expands this rec and collapses others
     expand() {
-        //TODO: expands rec when arrow is clicked
+        //TODO: center scroll on this rec when it expands
+        $(".rec_item").removeClass("rec_item_active");
+
+        $("#" + this.recId).addClass("rec_item_active");
+    }
+
+    // collapses the rec
+    collapse() {
+        $("#" + this.recId).removeClass("rec_item_active")
     }
 
     // removes this rec from the list
@@ -42,6 +91,11 @@ class RecModal {
     // reports this rec
     report() {
         //TODO: create report modal and bring it up with this (a bit more intensive), sets icon to filled
+    }
+
+    // shows the buttons for the recs owner
+    showOwnerButtons() {
+        //TODO: call if the user owns this re to show editing buttons
     }
 
     // edits this rec

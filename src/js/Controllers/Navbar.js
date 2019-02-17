@@ -84,7 +84,11 @@ class Navbar {
 
     // goes to home page when logo is clicked
     goToHomePage() {
+        let $element = $("#home_button");
 
+        // change page and animate change
+        this.main.changePage($element);
+        this.animateChangePage($element)
     }
 
     // goes to account page when option is clicked

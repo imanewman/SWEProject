@@ -82,3 +82,5 @@ class Rec {
 
 	generateCalendarObj() {}
 }
+
+export default Rec;

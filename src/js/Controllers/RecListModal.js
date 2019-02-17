@@ -1,3 +1,6 @@
+import RecModal from "./RecModal.js";
+import Rec from "../Model/Rec.js";
+
 const REC_IMPORTS = {
     ALL: 0,
     RECOMMENDED: 1,
@@ -15,6 +18,7 @@ class RecListModal {
         this.title = title;
         this.importType = importType;
         this.currentRecs = [];
+        this.currentRecModals = [];
 
         this.attach();
     }
@@ -27,6 +31,7 @@ class RecListModal {
                 $("#rec_list_container").hide();
 
                 this.setName();
+                this.importRecs();
                 this.display();
             });
         });
@@ -42,14 +47,14 @@ class RecListModal {
     }
 
     // displays the rec list
-    display() {
-        //TODO: animate display
-        $("#rec_list_container").delay(100).fadeIn(100);
+    display(callback = () => {}) {
+        //TODO: animate display cooler
+        $("#rec_list_container").delay(100).fadeIn(100, callback);
     }
 
     // hides this rec list
     hide(callback = () => {}) {
-        //TODO: animate hide
+        //TODO: animate hide cooler
         $("#rec_list_container").fadeOut(100, callback);
     }
 
@@ -65,17 +70,43 @@ class RecListModal {
     // imports recs into the rec list
     importRecs() {
         //TODO: pull right recs from db, create RecModals, display them
+        if (test) this.currentRecs = testRecs;
+
+        // remove recs currently displayed
+        this.removeRecs();
+
+        // add all recs into displayed list
+        for (let i = 0; i < this.currentRecs.length; i++) {
+            let currentRec = this.currentRecs[i];
+            let newRecModal = new RecModal(currentRec);
+
+            this.currentRecModals.push(newRecModal);
+        }
+    }
+
+    // removes all recs from the rec list
+    removeRecs() {
+        $("#rec_items").empty();
+
+        this.currentRecModals = [];
     }
 
     // filters rec list based on search and checkboxes
     filter() {
-
+        //TODO: filter recs based on filters
     }
 }
 
-let test = false;
+let test = true;
 
-if (test) { const recList = new RecListModal(); }
+let testRecs = [
+    new Rec("0000001"),
+    new Rec("0000002"),
+    new Rec("0000003"),
+    new Rec("0000004"),
+    new Rec("0000005"),
+    new Rec("0000006"),
+];
 
 export {
     RecListModal,

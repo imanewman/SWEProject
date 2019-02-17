@@ -1,4 +1,4 @@
-class AccountPage {
+class AccountModal {
     requestOrganizerStatus() {}
 
     addPreferredEvents() {}

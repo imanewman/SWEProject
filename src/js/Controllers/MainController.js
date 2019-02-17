@@ -22,12 +22,10 @@ class MainController {
         let newScene = nameToSceneMap[elementName];
 
         let addNewScene = () => {
-            console.log("adding " + elementName);
             if (newScene) this.scene = newScene();
         };
 
         if (this.scene) {
-            console.log("removing " + this.scene.title);
             this.scene.remove(addNewScene);
         } else {
             addNewScene();
