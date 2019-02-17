@@ -48,13 +48,13 @@ class RecListModal {
 
     // displays the rec list
     display(callback = () => {}) {
-        //TODO: animate display cooler
+        //TODO: animate display cooler, maybe slide in from direction of last page?
         $("#rec_list_container").delay(100).fadeIn(100, callback);
     }
 
     // hides this rec list
     hide(callback = () => {}) {
-        //TODO: animate hide cooler
+        //TODO: animate hide cooler, maybe slide out in direction of next page?
         $("#rec_list_container").fadeOut(100, callback);
     }
 
@@ -69,7 +69,7 @@ class RecListModal {
 
     // imports recs into the rec list
     importRecs() {
-        //TODO: pull right recs from db, create RecModals, display them
+        //TODO: pull right recs from db
         if (test) this.currentRecs = testRecs;
 
         // remove recs currently displayed

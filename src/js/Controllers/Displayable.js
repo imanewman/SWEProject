@@ -1,4 +1,4 @@
-class SceneModal {
+class Displayable {
     attach() {}
 
     display(callback = () => {}) {}

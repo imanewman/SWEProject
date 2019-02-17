@@ -29,8 +29,33 @@ class RecModal {
 
     // attaches functions for controlling each button
     attachFunctions() {
+        // expand/collapse when arrow is clicked
         $("#" + this.recId + " .rec_item_button_dropdown i").click( () => {
             this.toggleExpand();
+        });
+
+        $("#" + this.recId + " .save_button").click( () => {
+            this.toggleSave();
+        });
+
+        $("#" + this.recId + " .map_button").click( () => {
+            this.locate();
+        });
+
+        $("#" + this.recId + " .report_button").click( () => {
+            this.report();
+        });
+
+        $("#" + this.recId + " .edit_button").click( () => {
+            this.edit();
+        });
+
+        $("#" + this.recId + " .delete_button").click( () => {
+            this.delete();
+        });
+
+        $("#" + this.recId + " .hide_button").click( () => {
+            this.toggleDraft();
         });
     }
 
@@ -80,7 +105,7 @@ class RecModal {
 
     // saves this rec to the users watchlist
     toggleSave() {
-        //TODO: toggle save on and off, animate toggle
+        //TODO: toggle save on and off, animate toggle between icons
     }
 
     // opens up new window with location on google maps
@@ -101,6 +126,17 @@ class RecModal {
     // edits this rec
     edit() {
         //TODO: allow in-place editing if the user is the owner
+        //TODO: maybe apply state pattern between view/edit mode?
+    }
+
+    // saves this rec after editing
+    saveEdit() {
+        //TODO: add save button in edit mode and implement this
+    }
+
+    // aborts an edit
+    abortEdit() {
+        //TODO: add discard button in edit mode and implement this
     }
 
     // deletes this rec
@@ -109,7 +145,7 @@ class RecModal {
     }
 
     // toggles rec between published and hidden
-    toggleHide() {
+    toggleDraft() {
         //TODO: hides this rec from the public by setting it to draft. changes icon to publish
     }
 
@@ -120,3 +156,5 @@ class RecModal {
 }
 
 export default RecModal;
+
+//TODO: maybe make a defualt button class and make a class for each type with a ref to this RecModal
