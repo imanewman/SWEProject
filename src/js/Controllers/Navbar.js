@@ -64,7 +64,8 @@ class Navbar {
         $(document).mousedown( (e) => {
             if ($(e.target).closest("#nav_account_icon").length === 0 &&
                 $(e.target).closest(".nav_account_dropdown").length === 0 &&
-                $(".nav_account_dropdown").hasClass("nav_account_dropdown-open")) {
+                $("#nav_account").hasClass("nav_account-open")) {
+
                 this.toggleAccountMenu();
             }
         });

@@ -19,6 +19,7 @@ class RecListModal {
         this.importType = importType;
         this.currentRecs = [];
         this.currentRecModals = [];
+        this.displaySpeed = 200;
 
         this.attach();
     }
@@ -31,8 +32,8 @@ class RecListModal {
                 $("#rec_list_container").hide();
 
                 this.setName();
-                this.importRecs();
                 this.display();
+                setTimeout(() => { this.importRecs() }, this.displaySpeed);
             });
         });
     }
@@ -48,20 +49,28 @@ class RecListModal {
 
     // displays the rec list
     display(callback = () => {}) {
-        //TODO: animate display cooler, maybe slide in from direction of last page?
-        $("#rec_list_container").delay(100).fadeIn(100, callback);
+        $("#rec_list_container").delay(this.displaySpeed).fadeIn(this.displaySpeed, callback);
+
+        $("#rec_filter").css('width', '0').delay(this.displaySpeed).animate({
+            'width': '14em'
+        }, this.displaySpeed);
+
+        $("#rec_list_header").css('top', '0').delay(this.displaySpeed).animate({
+            'top': '4em'
+        }, this.displaySpeed);
     }
 
     // hides this rec list
     hide(callback = () => {}) {
-        //TODO: animate hide cooler, maybe slide out in direction of next page?
         $("#rec_filter").animate({
            'width': '0'
-        }, 100);
+        }, this.displaySpeed);
+
         $("#rec_list_header").animate({
             'top': '0'
-        }, 100);
-        $("#rec_list_container").fadeOut(100, callback);
+        }, this.displaySpeed);
+
+        $("#rec_list_container").fadeOut(this.displaySpeed, callback);
     }
 
     // removes this rec list from the page
@@ -83,10 +92,12 @@ class RecListModal {
 
         // add all recs into displayed list
         for (let i = 0; i < this.currentRecs.length; i++) {
-            let currentRec = this.currentRecs[i];
-            let newRecModal = new RecModal(currentRec);
+            setTimeout(() => {
+                let currentRec = this.currentRecs[i];
+                let newRecModal = new RecModal(currentRec);
 
-            this.currentRecModals.push(newRecModal);
+                this.currentRecModals.push(newRecModal);
+            }, i * 50);
         }
     }
 

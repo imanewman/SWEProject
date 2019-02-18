@@ -2,6 +2,7 @@ class RecModal {
     constructor(rec) {
         this.rec = rec;
         this.recId = this.rec.getId();
+        this.displaySpeed = 200;
 
         this.attach();
     }
@@ -15,14 +16,20 @@ class RecModal {
                 // set rec elements id to the same
                 recElement.attr('id', this.recId);
 
-                $("#rec_items").append(recElement);
-                // recElement.hide();
+                // hide the element
+                recElement.hide().promise().then( () => {
+                    // add it to the rec list
+                    $("#rec_items").append(recElement);
 
-                // attach controller functions to elements
-                this.attachFunctions();
+                    // attach controller functions to elements
+                    this.attachFunctions();
 
-                this.updateInfo();
-                this.display();
+                    // update the rec info
+                    this.updateInfo();
+
+                    // display the rec
+                    this.display();
+                });
             });
         });
     }
@@ -66,13 +73,15 @@ class RecModal {
     }
 
     // displays this rec
-    display() {
+    display(callback = () => {}) {
         //TODO: display this rec
+        $("#" + this.recId).fadeIn(this.displaySpeed, callback);
     }
 
     // hides this rec
-    hide() {
+    hide(callback = () => {}) {
         //TODO: hide this rec, ie: when filtered out during search
+        $("#" + this.recId).fadeOut(this.displaySpeed, callback);
     }
 
     // toggles whether the rec is open
