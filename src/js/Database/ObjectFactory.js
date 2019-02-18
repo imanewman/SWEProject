@@ -12,7 +12,7 @@ class PrivateObjectFactory {
     }
 
     initializeRec(recObject) {
-        return new Rec(
+        return Rec.constructor(
             recObject.id,
             recObject.title || "",
             recObject.description || "",
