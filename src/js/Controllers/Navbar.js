@@ -103,12 +103,15 @@ class Navbar {
 
     // toggles account menu open and closed
     toggleAccountMenu() {
-        var $element = $(".nav_account_dropdown");
+        let $accountButton = $("#nav_account");
+        let $accountIcon = $("#nav_account i");
 
-        if ($element.hasClass("nav_account_dropdown-open")) {
-            $element.removeClass("nav_account_dropdown-open");
+        if ($accountButton.hasClass("nav_account-open")) {
+            $accountButton.removeClass("nav_account-open");
+            $accountIcon.addClass("hov-light");
         } else {
-            $element.addClass("nav_account_dropdown-open");
+            $accountButton.addClass("nav_account-open");
+            $accountIcon.removeClass("hov-light");
         }
     }
 

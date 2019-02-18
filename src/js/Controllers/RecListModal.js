@@ -55,6 +55,12 @@ class RecListModal {
     // hides this rec list
     hide(callback = () => {}) {
         //TODO: animate hide cooler, maybe slide out in direction of next page?
+        $("#rec_filter").animate({
+           'width': '0'
+        }, 100);
+        $("#rec_list_header").animate({
+            'top': '0'
+        }, 100);
         $("#rec_list_container").fadeOut(100, callback);
     }
 

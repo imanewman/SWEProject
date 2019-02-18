@@ -21,7 +21,9 @@
 
     box-shadow: 0 1px 2px rgba(7, 44, 104, 0.15);
 
-    background-color: var(--darkish);
+    /*background-color: var(--darkish);*/
+
+    background-color: var(--darker);
 }
 
 #header_bar {
@@ -59,6 +61,8 @@
 
 .nav_button_text {
     transition: color 0.2s;
+
+    color: var(--grey);
 }
 
 .nav_button-current .nav_button_text { color: var(--darker-blue); }
@@ -79,7 +83,7 @@
 
     border-radius: 0.1em;
 
-    background-color: var(--hover);
+    background-color: var(--darker-blue);
 
     padding-left: 0.4em;
     padding-right: 0.4em;
@@ -166,12 +170,22 @@
     transition: all 0.2s;
 }
 
-.nav_account_dropdown-open {
+.nav_account-open #nav_account_icon {
+    color: var(--darker-blue);
+}
+
+.nav_account-open #nav_account_icon:hover {
+    color: var(--brighter-blue);
+
+    cursor: pointer;
+}
+
+.nav_account-open .nav_account_dropdown {
     border: 1px solid #ccc;
     box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
 }
 
-.nav_account_dropdown-open .nav_account_dropdown_option {
+.nav_account-open .nav_account_dropdown_option {
     height: 2.5em;
 
     opacity: 1;
@@ -193,7 +207,11 @@
     right: 2em;
 }
 
-#nav_account_icon { transform: scale(2); }
+#nav_account_icon {
+    transform: scale(2);
+
+    color: var(--grey);
+}
 
 
 /****************************************************** Logo **********************************************************/

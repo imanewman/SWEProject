@@ -9,10 +9,10 @@
 
 :root {
     --rec_item_height: 10em;
-    --rec_item_width: 60em;
+    --rec_item_width: 75em;
 
     --rec_item_height_active_factor: 4;
-    --rec_item_width_active_factor: 1.2;
+    --rec_item_width_active_factor: 1.1;
 
     --rec_item_active_height: calc(var(--rec_item_height)*var(--rec_item_height_active_factor));
     --rec_item_active_width: calc(var(--rec_item_width)*var(--rec_item_width_active_factor));
@@ -20,25 +20,76 @@
     --rec_item_active_details_indent: 17em;
 
     --rec-transition-time: 0.3s;
+
+    --rec_filter_width: 14em;
 }
 
 #rec_list_container {
+    display: flex;
+
     width: 100vw;
 
-    margin-top: 5em;
+    margin-top: 4em;
     margin-bottom: 5em;
+}
+
+#rec_filter {
+    position: fixed;
+
+    z-index: 20;
+
+    height: 100vh;
+    width: var(--rec_filter_width);
+
+    border-right: 1px solid var(--dark-grey);
+
+    box-shadow: 0 1px 2px rgba(7, 44, 104, 0.15);
+
+    background-color: var(--darkish)
+}
+
+#rec_filter_title {
+    padding-left: 2em;
+
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+#rec_filter_title h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 #rec_list {
     width: 100%;
+
+    margin-left: var(--rec_filter_width);
 }
 
 #rec_list_header {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 2em;
+    position: fixed;
+
+    display: flex;
+
+    height: 4em;
+    width: 100%;
+
+    background: var(--lightish);
+
+    z-index: 10;
 
     border-bottom: 2px solid var(--dark-grey);
+
+    overflow: hidden;
+}
+
+#rec_list_title {
+    margin-left: 2em;
+    margin-right: 2em
+}
+
+#rec_list_search {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #rec_list_search_input {
@@ -47,8 +98,8 @@
 
     padding-left: 0.5em;
 
-    border: 0.1em solid var(--darkish);
-    border-radius: 0.3em;
+    border: 0.1em solid var(--dark-grey);
+    border-radius: 0.5em;
 
     font-size: 1em;
 
@@ -74,7 +125,7 @@
 }
 
 #rec_list_filter_checkboxes {
-    display: flex;
+    border-bottom: 1px solid var(--dark-grey);
 }
 
 .rec_list_filter_checkbox {
@@ -95,6 +146,10 @@
 }
 
 /****************************************************** Rec Items *****************************************************/
+
+#rec_items {
+    margin-top: 6em;
+}
 
 #rec_list .rec_item:first-child {
     border-top-left-radius: 0.5em;
@@ -215,7 +270,8 @@
     position: relative;
 
     bottom: 3.5em;
-    left: calc(var(--rec_item_width)*0.9);
+    /*left: calc(var(--rec_item_width)*0.9);*/
+    left: calc(var(--rec_item_width) - 6em);
 
     width: 6.5em;
 
@@ -234,7 +290,8 @@
 }
 
 .rec_item_active .rec_item_buttons {
-    left: calc(var(--rec_item_width)*1.1);
+    /*left: calc(var(--rec_item_width)*1.1);*/
+    left: calc(var(--rec_item_width) + 1.5em);
 }
 
 .rec_item_button {
@@ -381,7 +438,7 @@
     position: relative;
 
     bottom: 38em;
-    left: 68em;
+    left: calc(var(--rec_item_active_width) - 4em);
 }
 
 .rec_item_rsvp_button {
