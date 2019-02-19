@@ -85,7 +85,7 @@ class Rec {
 
     addNewField(fieldName, fieldValue) { this.newFields[fieldName] = fieldValue; }
 
-    deleteNewFields(filedName) { this.newFields.remove(fieldName); }
+    deleteNewFields(fieldName) { this.newFields.remove(fieldName); }
     
     generateCalendarObj() {}
     
