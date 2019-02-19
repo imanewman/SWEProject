@@ -149,7 +149,7 @@ class RecModal {
 
     // shows the buttons for the recs owner
     showOwnerButtons() {
-        //TODO: call if the user owns this re to show editing buttons
+        //TODO: call if the user owns this rec to show editing buttons
     }
 
     // edits this rec
