@@ -8,9 +8,10 @@ class Rec {
 	    title,
 	    description,
 	    location,
-	date,
+    date,
         duration,
         startTime,
+        endTime,
         tags,
         draft,
         contactInfo,
@@ -90,7 +91,7 @@ class Rec {
     generateCalendarObj() {}
     
     //TODO: once endTime is complete, create "<DATE>, from <STARTTIME> to <ENDTIME>"
-    getDateString() {  }
+    getDateString() { this.date + ", from " + this.startTime + " to " }
 }
 
 export default Rec;
