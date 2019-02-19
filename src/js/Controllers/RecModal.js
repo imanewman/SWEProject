@@ -68,8 +68,14 @@ class RecModal {
 
     // updates the rec information currently displayed
     updateInfo() {
-        //TODO: update info in rec modal based on rec data
+        //TODO: add location on map
+        //TODO: load image
         //TODO: make icon change based on event type
+        $("#" + this.recId + " .rec_item_title h3").text(this.rec.getTitle());
+        //$("#" + this.recId + " .rec_item_time h5").text(this.rec.getDateString());
+        $("#" + this.recId + " .rec_item_location h5").text(this.rec.getLocation());
+        $("#" + this.recId + " .rec_item_details_description p").text(this.rec.getDescription());
+        $("#" + this.recId + " .rec_item_details_rules p").text(this.rec.getRules());
     }
 
     // displays this rec
