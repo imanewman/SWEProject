@@ -31,18 +31,18 @@ class PrivateDatabaseRetriever {
     }
 
     getRecs() {
-        let recsObject = {};
+        let recList = [];
 
         $.ajax({
             url: `Recs`,
             type: 'GET',
             async: false,
             success: (result) => {
-                recsObject = result;
+                recList = result;
             }
         });
 
-        let recs = this.factory.initializeRecList(recsObject);
+        let recs = this.factory.initializeRecList(recList);
 
         return recs;
     }
@@ -79,6 +79,21 @@ class PrivateDatabaseRetriever {
         let pendingOrganizers = this.factory.initializePendingOrganizerList(pendingOrganizersObject);
 
         return pendingOrganizers;
+    }
+
+    getTags(recId) {
+        let tagList = [];
+
+        $.ajax({
+            url: `Tags/${recId}`,
+            type: 'GET',
+            async: false,
+            success: (result) => {
+                tagList = result;
+            }
+        });
+
+        return tagList;
     }
 }
 
