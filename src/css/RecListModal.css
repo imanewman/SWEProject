@@ -9,34 +9,147 @@
 
 :root {
     --rec_item_height: 10em;
-    --rec_item_width: 60em;
+    --rec_item_width: 75em;
 
-    --rec_item_height_active_factor: 5;
-    --rec_item_width_active_factor: 1.2;
+    --rec_item_height_active_factor: 4;
+    --rec_item_width_active_factor: 1.1;
 
     --rec_item_active_height: calc(var(--rec_item_height)*var(--rec_item_height_active_factor));
     --rec_item_active_width: calc(var(--rec_item_width)*var(--rec_item_width_active_factor));
 
-    --rec_item_active_details_indent: 20em;
+    --rec_item_active_details_indent: 17em;
 
     --rec-transition-time: 0.3s;
+
+    --rec_filter_width: 14em;
 }
 
 #rec_list_container {
+    display: flex;
+
     width: 100vw;
 
     margin-top: 4em;
+    margin-bottom: 5em;
+}
+
+#rec_filter {
+    position: fixed;
+
+    z-index: 20;
+
+    height: 100vh;
+    width: var(--rec_filter_width);
+
+    border-right: 1px solid var(--dark-grey);
+
+    box-shadow: 0 1px 2px rgba(7, 44, 104, 0.15);
+
+    background-color: var(--darkish)
+}
+
+#rec_filter_title {
+    padding-left: 2em;
+
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+#rec_filter_title h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 #rec_list {
     width: 100%;
+
+    margin-left: var(--rec_filter_width);
+}
+
+#rec_list_header {
+    position: fixed;
+
+    display: flex;
+
+    height: 4em;
+    width: 100%;
+
+    background: var(--lightish);
+
+    z-index: 10;
+
+    border-bottom: 2px solid var(--dark-grey);
+
+    overflow: hidden;
 }
 
 #rec_list_title {
-    padding-left: 10%;
+    margin-left: 2em;
+    margin-right: 2em
+}
+
+#rec_list_search {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#rec_list_search_input {
+    width: 35em;
+    height: 2em;
+
+    padding-left: 0.5em;
+
+    border: 0.1em solid var(--dark-grey);
+    border-radius: 0.5em;
+
+    font-size: 1em;
+
+    background-color: var(--lighter);
+
+    transition: box-shadow var(--rec-transition-time);
+
+    outline: none;
+}
+
+#rec_list_search_input:hover,
+#rec_list_search_input:active {
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+}
+
+#rec_list_filter {
+    display: flex;
+}
+
+#rec_list_filter_text {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#rec_list_filter_checkboxes {
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.rec_list_filter_checkbox {
+    display: flex;
+    margin-left:0.5em;
+}
+
+.rec_list_filter_checkbox_text {
+    margin-top: 1em;
+    margin-bottom: 0em;
+}
+
+.rec_list_filter_checkbox_button {
+    --mdc-theme-on-primary: white;
+    --mdc-theme-primary: var(--blue);
+    --mdc-theme-on-secondary: white;
+    --mdc-theme-secondary: var(--blue);
 }
 
 /****************************************************** Rec Items *****************************************************/
+
+#rec_items {
+    margin-top: 6em;
+}
 
 #rec_list .rec_item:first-child {
     border-top-left-radius: 0.5em;
@@ -53,6 +166,8 @@
     height: var(--rec_item_height);
 
     border: 2px solid var(--darkish);
+
+    background-color: var(--lighter);
 
     transition: all var(--rec-transition-time);
 
@@ -76,6 +191,8 @@
 
     border-bottom: 1px solid var(--dark-grey);
 }
+
+/* Rec Top - Header Info */
 
 .rec_item_info {
     display: flex;
@@ -120,6 +237,147 @@
     font-weight: 600;
 }
 
+.rec_item_image i {
+    transform: scale(2);
+    margin-top: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+
+    color: var(--brighter-blue);
+}
+
+.rec_item_text_secondary {
+    display: flex;
+}
+
+.rec_item_text {
+    position: relative;
+    bottom: 0.4em;
+}
+
+.rec_item_text_secondary {
+    position: relative;
+    bottom: 2.2em;
+
+    opacity: 0.85;
+}
+
+/* Rec Action Buttons */
+
+.rec_item_buttons {
+    display: flex;
+
+    position: relative;
+
+    bottom: 3.5em;
+    /*left: calc(var(--rec_item_width)*0.9);*/
+    left: calc(var(--rec_item_width) - 6em);
+
+    width: 6.5em;
+
+    transition: left var(--rec-transition-time);
+}
+
+.rec_item_buttons_public {
+    display: flex;
+
+    margin-bottom: 0.2em;
+}
+
+.rec_item_buttons_owner {
+    /*display: flex;*/
+    display: none;
+}
+
+.rec_item_active .rec_item_buttons {
+    /*left: calc(var(--rec_item_width)*1.1);*/
+    left: calc(var(--rec_item_width) + 1.5em);
+}
+
+.rec_item_button {
+    border-radius: 1em;
+
+    border: 1px solid rgba(0,0,0,0);
+
+    margin-right: 0.5em;
+
+    transform: scale(1.2);
+
+    width: 1.3em;
+    height: 1.3em;
+
+    transition: all 0.2s;
+
+    cursor: pointer;
+}
+
+.rec_item_button:hover {
+    border: 1px solid #AAAA;
+
+    /*background-color: #CCCC;*/
+
+    color: var(--brighter-blue);
+
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+}
+
+.rec_item_button:active {
+    background-color: var(--dark);
+    color: var(--blue);
+}
+
+.save_button i {
+    position: relative;
+    left: 0.27em;
+    top: 0.16em;
+}
+
+.map_button i {
+    position: relative;
+    left: 0.08em;
+    /*top: 0.1em;*/
+}
+
+.report_button i {
+    position: relative;
+    left: 0.17em;
+    top: 0.16em;
+}
+
+.edit_button i {
+    position: relative;
+    left: 0.14em;
+    top: 0.15em;
+}
+
+.delete_button i {
+    position: relative;
+    left: 0.22em;
+    top: 0.14em;
+}
+
+.hide_button i {
+    position: relative;
+    left: 0.15em;
+    top: 0.16em;
+}
+
+/* Rec Bottom - Details */
+
+.rec_item_bottom {
+    overflow: hidden;
+
+    height: calc(var(--rec_item_height)*0.5);
+
+    position: relative;
+
+    bottom: 1em;
+}
+
+.rec_item_active .rec_item_bottom {
+    height: calc(var(--rec_item_active_height)*0.88);
+}
+
 .rec_item_details {
     position: relative;
 
@@ -146,104 +404,21 @@
     height: calc(var(--rec_item_active_height)*0.88);
 }
 
-.rec_item_image i {
-    transform: scale(2);
-    margin-top: 1.5em;
-    margin-left: 1em;
-    margin-right: 1em;
-
-    color: var(--brighter-blue);
-}
-
-.rec_item_text_secondary {
-    display: flex;
-}
-
-.rec_item_text {
-    position: relative;
-    bottom: 0.4em;
-}
-
-.rec_item_text_secondary {
-    position: relative;
-    bottom: 2.2em;
-
-    opacity: 0.85;
-}
-
-.rec_item_buttons {
-    display: flex;
-
-    position: relative;
-
-    bottom: 3.5em;
-    left: calc(var(--rec_item_width)*0.89);
-
-    transition: left var(--rec-transition-time);
-}
-
-.rec_item_active .rec_item_buttons {
-    left: calc(var(--rec_item_width)*1.09);
-}
-
-.rec_item_button {
-    border-radius: 1em;
-
-    border: 1px solid var(--darkish);
-    border: 1px solid var(--darkish);
-
-    margin-right: 1em;
-
-    transform: scale(1.2);
-
-    width: 1.3em;
-    height: 1.3em;
-
-    transition: all 0.2s;
-
-    cursor: pointer;
-}
-
-.rec_item_button:hover {
-    border: 1px solid #AAAA;
-    background-color: #CCCC;
-    color: var(--brighter-blue);
-}
-
-.rec_item_button:active {
-    background-color: var(--dark);
-    color: var(--blue);
-}
-
-.save_button i {
-    position: relative;
-    left: 0.25em;
-    top: 0.15em;
-}
-
-.map_button i {
-    position: relative;
-    left: 0.07em;
-    top: 0.1em;
-}
-
-.report_button i {
-    position: relative;
-    left: 0.14em;
-    top: 0.1em;
-}
-
-.rec_item_bottom {
-    overflow: hidden;
-}
-
-.rec_item_side_pane {
+.rec_item_side_pane,
+.rec_item_details_rules,
+.rec_item_rsvp  {
     visibility: hidden;
+
+    transition-delay: visibility var(--rec-transition-time);
+}
+
+.rec_item_active .rec_item_side_pane,
+.rec_item_active .rec_item_details_rules,
+.rec_item_active .rec_item_rsvp  {
+    visibility: visible;
 }
 
 .rec_item_active .rec_item_side_pane {
-    visibility: visible;
-
     position: relative;
 
     bottom: calc(var(--rec_item_active_height) * 0.9); /*not the right way to calculate this*/
@@ -258,3 +433,24 @@
     width: var(--rec_item_active_details_indent);
     height: var(--rec_item_active_details_indent);
 }
+
+.rec_item_active .rec_item_rsvp {
+    position: relative;
+
+    bottom: 38em;
+    left: calc(var(--rec_item_active_width) - 4em);
+}
+
+.rec_item_rsvp_button {
+    --mdc-theme-on-primary: white;
+    --mdc-theme-primary: var(--blue);
+    --mdc-theme-on-secondary: white;
+    --mdc-theme-secondary: var(--blue);
+}
+
+/*.rec_item_rsvp_text {*/
+    /*position: relative;*/
+    /*right: 3.4em;*/
+    /*bottom: 3.2em;*/
+/*}*/
+

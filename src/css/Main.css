@@ -9,10 +9,12 @@
 
 /*Named Variables*/
 :root {
+    --lighter: #FCFCFC;
     --light: #FAFAFA;
     --lightish: #EFEFEF;
     --dark-grey: #DDDDDD;
     --darkish: #EAEAEA;
+    --grey: #A8A8A8;
     --dark: #585858;
     --darker: #3D3D3D;
     --hover: #558BDA;
@@ -20,6 +22,8 @@
     --blue: #4AB8FF;
     --brighter-blue: #4ACBFF;
     --darker-blue: #4AA7FF;
+    --dark-blue: #3B87D0;
+    --darkest-blue: #3576B4;
 }
 
 /*Entire Page*/
@@ -50,7 +54,8 @@ body {
 /*Hovering*/
 .hov-black,
 .hov-blue,
-.hov-bg-dark {
+.hov-bg-dark,
+.hov-light {
     cursor: pointer;
     transition: color 0.1s;
 }
@@ -61,6 +66,9 @@ body {
 
 .hov-black:hover { color: var(--darker); }
 .hov-black:active { color: black; }
+
+.hov-light:hover { color: var(--darkish); }
+.hov-light:active { color: var(--lightish); }
 
 .hov-bg-dark:hover { background-color: var(--lightish); }
 .hov-bg-dark:active { background-color: var(--darkish); }
@@ -79,7 +87,7 @@ flex-grow { flex-grow: 1; }
 .center { margin: auto; }
 .center-horizontal { margin-left: auto; margin-right: auto; }
 
-.shadow { box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15); }
+.shadow { box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15) !important; }
 
 /*Tooltips*/
 .tooltip {}
@@ -94,7 +102,7 @@ flex-grow { flex-grow: 1; }
     visibility: hidden;
 
     background-color: var(--darker);
-    color: #fff;
+    color: var(--lighter);
 
     text-align: center;
 
@@ -123,4 +131,8 @@ flex-grow { flex-grow: 1; }
     transform: scale(1.2);
 
     margin: auto;
+
+    height: 1em;
+
+    color: var(--dark-grey);
 }

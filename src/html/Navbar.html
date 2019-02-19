@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>The Rec - Page Header</title>
-</head>
-
-<!------ Outside Extensions ------>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-<!-- Iscroller -->
-<script type="text/javascript" src="js/iscroll.js"></script>
-
-<!-- Fuse -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"></script>
-
-<!-- Material Components -->
-<script src="@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-
-<!------ CSS Files ------>
-
-<link rel="stylesheet" type="text/css" href="../css/Navbar.css"/>
-<link rel="stylesheet" type="text/css" href="../css/Main.css"/>
-
-<!------ JS Files ------>
-
-<!--<script src="../js/Controllers/header.js"></script>-->
-
 <header id="nav_header">
-    <div id="header_bar_container" class="bg-light shadow">
+    <div class="header_bar_container">
 
         <div id="header_bar">
 
@@ -40,40 +9,40 @@
 
             <div id="nav_buttons" class="header_item">
 
-                <div id="home_button" class="nav_button hov-black">
-                    <h3 class="nav_button_text center">home</h3>
-
-                    <div class="nav_button_underline nav_button_underline-current"></div>
-                </div>
-
-                <div class="nav_divider">|</div>
-
-                <div id="my_recs_button" class="nav_button hov-black">
-                    <h3 class="nav_button_text center">my recs</h3>
+                <div id="home_button" class="nav_button nav_button-current">
+                    <h3 class="nav_button_text center hov-light ">home</h3>
 
                     <div class="nav_button_underline"></div>
                 </div>
 
                 <div class="nav_divider">|</div>
 
-                <div id="all_recs_button" class="nav_button hov-black">
-                    <h3 class="nav_button_text center">all recs</h3>
+                <div id="my_recs_button" class="nav_button">
+                    <h3 class="nav_button_text center hov-light">my recs</h3>
 
                     <div class="nav_button_underline"></div>
                 </div>
 
                 <div class="nav_divider">|</div>
 
-                <div id="watchlist_button" class="nav_button hov-black">
-                    <h3 class="nav_button_text center">watchlist</h3>
+                <div id="all_recs_button" class="nav_button">
+                    <h3 class="nav_button_text center hov-light">all recs</h3>
 
                     <div class="nav_button_underline"></div>
                 </div>
 
                 <div class="nav_divider">|</div>
 
-                <div id="my_posts_button" class="nav_button hov-black">
-                    <h3 class="nav_button_text center">my posts</h3>
+                <div id="watchlist_button" class="nav_button">
+                    <h3 class="nav_button_text center hov-light">watchlist</h3>
+
+                    <div class="nav_button_underline"></div>
+                </div>
+
+                <div class="nav_divider">|</div>
+
+                <div id="my_posts_button" class="nav_button">
+                    <h3 class="nav_button_text center hov-light">my posts</h3>
 
                     <div class="nav_button_underline"></div>
                 </div>
@@ -82,25 +51,25 @@
 
             <div id="nav_search">
                 <div id="nav_search_bar">
-                    <input id="nav_search_input">
+                    <input id="nav_search_input" placeholder="Search Recs...">
                 </div>
 
                 <div id="nav_search_icon" class="nav_icon">
-                    <i class="fas fa-search hov-black"></i>
+                    <i class="fas fa-search hov-light"></i>
                 </div>
             </div>
 
             <div id="nav_account" class="header_item">
                 <div id="nav_account_icon" class="nav_icon">
-                    <i class="far fa-user-circle hov-black"></i>
+                    <i class="far fa-user-circle hov-light"></i>
                 </div>
 
-                <div id="nav_account_dropdown" class="shadow">
-                    <div class="nav_account_dropdown_option hov-bg-dark">
+                <div class="nav_account_dropdown">
+                    <div id="my_account_button" class="nav_account_dropdown_option hov-bg-dark">
                         <i class="fas fa-user"></i>
                         <div>My Account</div>
                     </div>
-                    <div class="nav_account_dropdown_option hov-bg-dark">
+                    <div id="log_out_button" class="nav_account_dropdown_option hov-bg-dark">
                         <i class="fas fa-sign-out-alt"></i>
                         <div>Log Out</div>
                     </div>
@@ -109,5 +78,3 @@
         </div>
     </div>
 </header>
-
-</html>

@@ -4,12 +4,13 @@ node_js:
 before_script: 
  - cd src
  - npm install -g eslint --save-dev
- - npm install express --save
- - npm install mysql
- - npm install mocha --save
- - npm install chai --save
- - npm install request --save
- - npm install lit-element --save
- - npm install lit-html --save
+ - npm install express --save-dev
+ - npm install mysql --save-dev
+ - npm install mocha --save-dev
+ - npm install chai --save-dev
+ - npm install request --save-dev
+ - npm install lit-element --save-dev
+ - npm install lit-html --save-dev
+ - npm install nyc --save-dev
  - npm i @webcomponents/webcomponentsjs
  - cd ..
