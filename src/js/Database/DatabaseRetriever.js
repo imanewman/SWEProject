@@ -14,27 +14,71 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        let recObject = this.database.get("Rec", recId);
+        let recObject = {};
 
-        return this.factory.initializeRec(recObject);
+        $.ajax({
+            url: `Recs/${recId}`,
+            type: 'GET',
+            async: false,
+            success: (result) => {
+                recObject = result;
+            }
+        });
+
+        let rec = this.factory.initializeRec(recObject);
+
+        return rec;
     }
 
     getRecs() {
-        let recsObject = this.database.get("Rec");
+        let recsObject = {};
 
-        return this.factory.initializeRecList(recsObject);
+        $.ajax({
+            url: `Recs`,
+            type: 'GET',
+            async: false,
+            success: (result) => {
+                recsObject = result;
+            }
+        });
+
+        let recs = this.factory.initializeRecList(recsObject);
+
+        return recs;
     }
 
     getUser(userId) {
-        let userObject = this.database.get("User", userId);
+        let userObject = {};
 
-        return this.factory.initializeUser(userObject); //TODO: make different user types
+        $.ajax({
+            url: `Users/${userId}`,
+            type: 'GET',
+            async: false,
+            success: (result) => {
+                userObject = result;
+            }
+        });
+
+        let user = this.factory.initializeUser(userObject);
+
+        return user;
     }
 
     getPendingOrgaizers() {
-        let pendingOrganizersObject = this.database.get("PendingOrganizer");
+        let pendingOrganizersObject = {};
 
-        return this.factory.initializePendingOrganizerList(pendingOrganizersObject);
+        $.ajax({
+            url: `PendingOrganizers`,
+            type: 'GET',
+            async: false,
+            success: (result) => {
+                pendingOrganizersObject = result;
+            }
+        });
+
+        let pendingOrganizers = this.factory.initializePendingOrganizerList(pendingOrganizersObject);
+
+        return pendingOrganizers;
     }
 }
 

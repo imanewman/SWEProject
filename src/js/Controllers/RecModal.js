@@ -68,7 +68,6 @@ class RecModal {
 
     // updates the rec information currently displayed
     updateInfo() {
-        //TODO: add location on map
         //TODO: load image
         //TODO: make icon change based on event type
         $("#" + this.recId + " .rec_item_title h3").text(this.rec.getTitle());
@@ -76,6 +75,21 @@ class RecModal {
         $("#" + this.recId + " .rec_item_location h5").text(this.rec.getLocation());
         $("#" + this.recId + " .rec_item_details_description p").text(this.rec.getDescription());
         $("#" + this.recId + " .rec_item_details_rules p").text(this.rec.getRules());
+        $.get("./GoogleMapsLocations.html", (data) => {
+            let $element = $(data);
+
+            if (this.rec.getLocation()) {
+                let srcString = this.rec.getLocation().split(' ').join('%20');
+
+                $element.children('iframe').attr('src', srcString);
+            }
+
+            $("#" + this.recId + " .rec_item_map").append($element);
+
+        });
+        $("#" + this.recId + " .rec_item_picture img").attr('src',
+            'https://myeventmarket.com/wp-content/uploads/2018/06/Funny-Costume.png'
+        );
     }
 
     // displays this rec
