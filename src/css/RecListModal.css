@@ -424,9 +424,22 @@
     bottom: calc(var(--rec_item_active_height) * 0.9); /*not the right way to calculate this*/
 }
 
+.rec_item_picture {
+    opacity: 0;
+
+    transition: opacity 0.2s;
+    transition-delay: 0.2s;
+}
+
 .rec_item_active .rec_item_picture {
     width: var(--rec_item_active_details_indent);
     height: var(--rec_item_active_details_indent);
+
+    opacity: 1;
+}
+
+.rec_item_active .rec_item_picture img {
+    width: inherit;
 }
 
 .rec_item_active .rec_item_map {
@@ -448,9 +461,28 @@
     --mdc-theme-secondary: var(--blue);
 }
 
-/*.rec_item_rsvp_text {*/
-    /*position: relative;*/
-    /*right: 3.4em;*/
-    /*bottom: 3.2em;*/
-/*}*/
+/* Rec Location Map */
 
+.mapouter {
+    opacity: 0;
+
+    text-align:right;
+
+    height:inherit;
+
+    width:inherit;
+
+    transition: opacity 0.2s;
+    transition-delay: 0.2s;
+}
+
+.rec_item_active .mapouter { opacity: 1; }
+
+.gmap_canvas {
+    overflow:hidden;
+
+    background:none!important;
+
+    height:inherit;
+    width:inherit;
+}
