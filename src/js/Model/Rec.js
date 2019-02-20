@@ -99,8 +99,16 @@ class Rec {
     
     generateCalendarObj() {}
     
-    //TODO: once endTime is complete, create "<DATE>, from <STARTTIME> to <ENDTIME>"
-    getDateString() { this.date + ", from " + this.startTime + " to " + this.endTime }
+    // returns "<DATE>, from <STARTTIME> to <ENDTIME>"
+    getDateString() {
+	    if (this.date !== ''
+            && this.startTime !== '00:00:00'
+            && this.endTime !== '00:00:00') {
+            return this.date + ", from " + this.startTime + " to " + this.endTime;
+        } else {
+	        return "All Day";
+        }
+	}
 }
 
 export default Rec;

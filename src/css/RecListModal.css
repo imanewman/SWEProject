@@ -385,7 +385,7 @@
     left: 0em;
 
     width: 96%;
-    height: calc(var(--rec_item_height)*0.5);
+    height: calc(var(--rec_item_height)*0.58);
 
     padding-left: 2%;
     padding-right: 2%;
@@ -420,6 +420,34 @@
 .rec_item_active .rec_item_details_website,
 .rec_item_active .rec_item_rsvp  {
     visibility: visible;
+}
+
+.rec_item_details_description h3 {
+    /*display: none;*/
+    overflow: hidden;
+
+    height: 0;
+
+    opacity: 0;
+
+    transition: height 0.1s, opacity 0.1s linear 0.1s;
+}
+
+.rec_item_active .rec_item_details_description h3 {
+    /*display: block;*/
+    height: 1.1em;
+
+    opacity: 1;
+}
+
+.rec_item_details_description p {
+    position: relative;
+
+    bottom: 1em;
+}
+
+.rec_item_active .rec_item_details_description p {
+    bottom: 0em;
 }
 
 .rec_item_active .rec_item_side_pane {

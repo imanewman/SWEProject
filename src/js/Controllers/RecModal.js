@@ -1,3 +1,16 @@
+const TAG_ICON_MAP = {
+    'Farmers Market': 'fas fa-carrot',
+    'Hiking': 'fas fa-hiking',
+    'Festival': 'fas fa-guitar',
+    'Food': 'fas fa-utensils',
+    'Open Mic': 'fas fa-microphone',
+    'Career Fair': 'fas fa-user-tie',
+    'Trade Show': 'fas fa-store',
+    'Sports': 'fas fa-futbol',
+    'Charity Event': 'fas fa-hand-holding-heart',
+    'Convention': 'fas fa-users'
+};
+
 class RecModal {
     constructor(rec) {
         this.rec = rec;
@@ -71,19 +84,38 @@ class RecModal {
         //TODO: make icon change based on event type
 
         $("#" + this.recId + " .rec_item_title h3").text(this.rec.getTitle());
+
         $("#" + this.recId + " .rec_item_time h5").text(this.rec.getDateString());
+
         $("#" + this.recId + " .rec_item_location h5").text(this.rec.getLocation());
+
         $("#" + this.recId + " .rec_item_details_description p").text(this.rec.getDescription());
+
         $("#" + this.recId + " .rec_item_details_rules p").text(this.rec.getRules());
+
         $("#" + this.recId + " .rec_item_details_contact p").text(this.rec.getContactInfo());
+
         $("#" + this.recId + " .rec_item_details_website a")
             .text(this.rec.getWebsiteLink())
             .attr('href', this.rec.getWebsiteLink());
 
         this.updateMap();
         this.updateImage();
+        this.updateIcon();
     }
 
+    // updates the rec icon based on its tags
+    updateIcon() {
+        let tags = this.rec.getTags();
+
+        if (tags.length > 0 && tags[0] in TAG_ICON_MAP) {
+            let tagClasses = TAG_ICON_MAP[tags[0]]; // for now it just picks the first tag
+
+            $("#" + this.recId + " .rec_item_image i").removeClass().addClass(tagClasses);
+        }
+    }
+
+    // updates the rec image and crops it based on teh longer edge
     updateImage() {
         let $image = $("#" + this.recId + " .rec_item_picture img");
 
@@ -99,7 +131,7 @@ class RecModal {
     updateMap() {
         let location = this.rec.getLocation();
 
-        if (location && location !== '') {
+        if (location !== '') {
             let srcString = 'https://maps.google.com/maps?q='
                 + this.rec.getLocation().replace('%20')
                 + '&t=&z=13&ie=UTF8&iwloc=&output=embed';
@@ -152,17 +184,26 @@ class RecModal {
 
     // saves this rec to the users watchlist
     toggleSave() {
-        //TODO: toggle save on and off, animate toggle between icons
+        //TODO: toggle save on and off
+        let $saveIcon = $("#" + this.recId + " .save_button i");
+
+        this.toggleIconFill($saveIcon);
     }
 
     // opens up new window with location on google maps
     locate() {
-        //TODO: open location on map
+        let location = this.rec.getLocation();
+        let mapsLink = 'https://www.google.com/maps/search/' + location.replace(' ', '+');
+
+        window.open(mapsLink);
     }
 
     // reports this rec
     report() {
-        //TODO: create report modal and bring it up with this (a bit more intensive), sets icon to filled
+        //TODO: create report modal and bring it up with this (a bit more intensive)
+        let $reportIcon = $("#" + this.recId + " .report_button i");
+
+        this.toggleIconFill($reportIcon);
     }
 
     // shows the buttons for the recs owner
@@ -199,6 +240,15 @@ class RecModal {
     // rsvps to rec
     rsvp() {
         //TODO: rsvp to rec, also needs a new modal, will be more intensive
+    }
+
+    // toggles whether a FA icon is filled in
+    toggleIconFill($icon) {
+        if ($icon.hasClass("fas")) {
+            $icon.removeClass("fas").addClass("far");
+        } else {
+            $icon.removeClass("far").addClass("fas");
+        }
     }
 }
 

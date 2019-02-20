@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64139299-871f-41c1-bcb6-104bd910e68d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/css/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/RecListModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/RecListModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/Navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/RecListModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/RecListModal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/RecModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/RecModal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/Controllers/RecModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Controllers/RecModal.js" afterDir="false" />
@@ -60,8 +59,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/css/RecListModal.css">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="505">
-                    <caret line="453" column="23" lean-forward="true" selection-start-line="453" selection-start-column="23" selection-end-line="453" selection-end-column="23" />
+                  <state relative-caret-position="310">
+                    <caret line="422" column="1" lean-forward="true" selection-start-line="422" selection-start-column="1" selection-end-line="422" selection-end-column="1" />
                   </state>
                 </provider>
               </entry>
@@ -77,8 +76,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/html/index.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="105">
-                    <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                  <state relative-caret-position="120">
+                    <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
                   </state>
                 </provider>
               </entry>
@@ -95,8 +94,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/html/RecListModal.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-420">
-                    <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+                  <state relative-caret-position="585">
+                    <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
                   </state>
                 </provider>
               </entry>
@@ -104,17 +103,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/html/RecModal.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="366">
-                    <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/html/material_design.html">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="720">
-                    <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+                  <state relative-caret-position="75">
+                    <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
                   </state>
                 </provider>
               </entry>
@@ -128,9 +118,9 @@
     <session id="1604374862">
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="112" />
-          <entry key="HTML" value="50" />
-          <entry key="JavaScript" value="943" />
+          <entry key="CSS" value="282" />
+          <entry key="HTML" value="149" />
+          <entry key="JavaScript" value="2016" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -164,20 +154,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="129" column="150" selection-start-line="129" selection-start-column="150" selection-end-line="129" selection-end-column="150" />
+            <state relative-caret-position="120">
+              <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state relative-caret-position="199">
+              <caret line="110" column="12" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -185,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Model/Rec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="-11">
+              <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -273,18 +263,18 @@
         <option value="$PROJECT_DIR$/src/html/index.html" />
         <option value="$PROJECT_DIR$/src/js/Controllers/MainController.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/Displayable.js" />
-        <option value="$PROJECT_DIR$/src/html/RecListModal.html" />
         <option value="$PROJECT_DIR$/src/js/Controllers/Navbar.js" />
         <option value="$PROJECT_DIR$/src/html/GoogleMapsLocations.html" />
         <option value="$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js" />
         <option value="$PROJECT_DIR$/src/html/Navbar.html" />
-        <option value="$PROJECT_DIR$/src/js/Model/Rec.js" />
-        <option value="$PROJECT_DIR$/src/html/RecModal.html" />
         <option value="$PROJECT_DIR$/src/css/Main.css" />
         <option value="$PROJECT_DIR$/src/css/Navbar.css" />
+        <option value="$PROJECT_DIR$/src/html/RecModal.html" />
         <option value="$PROJECT_DIR$/src/css/RecListModal.css" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecModal.js" />
+        <option value="$PROJECT_DIR$/src/html/RecListModal.html" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" />
+        <option value="$PROJECT_DIR$/src/js/Model/Rec.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecModal.js" />
       </list>
     </option>
   </component>
@@ -439,7 +429,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148678000" />
+    <option name="totallyTimeSpent" value="152079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,7 +444,7 @@
     <frame x="0" y="-1" width="1080" height="960" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2098646" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2098646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -469,7 +459,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32934132" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28862277" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.28862277" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -644,13 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/material_design.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/Displayable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -700,31 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/RecListModal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/html/GoogleMapsLocations.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Model/Rec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/RecModal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -742,31 +704,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/material_design.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/RecModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/RecListModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/RecListModal.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="453" column="23" lean-forward="true" selection-start-line="453" selection-start-column="23" selection-end-line="453" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="310">
+          <caret line="422" column="1" lean-forward="true" selection-start-line="422" selection-start-column="1" selection-end-line="422" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="129" column="150" selection-start-line="129" selection-start-column="150" selection-end-line="129" selection-end-column="150" />
+        <state relative-caret-position="120">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Model/Rec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="77" column="42" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="110" column="12" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
         </state>
       </provider>
     </entry>

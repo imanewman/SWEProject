@@ -125,7 +125,7 @@ let testRecs = [
         "Thursday, Febuary 21, 2019",
         "6:00 PM",
         "9:00 PM",
-        [],
+        ['Farmers Market'],
         true,
         "For more information about Downtown SLO Farmers’ Market please contact our Market Manager at (805) 541-0286 ext. 2 or farmers@DowntownSLO.com",
         "https://downtownslo.com/farmers-market/",
