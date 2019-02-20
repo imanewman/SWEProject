@@ -385,7 +385,7 @@
     left: 0em;
 
     width: 96%;
-    height: calc(var(--rec_item_height)*0.58);
+    height: calc(var(--rec_item_height)*0.56);
 
     padding-left: 2%;
     padding-right: 2%;

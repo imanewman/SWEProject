@@ -7,10 +7,12 @@ const TAG_ICON_MAP = {
     'Career Fair': 'fas fa-user-tie',
     'Trade Show': 'fas fa-store',
     'Sports': 'fas fa-futbol',
-    'Charity Event': 'fas fa-hand-holding-heart',
-    'Convention': 'fas fa-users'
+    'Charity': 'fas fa-hand-holding-heart',
+    'Convention': 'fas fa-users',
+    'Speech': 'fas fa-comments'
 };
 
+//TODO: add owner info
 class RecModal {
     constructor(rec) {
         this.rec = rec;
@@ -42,6 +44,11 @@ class RecModal {
 
                     // display the rec
                     this.display();
+
+                    //TODO: put user id in local storage
+                    if (testOwner || localStorage.getItem("userId")) {
+                        this.showOwnerButtons();
+                    }
                 });
             });
         });
@@ -76,6 +83,10 @@ class RecModal {
 
         $("#" + this.recId + " .hide_button").click( () => {
             this.toggleDraft();
+        });
+
+        $("#" + this.recId + " .rec_item_rsvp").click( () => {
+            this.rsvp();
         });
     }
 
@@ -209,6 +220,8 @@ class RecModal {
     // shows the buttons for the recs owner
     showOwnerButtons() {
         //TODO: call if the user owns this rec to show editing buttons
+        $("#" + this.recId + " .rec_item_buttons_public").hide();
+        $("#" + this.recId + " .rec_item_buttons_owner").css('display', 'flex');
     }
 
     // edits this rec
@@ -234,7 +247,7 @@ class RecModal {
 
     // toggles rec between published and hidden
     toggleDraft() {
-        //TODO: hides this rec from the public by setting it to draft. changes icon to publish
+        //TODO: hides this rec from the public by setting it to draft
     }
 
     // rsvps to rec
@@ -242,7 +255,7 @@ class RecModal {
         //TODO: rsvp to rec, also needs a new modal, will be more intensive
     }
 
-    // toggles whether a FA icon is filled in
+    // toggles whether an FA icon is filled in
     toggleIconFill($icon) {
         if ($icon.hasClass("fas")) {
             $icon.removeClass("fas").addClass("far");
@@ -252,6 +265,8 @@ class RecModal {
     }
 }
 
+let testOwner = false;
+
 export default RecModal;
 
-//TODO: maybe make a defualt button class and make a class for each type with a ref to this RecModal
+//TODO: maybe make a default button class and make a class for each type with a ref to this RecModal

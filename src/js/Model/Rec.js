@@ -13,6 +13,7 @@ class Rec {
         websiteLink,
         imageLink,
         rules,
+        ownerId,
         newFields
     ) {
         this.id = id || '1';
@@ -28,6 +29,7 @@ class Rec {
 		this.contactInfo = contactInfo || '';
 		this.websiteLink = websiteLink || '';
         this.imageLink = imageLink || '';
+        this.ownerId = ownerId || '';
 		this.newFields = newFields || {};
 	}
 
@@ -104,11 +106,29 @@ class Rec {
 	    if (this.date !== ''
             && this.startTime !== '00:00:00'
             && this.endTime !== '00:00:00') {
-            return this.date + ", from " + this.startTime + " to " + this.endTime;
+	        let startStr = this.convertTime(this.startTime);
+            let endStr = this.convertTime(this.endTime);
+
+            return this.date + " from " + startStr + " to " + endStr;
         } else {
 	        return "All Day";
         }
 	}
+
+	convertTime(timeStr) {
+	    let timeParts = timeStr.split(':');
+
+	    var hour = timeParts[0];
+	    let min = timeParts[1];
+	    var partOfDay = 'AM';
+
+	    if (hour > 12) {
+	        hour -= 12;
+	        partOfDay = 'PM';
+        }
+
+	    return hour + ':' + min + ' ' + partOfDay;
+    }
 }
 
 export default Rec;
