@@ -1,37 +1,34 @@
 class Rec {
-
-    //TODO: add functionality to auto update recs in database when edited
-    //TODO: remove duration, add endTime
-	
 	constructor(
 	    id,
 	    title,
 	    description,
 	    location,
-    date,
-        duration,
+        date,
         startTime,
         endTime,
         tags,
         draft,
         contactInfo,
         websiteLink,
+        imageLink,
         rules,
         newFields
     ) {
-		this.location = location;
-		this.date = date;
-		this.duration =	duration;
-		this.startTime = startTime;
-		this.tags = tags;
-		this.draft = draft;
-		this.contactInfo = contactInfo;
-		this.websiteLink = websiteLink;
-		this.newFields = newFields;
-		this.title = title;
-		this.id = id;
-		this.description = description;
-		this.rules = rules;
+        this.id = id || '1';
+        this.title = title || 'Rec Title';
+        this.description = description || 'No Description';
+        this.rules = rules || '';
+		this.location = location || '';
+		this.date = date || '';
+		this.startTime = startTime || '00:00:00';
+		this.endTime = endTime || '00:00:00';
+		this.tags = tags || [];
+		this.draft = draft || true;
+		this.contactInfo = contactInfo || '';
+		this.websiteLink = websiteLink || '';
+        this.imageLink = imageLink || '';
+		this.newFields = newFields || {};
 	}
 
     getId() { return this.id; }
@@ -60,6 +57,10 @@ class Rec {
 
     setStartTime(startTime) { this.startTime = startTime; }
 
+    getEndTime() { return this.endTime; }
+
+    setEndTime(endTime) { this.endTime = endTime; }
+
     getTags() { return this.tags; }
 
     addTags(tags) { this.tags = tags; }
@@ -82,6 +83,14 @@ class Rec {
 
     setRules(rules) { this.rules = rules; }
 
+    getWebsiteLink() { return this.websiteLink; }
+
+    setWebsiteLink(link) { this.websiteLink = link; }
+
+    getImageLink() { return this.imageLink; }
+
+    setImageLink(link) { this.imageLink = link; }
+
     getNewFields() { return this.newFields; }
 
     addNewField(fieldName, fieldValue) { this.newFields[fieldName] = fieldValue; }
@@ -91,7 +100,7 @@ class Rec {
     generateCalendarObj() {}
     
     //TODO: once endTime is complete, create "<DATE>, from <STARTTIME> to <ENDTIME>"
-    getDateString() { this.date + ", from " + this.startTime + " to " }
+    getDateString() { this.date + ", from " + this.startTime + " to " + this.endTime }
 }
 
 export default Rec;

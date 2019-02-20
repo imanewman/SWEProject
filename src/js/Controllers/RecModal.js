@@ -68,28 +68,46 @@ class RecModal {
 
     // updates the rec information currently displayed
     updateInfo() {
-        //TODO: load image
         //TODO: make icon change based on event type
+
         $("#" + this.recId + " .rec_item_title h3").text(this.rec.getTitle());
-        //$("#" + this.recId + " .rec_item_time h5").text(this.rec.getDateString());
+        $("#" + this.recId + " .rec_item_time h5").text(this.rec.getDateString());
         $("#" + this.recId + " .rec_item_location h5").text(this.rec.getLocation());
         $("#" + this.recId + " .rec_item_details_description p").text(this.rec.getDescription());
         $("#" + this.recId + " .rec_item_details_rules p").text(this.rec.getRules());
-        $.get("./GoogleMapsLocations.html", (data) => {
-            let $element = $(data);
+        $("#" + this.recId + " .rec_item_details_contact p").text(this.rec.getContactInfo());
+        $("#" + this.recId + " .rec_item_details_website a")
+            .text(this.rec.getWebsiteLink())
+            .attr('href', this.rec.getWebsiteLink());
 
-            if (this.rec.getLocation()) {
-                let srcString = this.rec.getLocation().split(' ').join('%20');
+        this.updateMap();
+        this.updateImage();
+    }
 
-                $element.children('iframe').attr('src', srcString);
-            }
+    updateImage() {
+        let $image = $("#" + this.recId + " .rec_item_picture img");
 
-            $("#" + this.recId + " .rec_item_map").append($element);
+        let fillClass = ($image.height() > $image.width())
+            ? 'fillheight'
+            : 'fillwidth';
 
-        });
-        $("#" + this.recId + " .rec_item_picture img").attr('src',
-            'https://myeventmarket.com/wp-content/uploads/2018/06/Funny-Costume.png'
-        );
+        $image.attr('src',this.rec.getImageLink());
+        $image.removeClass("fillheight fillwidth").addClass(fillClass);
+    }
+
+    // updates the map based on the recs location
+    updateMap() {
+        let location = this.rec.getLocation();
+
+        if (location && location !== '') {
+            let srcString = 'https://maps.google.com/maps?q='
+                + this.rec.getLocation().replace('%20')
+                + '&t=&z=13&ie=UTF8&iwloc=&output=embed';
+
+            $("#" + this.recId + " .rec_item_map iframe").attr('src', srcString);
+        } else {
+            $("#" + this.recId + " .rec_item_map").css('visibility', 'hidden');
+        }
     }
 
     // displays this rec

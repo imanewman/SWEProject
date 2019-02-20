@@ -117,12 +117,25 @@ class RecListModal {
 let test = true;
 
 let testRecs = [
-    new Rec("0000001"),
+    new Rec(
+        "0000001",
+        "Downtown SLO Farmers Market",
+        "The Downtown SLO Farmers’ Market is undoubtedly one of the most treasured events on the Central Coast and has a long history of bringing locals and visitors together to eat, shop, listen to music and connect with their community.\nThe Market takes place every Thursday evening from 6:00 PM to 9:00 PM (weather permitting and excluding major holidays) on Higuera Street between Nipomo and Osos streets.",
+        "Higuera Street, San Luis Obispo, CA",
+        "Thursday, Febuary 21, 2019",
+        "6:00 PM",
+        "9:00 PM",
+        [],
+        true,
+        "For more information about Downtown SLO Farmers’ Market please contact our Market Manager at (805) 541-0286 ext. 2 or farmers@DowntownSLO.com",
+        "https://downtownslo.com/farmers-market/",
+        'https://downtownslo.com/wp-content/uploads/2019/02/2.21.19-821x1024.jpg',
+        "California Health & Safety Code 114259.5 stipulates that live animals aren’t allowed in certified farmers markets (such as ours) and permitted food facilities, with the exception of service animals. Fraudulently misrepresenting service animals is a misdemeanor (California Penal Code 365.7 [a]). Please, leave your pets at home to keep our Market clean and safe for all guests.",
+        {}
+    ),
     new Rec("0000002"),
     new Rec("0000003"),
-    new Rec("0000004"),
-    new Rec("0000005"),
-    new Rec("0000006"),
+    new Rec("0000004")
 ];
 
 export {

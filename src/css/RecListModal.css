@@ -406,6 +406,8 @@
 
 .rec_item_side_pane,
 .rec_item_details_rules,
+.rec_item_details_contact,
+.rec_item_details_website,
 .rec_item_rsvp  {
     visibility: hidden;
 
@@ -414,6 +416,8 @@
 
 .rec_item_active .rec_item_side_pane,
 .rec_item_active .rec_item_details_rules,
+.rec_item_active .rec_item_details_contact,
+.rec_item_active .rec_item_details_website,
 .rec_item_active .rec_item_rsvp  {
     visibility: visible;
 }
@@ -422,9 +426,17 @@
     position: relative;
 
     bottom: calc(var(--rec_item_active_height) * 0.9); /*not the right way to calculate this*/
+
+    width: var(--rec_item_active_details_indent);
+
 }
 
 .rec_item_picture {
+    border-bottom: 1px solid var(--lightish);
+
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+
     opacity: 0;
 
     transition: opacity 0.2s;
@@ -439,7 +451,8 @@
 }
 
 .rec_item_active .rec_item_picture img {
-    width: inherit;
+    /*width: inherit;*/
+    /*margin-top: 3em; !*not permanent!*!*/
 }
 
 .rec_item_active .rec_item_map {
@@ -450,7 +463,7 @@
 .rec_item_active .rec_item_rsvp {
     position: relative;
 
-    bottom: 38em;
+    bottom: 39em;
     left: calc(var(--rec_item_active_width) - 4em);
 }
 
@@ -485,4 +498,9 @@
 
     height:inherit;
     width:inherit;
+}
+
+.gmap {
+    width: inherit;
+    height: inherit;
 }
