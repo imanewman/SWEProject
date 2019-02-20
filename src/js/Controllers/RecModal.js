@@ -1,4 +1,13 @@
-//TODO: add owner info
+import SaveRecButton from './RecButtons/SaveRecButton.js';
+import LocateRecButton from './RecButtons/LocateRecButton.js';
+import ReportRecButton from './RecButtons/ReportRecButton.js';
+import ExpandRecButton from './RecButtons/ExpandRecButton.js';
+import EditRecButton from './RecButtons/EditRecButton.js';
+import DeleteRecButton from './RecButtons/DeleteRecButton.js';
+import HideRecButton from './RecButtons/HideRecButton.js';
+import RsvpRecButton from './RecButtons/RsvpRecButton.js';
+
+//TODO: add owner info, tags
 class RecModal {
     constructor(rec) {
         this.rec = rec;
@@ -20,16 +29,6 @@ class RecModal {
             'Speech': 'fas fa-comments'
         };
 
-        this.editableElementSelectors = [
-            '.rec_item_title h3',
-            '.rec_item_time h5',
-            '.rec_item_location h5',
-            '.rec_item_details_description p',
-            '.rec_item_details_rules p',
-            '.rec_item_details_contact p',
-            '.rec_item_details_website a'
-        ];
-
         this.attach();
     }
 
@@ -47,7 +46,7 @@ class RecModal {
                     // add it to the rec list
                     $("#rec_items").append(recElement);
 
-                    // attach controller functions to elements
+                    // attach controller functions to buttons
                     this.attachFunctions();
 
                     // update the rec info
@@ -57,7 +56,7 @@ class RecModal {
                     this.display();
 
                     //TODO: put user id in local storage
-                    if (testOwner || localStorage.getItem("userId")) {
+                    if (localStorage.getItem("userId") == this.rec.getOwnerId()) {
                         this.showOwnerButtons();
                     }
                 });
@@ -65,40 +64,16 @@ class RecModal {
         });
     }
 
-    // attaches functions for controlling each button
+    // adds all buttons, which attaches click handlers
     attachFunctions() {
-        // expand/collapse when arrow is clicked
-        $("#" + this.recId + " .rec_item_button_dropdown i").click( () => {
-            this.toggleExpand();
-        });
-
-        $("#" + this.recId + " .save_button").click( () => {
-            this.toggleSave();
-        });
-
-        $("#" + this.recId + " .map_button").click( () => {
-            this.locate();
-        });
-
-        $("#" + this.recId + " .report_button").click( () => {
-            this.report();
-        });
-
-        $("#" + this.recId + " .edit_button").click( () => {
-            this.toggleEdit();
-        });
-
-        $("#" + this.recId + " .delete_button").click( () => {
-            this.delete();
-        });
-
-        $("#" + this.recId + " .hide_button").click( () => {
-            this.toggleDraft();
-        });
-
-        $("#" + this.recId + " .rec_item_rsvp").click( () => {
-            this.rsvp();
-        });
+        this.expandButton = new ExpandRecButton(this);
+        this.saveButton = new SaveRecButton(this);
+        this.locateButton = new LocateRecButton(this);
+        this.reportButton = new ReportRecButton(this);
+        this.editButton = new EditRecButton(this);
+        this.deleteButton = new DeleteRecButton(this);
+        this.hideButton = new HideRecButton(this);
+        this.rsvpButton = new RsvpRecButton(this);
     }
 
     // updates the rec information currently displayed
@@ -164,38 +139,19 @@ class RecModal {
         }
     }
 
+    // returns the associated rec
+    getRec() { return this.rec; }
+
     // displays this rec
     display(callback = () => {}) {
-        //TODO: display this rec
+        //TODO: display this rec, animate
         $("#" + this.recId).fadeIn(this.displaySpeed, callback);
     }
 
     // hides this rec
     hide(callback = () => {}) {
-        //TODO: hide this rec, ie: when filtered out during search
+        //TODO: hide this rec, aniamte, ie: when filtered out during search
         $("#" + this.recId).fadeOut(this.displaySpeed, callback);
-    }
-
-    // toggles whether the rec is open
-    toggleExpand() {
-        if ($("#" + this.recId).hasClass("rec_item_active")) {
-            this.collapse();
-        } else {
-            this.expand();
-        }
-    }
-
-    // expands this rec and collapses others
-    expand() {
-        //TODO: center scroll on this rec when it expands
-        $(".rec_item").removeClass("rec_item_active");
-
-        $("#" + this.recId).addClass("rec_item_active");
-    }
-
-    // collapses the rec
-    collapse() {
-        $("#" + this.recId).removeClass("rec_item_active")
     }
 
     // removes this rec from the list
@@ -207,107 +163,20 @@ class RecModal {
         this.hide(removeRec);
     }
 
-    // saves this rec to the users watchlist
-    toggleSave() {
-        //TODO: toggle save on and off
-        let $saveIcon = $("#" + this.recId + " .save_button i");
-
-        this.toggleIconFill($saveIcon);
-    }
-
-    // opens up new window with location on google maps
-    locate() {
-        let location = this.rec.getLocation();
-        let mapsLink = 'https://www.google.com/maps/search/' + location.replace(' ', '+');
-
-        window.open(mapsLink);
-    }
-
-    // reports this rec
-    report() {
-        //TODO: create report modal and bring it up with this (a bit more intensive)
-        let $reportIcon = $("#" + this.recId + " .report_button i");
-
-        this.toggleIconFill($reportIcon);
-    }
-
     // shows the buttons for the recs owner
     showOwnerButtons() {
         //TODO: call if the user owns this rec to show editing buttons
+        //TODO: be able to switch between public, owner, edit buttons with this
         $("#" + this.recId + " .rec_item_buttons_public").hide();
         $("#" + this.recId + " .rec_item_buttons_owner").css('display', 'flex');
-    }
-
-    // toggles editing this rec
-    toggleEdit() {
-        //TODO: maybe apply state pattern between view/edit mode?
-        if (this.editing) {
-            this.viewMode();
-        } else {
-            this.editMode();
-        }
-    }
-
-    // sets the rec to edit mode
-    editMode() {
-        $("#" + this.recId).addClass("rec_item_editable");
-
-        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
-            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
-                .attr('contenteditable', 'true');
-        }
-
-        this.editing = true;
-    }
-
-    //sets the rec to view mode
-    viewMode() {
-        $("#" + this.recId).removeClass("rec_item_editable");
-
-        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
-            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
-                .attr('contenteditable', 'false');
-        }
-
-        this.editing = false;
-    }
-
-    // saves this rec after editing
-    saveEdit() {
-        //TODO: add save button in edit mode and implement this
-    }
-
-    // aborts an edit
-    abortEdit() {
-        //TODO: add discard button in edit mode and implement this
-    }
-
-    // deletes this rec
-    delete() {
-        //TODO: deletes this rec after confirming with the user
-    }
-
-    // toggles rec between published and hidden
-    toggleDraft() {
-        //TODO: hides this rec from the public by setting it to draft
-    }
-
-    // rsvps to rec
-    rsvp() {
-        //TODO: rsvp to rec, also needs a new modal, will be more intensive
-    }
-
-    // toggles whether an FA icon is filled in
-    toggleIconFill($icon) {
-        if ($icon.hasClass("fas")) {
-            $icon.removeClass("fas").addClass("far");
-        } else {
-            $icon.removeClass("far").addClass("fas");
-        }
     }
 }
 
 let testOwner = true;
+
+if (testOwner) {
+    localStorage.setItem("userId", "1000000");
+}
 
 export default RecModal;
 

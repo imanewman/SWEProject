@@ -1,7 +1,10 @@
 class RecButton {
-    constructor(rec) {
-        this.rec = rec;
-        this.recId = rec.getId();
+    constructor(recModal) {
+        this.recModal = recModal;
+        this.rec = recModal.getRec();
+        this.recId = this.rec.getId();
+
+        this.attach();
     }
 
     attach() {}
@@ -18,4 +21,4 @@ class RecButton {
     }
 }
 
-default export RecButton;
+export default RecButton;

@@ -31,11 +31,11 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/html/index.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="793">
-                    <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+                  <state relative-caret-position="161">
+                    <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
                   </state>
                 </provider>
               </entry>
@@ -58,7 +58,7 @@
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/html/RecModal.html">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="75">
@@ -112,14 +112,18 @@
           <leaf>
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RecButton.js">
-                <provider selected="true" editor-type-id="text-editor" />
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="323">
+                    <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+                  </state>
+                </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveRecButton.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="272">
-                    <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+                  <state>
+                    <caret selection-end-line="23" selection-end-column="29" />
                   </state>
                 </provider>
               </entry>
@@ -127,8 +131,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/LocateRecButton.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state>
-                    <caret selection-end-line="16" selection-end-column="31" />
+                  <state relative-caret-position="289">
+                    <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
                   </state>
                 </provider>
               </entry>
@@ -136,26 +140,26 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/ReportRecButton.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="272">
-                    <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/EditRecButton.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="272">
-                    <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+                  <state relative-caret-position="119">
+                    <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/DeleteRecButton.js">
+              <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/EditRecButton.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="272">
-                    <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+                  <state relative-caret-position="841">
+                    <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/ExpandRecButton.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="153">
+                    <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
                   </state>
                 </provider>
               </entry>
@@ -191,8 +195,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2193">
-              <caret line="225" column="2" selection-start-line="225" selection-start-column="2" selection-end-line="225" selection-end-column="2" />
+            <state relative-caret-position="832">
+              <caret line="226" column="2" lean-forward="true" selection-start-line="226" selection-start-column="2" selection-end-line="226" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -200,8 +204,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="187" column="36" lean-forward="true" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
+            <state relative-caret-position="696">
+              <caret line="58" column="81" selection-start-line="58" selection-start-column="81" selection-end-line="58" selection-end-column="81" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,8 +216,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/Model/Rec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state relative-caret-position="527">
+              <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -261,10 +268,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/TestRunner.js" />
-        <option value="$PROJECT_DIR$/src/test/DatabaseConnectorTest.js" />
-        <option value="$PROJECT_DIR$/src/Database.js" />
-        <option value="$PROJECT_DIR$/src/html/header.html" />
         <option value="$PROJECT_DIR$/src/css/main.css" />
         <option value="$PROJECT_DIR$/src/css/header.css" />
         <option value="$PROJECT_DIR$/src/css/login.css" />
@@ -291,11 +294,8 @@
         <option value="$PROJECT_DIR$/src/css/Main.css" />
         <option value="$PROJECT_DIR$/src/css/Navbar.css" />
         <option value="$PROJECT_DIR$/src/html/RecModal.html" />
-        <option value="$PROJECT_DIR$/src/js/Model/Rec.js" />
         <option value="$PROJECT_DIR$/src/html/RecListModal.html" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" />
         <option value="$PROJECT_DIR$/src/css/RecListModal.css" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecModal.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecButton.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/SaveButton.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/LocateButton.js" />
@@ -304,14 +304,21 @@
         <option value="$PROJECT_DIR$/src/js/Controllers/DeleteRecButton.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/HideRecButton.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveEditButton.js" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/DiscrardEditRecButton.js" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/RevertEditRecButton.js" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/RecButton.js" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/LocateRecButton.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveRecButton.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/ReportRecButton.js" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/EditRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/LocateRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/ExpandRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/HideRecButton.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/DeleteRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/DiscrardEditRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/RevertEditRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveEditRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/RsvpRecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/RecButton.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecModal.js" />
+        <option value="$PROJECT_DIR$/src/js/Model/Rec.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/EditRecButton.js" />
       </list>
     </option>
   </component>
@@ -410,7 +417,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550692839443" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550703612716" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -466,12 +473,12 @@
       <workItem from="1550457978460" duration="9109000" />
       <workItem from="1550532017666" duration="2582000" />
       <workItem from="1550680647519" duration="2458000" />
-      <workItem from="1550691982083" duration="665000" />
+      <workItem from="1550691982083" duration="3366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159826000" />
+    <option name="totallyTimeSpent" value="162527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -556,14 +563,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/HttpServer.js" />
-    <entry file="file://$PROJECT_DIR$/src/js/RestOperations/Recs/recs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/RestOperations/Users/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -725,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="225" column="2" selection-start-line="225" selection-start-column="2" selection-end-line="225" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/html/Navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -753,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
-          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/Main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2261">
@@ -774,16 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="187" column="36" lean-forward="true" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveEditRecButton.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/html/RecModal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -791,57 +766,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/DiscrardEditRecButton.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RevertEditRecButton.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Model/Rec.js">
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/ReportRecButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/HideRecButton.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RecButton.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveRecButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/LocateRecButton.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="16" selection-end-column="31" />
+          <caret selection-end-line="23" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/ReportRecButton.js">
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RevertEditRecButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/EditRecButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="323">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/DeleteRecButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="323">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/HideRecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/ExpandRecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveEditRecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/DiscrardEditRecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RsvpRecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/LocateRecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="226" column="2" lean-forward="true" selection-start-line="226" selection-start-column="2" selection-end-line="226" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="58" column="81" selection-start-line="58" selection-start-column="81" selection-end-line="58" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Model/Rec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/EditRecButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
         </state>
       </provider>
     </entry>

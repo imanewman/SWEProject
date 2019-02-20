@@ -35,6 +35,8 @@ class Rec {
 
     getId() { return this.id; }
 
+    getOwnerId() { return this.ownerId; }
+
     getTitle() { return this.title; }
 
     setTitle(title) { this.title = title; }

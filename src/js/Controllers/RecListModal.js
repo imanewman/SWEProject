@@ -148,7 +148,7 @@ let testRecs = [
         "https://www.microsoft.com/en-us/research/people/mlg/",
         'https://www.pacslo.org/ArticleMedia/Images/PAC/Site/PAC_SLO_logo.jpg',
         "None Specified",
-        "1000000",
+        "1000001",
         {}
     ),
     new Rec(
@@ -165,7 +165,7 @@ let testRecs = [
         "https://www.7sistersbrewing.com/events-page",
         'https://static1.squarespace.com/static/595591b09f7456c3e0135686/59df60232994caa6a873399c/5c5eee8853450a883a16d178/1549725383822/cassi+nichols.jpg',
         "None Specified",
-        "1000000",
+        "1000001",
         {}
     ),
     new Rec(
@@ -182,7 +182,7 @@ let testRecs = [
         "https://www.gopoly.com/sports/mbkb/2018-19/schedule#",
         "https://sportsfly.cbsistatic.com/bundles/sportsmediacss/images/team-logos/ncaa/CPOLY.svg",
         "None Specified",
-        "1000000",
+        "1000001",
         {}
     ),
     new Rec(
@@ -199,6 +199,7 @@ let testRecs = [
         "https://www.eventbrite.com/e/lyceum-mental-health-awards-education-luncheon-tickets-55295189400?aff=ebdssbdestsearch",
         "https://storage.googleapis.com/cccslo-org/uploads/lyceum2.png",
         "Tickets: $50.00",
+        "1000000",
         {}
     ),
     new Rec(

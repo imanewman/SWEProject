@@ -1,13 +1,13 @@
 import RecButton from "./RecButton.js";
 
-class HideRecButton extends RecButton {
+class RsvpRecButton extends RecButton {
     constructor(rec) {
         super(rec);
     }
 
-    // attaches click handler to hide button
+    // attaches click handler to rsvp button
     attach() {
-        $("#" + this.recId + " .hide_button").click( () => {
+        $("#" + this.recId + " .rsvp_button").click( () => {
             this.click();
         });
     }
@@ -17,4 +17,4 @@ class HideRecButton extends RecButton {
     }
 }
 
-export default HideRecButton;
+export default RsvpRecButton;

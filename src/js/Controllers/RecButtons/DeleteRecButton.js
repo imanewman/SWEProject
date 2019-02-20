@@ -5,8 +5,11 @@ class DeleteRecButton extends RecButton {
         super(rec);
     }
 
+    // attaches click handler to delete button
     attach() {
-
+        $("#" + this.recId + " .delete_button").click( () => {
+            this.click();
+        });
     }
 
     click() {
