@@ -1,23 +1,34 @@
-const TAG_ICON_MAP = {
-    'Farmers Market': 'fas fa-carrot',
-    'Hiking': 'fas fa-hiking',
-    'Festival': 'fas fa-guitar',
-    'Food': 'fas fa-utensils',
-    'Open Mic': 'fas fa-microphone',
-    'Career Fair': 'fas fa-user-tie',
-    'Trade Show': 'fas fa-store',
-    'Sports': 'fas fa-futbol',
-    'Charity': 'fas fa-hand-holding-heart',
-    'Convention': 'fas fa-users',
-    'Speech': 'fas fa-comments'
-};
-
 //TODO: add owner info
 class RecModal {
     constructor(rec) {
         this.rec = rec;
         this.recId = this.rec.getId();
         this.displaySpeed = 200;
+        this.editing = false;
+
+        this.tagIconMap = {
+            'Farmers Market': 'fas fa-carrot',
+            'Hiking': 'fas fa-hiking',
+            'Festival': 'fas fa-guitar',
+            'Food': 'fas fa-utensils',
+            'Open Mic': 'fas fa-microphone',
+            'Career Fair': 'fas fa-user-tie',
+            'Trade Show': 'fas fa-store',
+            'Sports': 'fas fa-futbol',
+            'Charity': 'fas fa-hand-holding-heart',
+            'Convention': 'fas fa-users',
+            'Speech': 'fas fa-comments'
+        };
+
+        this.editableElementSelectors = [
+            '.rec_item_title h3',
+            '.rec_item_time h5',
+            '.rec_item_location h5',
+            '.rec_item_details_description p',
+            '.rec_item_details_rules p',
+            '.rec_item_details_contact p',
+            '.rec_item_details_website a'
+        ];
 
         this.attach();
     }
@@ -74,7 +85,7 @@ class RecModal {
         });
 
         $("#" + this.recId + " .edit_button").click( () => {
-            this.edit();
+            this.toggleEdit();
         });
 
         $("#" + this.recId + " .delete_button").click( () => {
@@ -119,8 +130,8 @@ class RecModal {
     updateIcon() {
         let tags = this.rec.getTags();
 
-        if (tags.length > 0 && tags[0] in TAG_ICON_MAP) {
-            let tagClasses = TAG_ICON_MAP[tags[0]]; // for now it just picks the first tag
+        if (tags.length > 0 && tags[0] in this.tagIconMap) {
+            let tagClasses = this.tagIconMap[tags[0]]; // for now it just picks the first tag
 
             $("#" + this.recId + " .rec_item_image i").removeClass().addClass(tagClasses);
         }
@@ -189,8 +200,11 @@ class RecModal {
 
     // removes this rec from the list
     remove() {
-        this.hide();
-        //TODO: remove this rec
+        let removeRec = () => {
+            $("#" + this.recId).remove();
+        };
+
+        this.hide(removeRec);
     }
 
     // saves this rec to the users watchlist
@@ -224,10 +238,38 @@ class RecModal {
         $("#" + this.recId + " .rec_item_buttons_owner").css('display', 'flex');
     }
 
-    // edits this rec
-    edit() {
-        //TODO: allow in-place editing if the user is the owner
+    // toggles editing this rec
+    toggleEdit() {
         //TODO: maybe apply state pattern between view/edit mode?
+        if (this.editing) {
+            this.viewMode();
+        } else {
+            this.editMode();
+        }
+    }
+
+    // sets the rec to edit mode
+    editMode() {
+        $("#" + this.recId).addClass("rec_item_editable");
+
+        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
+            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
+                .attr('contenteditable', 'true');
+        }
+
+        this.editing = true;
+    }
+
+    //sets the rec to view mode
+    viewMode() {
+        $("#" + this.recId).removeClass("rec_item_editable");
+
+        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
+            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
+                .attr('contenteditable', 'false');
+        }
+
+        this.editing = false;
     }
 
     // saves this rec after editing
@@ -265,7 +307,7 @@ class RecModal {
     }
 }
 
-let testOwner = false;
+let testOwner = true;
 
 export default RecModal;
 

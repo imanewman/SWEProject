@@ -135,7 +135,7 @@
 
 .rec_list_filter_checkbox_text {
     margin-top: 1em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
 .rec_list_filter_checkbox_button {
@@ -246,20 +246,28 @@
     color: var(--brighter-blue);
 }
 
-.rec_item_text_secondary {
-    display: flex;
-}
-
 .rec_item_text {
     position: relative;
     bottom: 0.4em;
 }
 
 .rec_item_text_secondary {
+    display: flex;
+
     position: relative;
+
     bottom: 2.2em;
 
     opacity: 0.85;
+
+    height: 1em;
+
+    margin-top: 2.5em;
+}
+
+.rec_item_text_secondary h5 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Rec Action Buttons */
@@ -500,6 +508,30 @@
     --mdc-theme-primary: var(--blue);
     --mdc-theme-on-secondary: white;
     --mdc-theme-secondary: var(--blue);
+}
+
+.rec_item_title h3,
+.rec_item_time h5,
+.rec_item_location h5,
+.rec_item_details_description p,
+.rec_item_details_rules p,
+.rec_item_details_contact p,
+.rec_item_details_website a {
+    transition: border 0.1s, padding 0.1s;
+}
+
+.rec_item_editable .rec_item_title h3,
+.rec_item_editable .rec_item_time h5,
+.rec_item_editable .rec_item_location h5,
+.rec_item_editable .rec_item_details_description p,
+.rec_item_editable .rec_item_details_rules p,
+.rec_item_editable .rec_item_details_contact p,
+.rec_item_editable .rec_item_details_website a {
+    border: 1px solid var(--grey);
+    border-radius: 0.2em;
+
+    padding-left: 0.2em;
+    padding-right: 0.2em;
 }
 
 /* Rec Location Map */
