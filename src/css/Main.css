@@ -24,6 +24,18 @@
     --darker-blue: #4AA7FF;
     --dark-blue: #3B87D0;
     --darkest-blue: #3576B4;
+    --deepblue: #3343F9;
+    --orange: #F99033;
+    --limegreen: #A7F933;
+    --green: #6EEB46;
+    --neongreen: #33F96B;
+    --purple: #BE46EB;
+    --bloodorange: #EB5D46;
+    --pink: #F933E7;
+    --gold: #F9DC33;
+    --red: #F93345;
+    --rose: #F93372;
+
 }
 
 /*Entire Page*/
@@ -45,6 +57,17 @@ body {
 }
 
 /*Primary Colors*/
+.orange { color: var(--orange); }
+.green { color: var(--green); }
+.purple { color: var(--purple); }
+.bloodorange { color: var(--bloodorange); }
+.pink { color: var(--pink); }
+.neongreen { color: var(--neongreen); }
+.gold { color: var(--gold); }
+.limegreen { color: var(--limegreen); }
+.deepblue { color: var(--deepblue); }
+.red { color: var(--red); }
+.rose { color: var(--rose); }
 
 /*Background Colors*/
 .bg-white { background-color: white; }

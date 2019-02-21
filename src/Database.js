@@ -56,10 +56,10 @@ class PrivateDatabaseConnector {
         return this.query(queryString, callback);
     }
 
-    put(paramName, callback = undefined) {
+    put(paramName, dataString, callback = undefined) {
         // update: "UPDATE table_name SET field1 = new-value1, field2 = new-value2"
         // insert: "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')"
-        let queryString = ``;
+        let queryString = `INSERT INTO ${paramName} VALUES (${dataString})`;
 
         return this.query(queryString, callback);
     }

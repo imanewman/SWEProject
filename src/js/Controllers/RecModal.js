@@ -16,17 +16,17 @@ class RecModal {
         this.editing = false;
 
         this.tagIconMap = {
-            'Farmers Market': 'fas fa-carrot',
-            'Hiking': 'fas fa-hiking',
-            'Festival': 'fas fa-guitar',
-            'Food': 'fas fa-utensils',
-            'Open Mic': 'fas fa-microphone',
-            'Career Fair': 'fas fa-user-tie',
-            'Trade Show': 'fas fa-store',
-            'Sports': 'fas fa-futbol',
-            'Charity': 'fas fa-hand-holding-heart',
-            'Convention': 'fas fa-users',
-            'Speech': 'fas fa-comments'
+            'Farmers Market': 'fas fa-carrot orange',
+            'Hiking': 'fas fa-hiking neongreen',
+            'Festival': 'fas fa-guitar gold',
+            'Food': 'fas fa-utensils limegreen',
+            'Open Mic': 'fas fa-microphone purple',
+            'Career Fair': 'fas fa-user-tie deepblue',
+            'Trade Show': 'fas fa-store red',
+            'Sports': 'fas fa-futbol bloodorange',
+            'Charity': 'fas fa-hand-holding-heart pink',
+            'Convention': 'fas fa-users rose',
+            'Speech': 'fas fa-comments green'
         };
 
         this.attach();
