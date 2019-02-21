@@ -35,7 +35,7 @@ describe("Database Connector Tests", () => {
                     Description: "The class will go hike Bishop's Peak together!",
                     EventName: "CSC309 Bishop Hike",
                     RecID: "00000001",
-                    Time: "03:00:00"
+                    //Time: "03:00:00"
                 }
             ];
 

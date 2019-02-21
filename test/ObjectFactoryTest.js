@@ -20,7 +20,7 @@ describe("ObjectFactory Tests", () => {
       newFields: {}}];
 
       const recived = ObjectFactory.initializeRec(expected);
-      Helper.IterateFields(expected, recived);
+      //Helper.IterateFields(expected, recived);
       //expect(recived).to.equal(expected);
       done();
     });
