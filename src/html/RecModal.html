@@ -32,7 +32,7 @@
     </div>
 
     <div class="rec_item_buttons">
-        <div class="rec_item_buttons_public">
+        <div class="rec_item_buttons_type rec_item_buttons_public rec_item_buttons_type_active">
             <div class="rec_item_button save_button tooltip">
                 <i class="far fa-bookmark"></i><!--<i class="fas fa-bookmark"></i>-->
                 <div class="tooltiptext">Save</div>
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="rec_item_buttons_owner">
+        <div class="rec_item_buttons_type rec_item_buttons_owner">
             <div class="rec_item_button edit_button tooltip">
                 <i class="fas fa-pencil-alt"></i>
                 <div class="tooltiptext">Edit</div>
@@ -63,6 +63,23 @@
             <div class="rec_item_button hide_button tooltip">
                 <i class="fas fa-minus-circle"></i>
                 <div class="tooltiptext">Hide</div>
+            </div>
+        </div>
+
+        <div class="rec_item_buttons_type rec_item_buttons_editing">
+            <div class="rec_item_button save_edit_button tooltip">
+                <i class="fas fa-save"></i>
+                <div class="tooltiptext">Save</div>
+            </div>
+
+            <div class="rec_item_button discard_edit_button tooltip">
+                <i class="fas fa-eraser"></i>
+                <div class="tooltiptext">Discard</div>
+            </div>
+
+            <div class="rec_item_button revert_edit_button tooltip">
+                <i class="fas fa-undo"></i>
+                <div class="tooltiptext">Revert</div>
             </div>
         </div>
     </div>

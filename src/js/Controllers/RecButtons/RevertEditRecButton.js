@@ -13,7 +13,7 @@ class RevertEditRecButton extends RecButton {
     }
 
     click() {
-
+        this.recModal.updateInfo();
     }
 }
 

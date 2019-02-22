@@ -6,6 +6,9 @@ import EditRecButton from './RecButtons/EditRecButton.js';
 import DeleteRecButton from './RecButtons/DeleteRecButton.js';
 import HideRecButton from './RecButtons/HideRecButton.js';
 import RsvpRecButton from './RecButtons/RsvpRecButton.js';
+import SaveEditRecButton from './RecButtons/SaveEditRecButton.js';
+import DiscardEditRecButton from './RecButtons/DiscardEditRecButton.js';
+import RevertEditRecButton from './RecButtons/RevertEditRecButton.js';
 
 //TODO: add owner info, tags
 class RecModal {
@@ -28,6 +31,16 @@ class RecModal {
             'Convention': 'fas fa-users rose',
             'Speech': 'fas fa-comments green'
         };
+
+        this.editableElementSelectors = [
+            '.rec_item_title h3',
+            '.rec_item_time h5',
+            '.rec_item_location h5',
+            '.rec_item_details_description p',
+            '.rec_item_details_rules p',
+            '.rec_item_details_contact p',
+            '.rec_item_details_website a'
+        ];
 
         this.attach();
     }
@@ -57,7 +70,7 @@ class RecModal {
 
                     //TODO: put user id in local storage
                     if (localStorage.getItem("userId") == this.rec.getOwnerId()) {
-                        this.showOwnerButtons();
+                        this.showOtherButtons("owner");
                     }
                 });
             });
@@ -74,6 +87,9 @@ class RecModal {
         this.deleteButton = new DeleteRecButton(this);
         this.hideButton = new HideRecButton(this);
         this.rsvpButton = new RsvpRecButton(this);
+        this.saveEditButton = new SaveEditRecButton(this);
+        this.discardEditButton = new DiscardEditRecButton(this);
+        this.revertEditButton = new RevertEditRecButton(this);
     }
 
     // updates the rec information currently displayed
@@ -163,12 +179,40 @@ class RecModal {
         this.hide(removeRec);
     }
 
+    // set mode to editing and show edit buttons
+    editMode() {
+        this.editing = true;
+
+        $("#" + this.recId).addClass("rec_item_editable");
+
+        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
+            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
+                .attr('contenteditable', 'true');
+        }
+
+        this.showOtherButtons("editing");
+    }
+
+    // set mode back to non-editing, and show owner buttons
+    displayMode() {
+        this.editing = false;
+
+        $("#" + this.recId).removeClass("rec_item_editable");
+
+        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
+            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
+                .attr('contenteditable', 'false');
+        }
+
+        this.showOtherButtons("owner");
+    }
+
     // shows the buttons for the recs owner
-    showOwnerButtons() {
+    showOtherButtons(type = "owner") {
         //TODO: call if the user owns this rec to show editing buttons
         //TODO: be able to switch between public, owner, edit buttons with this
-        $("#" + this.recId + " .rec_item_buttons_public").hide();
-        $("#" + this.recId + " .rec_item_buttons_owner").css('display', 'flex');
+        $("#" + this.recId + " .rec_item_buttons_type").removeClass("rec_item_buttons_type_active");
+        $("#" + this.recId + " .rec_item_buttons_" + type).addClass("rec_item_buttons_type_active");
     }
 }
 
