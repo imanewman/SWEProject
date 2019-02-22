@@ -1,5 +1,5 @@
-const Rec = require("../Model/Rec.js");
-const User = require("../Model/User.js");
+import Rec from "../Model/Rec.js";
+import User from "../Model/User.js";
 //import { Rec, User, PendingOrganizers } from "../Model";
 
 class PrivateObjectFactory {
@@ -12,7 +12,7 @@ class PrivateObjectFactory {
     }
 
     initializeRec(recObject) {
-        return Rec.constructor(
+        return new Rec(
             recObject.id,
             recObject.title || "",
             recObject.description || "",
