@@ -13,7 +13,7 @@ class SaveEditRecButton extends RecButton {
     }
 
     click() {
-
+        this.recModal.displayMode();
     }
 }
 

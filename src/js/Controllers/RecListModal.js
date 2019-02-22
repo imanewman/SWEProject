@@ -20,8 +20,11 @@ class RecListModal {
         this.currentRecs = [];
         this.currentRecModals = [];
         this.displaySpeed = 200;
+        this.didScroll = false;
 
         this.attach();
+
+        this.animateScroll();
     }
 
     // attaches rec list to body of page
@@ -31,11 +34,18 @@ class RecListModal {
                 $("#scene").append($(data));
                 $("#rec_list_container").hide();
 
+                this.attachFunctions();
                 this.setName();
                 this.display();
+
                 setTimeout(() => { this.importRecs() }, this.displaySpeed);
             });
         });
+    }
+
+    attachFunctions() {
+        // update didScroll when window scrolls
+        $(window).scroll( () => { this.didScroll = true } );
     }
 
     // sets the name of this rec list
@@ -111,6 +121,24 @@ class RecListModal {
     // filters rec list based on search and checkboxes
     filter() {
         //TODO: filter recs based on filters
+    }
+
+    // animates border shadow on navbar increasing when scrolled
+    animateScroll() {
+        //TODO: make transition in box shadow increase based on distance from top?
+        setInterval( () => {
+            if (this.didScroll) {
+                this.didScroll = false;
+
+                var scroll = $(window).scrollTop();
+
+                if (scroll) {
+                    $("#rec_list_header").addClass("shadow");
+                } else {
+                    $("#rec_list_header").removeClass("shadow");
+                }
+            }
+        }, 50);
     }
 }
 
