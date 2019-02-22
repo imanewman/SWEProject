@@ -79,7 +79,7 @@ class RecModal {
                     this.display();
 
                     //TODO: put user id in local storage
-                    if (localStorage.getItem("userId") == this.rec.getOwnerId()) {
+                    if (localStorage.getItem("userId") === this.rec.getOwnerId()) {
                         this.showOtherButtons("owner");
                     }
                 });
@@ -100,6 +100,16 @@ class RecModal {
         this.saveEditButton = new SaveEditRecButton(this);
         this.discardEditButton = new DiscardEditRecButton(this);
         this.revertEditButton = new RevertEditRecButton(this);
+
+        this.regulateEditableFields();
+    }
+
+    // makes it so certain things arent allowed in editable fields
+    regulateEditableFields() {
+        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
+            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
+                .keypress( (e) => { return e.which !== 13; }); //removes any new lines
+        }
     }
 
     // saves updated rec info

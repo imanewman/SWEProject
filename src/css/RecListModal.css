@@ -133,6 +133,12 @@
     margin-left:0.5em;
 }
 
+.rec_list_filter_checkbox:hover {
+    background-color: var(--dark-grey);
+
+    cursor: pointer;
+}
+
 .rec_list_filter_checkbox_text {
     margin-top: 1em;
     margin-bottom: 0;

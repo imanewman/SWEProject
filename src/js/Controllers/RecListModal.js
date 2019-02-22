@@ -46,6 +46,21 @@ class RecListModal {
     attachFunctions() {
         // update didScroll when window scrolls
         $(window).scroll( () => { this.didScroll = true } );
+
+        $(".rec_list_filter_checkbox").click( (e) => {
+            let $checkbox = $(e.currentTarget).children(".rec_list_filter_checkbox_button");
+
+            this.toggleCheckBox($checkbox);
+        });
+    }
+
+    // toggles whether a checkbox is checked
+    toggleCheckBox($checkbox) {
+        if ($checkbox.attr("checked") !== undefined) {
+            $checkbox.removeAttr("checked");
+        } else {
+            $checkbox.attr("checked", true);
+        }
     }
 
     // sets the name of this rec list
