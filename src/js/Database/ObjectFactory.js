@@ -1,5 +1,11 @@
-import Rec from "../Model/Rec.js";
-import User from "../Model/User.js";
+// try{
+//import Rec from "../Model/Rec.js";
+//import User from "../Model/User.js";
+// }
+//catch(err) {
+  const Rec = require("../Model/Rec.js");
+  const  User = require("../Model/User.js")
+//}
 //import { Rec, User, PendingOrganizers } from "../Model";
 
 class PrivateObjectFactory {
