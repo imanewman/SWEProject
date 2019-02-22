@@ -9,10 +9,12 @@
 
 /*Named Variables*/
 :root {
+    --lighter: #FCFCFC;
     --light: #FAFAFA;
     --lightish: #EFEFEF;
     --dark-grey: #DDDDDD;
     --darkish: #EAEAEA;
+    --grey: #A8A8A8;
     --dark: #585858;
     --darker: #3D3D3D;
     --hover: #558BDA;
@@ -20,6 +22,20 @@
     --blue: #4AB8FF;
     --brighter-blue: #4ACBFF;
     --darker-blue: #4AA7FF;
+    --dark-blue: #3B87D0;
+    --darkest-blue: #3576B4;
+    --deepblue: #3343F9;
+    --orange: #F99033;
+    --limegreen: #A7F933;
+    --green: #6EEB46;
+    --neongreen: #33F96B;
+    --purple: #BE46EB;
+    --bloodorange: #EB5D46;
+    --pink: #F933E7;
+    --gold: #F9DC33;
+    --red: #F93345;
+    --rose: #F93372;
+
 }
 
 /*Entire Page*/
@@ -41,6 +57,17 @@ body {
 }
 
 /*Primary Colors*/
+.orange { color: var(--orange); }
+.green { color: var(--green); }
+.purple { color: var(--purple); }
+.bloodorange { color: var(--bloodorange); }
+.pink { color: var(--pink); }
+.neongreen { color: var(--neongreen); }
+.gold { color: var(--gold); }
+.limegreen { color: var(--limegreen); }
+.deepblue { color: var(--deepblue); }
+.red { color: var(--red); }
+.rose { color: var(--rose); }
 
 /*Background Colors*/
 .bg-white { background-color: white; }
@@ -50,7 +77,8 @@ body {
 /*Hovering*/
 .hov-black,
 .hov-blue,
-.hov-bg-dark {
+.hov-bg-dark,
+.hov-light {
     cursor: pointer;
     transition: color 0.1s;
 }
@@ -61,6 +89,9 @@ body {
 
 .hov-black:hover { color: var(--darker); }
 .hov-black:active { color: black; }
+
+.hov-light:hover { color: var(--darkish); }
+.hov-light:active { color: var(--lightish); }
 
 .hov-bg-dark:hover { background-color: var(--lightish); }
 .hov-bg-dark:active { background-color: var(--darkish); }
@@ -79,7 +110,7 @@ flex-grow { flex-grow: 1; }
 .center { margin: auto; }
 .center-horizontal { margin-left: auto; margin-right: auto; }
 
-.shadow { box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15); }
+.shadow { box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15) !important; }
 
 /*Tooltips*/
 .tooltip {}
@@ -94,7 +125,7 @@ flex-grow { flex-grow: 1; }
     visibility: hidden;
 
     background-color: var(--darker);
-    color: #fff;
+    color: var(--lighter);
 
     text-align: center;
 
@@ -115,12 +146,12 @@ flex-grow { flex-grow: 1; }
     transition-delay: 0s;
 }
 
-/*Logo*/
-#rec_logo_text {
-    font-size: 2em;
-    font-weight: 1000;
-
-    transform: scale(1.2);
-
-    margin: auto;
+/*Autoscaling Images*/
+.fillwidth {
+    width: 100%;
+    height: auto;
+}
+.fillheight {
+    height: 100%;
+    width: auto;
 }

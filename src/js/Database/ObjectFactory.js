@@ -33,6 +33,7 @@ class PrivateObjectFactory {
 
         for (let recObject in recListObject) {
             let newRec = this.initializeRec(recObject);
+
             recList.append(newRec);
         }
 

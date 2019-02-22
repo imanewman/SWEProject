@@ -3169,7 +3169,7 @@
 											"top": 503,
 											"width": 80.57080078125,
 											"height": 13,
-											"text": "HomePage"
+											"text": "HomeModal"
 										},
 										{
 											"_type": "LabelView",
@@ -3581,7 +3581,7 @@
 											"top": 679,
 											"width": 184.60888671875,
 											"height": 13,
-											"text": "RecListComponent"
+											"text": "RecListModal"
 										},
 										{
 											"_type": "LabelView",
@@ -4761,7 +4761,7 @@
 											"top": 575,
 											"width": 157.8916015625,
 											"height": 13,
-											"text": "CallendarPage"
+											"text": "CallendarModal"
 										},
 										{
 											"_type": "LabelView",
@@ -5173,7 +5173,7 @@
 											"top": 1247,
 											"width": 166.55615234375,
 											"height": 13,
-											"text": "LoginPage"
+											"text": "LoginModal"
 										},
 										{
 											"_type": "LabelView",
@@ -7754,7 +7754,7 @@
 											"top": 1135,
 											"width": 235.18701171875,
 											"height": 13,
-											"text": "AccountPage"
+											"text": "AccountModal"
 										},
 										{
 											"_type": "LabelView",
@@ -22634,7 +22634,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "HomePage"
+					"name": "HomeModal"
 				},
 				{
 					"_type": "UMLClass",
@@ -22682,7 +22682,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "RecListComponent",
+					"name": "RecListModal",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -22869,7 +22869,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "CallendarPage",
+					"name": "CallendarModal",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -22985,7 +22985,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "LoginPage",
+					"name": "LoginModal",
 					"operations": [
 						{
 							"_type": "UMLOperation",
@@ -23571,7 +23571,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "AccountPage",
+					"name": "AccountModal",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",

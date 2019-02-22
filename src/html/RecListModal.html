@@ -1,42 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
-    <title>The Rec - Rec List Modal</title>
-</head>
-
-<!------ Outside Extensions ------>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-<!-- Material Components -->
-<script src="@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-
-<!-- Material Icons -->
-<script type="module" src="https://unpkg.com/@material/mwc-fab@^0.1.0/mwc-fab.js?module"></script>
-
-<!------ CSS Files ------>
-
-<link rel="stylesheet" type="text/css" href="../css/RecListModal.css"/>
-<link rel="stylesheet" type="text/css" href="../css/Main.css"/>
-
-<!------ JS Files ------>
-
-<!--<script src="../js/Controllers/login.js"></script>-->
-
-<!--TODO: if you spell "Rex" on the keyboard, it changes all 'Recs' to 'Rex'-->
-
-<body>
 <div id="rec_list_container">
-    <div id="rec_list" class="center-horizontal">
-        <div id="rec_list_title">
-            <h2 id="rec_list_title_text">Upcoming Recs</h2>
+    <div id="rec_filter">
+        <div id="rec_filter_title">
+            <h2>Categories</h2>
         </div>
 
-        <div id="rec_items ">
+        <div id="rec_list_filter_checkboxes">
+            <div id="checkbox_hikes" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Hikes</h5>
+            </div>
+
+            <div id="checkbox_concerts" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Concerts</h5>
+            </div>
+
+            <div id="checkbox_festival" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Festivals</h5>
+            </div>
+
+            <div id="checkbox_food" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Food</h5>
+            </div>
+
+            <div id="checkbox_open_mic" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Open Mics</h5>
+            </div>
+
+            <div id="checkbox_career_fair" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Career Fairs</h5>
+            </div>
+
+            <div id="checkbox_convention" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Conventions</h5>
+            </div>
+
+            <div id="checkbox_sports" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Sports</h5>
+            </div>
+
+            <div id="checkbox_trade_show" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Trade Shows</h5>
+            </div>
+
+            <div id="checkbox_charity_event" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Charity Events</h5>
+            </div>
+
+            <div id="checkbox_farmers_market" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Farmers' Markets</h5>
+            </div>
+
+            <div id="checkbox_speech" class="rec_list_filter_checkbox">
+                <mwc-checkbox checked class="rec_list_filter_checkbox_button"></mwc-checkbox>
+                <h5 class="rec_list_filter_checkbox_text">Speeches and Discussions</h5>
+            </div>
+        </div>
+    </div>
+
+    <div id="rec_list" class="center-horizontal">
+        <div id="rec_list_header">
+            <div id="rec_list_title">
+                <h2 id="rec_list_title_text">Upcoming Recs</h2>
+            </div>
+
+            <div id="rec_list_search">
+                <input id="rec_list_search_input" placeholder="Search Recs...">
+            </div>
+        </div>
+
+        <div id="rec_items">
             <div class="rec_item center-horizontal">
                 <div class="rec_item_info_container">
                     <div class="rec_item_info">
@@ -71,21 +113,38 @@
                 </div>
 
                 <div class="rec_item_buttons">
-                    <!--<mwc-fab icon="explore" class="light"></mwc-fab>-->
+                    <div class="rec_item_buttons_public">
+                        <div class="rec_item_button save_button tooltip">
+                            <i class="far fa-bookmark"></i><!--<i class="fas fa-bookmark"></i>-->
+                            <div class="tooltiptext">Save</div>
+                        </div>
 
-                    <div class="rec_item_button save_button tooltip">
-                        <i class="far fa-bookmark"></i><!--<i class="fas fa-bookmark"></i>-->
-                        <div class="tooltiptext">Save</div>
+                        <div class="rec_item_button map_button tooltip">
+                            <i class="fas fa-map-marked-alt"></i><!--<i class="far fa-map"></i>-->
+                            <div class="tooltiptext">Location</div>
+                        </div>
+
+                        <div class="rec_item_button report_button tooltip">
+                            <i class="far fa-flag"></i><!--<i class="fas fa-flag"></i>-->
+                            <div class="tooltiptext">Report</div>
+                        </div>
                     </div>
 
-                    <div class="rec_item_button map_button tooltip">
-                        <i class="fas fa-map-marked-alt"></i><!--<i class="far fa-map"></i>-->
-                        <div class="tooltiptext">Location</div>
-                    </div>
+                    <div class="rec_item_buttons_owner">
+                        <div class="rec_item_button edit_button tooltip">
+                            <i class="fas fa-pencil-alt"></i>
+                            <div class="tooltiptext">Edit</div>
+                        </div>
 
-                    <div class="rec_item_button report_button tooltip">
-                        <i class="far fa-flag"></i><!--<i class="fas fa-flag"></i>-->
-                        <div class="tooltiptext">Report</div>
+                        <div class="rec_item_button delete_button tooltip">
+                            <i class="fas fa-trash"></i>
+                            <div class="tooltiptext">Delete</div>
+                        </div>
+
+                        <div class="rec_item_button hide_button tooltip">
+                            <i class="fas fa-minus-circle"></i>
+                            <div class="tooltiptext">Hide</div>
+                        </div>
                     </div>
                 </div>
 
@@ -107,6 +166,10 @@
                         <div class="rec_item_map">
 
                         </div>
+                    </div>
+
+                    <div class="rec_item_rsvp">
+                        <mwc-fab icon="calendar_today" class="rec_item_rsvp_button"></mwc-fab>
                     </div>
                 </div>
             </div>
@@ -143,21 +206,38 @@
                 </div>
 
                 <div class="rec_item_buttons">
-                    <!--<mwc-fab icon="explore" class="light"></mwc-fab>-->
+                    <div class="rec_item_buttons_public">
+                        <div class="rec_item_button save_button tooltip">
+                            <i class="far fa-bookmark"></i><!--<i class="fas fa-bookmark"></i>-->
+                            <div class="tooltiptext">Save</div>
+                        </div>
 
-                    <div class="rec_item_button save_button tooltip">
-                        <i class="far fa-bookmark"></i><!--<i class="fas fa-bookmark"></i>-->
-                        <div class="tooltiptext">Save</div>
+                        <div class="rec_item_button map_button tooltip">
+                            <i class="fas fa-map-marked-alt"></i><!--<i class="far fa-map"></i>-->
+                            <div class="tooltiptext">Location</div>
+                        </div>
+
+                        <div class="rec_item_button report_button tooltip">
+                            <i class="far fa-flag"></i><!--<i class="fas fa-flag"></i>-->
+                            <div class="tooltiptext">Report</div>
+                        </div>
                     </div>
 
-                    <div class="rec_item_button map_button tooltip">
-                        <i class="fas fa-map-marked-alt"></i><!--<i class="far fa-map"></i>-->
-                        <div class="tooltiptext">Location</div>
-                    </div>
+                    <div class="rec_item_buttons_owner">
+                        <div class="rec_item_button edit_button tooltip">
+                            <i class="fas fa-pencil-alt"></i>
+                            <div class="tooltiptext">Edit</div>
+                        </div>
 
-                    <div class="rec_item_button report_button tooltip">
-                        <i class="far fa-flag"></i><!--<i class="fas fa-flag"></i>-->
-                        <div class="tooltiptext">Report</div>
+                        <div class="rec_item_button delete_button tooltip">
+                            <i class="fas fa-trash"></i>
+                            <div class="tooltiptext">Delete</div>
+                        </div>
+
+                        <div class="rec_item_button hide_button tooltip">
+                            <i class="fas fa-minus-circle"></i>
+                            <div class="tooltiptext">Hide</div>
+                        </div>
                     </div>
                 </div>
 
@@ -183,6 +263,9 @@
 
                     <div class="rec_item_rsvp">
                         <mwc-fab icon="calendar_today" class="rec_item_rsvp_button"></mwc-fab>
+                        <!--<div class="rec_item_rsvp_text">-->
+                            <!--<h3>RSVP</h3>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -193,4 +276,3 @@
         </div>
     </div>
 </div>
-</body>
