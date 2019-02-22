@@ -50,7 +50,17 @@ class RecModal {
             'rules': "#" + this.recId + " .rec_item_details_rules p",
             'contactInfo': "#" + this.recId + " .rec_item_details_contact p",
             'websiteLink': "#" + this.recId + " .rec_item_details_website a"
-        }
+        };
+
+        this.maxLengths = {
+            'title': 50,
+            'date': 60,
+            'location': 50,
+            'description': 500,
+            'rules': 500,
+            'contactInfo': 500,
+            'websiteLink': 150
+        };
 
         this.attach();
     }
@@ -70,7 +80,10 @@ class RecModal {
                     $("#rec_items").append(recElement);
 
                     // attach controller functions to buttons
-                    this.attachFunctions();
+                    this.attachButtons();
+
+                    // regulate how fields can be edited
+                    this.regulateEditableFields();
 
                     // update the rec info
                     this.updateInfo();
@@ -88,7 +101,7 @@ class RecModal {
     }
 
     // adds all buttons, which attaches click handlers
-    attachFunctions() {
+    attachButtons() {
         this.expandButton = new ExpandRecButton(this);
         this.saveButton = new SaveRecButton(this);
         this.locateButton = new LocateRecButton(this);
@@ -100,15 +113,31 @@ class RecModal {
         this.saveEditButton = new SaveEditRecButton(this);
         this.discardEditButton = new DiscardEditRecButton(this);
         this.revertEditButton = new RevertEditRecButton(this);
-
-        this.regulateEditableFields();
     }
 
     // makes it so certain things arent allowed in editable fields
     regulateEditableFields() {
-        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
-            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
-                .keypress( (e) => { return e.which !== 13; }); //removes any new lines
+        for (let key in this.selectors) {
+            if (this.selectors.hasOwnProperty(key)) {
+                let selector = this.selectors[key];
+                let maxChars = this.maxLengths[key];
+
+                $(selector)
+                    .keypress((e) => {
+                        return e.which !== 13;
+                    }) //removes any new lines
+                    .keydown((e) => {
+                        this.regulateCharCount(selector, maxChars, e);
+                    });
+            }
+        }
+    }
+
+    // ensures text field isnt too long
+    regulateCharCount(selector, maxChars, e) {
+        if(e.which !== 8 && $(selector).text().length > maxChars)
+        {
+            e.preventDefault();
         }
     }
 

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64139299-871f-41c1-bcb6-104bd910e68d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/css/RecListModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/RecListModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/Controllers/RecModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Controllers/RecModal.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,7 +110,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="32" />
-          <entry key="JavaScript" value="477" />
+          <entry key="JavaScript" value="832" />
         </counts>
       </usages-collector>
     </session>
@@ -152,8 +150,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="110" column="86" selection-start-line="110" selection-start-column="86" selection-end-line="110" selection-end-column="86" />
+            <state relative-caret-position="285">
+              <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -426,7 +424,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176394000" />
+    <option name="totallyTimeSpent" value="178127000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,8 +809,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="110" column="86" selection-start-line="110" selection-start-column="86" selection-end-line="110" selection-end-column="86" />
+        <state relative-caret-position="285">
+          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
