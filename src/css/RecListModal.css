@@ -488,6 +488,8 @@
 
     opacity: 0;
 
+    overflow: hidden;
+
     transition: opacity 0.2s;
     transition-delay: 0.2s;
 }

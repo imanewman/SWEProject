@@ -42,6 +42,16 @@ class RecModal {
             '.rec_item_details_website a'
         ];
 
+        this.selectors = {
+            'title': "#" + this.recId + " .rec_item_title h3",
+            'date': "#" + this.recId + " .rec_item_time h5",
+            'location': "#" + this.recId + " .rec_item_location h5",
+            'description': "#" + this.recId + " .rec_item_details_description p",
+            'rules': "#" + this.recId + " .rec_item_details_rules p",
+            'contactInfo': "#" + this.recId + " .rec_item_details_contact p",
+            'websiteLink': "#" + this.recId + " .rec_item_details_website a"
+        }
+
         this.attach();
     }
 
@@ -92,23 +102,49 @@ class RecModal {
         this.revertEditButton = new RevertEditRecButton(this);
     }
 
+    // saves updated rec info
+    saveInfo() {
+        let title = $(this.selectors['title']).text();
+        this.rec.setTitle(title);
+
+        let date = $(this.selectors['date']).text();
+        //TODO: set date and time based on this string, make a method in Rec
+
+        let location = $(this.selectors['location']).text();
+        this.rec.setLocation(location);
+
+        let description = $(this.selectors['description']).text();
+        this.rec.setDescription(description);
+
+        let rules = $(this.selectors['rules']).text();
+        this.rec.setRules(rules);
+
+        let contactInfo = $(this.selectors['contactInfo']).text();
+        this.rec.setContactInfo(contactInfo);
+
+        let websiteLink = $(this.selectors['websiteLink']).text();
+        this.rec.setWebsiteLink(websiteLink);
+
+        this.updateMap();
+        this.updateImage();
+        this.updateIcon();
+    }
+
     // updates the rec information currently displayed
     updateInfo() {
-        //TODO: make icon change based on event type
+        $(this.selectors['title']).text(this.rec.getTitle());
 
-        $("#" + this.recId + " .rec_item_title h3").text(this.rec.getTitle());
+        $(this.selectors['date']).text(this.rec.getDateString());
 
-        $("#" + this.recId + " .rec_item_time h5").text(this.rec.getDateString());
+        $(this.selectors['location']).text(this.rec.getLocation());
 
-        $("#" + this.recId + " .rec_item_location h5").text(this.rec.getLocation());
+        $(this.selectors['description']).text(this.rec.getDescription());
 
-        $("#" + this.recId + " .rec_item_details_description p").text(this.rec.getDescription());
+        $(this.selectors['rules']).text(this.rec.getRules());
 
-        $("#" + this.recId + " .rec_item_details_rules p").text(this.rec.getRules());
+        $(this.selectors['contactInfo']).text(this.rec.getContactInfo());
 
-        $("#" + this.recId + " .rec_item_details_contact p").text(this.rec.getContactInfo());
-
-        $("#" + this.recId + " .rec_item_details_website a")
+        $(this.selectors['websiteLink'])
             .text(this.rec.getWebsiteLink())
             .attr('href', this.rec.getWebsiteLink());
 
