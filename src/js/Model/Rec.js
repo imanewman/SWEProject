@@ -110,12 +110,27 @@ class Rec {
             && this.endTime !== '00:00:00') {
 	        let startStr = this.convertTime(this.startTime);
             let endStr = this.convertTime(this.endTime);
+            let dateStr = this.convertDate(this.date);
 
-            return this.date + " from " + startStr + " to " + endStr;
+            return dateStr + " from " + startStr + " to " + endStr;
         } else {
 	        return "All Day";
         }
-	}
+    }
+    
+    convertDate(dateStr) {
+        let monthList = ["January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December"];
+        let dateParts = dateStr.split('-');
+
+        var year = dateParts[0];
+        var monthNum = parseInt(dateParts[1]);
+        var day = dateParts[2];
+
+        var month = monthList[monthNum];
+
+        return month + " " + day + ", " + year;
+    }
 
 	convertTime(timeStr) {
 	    let timeParts = timeStr.split(':');
