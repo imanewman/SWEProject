@@ -9,6 +9,7 @@ import RsvpRecButton from './RecButtons/RsvpRecButton.js';
 import SaveEditRecButton from './RecButtons/SaveEditRecButton.js';
 import DiscardEditRecButton from './RecButtons/DiscardEditRecButton.js';
 import RevertEditRecButton from './RecButtons/RevertEditRecButton.js';
+import RecTextFactory from './EditableRecText/RecTextFactory.js';
 
 //TODO: add owner info, tags
 class RecModal {
@@ -17,6 +18,8 @@ class RecModal {
         this.recId = this.rec.getId();
         this.displaySpeed = 200;
         this.editing = false;
+        this.buttons = {};
+        this.editableTexts = {};
 
         this.tagIconMap = {
             'Farmers Market': 'fas fa-carrot orange',
@@ -30,36 +33,6 @@ class RecModal {
             'Charity': 'fas fa-hand-holding-heart pink',
             'Convention': 'fas fa-users rose',
             'Speech': 'fas fa-comments green'
-        };
-
-        this.editableElementSelectors = [
-            '.rec_item_title h3',
-            '.rec_item_time h5',
-            '.rec_item_location h5',
-            '.rec_item_details_description p',
-            '.rec_item_details_rules p',
-            '.rec_item_details_contact p',
-            '.rec_item_details_website a'
-        ];
-
-        this.selectors = {
-            'title': "#" + this.recId + " .rec_item_title h3",
-            'date': "#" + this.recId + " .rec_item_time h5",
-            'location': "#" + this.recId + " .rec_item_location h5",
-            'description': "#" + this.recId + " .rec_item_details_description p",
-            'rules': "#" + this.recId + " .rec_item_details_rules p",
-            'contactInfo': "#" + this.recId + " .rec_item_details_contact p",
-            'websiteLink': "#" + this.recId + " .rec_item_details_website a"
-        };
-
-        this.maxLengths = {
-            'title': 50,
-            'date': 60,
-            'location': 50,
-            'description': 500,
-            'rules': 500,
-            'contactInfo': 500,
-            'websiteLink': 150
         };
 
         this.attach();
@@ -82,8 +55,7 @@ class RecModal {
                     // attach controller functions to buttons
                     this.attachButtons();
 
-                    // regulate how fields can be edited
-                    this.regulateEditableFields();
+                    this.editableTexts = RecTextFactory.createAllEditableText(this);
 
                     // update the rec info
                     this.updateInfo();
@@ -102,67 +74,26 @@ class RecModal {
 
     // adds all buttons, which attaches click handlers
     attachButtons() {
-        this.expandButton = new ExpandRecButton(this);
-        this.saveButton = new SaveRecButton(this);
-        this.locateButton = new LocateRecButton(this);
-        this.reportButton = new ReportRecButton(this);
-        this.editButton = new EditRecButton(this);
-        this.deleteButton = new DeleteRecButton(this);
-        this.hideButton = new HideRecButton(this);
-        this.rsvpButton = new RsvpRecButton(this);
-        this.saveEditButton = new SaveEditRecButton(this);
-        this.discardEditButton = new DiscardEditRecButton(this);
-        this.revertEditButton = new RevertEditRecButton(this);
-    }
-
-    // makes it so certain things arent allowed in editable fields
-    regulateEditableFields() {
-        for (let key in this.selectors) {
-            if (this.selectors.hasOwnProperty(key)) {
-                let selector = this.selectors[key];
-                let maxChars = this.maxLengths[key];
-
-                $(selector)
-                    .keypress((e) => {
-                        return e.which !== 13;
-                    }) //removes any new lines
-                    .keydown((e) => {
-                        this.regulateCharCount(selector, maxChars, e);
-                    });
-            }
-        }
-    }
-
-    // ensures text field isnt too long
-    regulateCharCount(selector, maxChars, e) {
-        if(e.which !== 8 && $(selector).text().length > maxChars)
-        {
-            e.preventDefault();
-        }
+        this.buttons['expand'] = new ExpandRecButton(this);
+        this.buttons['save'] = new SaveRecButton(this);
+        this.buttons['locate'] = new LocateRecButton(this);
+        this.buttons['report'] = new ReportRecButton(this);
+        this.buttons['edit'] = new EditRecButton(this);
+        this.buttons['delete'] = new DeleteRecButton(this);
+        this.buttons['hide'] = new HideRecButton(this);
+        this.buttons['rsvp'] = new RsvpRecButton(this);
+        this.buttons['saveEdit'] = new SaveEditRecButton(this);
+        this.buttons['discardEdit'] = new DiscardEditRecButton(this);
+        this.buttons['revertEdit'] = new RevertEditRecButton(this);
     }
 
     // saves updated rec info
     saveInfo() {
-        let title = $(this.selectors['title']).text();
-        this.rec.setTitle(title);
-
-        let date = $(this.selectors['date']).text();
-        //TODO: set date and time based on this string, make a method in Rec
-
-        let location = $(this.selectors['location']).text();
-        this.rec.setLocation(location);
-
-        let description = $(this.selectors['description']).text();
-        this.rec.setDescription(description);
-
-        let rules = $(this.selectors['rules']).text();
-        this.rec.setRules(rules);
-
-        let contactInfo = $(this.selectors['contactInfo']).text();
-        this.rec.setContactInfo(contactInfo);
-
-        let websiteLink = $(this.selectors['websiteLink']).text();
-        this.rec.setWebsiteLink(websiteLink);
+        for (let key in this.editableTexts) {
+            if (this.editableTexts.hasOwnProperty(key)) {
+                this.editableTexts[key].save();
+            }
+        }
 
         this.updateMap();
         this.updateImage();
@@ -171,21 +102,11 @@ class RecModal {
 
     // updates the rec information currently displayed
     updateInfo() {
-        $(this.selectors['title']).text(this.rec.getTitle());
-
-        $(this.selectors['date']).text(this.rec.getDateString());
-
-        $(this.selectors['location']).text(this.rec.getLocation());
-
-        $(this.selectors['description']).text(this.rec.getDescription());
-
-        $(this.selectors['rules']).text(this.rec.getRules());
-
-        $(this.selectors['contactInfo']).text(this.rec.getContactInfo());
-
-        $(this.selectors['websiteLink'])
-            .text(this.rec.getWebsiteLink())
-            .attr('href', this.rec.getWebsiteLink());
+        for (let key in this.editableTexts) {
+            if (this.editableTexts.hasOwnProperty(key)) {
+                this.editableTexts[key].update();
+            }
+        }
 
         this.updateMap();
         this.updateImage();
@@ -230,8 +151,9 @@ class RecModal {
         }
     }
 
-    // returns the associated rec
     getRec() { return this.rec; }
+
+    getRecId() { return this.recId; }
 
     // displays this rec
     display(callback = () => {}) {
@@ -260,9 +182,10 @@ class RecModal {
 
         $("#" + this.recId).addClass("rec_item_editable");
 
-        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
-            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
-                .attr('contenteditable', 'true');
+        for (let key in this.editableTexts) {
+            if (this.editableTexts.hasOwnProperty(key)) {
+                this.editableTexts[key].editMode();
+            }
         }
 
         this.showOtherButtons("editing");
@@ -274,9 +197,10 @@ class RecModal {
 
         $("#" + this.recId).removeClass("rec_item_editable");
 
-        for (let idx = 0; idx < this.editableElementSelectors.length; idx++) {
-            $("#" + this.recId + ' ' + this.editableElementSelectors[idx])
-                .attr('contenteditable', 'false');
+        for (let key in this.editableTexts) {
+            if (this.editableTexts.hasOwnProperty(key)) {
+                this.editableTexts[key].displayMode();
+            }
         }
 
         this.showOtherButtons("owner");
@@ -298,5 +222,3 @@ if (testOwner) {
 }
 
 export default RecModal;
-
-//TODO: maybe make a default button class and make a class for each type with a ref to this RecModal
