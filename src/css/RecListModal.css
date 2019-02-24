@@ -591,3 +591,34 @@
     width: inherit;
     height: inherit;
 }
+
+#rec_list_add {
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+#rec_list_add_button {
+    width: 8em;
+    height: 3em;
+
+    margin: 1em auto 1em auto;
+
+    border-radius: 2em;
+
+    display: flex;
+
+    border: 1px solid var(--dark-grey);
+
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+
+    transition: box-shadow 0.2s;
+}
+
+#rec_list_add_button:hover {
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
+
+    cursor: pointer;
+}
+
+#rec_list_add_button_text {
+    margin: auto;
+}
