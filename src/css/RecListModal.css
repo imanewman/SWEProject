@@ -95,7 +95,7 @@
 }
 
 #rec_list_search_input {
-    width: 35em;
+    width: 50vw;
     height: 2em;
 
     padding-left: 0.5em;
@@ -133,12 +133,16 @@
 .rec_list_filter_checkbox {
     display: flex;
     margin-left:0.5em;
+
+    transition: box-shadow 0.2s;
 }
 
 .rec_list_filter_checkbox:hover {
     background-color: var(--dark-grey);
 
     cursor: pointer;
+
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149)
 }
 
 .rec_list_filter_checkbox_text {
@@ -193,7 +197,7 @@
     margin-top: 1em;
     margin-bottom: 1em;
 
-    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
 }
 
 .rec_item_info_container {
@@ -610,15 +614,36 @@
 
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
 
-    transition: box-shadow 0.2s;
+    transition: all 0.2s;
 }
 
 #rec_list_add_button:hover {
     box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
 
     cursor: pointer;
+
+    background-color: var(--dark-grey);
+}
+
+#rec_list_add_button:active {
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
 }
 
 #rec_list_add_button_text {
     margin: auto;
+}
+
+#rec_list_add_button_text h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#rec_list_add_button_icon {
+    transform: scale(2);
+
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1em;
+
+    color: var(--blue);
 }
