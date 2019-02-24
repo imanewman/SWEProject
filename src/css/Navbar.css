@@ -174,7 +174,7 @@
 }
 
 .nav_account_dropdown_option {
-    display: flex;
+    display: none;
 
     width: 10em;
     height: 0;
