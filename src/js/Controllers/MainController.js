@@ -1,10 +1,19 @@
 import Navbar from "./Navbar.js";
 import { RecListModal, REC_IMPORTS } from "./RecListModal.js";
+import DatabaseRetriever from '../Database/DatabaseRetriever.js';
 
 class MainController {
     constructor() {
         this.navbar = new Navbar(this);
         this.scene = null;
+
+        this.nameToSceneMap = {
+            'home': () => { return null },
+            'my recs': () => { return new RecListModal('My Recs', REC_IMPORTS.RECOMMENDED); },
+            'all recs': () => { return new RecListModal('All Recs', REC_IMPORTS.ALL); },
+            'watchlist': () => { return new RecListModal('Rec Watchlist', REC_IMPORTS.WATCHLIST); },
+            'my posts': () => { return new RecListModal('My Posts', REC_IMPORTS.OWNED); }
+        };
 
         if(! MainController.instance){
             MainController.instance = this;
@@ -19,7 +28,7 @@ class MainController {
         // console.log($element);
 
         let elementName = $element.text().trim();
-        let newScene = nameToSceneMap[elementName];
+        let newScene = this.nameToSceneMap[elementName];
 
         let addNewScene = () => {
             if (newScene) this.scene = newScene();
@@ -37,12 +46,6 @@ class MainController {
 
 const Main = new MainController();
 
-const nameToSceneMap = {
-    'home': () => { return null },
-    'my recs': () => { return new RecListModal('My Recs', REC_IMPORTS.RECOMMENDED); },
-    'all recs': () => { return new RecListModal('All Recs', REC_IMPORTS.ALL); },
-    'watchlist': () => { return new RecListModal('Rec Watchlist', REC_IMPORTS.WATCHLIST); },
-    'my posts': () => { return new RecListModal('My Posts', REC_IMPORTS.OWNED); }
-};
+// console.log(DatabaseRetriever.getRec('00000001'));
 
 export default Main;

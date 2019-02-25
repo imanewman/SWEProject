@@ -169,10 +169,12 @@
     border: 0px solid rgba(0,0,0,0);
 
     transition: border 0.2s;
+
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
 }
 
 .nav_account_dropdown_option {
-    display: flex;
+    display: none;
 
     width: 10em;
     height: 0;

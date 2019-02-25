@@ -109,8 +109,12 @@ flex-grow { flex-grow: 1; }
 /*Generally Common*/
 .center { margin: auto; }
 .center-horizontal { margin-left: auto; margin-right: auto; }
+.center-vertical { margin-topt: auto; margin-bottom: auto; }
 
 .shadow { box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15) !important; }
+
+.displayed { display: block !important; }
+.flexed { display: flex !important; }
 
 /*Tooltips*/
 .tooltip {}
@@ -148,10 +152,16 @@ flex-grow { flex-grow: 1; }
 
 /*Autoscaling Images*/
 .fillwidth {
-    width: 100%;
-    height: auto;
+    /*width: 100%;*/
+    /*height: auto;*/
+    object-fit: contain;
+    height: inherit;
+    width: inherit;
 }
 .fillheight {
-    height: 100%;
-    width: auto;
+    /*height: 100%;*/
+    /*width: auto;*/
+    object-fit: contain;
+    height: inherit;
+    width: inherit;
 }

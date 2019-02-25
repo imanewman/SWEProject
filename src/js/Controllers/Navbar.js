@@ -21,6 +21,8 @@ class Navbar {
 
                 // attach controller functions to elements
                 this.attachFunctions();
+
+                //TODO: show account buttons if logged in
             });
         });
     }
@@ -94,6 +96,10 @@ class Navbar {
 
     // goes to account page when option is clicked
     goToAccountPage() {
+
+    }
+
+    logIn() {
 
     }
 
