@@ -1,7 +1,7 @@
-import Rec from "../Model/Rec.js";
-import User from "../Model/User.js";
-//const Rec = require("../Model/Rec.js");
-//const User = require("../Model/User.js");
+//import Rec from "../Model/Rec.js";
+//import User from "../Model/User.js";
+const Rec = require("../Model/Rec.js");
+const User = require("../Model/User.js");
 
 class PrivateObjectFactory {
     constructor() {
@@ -67,6 +67,6 @@ const ObjectFactory = new PrivateObjectFactory();
 
 Object.freeze(ObjectFactory);
 
-//module.exports = ObjectFactory;
+module.exports = ObjectFactory;
 
-export default ObjectFactory;
+//export default ObjectFactory;
