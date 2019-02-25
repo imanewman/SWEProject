@@ -36,26 +36,11 @@ describe("Database Connector Tests", () => {
                     EventName: "CSC309 Bishop Hike",
                     RecID: 1,
                     StartTime: "03:00:00"
-                    //Start Time and
                 }
             ];
 
             const checkEquals = (result) => {
-                /*expect(result.length).to.equal(expected.length); // check that result is one row
 
-                for (var idx = 0; idx < result.length; idx++) {
-                    let resultRow = result[idx];
-                    let expectedRow = expected[idx];
-
-                    //console.log(`all keys: ${Object.keys(expectedRow)}`);
-
-                    Object.keys(expectedRow).forEach( (key) => {
-                        // console.log(`key: ${key}`);
-                        // console.log(`-> ${JSON.stringify(resultRow[key])}`);
-                        // console.log(`-> ${JSON.stringify(resultRow[key])}`);
-                        expect(resultRow[key]).to.equal(expectedRow[key]); // check each value matches
-                    });
-                }*/
                 Helper.IterateFields(result, expected);
                 done();
 
@@ -79,21 +64,7 @@ describe("Database Connector Tests", () => {
             ];
 
             const checkEquals = (result) => {
-                /*expect(result.length).to.equal(expected.length); // check that result is one row
 
-                for (var idx = 0; idx < result.length; idx++) {
-                    let resultRow = result[idx];
-                    let expectedRow = expected[idx];
-
-                    //console.log(`all keys: ${Object.keys(expectedRow)}`);
-
-                    Object.keys(expectedRow).forEach( (key) => {
-                        // console.log(`key: ${key}`);
-                        // console.log(`-> ${JSON.stringify(resultRow[key])}`);
-                        // console.log(`-> ${JSON.stringify(resultRow[key])}`);
-                        expect(resultRow[key]).to.equal(expectedRow[key]); // check each value matches
-                    });
-                }*/
                 Helper.IterateFields(result, expected);
                 done();
 
