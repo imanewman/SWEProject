@@ -25,6 +25,25 @@ class PrivateHelper {
           });
       }
     }
+
+    getExpectedRec()
+    {
+      return{
+          "id": 2,
+          "title": "Junk",
+          "description": "Junk",
+          "location": "Here",
+      }
+    }
+
+    getExpectedUser()
+    {
+      return {
+          "id": 3,
+          "email": "Junk",
+          "fullName": "Name"
+      }
+    }
 }
 
 const Helper = new PrivateHelper();
