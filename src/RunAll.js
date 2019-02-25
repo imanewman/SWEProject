@@ -11,6 +11,19 @@ app.use(bodyParser.json());
 // Static paths to be served like index.html and all client side js
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) {
+   console.log("Handling " + req.path + '/' + req.method);
+   res.header("Access-Control-Allow-Origin", "http://localhost:63342");
+   res.header("Access-Control-Allow-Credentials", true);
+   res.header('Access-Control-Allow-Headers',
+    'Content-Type, Authorization, Content-Length, X-Requested-With');
+   res.header('Access-Control-Allow-Methods',
+    'GET, PUT, POST, DELETE, OPTIONS');
+   res.header("Access-Control-Expose-Headers",
+    'Content-Length, Content-Type, Location, Date');
+  next();
+});
+
 // Connect to the DB
 var cnn = require("./Database.js");
 
