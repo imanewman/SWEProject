@@ -1,9 +1,7 @@
-const DatabaseConnector = require("../../Database.js");
-const ObjectFactory = require("./ObjectFactory.js");
+import ObjectFactory from "./ObjectFactory.js";
 
 class PrivateDatabaseRetriever {
     constructor() {
-        this.database = DatabaseConnector;
         this.factory = ObjectFactory;
 
         if(! PrivateDatabaseRetriever.instance){
@@ -103,4 +101,6 @@ const DatabaseRetriever = new PrivateDatabaseRetriever();
 
 Object.freeze(DatabaseRetriever);
 
-module.exports = DatabaseRetriever;
+// module.exports = DatabaseRetriever;
+
+export default DatabaseRetriever;

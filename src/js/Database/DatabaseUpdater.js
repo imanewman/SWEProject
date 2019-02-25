@@ -1,9 +1,7 @@
-const DatabaseConnector = require("../../Database.js");
-const ObjectConverter = require("./ObjectConverter.js");
+import ObjectConverter from"./ObjectConverter.js";
 
 class PrivateDatabaseUpdater {
     constructor() {
-        this.database = DatabaseConnector;
         this.converter = ObjectConverter;
 
         if(! PrivateDatabaseUpdater.instance){
@@ -48,4 +46,6 @@ const DatabaseUpdater = new PrivateDatabaseUpdater();
 
 Object.freeze(DatabaseUpdater);
 
-module.exports = DatabaseUpdater;
+// module.exports = DatabaseUpdater;
+
+export default DatabaseUpdater;

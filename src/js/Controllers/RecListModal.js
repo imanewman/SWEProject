@@ -10,7 +10,6 @@ const REC_IMPORTS = {
 };
 
 class RecListModal {
-    //TODO: make way to init different types of lists
     constructor(
         title = "Upcoming Recs",
         importType = REC_IMPORTS.ALL
