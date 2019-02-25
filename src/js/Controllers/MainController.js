@@ -46,6 +46,6 @@ class MainController {
 
 const Main = new MainController();
 
-// console.log(DatabaseRetriever.getRec('00000001'));
+let rec = DatabaseRetriever.getRec(1);
 
 export default Main;
