@@ -6,7 +6,7 @@ const Helper = require("../HelperClasses/Helper.js")
 describe("ObjectFactory Tests", () => {
   describe("Test 'initializeRec' function", () => {
     it("Converts the given recObject", (done) => {
-      const expected = Helper.getExpectedRec();
+      const expected = Helper.getRecdata();
       const recived = ObjectFactory.initializeRec(expected);
       expect(recived.id).to.equal(expected.id);
       expect(recived.title).to.equal(expected.title)
@@ -18,7 +18,7 @@ describe("ObjectFactory Tests", () => {
 
   describe("Test 'initializeRec' function", () => {
     it("Converts the given userObject", (done) => {
-      const expected = Helper.getExpectedUser();
+      const expected = Helper.getUserdata();
       const recived = ObjectFactory.initializeUser(expected);
       expect(recived.id).to.equal(expected.id);
       expect(recived.email).to.equal(expected.email);

@@ -26,7 +26,7 @@ class PrivateHelper {
       }
     }
 
-    getExpectedRec()
+    getRecdata()
     {
       return{
           "id": 2,
@@ -36,7 +36,7 @@ class PrivateHelper {
       }
     }
 
-    getExpectedUser()
+    getUserdata()
     {
       return {
           "id": 3,
