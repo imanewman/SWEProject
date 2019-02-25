@@ -43,6 +43,19 @@ router.get('/', function(req, res) {
    cnn.query("SELECT * FROM Recs", handler);
 });
 
+// GET /Recs/id
+router.get('/:id', function(req, res) {
+
+	// handler that sends our response and releases connection
+   var handler = function(result) {
+      res.send(result);  
+   };
+   
+   console.log('GET /Recs');
+   
+   cnn.query(`SELECT * FROM Recs WHERE recID = ${req.params.id}`, handler);
+});
+
 // POST /Recs
 router.post('/', function(req, res) {
    console.log('POST /Recs');
