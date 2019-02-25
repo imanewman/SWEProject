@@ -46,7 +46,7 @@ class Rec {
     setDescription(description) { this.description = description; }
 
     getLocation() { return this.location; }
-    	
+
     setLocation(location) { this.location = location; }
 
     getDate() { return this.date; }
@@ -100,9 +100,9 @@ class Rec {
     addNewField(fieldName, fieldValue) { this.newFields[fieldName] = fieldValue; }
 
     deleteNewFields(fieldName) { this.newFields.remove(fieldName); }
-    
+
     generateCalendarObj() {}
-    
+
     // returns "<DATE>, from <STARTTIME> to <ENDTIME>"
     getDateString() {
 	    if (this.date !== ''
@@ -117,9 +117,9 @@ class Rec {
 	        return "All Day";
         }
     }
-    
+
     static convertDate(dateStr) {
-        let monthList = ["January", "February", "March", "April", "May", "June", 
+        let monthList = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"];
         let dateParts = dateStr.split('-');
 
@@ -152,4 +152,5 @@ class Rec {
     }
 }
 
-export default Rec;
+//export default Rec;
+module.exports = Rec;

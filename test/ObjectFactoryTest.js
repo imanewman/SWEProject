@@ -6,7 +6,7 @@ describe("ObjectFactory Tests", () => {
   describe("Test 'initializeRec' function", () => {
     it("Converts the given recObject", (done) => {
       const expected = [{
-      id: 00000001,
+      id: 1,
       title: "Test",
       description: "This is a test",
       location: "Here",
@@ -20,6 +20,7 @@ describe("ObjectFactory Tests", () => {
       newFields: {}}];
 
       const recived = ObjectFactory.initializeRec(expected);
+      expect(recived.id).to.equal("1");
       //Helper.IterateFields(expected, recived);
       //expect(recived).to.equal(expected);
       done();

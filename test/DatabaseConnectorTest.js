@@ -32,11 +32,11 @@ describe("Database Connector Tests", () => {
 
             const expected = [
                 {
-                    Description: "The class will go hike Bishop's Peak together!",
+                    Description: "I have changed this description...",
                     EventName: "CSC309 Bishop Hike",
-                    RecID: "00000001",
+                    RecID: 1,
                     StartTime: "03:00:00"
-                    //Start Time and 
+                    //Start Time and
                 }
             ];
 
