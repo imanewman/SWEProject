@@ -13,8 +13,6 @@ class SaveEditRecButton extends RecButton {
     }
 
     click() {
-        //TODO: update rec and pass to DB
-
         this.recModal.displayMode();
         this.recModal.saveInfo();
     }

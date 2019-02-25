@@ -15,11 +15,13 @@ class PrivateDatabaseRetriever {
         let recObject = {};
 
         $.ajax({
-            url: `Recs/${recId}`,
+            url: `//localhost:4000/Recs/${recId}`,
             type: 'GET',
             async: false,
             success: (result) => {
                 recObject = result;
+
+                console.log(recObject);
             }
         });
 
