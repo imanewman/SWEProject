@@ -1,12 +1,5 @@
-// try{
-//import Rec from "../Model/Rec.js";
-//import User from "../Model/User.js";
-// }
-//catch(err) {
-  const Rec = require("../Model/Rec.js");
-  const  User = require("../Model/User.js")
-//}
-//import { Rec, User, PendingOrganizers } from "../Model";
+import Rec from "../Model/Rec.js";
+import User from "../Model/User.js";
 
 class PrivateObjectFactory {
     constructor() {
@@ -20,17 +13,20 @@ class PrivateObjectFactory {
     initializeRec(recObject) {
         return new Rec(
             recObject.id,
-            recObject.title || "",
-            recObject.description || "",
-            recObject.location || "",
-            recObject.duration || 0,
-            recObject.startTime || "",
-            recObject.tags || [], // need to change, db has tagId and points to tag table
-            recObject.draft || true,
-            recObject.contactInfo || "",
-            recObject.websiteLink || "",
-            recObject.rules || "",
-            recObject.newFields || {}
+            recObject.title,
+            recObject.description,
+            recObject.location,
+            recObject.date,
+            recObject.startTime,
+            recObject.endTime,
+            recObject.tags,
+            recObject.draft,
+            recObject.contactInfo,
+            recObject.websiteLink,
+            recObject.imageLink,
+            recObject.rules,
+            recObject.ownerId,
+            recObject.newFields
         );
     }
 
@@ -38,9 +34,11 @@ class PrivateObjectFactory {
         let recList = [];
 
         for (let recObject in recListObject) {
-            let newRec = this.initializeRec(recObject);
+            if (recListObject.hasOwnProperty(key)) {
+                let newRec = this.initializeRec(recObject);
 
-            recList.append(newRec);
+                recList.append(newRec);
+            }
         }
 
         return recList;
@@ -56,9 +54,9 @@ class PrivateObjectFactory {
         )
     }
 
-    //initializePendingOrganizerList(pendingOrganizerListObject) {
-      //  return new PendingOrganizers(pendingOrganizerListObject); // may need to parse list
-    //}
+    initializePendingOrganizerList(pendingOrganizerListObject) {
+        return new PendingOrganizers(pendingOrganizerListObject); // may need to parse list
+    }
 }
 
 // Set up object as a Singleton
@@ -67,12 +65,6 @@ const ObjectFactory = new PrivateObjectFactory();
 
 Object.freeze(ObjectFactory);
 
-module.exports = ObjectFactory;
+// module.exports = ObjectFactory;
 
-
-
-
-
-// I think this is the best way to create a singleton?
-// https://www.sitepoint.com/javascript-design-patterns-singleton/
-// other way: https://www.dofactory.com/javascript/singleton-design-pattern
+export default ObjectFactory;
