@@ -51,7 +51,7 @@ router.get('/:id', function(req, res) {
       res.send(result);  
    };
    
-   console.log('GET /Recs');
+   console.log('GET /Recs/{id}');
    
    cnn.query(`SELECT * FROM Recs WHERE recID = ${req.params.id}`, handler);
 });
@@ -68,7 +68,35 @@ router.post('/', function(req, res) {
    console.log(req.body);
    
    handler();
-   // do stuff here
+   
+   //cnn.query(`INSERT INTO Recs VALUES (ownerId, title) VALUES (?, ?)`, handler);
+});
+
+// PUT /Recs/{id}
+router.put('/:id', function(req, res) {
+   console.log('PUT /Recs/{id}');
+   
+   var putId = parseInt(req.params.id, 10);
+   
+	// handler that sends our response and releases connection
+   var handler = function(result) {
+      console.log(result.affectedRows + " records updated");
+      res.status(200).end();
+   };
+   
+   console.log(req.body); 
+   
+   var sql = `UPDATE Recs SET EventName = '${req.body.EventName}', ` +
+   			 `Location = '${req.body.Location}', Date = '${req.body.Date}', StartTime = '${req.body.StartTime}', ` +
+   			 `EndTime = '${req.body.EndTime}', ImgLink = '${req.body.ImgLink}', WebsiteLink = '${req.body.WebsiteLink}', ` +
+   			 `Description = '${req.body.Description}', Rules = '${req.body.Rules}', ContactInfo = '${req.body.ContactInfo}'` + 
+   			 ` WHERE RecID = ${putId}`
+   
+   console.log(sql);
+   
+   
+	cnn.query(sql, handler);
+   //handler();
 });
 
 module.exports = router;
