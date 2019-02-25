@@ -13,13 +13,14 @@ import RecTextFactory from './EditableRecText/RecTextFactory.js';
 
 //TODO: add owner info, tags
 class RecModal {
-    constructor(rec) {
+    constructor(rec, newRec = false) {
         this.rec = rec;
         this.recId = this.rec.getId();
         this.displaySpeed = 200;
         this.editing = false;
         this.buttons = {};
         this.editableTexts = {};
+        this.newRec = newRec;
 
         this.tagIconMap = {
             'Farmers Market': 'fas fa-carrot orange',
@@ -50,22 +51,29 @@ class RecModal {
                 // hide the element
                 recElement.hide().promise().then( () => {
                     // add it to the rec list
-                    $("#rec_items").append(recElement);
+                    if (this.newRec) {
+                        $("#rec_items").prepend(recElement);
+                    } else {
+                        $("#rec_items").append(recElement);
+                    }
 
                     // attach controller functions to buttons
-                    this.attachButtons();
-
-                    this.editableTexts = RecTextFactory.createAllEditableText(this);
+                    this.attachEventHandlers();
 
                     // update the rec info
                     this.updateInfo();
 
-                    // display the rec
-                    this.display();
-
                     //TODO: put user id in local storage
                     if (localStorage.getItem("userId") === this.rec.getOwnerId()) {
                         this.showOtherButtons("owner");
+                    }
+
+                    // display the rec
+                    this.display();
+
+                    if (this.newRec) {
+                        this.expand();
+                        this.editMode();
                     }
                 });
             });
@@ -73,7 +81,7 @@ class RecModal {
     }
 
     // adds all buttons, which attaches click handlers
-    attachButtons() {
+    attachEventHandlers() {
         this.buttons['expand'] = new ExpandRecButton(this);
         this.buttons['save'] = new SaveRecButton(this);
         this.buttons['locate'] = new LocateRecButton(this);
@@ -85,6 +93,8 @@ class RecModal {
         this.buttons['saveEdit'] = new SaveEditRecButton(this);
         this.buttons['discardEdit'] = new DiscardEditRecButton(this);
         this.buttons['revertEdit'] = new RevertEditRecButton(this);
+
+        this.editableTexts = RecTextFactory.createAllEditableText(this);
     }
 
     // saves updated rec info
@@ -114,6 +124,10 @@ class RecModal {
         this.updateMap();
         this.updateImage();
         this.updateIcon();
+    }
+
+    expand() {
+        this.buttons['expand'].click();
     }
 
     // updates the rec icon based on its tags

@@ -1,5 +1,6 @@
 import RecModal from "./RecModal.js";
 import Rec from "../Model/Rec.js";
+import DatabaseRetriever from '../Database/DatabaseRetriever.js';
 
 const REC_IMPORTS = {
     ALL: 0,
@@ -51,6 +52,8 @@ class RecListModal {
 
             this.toggleCheckBox($checkbox);
         });
+
+        $("#rec_list_add_button").click( () => { this.addNewRec(); })
     }
 
     // toggles whether a checkbox is checked
@@ -106,10 +109,17 @@ class RecListModal {
         this.hide(removeScene);
     }
 
+    addNewRec() {
+        let rec = new Rec();
+        let recModal = new RecModal(rec, true);
+
+        this.currentRecModals.push(recModal);
+    }
+
     // imports recs into the rec list
     importRecs() {
         //TODO: pull right recs from db
-        if (test) this.currentRecs = testRecs;
+        this.currentRecs = (test) ? testRecs : DatabaseRetriever.getRecs();
 
         // remove recs currently displayed
         this.removeRecs();
@@ -243,24 +253,24 @@ let testRecs = [
         "Tickets: $50.00",
         "1000000",
         {}
-    ),
-    new Rec(
-        "0000006",
-        "Name",
-        "Desc",
-        "Location",
-        "2019-02-20",
-        "19:00:00",
-        "21:00:00",
-        ['Tag'],
-        true,
-        "Contact",
-        "Website",
-        "Image",
-        "Rules",
-        "1000000",
-        {}
     )
+    // new Rec(
+    //     "0000006",
+    //     "Name",
+    //     "Desc",
+    //     "Location",
+    //     "2019-02-20",
+    //     "19:00:00",
+    //     "21:00:00",
+    //     ['Tag'],
+    //     true,
+    //     "Contact",
+    //     "Website",
+    //     "Image",
+    //     "Rules",
+    //     "1000000",
+    //     {}
+    // )
 ];
 
 export {

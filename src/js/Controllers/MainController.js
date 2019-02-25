@@ -1,6 +1,5 @@
 import Navbar from "./Navbar.js";
 import { RecListModal, REC_IMPORTS } from "./RecListModal.js";
-import DatabaseRetriever from '../Database/DatabaseRetriever.js';
 
 class MainController {
     constructor() {
@@ -45,7 +44,5 @@ class MainController {
 }
 
 const Main = new MainController();
-
-let rec = DatabaseRetriever.getRec(1);
 
 export default Main;
