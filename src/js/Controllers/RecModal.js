@@ -10,6 +10,7 @@ import SaveEditRecButton from './RecButtons/SaveEditRecButton.js';
 import DiscardEditRecButton from './RecButtons/DiscardEditRecButton.js';
 import RevertEditRecButton from './RecButtons/RevertEditRecButton.js';
 import RecTextFactory from './EditableRecText/RecTextFactory.js';
+import DatabaseUpdater from '../Database/DatabaseUpdater.js';
 
 //TODO: add owner info, tags
 class RecModal {
@@ -199,6 +200,8 @@ class RecModal {
 
         $("#" + this.recId).addClass("rec_item_editable");
 
+        $("#" + this.recId + " .rec_item_rsvp").fadeOut(this.displaySpeed);
+
         for (let key in this.editableTexts) {
             if (this.editableTexts.hasOwnProperty(key)) {
                 this.editableTexts[key].editMode();
@@ -213,6 +216,8 @@ class RecModal {
         this.editing = false;
 
         $("#" + this.recId).removeClass("rec_item_editable");
+
+        $("#" + this.recId + " .rec_item_rsvp").fadeIn(this.displaySpeed);
 
         for (let key in this.editableTexts) {
             if (this.editableTexts.hasOwnProperty(key)) {
