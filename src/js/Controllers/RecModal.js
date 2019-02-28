@@ -11,6 +11,7 @@ import DiscardEditRecButton from './RecButtons/DiscardEditRecButton.js';
 import RevertEditRecButton from './RecButtons/RevertEditRecButton.js';
 import RecTextFactory from './EditableRecText/RecTextFactory.js';
 import DatabaseUpdater from '../Database/DatabaseUpdater.js';
+import Categories from './Categories.js';
 
 //TODO: add owner info, tags
 class RecModal {
@@ -22,20 +23,6 @@ class RecModal {
         this.buttons = {};
         this.editableTexts = {};
         this.newRec = newRec;
-
-        this.tagIconMap = {
-            'Farmers Market': 'fas fa-carrot orange',
-            'Hiking': 'fas fa-hiking neongreen',
-            'Festival': 'fas fa-guitar gold',
-            'Food': 'fas fa-utensils limegreen',
-            'Open Mic': 'fas fa-microphone purple',
-            'Career Fair': 'fas fa-user-tie deepblue',
-            'Trade Show': 'fas fa-store red',
-            'Sports': 'fas fa-futbol bloodorange',
-            'Charity': 'fas fa-hand-holding-heart pink',
-            'Convention': 'fas fa-users rose',
-            'Speech': 'fas fa-comments green'
-        };
 
         this.attach();
     }
@@ -135,8 +122,8 @@ class RecModal {
     updateIcon() {
         let tags = this.rec.getTags();
 
-        if (tags.length > 0 && tags[0] in this.tagIconMap) {
-            let tagClasses = this.tagIconMap[tags[0]]; // for now it just picks the first tag
+        if (tags.length > 0 && tags[0] in Categories.icons) {
+            let tagClasses = Categories.icons[tags[0]]; // for now it just picks the first tag
 
             $("#" + this.recId + " .rec_item_image i").removeClass().addClass(tagClasses);
         }

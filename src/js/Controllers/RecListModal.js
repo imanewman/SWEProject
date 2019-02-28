@@ -1,6 +1,7 @@
 import RecModal from "./RecModal.js";
 import Rec from "../Model/Rec.js";
 import DatabaseRetriever from '../Database/DatabaseRetriever.js';
+import CheckboxFactory from './Checkbox/CheckboxFactory.js';
 
 const REC_IMPORTS = {
     ALL: 0,
@@ -19,6 +20,7 @@ class RecListModal {
         this.importType = importType;
         this.currentRecs = [];
         this.currentRecModals = [];
+        this.checkboxes = [];
         this.displaySpeed = 200;
         this.didScroll = false;
 
@@ -46,23 +48,10 @@ class RecListModal {
     attachFunctions() {
         // update didScroll when window scrolls
         $(window).scroll( () => { this.didScroll = true } );
-
-        $(".rec_list_filter_checkbox").click( (e) => {
-            let $checkbox = $(e.currentTarget).children(".rec_list_filter_checkbox_button");
-
-            this.toggleCheckBox($checkbox);
-        });
+        
+        this.checkboxes = CheckboxFactory.createAllCheckboxes();
 
         $("#rec_list_add_button").click( () => { this.addNewRec(); })
-    }
-
-    // toggles whether a checkbox is checked
-    toggleCheckBox($checkbox) {
-        if ($checkbox.attr("checked") !== undefined) {
-            $checkbox.removeAttr("checked");
-        } else {
-            $checkbox.attr("checked", true);
-        }
     }
 
     // sets the name of this rec list
