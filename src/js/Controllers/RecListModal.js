@@ -36,7 +36,7 @@ class RecListModal {
                 $("#scene").append($(data));
                 $("#rec_list_container").hide();
 
-                this.attachFunctions();
+                this.attachEventHandlers();
                 this.setName();
                 this.display();
 
@@ -45,10 +45,10 @@ class RecListModal {
         });
     }
 
-    attachFunctions() {
+    attachEventHandlers() {
         // update didScroll when window scrolls
         $(window).scroll( () => { this.didScroll = true } );
-        
+
         this.checkboxes = CheckboxFactory.createAllCheckboxes();
 
         $("#rec_list_add_button").click( () => { this.addNewRec(); })
