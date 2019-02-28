@@ -7,19 +7,8 @@
 / ******************************************************************************************************************** \
 \**********************************************************************************************************************/
 
-#rec_logo_text {
-    font-size: 2em;
-    font-weight: 1000;
-    line-height: 1em;
 
-    transform: scale(1.2);
-
-    margin: auto;
-
-    height: 1em;
-
-    color: var(--dark-grey);
-}
+/****************************************************** General *******************************************************/
 
 .header_bar_container {
     position: fixed;
@@ -33,7 +22,7 @@
 
     border-bottom: 1px solid var(--dark-grey);
 
-    box-shadow: 0 1px 2px rgba(7, 44, 104, 0.15);
+    /*box-shadow: 0 1px 2px rgba(7, 44, 104, 0.15);*/
 
     /*background-color: var(--darkish);*/
 
@@ -54,6 +43,32 @@
     display: flex;
 }
 
+/******************************************************* Logo *********************************************************/
+
+#rec_logo_text {
+    font-size: 2em;
+    font-weight: 1000;
+    line-height: 1em;
+
+    transform: scale(1.2);
+
+    /*margin: auto;*/
+
+    height: 1em;
+
+    color: var(--dark-grey);
+}
+
+#rec_logo {
+    width: 10em;
+    height: 4em;
+    margin: 0 1em 0 1em;
+}
+
+#rec_logo_text {
+    cursor: pointer;
+}
+
 /**************************************************** Nav Buttons *****************************************************/
 
 #nav_buttons {
@@ -61,17 +76,11 @@
     margin-top: 2.5em;
 }
 
-.nav_button { margin-left: 1.2em; }
+.nav_button {
+    margin-left: 1.2em;
 
-#home_button {}
-
-#my_recs_button {}
-
-#all_recs_button {}
-
-#watchlist_button {}
-
-#my_posts_button {}
+    cursor: pointer;
+}
 
 .nav_button_text {
     transition: color 0.2s;
@@ -79,13 +88,17 @@
     color: var(--grey);
 }
 
-.nav_button-current .nav_button_text { color: var(--darker-blue); }
+.nav_button:hover .nav_button_text {
+    color: var(--darkish);
+}
 
-.nav_button-current .nav_button_text:hover { color: var(--dark-blue); }
+.nav_button-current .nav_button_text {
+    color: var(--darker-blue);
+}
 
-.nav_button-current .nav_button_text:active { color: var(--darkest-blue); }
-
-.nav_button-current {}
+.nav_button-current:hover .nav_button_text {
+    color: var(--brighter-blue);
+}
 
 .nav_button_underline {
     position: relative;
@@ -110,49 +123,16 @@
     height: 0.25em;
 }
 
+.nav_button-current:hover .nav_button_underline {
+    background-color: var(--brighter-blue);
+}
+
 .nav_divider {
     margin-left: 1em;
-    /*margin-right: 1em;*/
 
     font-weight: 600;
 
     opacity: 0.5;
-}
-
-/****************************************************** Nav Search ****************************************************/
-
-#nav_search {
-    display: none;
-
-    position: absolute;
-
-    right: 8em;
-}
-
-#nav_search_icon { transform: scale(1.2); }
-
-#nav_search_input {
-    position: absolute;
-
-    right: 2em;
-    top: -0.2em;
-
-    width: 20em;
-    height: 1.5em;
-
-    padding-left: 0.5em;
-
-    border-radius: 1em;
-    border: 1px solid var(--darkish);
-
-    background-color: var(--lightish);
-
-    transition: background-color 0.2s;
-}
-
-#nav_search_input:focus {
-    outline: none;
-    background-color: var(--lighter);
 }
 
 /**************************************************** Account Button **************************************************/
@@ -173,6 +153,11 @@
     box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
 }
 
+.nav_account-open .nav_account_dropdown {
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
+}
+
 .nav_account_dropdown_option {
     display: none;
 
@@ -184,21 +169,6 @@
     overflow: hidden;
 
     transition: all 0.2s;
-}
-
-.nav_account-open #nav_account_icon {
-    color: var(--darker-blue);
-}
-
-.nav_account-open #nav_account_icon:hover {
-    color: var(--brighter-blue);
-
-    cursor: pointer;
-}
-
-.nav_account-open .nav_account_dropdown {
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 3px rgba(7, 44, 104, 0.15);
 }
 
 .nav_account-open .nav_account_dropdown_option {
@@ -217,6 +187,7 @@
     margin-right: 0.5em;
     line-height: 2.5em;
 }
+
 #nav_account {
     position: absolute;
 
@@ -229,15 +200,12 @@
     color: var(--grey);
 }
 
-
-/****************************************************** Logo **********************************************************/
-
-#rec_logo {
-    width: 10em;
-    height: 4em;
-    margin: 0 1em 0 1em;
+.nav_account-open #nav_account_icon {
+    color: var(--darker-blue);
 }
 
-#rec_logo_text {
+.nav_account-open #nav_account_icon:hover {
+    color: var(--brighter-blue);
+
     cursor: pointer;
 }

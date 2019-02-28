@@ -25,7 +25,7 @@ class Rec {
 		this.startTime = startTime || '00:00:00';
 		this.endTime = endTime || '00:00:00';
 		this.tags = tags || [];
-		this.draft = draft || true;
+		this.draft = (draft === undefined) ? true : draft;
 		this.contactInfo = contactInfo || '';
 		this.websiteLink = websiteLink || '';
         this.imageLink = imageLink || '';

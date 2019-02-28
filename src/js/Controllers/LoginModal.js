@@ -1,4 +1,5 @@
 class LoginModal {
-    login() {
-    }
+    constructor() {}
 }
+
+export default LoginModal;

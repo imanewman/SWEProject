@@ -14,29 +14,43 @@ class PrivateDatabaseUpdater {
     putRec(rec) {
         let recObject = this.converter.convertRec(rec);
 
-        this.database.put("Rec", recObject);
+        $.ajax({
+            url: `//localhost:4000/Recs`,
+            type: 'PUT',
+            data: recObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
     deleteRec(recId) {
-        this.database.delete("Rec", recId);
+        //TODO
     }
 
     putUser(user) {
         let userObject = this.converter.convertUser(user);
 
-        this.database.put("User", userObject);
+        $.ajax({
+            url: `//localhost:4000/Users`,
+            type: 'PUT',
+            data: userObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
     deleteUser(userId) {
-        this.database.delete("User", userId);
+        //TODO
     }
 
     putPendingOrganizer(pendingOrganizerId) {
-        this.database.put("PendingOrganizer", pendingOrganizerId);
+        //TODO
     }
 
     deletePendingOrgaizer(userId) {
-        this.database.delete("PendingOrganizer", userId);
+        //TODO
     }
 }
 

@@ -9,18 +9,20 @@ class PrivateObjectConverter {
 
     convertRec(rec) {
         return {
-            "id": rec.id,
-            "title": rec.title || "",
-            "description": rec.description,
-            "location": rec.location,
-            "duration": rec.duration,
-            "startTime": rec.startTime,
-            "tags": rec.tags, //may need to convert
+            "RecID": rec.id,
+            "EventName": rec.title,
+            "Description": rec.description,
+            "Location": rec.location,
+            "Date": rec.date,
+            "StartTime": rec.startTime,
+            "EndTime": rec.endTime,
+            "Tags": rec.tags, //TODO: not the way to do this
             "draft": rec.draft,
-            "contactInfo": rec.contactInfo,
-            "websiteLink": rec.websiteLink,
-            "rules": rec.rules,
-            "newFields": rec.newFields
+            "ContactInfo": rec.contactInfo,
+            "WebsiteLink": rec.websiteLink,
+            "ImgLink": rec.imageLink,
+            "Rules": rec.rules,
+            "UserID": rec.ownerId
         }
     }
 

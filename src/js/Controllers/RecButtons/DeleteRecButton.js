@@ -13,7 +13,8 @@ class DeleteRecButton extends RecButton {
     }
 
     click() {
-
+        //TODO: make delete modal to make sure they want to delete, and also delete from DB
+        this.recModal.remove();
     }
 }
 
