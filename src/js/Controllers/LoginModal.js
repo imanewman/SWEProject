@@ -1,5 +1,7 @@
 class LoginModal {
     constructor() {
+        this.displaySpeed = 200;
+
         this.attach();
     }
 
@@ -20,7 +22,7 @@ class LoginModal {
     }
 
     display() {
-        $("#login_container").addClass("displayed");
+        $("#login_container").fadeIn(this.displaySpeed);
     }
 
     displaySignUp() {
@@ -40,7 +42,7 @@ class LoginModal {
     }
 
     hide() {
-        $("#login_container").removeClass("displayed");
+        $("#login_container").fadeOut(this.displaySpeed);
     }
 }
 
