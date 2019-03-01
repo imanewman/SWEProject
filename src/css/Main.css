@@ -72,6 +72,8 @@ body {
     transition: color 0.1s;
 }
 
+.clickable { cursor: pointer; }
+
 .hov-blue:hover { color: var(--hover); }
 .hov-blue:active { color: var(--active); }
 

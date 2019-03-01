@@ -13,4 +13,5 @@ before_script:
  - npm install lit-html --save-dev
  - npm install nyc --save-dev
  - npm i @webcomponents/webcomponentsjs
+ - npm i babel-plugin-transform-imports
  - cd ..

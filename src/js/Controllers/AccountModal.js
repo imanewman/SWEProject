@@ -3,3 +3,5 @@ class AccountModal {
 
     addPreferredEvents() {}
 }
+
+export default AccountModal;
