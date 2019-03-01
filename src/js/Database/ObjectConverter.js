@@ -43,6 +43,6 @@ const ObjectConverter = new PrivateObjectConverter();
 
 Object.freeze(ObjectConverter);
 
- module.exports = ObjectConverter;
+ //module.exports = ObjectConverter;
 
-//export default ObjectConverter;
+export default ObjectConverter;
