@@ -3,18 +3,18 @@ import Rec from "../Model/Rec.js";
 import DatabaseRetriever from '../Database/DatabaseRetriever.js';
 import CheckboxFactory from './Checkbox/CheckboxFactory.js';
 
-const REC_IMPORTS = {
-    ALL: 0,
-    RECOMMENDED: 1,
-    WATCHLIST: 2,
-    OWNED: 3,
-    TEST: 4
-};
-
 class RecListModal {
+    static REC_IMPORTS = {
+        ALL: 0,
+        RECOMMENDED: 1,
+        WATCHLIST: 2,
+        OWNED: 3,
+        TEST: 4
+    };
+
     constructor(
         title = "Upcoming Recs",
-        importType = REC_IMPORTS.ALL
+        importType = RecListModal.REC_IMPORTS.ALL
     ) {
         this.title = title;
         this.importType = importType;
@@ -262,7 +262,4 @@ let testRecs = [
     // )
 ];
 
-export {
-    RecListModal,
-    REC_IMPORTS
-};
+export default RecListModal;

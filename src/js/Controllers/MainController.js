@@ -1,17 +1,20 @@
 import Navbar from "./Navbar.js";
-import { RecListModal, REC_IMPORTS } from "./RecListModal.js";
+import LoginModal from "./LoginModal.js";
+import AccountModal from "./AccountModal.js";
+import RecListFactory from "./RecListFactory.js";
 
 class MainController {
     constructor() {
         this.navbar = new Navbar(this);
+        this.login = new LoginModal();
         this.scene = null;
 
         this.nameToSceneMap = {
-            'home': () => { return null },
-            'my recs': () => { return new RecListModal('My Recs', REC_IMPORTS.RECOMMENDED); },
-            'all recs': () => { return new RecListModal('All Recs', REC_IMPORTS.ALL); },
-            'watchlist': () => { return new RecListModal('Rec Watchlist', REC_IMPORTS.WATCHLIST); },
-            'my posts': () => { return new RecListModal('My Posts', REC_IMPORTS.OWNED); }
+            'My Account': () => { return new AccountModal(); },
+            'my recs': () => { return RecListFactory.createMyRecsList(); },
+            'all recs': () => { return RecListFactory.createAllRecsList(); },
+            'watchlist': () => { return RecListFactory.createRecWatchlist(); },
+            'my posts': () => { return RecListFactory.createMyPosts(); }
         };
 
         if(! MainController.instance){

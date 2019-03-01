@@ -1,3 +1,0 @@
-/*class RecFilter {
-    filter(filterlist);
-}*/

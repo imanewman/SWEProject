@@ -43,19 +43,20 @@ class Navbar {
             this.animateChangePage($element)
         });
 
-        // toggle account menu when clicked
         $("#nav_account").click( () => {
             this.toggleAccountMenu();
         });
 
-        // go to account page when clicked
         $("#my_account_button").click( () => {
             this.goToAccountPage();
         });
 
-        // log out when clicked
         $("#log_out_button").click( () => {
             this.logOut();
+        });
+
+        $("#log_in_button").click( () => {
+            this.logIn();
         });
 
         // update didScroll when window scrolls
@@ -101,7 +102,7 @@ class Navbar {
     }
 
     logIn() {
-
+        this.main.login.display();
     }
 
     // logs out when option is clicked
