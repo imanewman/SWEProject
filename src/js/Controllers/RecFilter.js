@@ -57,7 +57,7 @@ class RecFilter extends Observer {
 
         let results = this.filterSearchString(filteredRecList);
 
-        console.log(results);
+        // console.log(results);
 
         let ids = [];
 
@@ -144,7 +144,7 @@ class RecFilter extends Observer {
             }
         }
 
-        console.log(JSON.stringify(this.categories));
+        // console.log(JSON.stringify(this.categories));
     }
 
     notifyOfUpdate() {
