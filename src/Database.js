@@ -46,10 +46,10 @@ class PrivateDatabaseConnector {
     }
 
     get(paramName, element = "", value = "", callback = undefined) {
-        var queryString = `SELECT * FROM ${this.connection.escape(paramName)}`;
+        var queryString = `SELECT * FROM ${paramName}`;
 
         if (value && element)
-            queryString += ` WHERE ${this.connection.escape(element)} = ${this.connection.escape(value)};`;
+            queryString += ` WHERE ${element} = ${this.connection.escape(value)};`;
         else
             queryString += ';';
 
@@ -59,13 +59,13 @@ class PrivateDatabaseConnector {
     put(paramName, dataString, callback = undefined) {
         // update: "UPDATE table_name SET field1 = new-value1, field2 = new-value2"
         // insert: "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')"
-        let queryString = `INSERT INTO ${this.connection.escape(paramName)} VALUES (${this.connection.escape(dataString)})`;
+        let queryString = `INSERT INTO ${paramName} VALUES (${this.connection.escape(dataString)})`;
 
         return this.query(queryString, callback);
     }
 
     delete(paramName, element = "", value = "", callback = undefined) {
-        let queryString = `DELETE FROM ${this.connection.escape(paramName)} WHERE ${element} = ${this.connection.escape(value)};`;
+        let queryString = `DELETE FROM ${paramName} WHERE ${element} = ${this.connection.escape(value)};`;
 
         return this.query(queryString, callback);
     }
