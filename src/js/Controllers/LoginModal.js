@@ -1,6 +1,6 @@
 class LoginModal {
     constructor() {
-        this.displaySpeed = 200;
+        this.displaySpeed = 100;
 
         this.attach();
     }
@@ -19,6 +19,14 @@ class LoginModal {
         $("#login_close_button").click( () => {
             this.hide();
         });
+
+        $("#signin_button").click( () => {
+            this.logIn();
+        });
+
+        $("#create_account_switch_button").click( () => {
+            this.displaySignUp();
+        });
     }
 
     display() {
@@ -26,7 +34,9 @@ class LoginModal {
     }
 
     displaySignUp() {
-
+        $("#signin").fadeOut(this.displaySpeed).promise().then( () => {
+            $("#signup").fadeIn(this.displaySpeed);
+        });
     }
 
     logIn() {
@@ -34,7 +44,9 @@ class LoginModal {
     }
 
     displayLogIn() {
-
+        $("#signup").fadeOut(this.displaySpeed).promise().then( () => {
+            $("#signin").fadeIn(this.displaySpeed);
+        });
     }
 
     signUp() {
@@ -43,6 +55,8 @@ class LoginModal {
 
     hide() {
         $("#login_container").fadeOut(this.displaySpeed);
+
+        this.displayLogIn();
     }
 }
 
