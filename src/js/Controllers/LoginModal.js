@@ -1,3 +1,5 @@
+// import DatabaseRetriever from "../Database/DatabaseRetriever";
+
 class LoginModal {
     constructor() {
         this.displaySpeed = 100;
@@ -21,11 +23,15 @@ class LoginModal {
         });
 
         $("#signin_button").click( () => {
-            this.logIn();
+            this.authenticate();
         });
 
         $("#create_account_switch_button").click( () => {
             this.displaySignUp();
+        });
+
+        $("#create_account_button").click( () => {
+            this.signUp();
         });
     }
 
@@ -39,8 +45,11 @@ class LoginModal {
         });
     }
 
-    logIn() {
+    authenticate() {
+        let username = $("#signin_username input").val();
+        let password = $("#signin_password input").val();
 
+        // let isValid = DatabaseRetriever.authenticate(username, password);
     }
 
     displayLogIn() {
@@ -50,7 +59,17 @@ class LoginModal {
     }
 
     signUp() {
+        let username = $("#signup_username input").val();
+        let password = $("#signup_password input").val();
+        let passwordVerify = $("#signup_password_confirm input").val();
 
+        let invalidPWElement = $("#invalid_create_text");
+
+        if (password !== passwordVerify) {
+            invalidPWElement.removeClass("hidden");
+        } else {
+            invalidPWElement.addClass("hidden");
+        }
     }
 
     hide() {
