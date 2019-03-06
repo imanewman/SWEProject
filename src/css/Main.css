@@ -101,6 +101,11 @@ body {
 
 .displayed { display: block !important; }
 .flexed { display: flex !important; }
+.hidden { display: none; }
+
+.full-width { width: 100%; }
+.full-height { height: 100%; }
+.full-size { width: 100%; height: 100%; }
 
 /*Tooltips*/
 .tooltip {}

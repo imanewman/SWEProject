@@ -1,3 +1,8 @@
+import Searchbox from './Searchbox.js';
+import Observer from './Observer.js';
+import CheckboxFactory from "./Checkbox/CheckboxFactory.js";
+import Categories from './Categories.js';
+
 class RecFilter extends Observer {
     constructor(recListModal) {
         super();
@@ -14,21 +19,68 @@ class RecFilter extends Observer {
             distance: 100,
             maxPatternLength: 32,
             minMatchCharLength: 1,
-            keys: [{ name: "text",
-                weight: 0.33 },
-                { name: "keywords",
-                    weight: 0.67 }]
+            keys: [
+                {
+                    name: "title",
+                    weight: 0.7
+                },
+                {
+                    name: "tags",
+                    weight: 0.3
+                }
+            ]
+        };
+
+        this.attachFilterMethods();
+    }
+
+    attachFilterMethods() {
+        this.searchbox = new Searchbox();
+        this.searchbox.attachObserver(this);
+
+        this.checkboxes = CheckboxFactory.createAllCheckboxes();
+
+        for (let key in this.checkboxes) {
+            if (this.checkboxes.hasOwnProperty(key)) {
+                this.checkboxes[key].attachObserver(this);
+            }
         }
+
+        this.gatherCategories();
     }
 
     applyFilters() {
-        var recList = this.recListModal.getRecs();
+        let recList = this.recListModal.getRecs();
+        let recModals = this.recListModal.getRecModals();
 
-        recList = this.filterCategories(recList);
+        let filteredRecList = this.filterCategories(recList);
 
-        recList = this.filterSearchString(recList);
+        let results = this.filterSearchString(filteredRecList);
 
-        //TODO: do something with search
+        console.log(results);
+
+        let ids = [];
+
+        for (let idx = 0; idx < results.length; idx++) {
+            let result = results[idx];
+
+            if (result['item'] !== undefined) {
+                ids.push(result['item']['id']);
+            } else {
+                ids.push(result['id']);
+            }
+        }
+
+        for (let idx = 0; idx < recModals.length; idx++) {
+            let recModal = recModals[idx];
+            let recId = recModal.getRecId();
+
+            if (ids.includes(recId)) {
+                recModal.display();
+            } else {
+                recModal.hide();
+            }
+        }
     }
 
     filterCategories(recList) {
@@ -36,11 +88,13 @@ class RecFilter extends Observer {
 
         for (let idx = 0; idx < recList.length; idx++) {
             let rec = recList[idx];
-            let tags =  rec.getTags();
+            let tags = rec.getTags();
 
             for (let tagIdx = 0; tagIdx < tags.length; tagIdx++) {
-                if (tags[tagIdx] in this.categories) {
-                    filteredRecList.append(rec);
+                let tag = tags[tagIdx];
+
+                if (this.categories.includes(tag)) {
+                    filteredRecList.push(rec);
 
                     continue;
                 }
@@ -53,12 +107,53 @@ class RecFilter extends Observer {
     filterSearchString(recList) {
         let items = [];
 
-        let fuse = new Fuse(items, this.fuseOptions);
+        for (let idx = 0; idx < recList.length; idx++) {
+            let rec = recList[idx];
 
-        return fuse.search(this.searchString);
+            let item = {
+                'id': rec.getId(),
+                'title': rec.getTitle(),
+                'tags': rec.getTags()
+            };
+
+            items.push(item);
+        }
+
+        if (this.searchString !== '') {
+            let fuse = new Fuse(items, this.fuseOptions);
+
+            return fuse.search(this.searchString);
+        } else {
+            return items;
+        }
+    }
+
+    gatherCategories() {
+        this.categories = [];
+
+        for (let key in this.checkboxes) {
+            if (this.checkboxes.hasOwnProperty(key)) {
+                let checkbox = this.checkboxes[key];
+
+                if (checkbox.isChecked()) {
+                    let name = checkbox.getName();
+                    let tag = Categories.nameToTag[name];
+
+                    this.categories.push(tag);
+                }
+            }
+        }
+
+        console.log(JSON.stringify(this.categories));
     }
 
     notifyOfUpdate() {
+        this.searchString = this.searchbox.getSearchString();
 
+        this.gatherCategories();
+
+        this.applyFilters();
     }
 }
+
+export default RecFilter;

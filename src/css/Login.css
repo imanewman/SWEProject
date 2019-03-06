@@ -23,24 +23,71 @@
 
 #login_box {
     width: 28em;
-    height:30em;
+    /*height:30em;*/
+    min-height: 20em;
 
-    margin-top: 10em;
+    margin-top: 15em;
 
     background: var(--lighter);
 
     border-radius: 1em;
     border: 1px solid var(--darkish);
+
+    transition: height 0.2s;
 }
 
 #login_close_button {
     position: relative;
 
     left: 26.5em;
-    top: 0.5em;
+    top: 0.2em;
 
-    width: 1em;
-    height: 1em;
+    width: 0;
+    height: 0;
 
     transform: scale(1.5);
+}
+
+.login_title {}
+
+.login_title_message {
+    width: fit-content;
+}
+
+.login_fields h4 {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+}
+
+.login_field {
+    width: 22em;
+    height: 2em;
+
+    margin-bottom: 1em;
+
+    border-radius: 0.3em;
+    border-style: groove;
+
+    padding-left: 0.4em;
+
+    font-size: 1.1em;
+}
+
+.login_buttons {
+    padding-bottom: 1em;
+}
+
+.login_button {
+    --mdc-theme-on-primary: white;
+    --mdc-theme-primary: var(--dark-blue);
+    --mdc-theme-on-secondary: white;
+    --mdc-theme-secondary: var(--dark-blue);
+}
+
+#create_account_switch_button {
+    margin-right: 8em;
+}
+
+#create_account_button {
+    margin-left: 14em;
 }

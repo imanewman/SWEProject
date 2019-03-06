@@ -85,6 +85,8 @@ class RecModal {
         this.editableTexts = RecTextFactory.createAllEditableText(this);
     }
 
+    getRecId() { return this.recId; }
+
     // saves updated rec info
     saveInfo() {
         for (let key in this.editableTexts) {
