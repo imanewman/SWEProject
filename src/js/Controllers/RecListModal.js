@@ -1,7 +1,7 @@
 import RecModal from "./RecModal.js";
 import Rec from "../Model/Rec.js";
 import DatabaseRetriever from '../Database/DatabaseRetriever.js';
-import CheckboxFactory from './Checkbox/CheckboxFactory.js';
+import RecFilter from './RecFilter.js';
 
 class RecListModal {
     static REC_IMPORTS = {
@@ -49,7 +49,7 @@ class RecListModal {
         // update didScroll when window scrolls
         $(window).scroll( () => { this.didScroll = true } );
 
-        this.checkboxes = CheckboxFactory.createAllCheckboxes();
+        this.filter = new RecFilter(this);
 
         $("#rec_list_add_button").click( () => { this.addNewRec(); })
     }
@@ -59,9 +59,12 @@ class RecListModal {
 
     // sets the rec items import type
     setImportType(importType) {
-        if (importType in REC_IMPORTS)
+        if (importType in RecListModal.REC_IMPORTS)
             this.importType = importType
     }
+
+    getRecs() { return this.currentRecs; }
+    getRecModals() { return this.currentRecModals; }
 
     // displays the rec list
     display(callback = () => {}) {

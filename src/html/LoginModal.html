@@ -1,17 +1,61 @@
  <div id="login_container" class="">
-    <div id="login_box" class="shadow center-horizontal flexed">
+    <div id="login_box" class="shadow center-horizontal flexed flex-col">
         <div id="login_close_button" class="clickable">
             <i class="fas fa-times"></i>
         </div>
 
-        <div id="login_title">
-            <div id="login_title_message">
+        <div id="signin" class="center">
+            <div class="login_title full-width">
+                <div class="login_title_message center-horizontal">
+                    <h2>Sign In</h2>
+                </div>
+            </div>
 
+            <div class="login_fields flexed flex-col full-width">
+                <div id="signin_username">
+                    <h4>Username</h4>
+                    <input class="login_field center-horizontal">
+                </div>
+
+                <div id="signin_password">
+                    <h4>Password</h4>
+                    <input type="password" class="login_field center-horizontal">
+                </div>
+            </div>
+
+            <div class="login_buttons">
+                <mwc-button id="create_account_switch_button" class="login_button">Create Account</mwc-button>
+                <mwc-button id="signin_button" class="login_button" raised>Sign In</mwc-button>
             </div>
         </div>
 
-        <div id="login_fields">
+        <div id="signup" class="center hidden">
+            <div class="login_title full-width">
+                <div class="login_title_message center-horizontal">
+                    <h2>Create Account</h2>
+                </div>
+            </div>
 
+            <div class="login_fields flexed flex-col full-width">
+                <div id="signup_username">
+                    <h4>Choose Username</h4>
+                    <input class="login_field center-horizontal">
+                </div>
+
+                <div id="signup_password">
+                    <h4>Set Password</h4>
+                    <input type="password" class="login_field center-horizontal">
+                </div>
+
+                <div id="signup_password_confirm">
+                    <h4>Confirm Password</h4>
+                    <input type="password" class="login_field center-horizontal">
+                </div>
+            </div>
+
+            <div class="login_buttons">
+                <mwc-button id="create_account_button" class="login_button" raised>Create Account</mwc-button>
+            </div>
         </div>
     </div>
 </div>

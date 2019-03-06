@@ -3,3 +3,5 @@ class Observer {
 
     notifyOfUpdate() {}
 }
+
+export default Observer;
