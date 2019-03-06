@@ -31,11 +31,13 @@ class RecGenerator {
     {
         let st = rec.getStartTime();
         let et = rec.getEndTime();
-        let dt = rec.getDate();
+        let dt = new Date(rec.getDate());
 
         for (let tIdx = 0; tIdx < times.length; tIdx++) {
             let time = times[tIdx];
-            if ((time.day == dt.getDay()) && (time.start <= rec.getStartTime()) && (time.end >= rec.getEndTime()))
+
+            // Check this: make sure formatting of fields is correct for comparison
+            if ((dt.getDay() in time.day) && (time.start <= rec.getStartTime()) && (time.end >= rec.getEndTime()))
                 return true;
         }
         return false;
