@@ -1,9 +1,12 @@
-class Checkbox {
+import Observable from '../Observable.js';
+
+class Checkbox extends Observable {
     constructor(name) {
+        super();
+
         this.name = name;
         this.id = name.replace(' ', '_') + '_checkbox';
         this.checked = true;
-        this.observers = [];
 
         this.attach();
     }
@@ -45,20 +48,7 @@ class Checkbox {
 
     isChecked() { return this.checked; }
 
-    attachObserver(o) {
-        this.observers.add(o);
-    }
-
-    detachObserver(o) {
-        this.observers.remove(o);
-
-    }
-
-    notifyObservers() {
-        for (let idx = 0; idx < this.observers.length; idx++) {
-            this.observers[idx].notifyOfUpdate();
-        }
-    }
+    getName() { return this.name; }
 }
 
 export default Checkbox;

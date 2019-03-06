@@ -25,7 +25,23 @@ class Categories {
         'Sports': 'Sports',
         'Charity': 'Charity Events',
         'Convention': 'Conventions',
-        'Speech': 'Speeches and Discussions'
+        'Speech': 'Speeches and Discussions',
+        'Concerts': 'Concerts'
+    };
+
+    static nameToTag = {
+        'Farmers Markets': 'Farmers Market',
+        'Hikes': 'Hiking',
+        'Festivals': 'Festival',
+        'Food': 'Food',
+        'Open Mics': 'Open Mic',
+        'Career Fairs': 'Career Fair',
+        'Trade Shows': 'Trade Show',
+        'Sports': 'Sports',
+        'Charity Events': 'Charity',
+        'Conventions': 'Convention',
+        'Speeches and Discussions': 'Speech',
+        'Concerts': 'Concerts'
     };
 
     static icons = {
