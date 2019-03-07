@@ -1,4 +1,5 @@
-import Rec from "../src/js/Model/Rec";
+//import Rec from "../src/js/Model/Rec";
+const Rec = require("../src/js/Model/Rec");
 
 const expect = require("chai").expect;
 const ObjectConverter = require("../src/js/Database/ObjectConverter.js");

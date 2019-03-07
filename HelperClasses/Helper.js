@@ -28,12 +28,27 @@ class PrivateHelper {
 
     getRecdata()
     {
-      return{
+      return {
+          "RecID": 0,
+          "EventName": "Downtown SLO Farmers Market",
+          "Description": "Description",
+          "Location": "Higuera Street, San Luis Obispo, CA",
+          "Date": "2019-02-21",
+          "StartTime": "18:00:00",
+          "EndTime": "21:00:00",
+          "Tags": ['Farmers Market'],
+          "draft": false,
+          "ContactInfo": "Contact Info",
+          "WebsiteLink": "https://downtownslo.com/farmers-market/",
+          "Rules": "Rules",
+          "UserID": "0001000"
+      };
+      /*{
           "id": 2,
           "title": "Junk",
           "description": "Junk",
           "location": "Here",
-      }
+      }*/
     }
 
     getUserdata()

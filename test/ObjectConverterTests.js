@@ -1,7 +1,7 @@
 const expect = require("chai").expect;
 const ObjectConverter = require("../src/js/Database/ObjectConverter.js");
 const ObjectFactory = require("../src/js/Database/ObjectFactory.js");
-const Helper = require("../HelperClasses/Helper.js")
+const Helper = require("../HelperClasses/Helper.js");
 
 
 describe("ObjectConverter Tests", () => {
