@@ -16,9 +16,9 @@ class Rec {
         ownerId,
         newFields
     ) {
-        this.id = id || '1';
-        this.title = title || 'Rec Title';
-        this.description = description || 'No Description';
+        this.RecID = id || '1';
+        this.EventName = title || 'Rec EventName';
+        this.Description = description || 'No Description';
         this.rules = rules || '';
 		this.location = location || '';
 		this.date = date || '';

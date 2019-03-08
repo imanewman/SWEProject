@@ -29,7 +29,7 @@ class PrivateHelper {
     getRecdata()
     {
       return {
-          "RecID": 0,
+          "RecID": "2",
           "EventName": "Downtown SLO Farmers Market",
           "Description": "Description",
           "Location": "Higuera Street, San Luis Obispo, CA",
@@ -41,7 +41,7 @@ class PrivateHelper {
           "ContactInfo": "Contact Info",
           "WebsiteLink": "https://downtownslo.com/farmers-market/",
           "Rules": "Rules",
-          "UserID": "0001000"
+          "UserID": "1"
       };
       /*{
           "id": 2,

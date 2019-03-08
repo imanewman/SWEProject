@@ -32,10 +32,10 @@ describe("Database Connector Tests", () => {
 
             const expected = [
                 {
-                    Description: "The class will go hike Bishop\'s Peak together!",
-                    EventName: "CSC309 Bishop Hike",
+                    Description: "The Downtown SLO Farmersâ€™ Market is undoubtedly one of the most treasured events on the Central Coast and has a long history of bringing locals and visitors together to eat, shop, listen to music and connect with their community. The Market takes place every Thursday evening from 6:00 PM to 9:00 PM (weather permitting and excluding major holidays) on Higuera Street between Nipomo and Osos streets.",
+                    EventName: "Downtown SLO Farmers Market",
                     RecID: 1,
-                    StartTime: "03:00:00"
+                    StartTime: "18:00:00"
                 }
             ];
 
