@@ -25,7 +25,7 @@ class SaveRecButton extends RecButton {
         if ($saveIcon.hasClass("fas")) {
             DatabaseUpdater.putRecToUserWatchlist(this.rec, CurrentUser);
         } else {
-            DatabaseUpdater.removeRecFromUserWatchlist(this.rec, CurrentUser);
+            DatabaseUpdater.deleteRecFromUserWatchlist(this.rec, CurrentUser);
         }
     }
 }

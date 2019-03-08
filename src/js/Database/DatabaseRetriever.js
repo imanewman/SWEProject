@@ -12,7 +12,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        let recObject = {};
+        var recObject = {};
 
         $.ajax({
             url: `//localhost:4000/Recs/${recId}`,
@@ -31,7 +31,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRecs() {
-        let recList = [];
+        var recList = [];
 
         $.ajax({
             url: `Recs`,
@@ -48,7 +48,7 @@ class PrivateDatabaseRetriever {
     }
 
     getUser(userId) {
-        let userObject = {};
+        var userObject = {};
 
         $.ajax({
             url: `Users/${userId}`,
@@ -58,7 +58,6 @@ class PrivateDatabaseRetriever {
                 userObject = result;
             }
         });
-        //TODO: remove pass
 
         let user = this.factory.initializeUser(userObject);
 
@@ -66,11 +65,23 @@ class PrivateDatabaseRetriever {
     }
 
     authenticateUser(user) {
+        let userObject = this.converter.convertUser(user);
+        var authenticated = false;
 
+        $.ajax({
+            url: `Users/${userId}/verify`, //TODO: set this up
+            type: 'PUT',
+            async: false,
+            success: (result) => {
+                authenticated = result;
+            }
+        });
+
+        return authenticated;
     }
 
     getTags(recId) {
-        let tagList = [];
+        var tagList = [];
 
         $.ajax({
             url: `Tags/${recId}`,

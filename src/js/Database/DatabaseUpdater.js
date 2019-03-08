@@ -25,7 +25,16 @@ class PrivateDatabaseUpdater {
     }
 
     deleteRec(rec) {
-        //TODO
+        let recId = rec.getId();
+
+        $.ajax({
+            url: `//localhost:4000/Recs`,
+            type: 'DELETE',
+            data: recId,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
     putUser(user) {
@@ -42,11 +51,39 @@ class PrivateDatabaseUpdater {
     }
 
     putRecToUserWatchlist(rec, user) {
+        let recId = rec.getId();
+        let userId = user.getId();
+        let watchlistObject = {
+            'userId': userId,
+            'recId': recId
+        };
 
+        $.ajax({
+            url: `//localhost:4000/Watchlist`,
+            type: 'PUT',
+            data: watchlistObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
-    removeRecFromUserWatchlist(rec, user) {
+    deleteRecFromUserWatchlist(rec, user) {
+        let recId = rec.getId();
+        let userId = user.getId();
+        let watchlistObject = {
+            'userId': userId,
+            'recId': recId
+        };
 
+        $.ajax({
+            url: `//localhost:4000/Watchlist`,
+            type: 'DELETE',
+            data: watchlistObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 }
 

@@ -1,4 +1,7 @@
-// import DatabaseRetriever from "../Database/DatabaseRetriever";
+import DatabaseRetriever from "../Database/DatabaseRetriever";
+import {
+    CurrentUser
+} from './MainController.js';
 
 class LoginModal {
     constructor() {
@@ -55,8 +58,10 @@ class LoginModal {
         let isValid = false;
 
         if (isValid) {
-            //TODO: add user as current user
+            // CurrentUser = DatabaseRetriever.getUser(username);
+
             this.hide();
+
             invalidLogin.addClass("hidden");
         } else {
             invalidLogin.removeClass("hidden");
