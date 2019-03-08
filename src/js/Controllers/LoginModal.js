@@ -48,8 +48,19 @@ class LoginModal {
     authenticate() {
         let username = $("#signin_username input").val();
         let password = $("#signin_password input").val();
+        let invalidLogin = $("#invalid_login_text");
 
+        //TODO: handle authenticate
         // let isValid = DatabaseRetriever.authenticate(username, password);
+        let isValid = false;
+
+        if (isValid) {
+            //TODO: add user as current user
+            this.hide();
+            invalidLogin.addClass("hidden");
+        } else {
+            invalidLogin.removeClass("hidden");
+        }
     }
 
     displayLogIn() {
@@ -70,6 +81,8 @@ class LoginModal {
         } else {
             invalidPWElement.addClass("hidden");
         }
+
+        //TODO: handle sign up
     }
 
     hide() {
