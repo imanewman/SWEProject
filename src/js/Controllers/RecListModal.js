@@ -24,6 +24,8 @@ class RecListModal {
         this.displaySpeed = 200;
         this.didScroll = false;
 
+        if (test) this.importType = RecListModal.REC_IMPORTS.TEST;
+
         this.attach();
 
         this.animateScroll();
@@ -56,12 +58,6 @@ class RecListModal {
 
     // sets the name of this rec list
     setName(title = this.title) { $("#rec_list_title_text").text(title); }
-
-    // sets the rec items import type
-    setImportType(importType) {
-        if (importType in RecListModal.REC_IMPORTS)
-            this.importType = importType
-    }
 
     getRecs() { return this.currentRecs; }
     getRecModals() { return this.currentRecModals; }
@@ -110,8 +106,22 @@ class RecListModal {
 
     // imports recs into the rec list
     importRecs() {
-        //TODO: pull right recs from db
-        this.currentRecs = (test) ? testRecs : DatabaseRetriever.getRecs();
+        switch (this.importType) {
+            case RecListModal.REC_IMPORTS.WATCHLIST:
+                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                break;
+            case RecListModal.REC_IMPORTS.OWNED:
+                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                break;
+            case RecListModal.REC_IMPORTS.RECOMMENDED:
+                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                break;
+            case RecListModal.REC_IMPORTS.TEST:
+                this.currentRecs = testRecs;
+                break;
+            default:
+                this.currentRecs = DatabaseRetriever.getRecs();
+        }
 
         // remove recs currently displayed
         this.removeRecs();
@@ -132,11 +142,6 @@ class RecListModal {
         $("#rec_items").empty();
 
         this.currentRecModals = [];
-    }
-
-    // filters rec list based on search and checkboxes
-    filter() {
-        //TODO: filter recs based on filters
     }
 
     // animates border shadow on navbar increasing when scrolled

@@ -2,6 +2,7 @@ import Navbar from "./Navbar.js";
 import LoginModal from "./LoginModal.js";
 import AccountModal from "./AccountModal.js";
 import RecListFactory from "./RecListFactory.js";
+import User from "../Model/User.js";
 
 class MainController {
     constructor() {
@@ -46,6 +47,11 @@ class MainController {
     }
 }
 
+var CurrentUser = new User();
+
 const Main = new MainController();
 
-export default Main;
+export {
+    Main,
+    CurrentUser
+};

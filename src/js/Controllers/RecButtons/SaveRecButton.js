@@ -1,4 +1,8 @@
 import RecButton from "./RecButton.js";
+import DatabaseUpdater from '../../Database/DatabaseUpdater.js';
+import {
+    CurrentUser
+} from '../MainController.js';
 
 class SaveRecButton extends RecButton {
     constructor(recModal) {
@@ -14,10 +18,15 @@ class SaveRecButton extends RecButton {
 
     // saves this rec to the users watchlist
     click() {
-        //TODO: toggle save on and off
         let $saveIcon = $("#" + this.recId + " .save_button i");
 
         RecButton.toggleIconFill($saveIcon);
+
+        if ($saveIcon.hasClass("fas")) {
+            DatabaseUpdater.putRecToUserWatchlist(this.rec, CurrentUser);
+        } else {
+            DatabaseUpdater.removeRecFromUserWatchlist(this.rec, CurrentUser);
+        }
     }
 }
 

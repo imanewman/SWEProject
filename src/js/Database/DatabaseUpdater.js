@@ -24,7 +24,7 @@ class PrivateDatabaseUpdater {
         });
     }
 
-    deleteRec(recId) {
+    deleteRec(rec) {
         //TODO
     }
 
@@ -41,16 +41,12 @@ class PrivateDatabaseUpdater {
         });
     }
 
-    deleteUser(userId) {
-        //TODO
+    putRecToUserWatchlist(rec, user) {
+
     }
 
-    putPendingOrganizer(pendingOrganizerId) {
-        //TODO
-    }
+    removeRecFromUserWatchlist(rec, user) {
 
-    deletePendingOrgaizer(userId) {
-        //TODO
     }
 }
 

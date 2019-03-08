@@ -58,27 +58,15 @@ class PrivateDatabaseRetriever {
                 userObject = result;
             }
         });
+        //TODO: remove pass
 
         let user = this.factory.initializeUser(userObject);
 
         return user;
     }
 
-    getPendingOrgaizers() {
-        let pendingOrganizersObject = {};
+    authenticateUser(user) {
 
-        $.ajax({
-            url: `PendingOrganizers`,
-            type: 'GET',
-            async: false,
-            success: (result) => {
-                pendingOrganizersObject = result;
-            }
-        });
-
-        let pendingOrganizers = this.factory.initializePendingOrganizerList(pendingOrganizersObject);
-
-        return pendingOrganizers;
     }
 
     getTags(recId) {
