@@ -1,4 +1,4 @@
-import DatabaseRetriever from "../Database/DatabaseRetriever";
+import DatabaseRetriever from "../Database/DatabaseRetriever.js";
 import {
     CurrentUser
 } from './MainController.js';
