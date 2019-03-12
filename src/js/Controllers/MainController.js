@@ -9,6 +9,7 @@ class MainController {
         this.navbar = new Navbar(this);
         this.login = new LoginModal();
         this.scene = null;
+        this.textTyped = '';
 
         this.nameToSceneMap = {
             'My Account': () => { return new AccountModal(); },
@@ -17,6 +18,8 @@ class MainController {
             'watchlist': () => { return RecListFactory.createRecWatchlist(); },
             'my posts': () => { return RecListFactory.createMyPosts(); }
         };
+
+        this.checkForRex();
 
         if(! MainController.instance){
             MainController.instance = this;
@@ -44,6 +47,25 @@ class MainController {
         }
 
         //TODO: if converting from one rec list to another, dont need to make a new one
+    }
+
+    checkForRex() {
+        let setRex = () => {
+            document.body.innerHTML = document.body.innerHTML
+                .replace('Recs', 'Rex')
+                .replace('the rec', 'the rex')
+                .replace('my recs', 'my rex')
+                .replace('all recs', 'all rex')
+                .replace('Rec', 'Rex');
+        };
+
+        $("body").keypress( (e) => {
+            this.textTyped += e.key;
+
+            if (this.textTyped.includes("rex")) {
+                setRex();
+            }
+        })
     }
 }
 
