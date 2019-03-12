@@ -28,9 +28,9 @@ class PrivateObjectConverter {
 
     convertUser(user) {
         return {
-            "id": user.id,
-            "email": user.email,
-            "fullName": user.fullName,
+            "UserId": user.Id,
+            "Email": user.Email,
+            "FullName": user.fullName,
             "passwordHash": user.passwordHash,
             "preferredEvents": user.preferredEvents // may need to convert
         }

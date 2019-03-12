@@ -40,9 +40,9 @@ class PrivateHelper {
           "Draft": false,
           "ContactInfo": "Contact Info",
           "WebsiteLink": "https://downtownslo.com/farmers-market/",
-          "ImageLink": "ImageLink stuff"
+          "ImageLink": "ImageLink stuff",
           //"Rules": "Rules",
-          "UserID": "1"
+          //"UserID": "1"
       };
       /*{
           "id": 2,
@@ -55,9 +55,9 @@ class PrivateHelper {
     getUserdata()
     {
       return {
-          "id": 3,
-          "email": "Junk",
-          "fullName": "Name"
+          "UserId": 3,
+          "Email": "Junk",
+          "FullName": "Name"
       }
     }
 }
