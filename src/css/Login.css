@@ -7,29 +7,91 @@
 / ******************************************************************************************************************** \
 \**********************************************************************************************************************/
 
-body {
+#login_container {
+    display: none;
+
+    position: fixed;
+    z-index: 200;
+
+    margin-top: -4em;
+
     width: 100vw;
     height: 100vh;
-}
 
-#login_container {
-    width: 28em;
-    height: 30em;
-    margin: auto;
-    padding-top: 25vh;
+    background-color: rgba(0,0,0,0.6);
 }
 
 #login_box {
-    width: 100%;
-    height:100%;
+    width: 28em;
+    /*height:30em;*/
+    min-height: 20em;
+
+    margin-top: 15em;
+
+    background: var(--lighter);
 
     border-radius: 1em;
     border: 1px solid var(--darkish);
+
+    transition: height 0.2s;
 }
 
-#login_rec_logo {
-    width: 7em;
-    height: 4em;
+#login_close_button {
+    position: relative;
 
-    padding-top: 3em;
+    left: 26.5em;
+    top: 0.2em;
+
+    width: 0;
+    height: 0;
+
+    transform: scale(1.5);
+}
+
+.login_title {}
+
+.login_title_message {
+    width: fit-content;
+}
+
+.login_fields h4 {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+}
+
+.login_field {
+    width: 22em;
+    height: 2em;
+
+    margin-bottom: 1em;
+
+    border-radius: 0.3em;
+    border-style: groove;
+
+    padding-left: 0.4em;
+
+    font-size: 1.1em;
+}
+
+.login_buttons {
+    padding-bottom: 1em;
+}
+
+.login_button {
+    --mdc-theme-on-primary: white;
+    --mdc-theme-primary: var(--dark-blue);
+    --mdc-theme-on-secondary: white;
+    --mdc-theme-secondary: var(--dark-blue);
+}
+
+#create_account_switch_button {
+    margin-right: 8em;
+}
+
+#create_account_button {
+    margin-left: 14em;
+}
+
+.invalid_text {
+    margin-bottom:0.2em;
 }

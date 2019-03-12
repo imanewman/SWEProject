@@ -1,4 +1,0 @@
-class CallendarModal {
-    loadCallendarData(UserId) {
-    }
-}

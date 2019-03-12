@@ -10,30 +10,19 @@ import SaveEditRecButton from './RecButtons/SaveEditRecButton.js';
 import DiscardEditRecButton from './RecButtons/DiscardEditRecButton.js';
 import RevertEditRecButton from './RecButtons/RevertEditRecButton.js';
 import RecTextFactory from './EditableRecText/RecTextFactory.js';
+import DatabaseUpdater from '../Database/DatabaseUpdater.js';
+import Categories from './Categories.js';
 
 //TODO: add owner info, tags
 class RecModal {
-    constructor(rec) {
+    constructor(rec, newRec = false) {
         this.rec = rec;
         this.recId = this.rec.getId();
         this.displaySpeed = 200;
         this.editing = false;
         this.buttons = {};
         this.editableTexts = {};
-
-        this.tagIconMap = {
-            'Farmers Market': 'fas fa-carrot orange',
-            'Hiking': 'fas fa-hiking neongreen',
-            'Festival': 'fas fa-guitar gold',
-            'Food': 'fas fa-utensils limegreen',
-            'Open Mic': 'fas fa-microphone purple',
-            'Career Fair': 'fas fa-user-tie deepblue',
-            'Trade Show': 'fas fa-store red',
-            'Sports': 'fas fa-futbol bloodorange',
-            'Charity': 'fas fa-hand-holding-heart pink',
-            'Convention': 'fas fa-users rose',
-            'Speech': 'fas fa-comments green'
-        };
+        this.newRec = newRec;
 
         this.attach();
     }
@@ -50,22 +39,29 @@ class RecModal {
                 // hide the element
                 recElement.hide().promise().then( () => {
                     // add it to the rec list
-                    $("#rec_items").append(recElement);
+                    if (this.newRec) {
+                        $("#rec_items").prepend(recElement);
+                    } else {
+                        $("#rec_items").append(recElement);
+                    }
 
                     // attach controller functions to buttons
-                    this.attachButtons();
-
-                    this.editableTexts = RecTextFactory.createAllEditableText(this);
+                    this.attachEventHandlers();
 
                     // update the rec info
                     this.updateInfo();
 
-                    // display the rec
-                    this.display();
-
                     //TODO: put user id in local storage
                     if (localStorage.getItem("userId") === this.rec.getOwnerId()) {
                         this.showOtherButtons("owner");
+                    }
+
+                    // display the rec
+                    this.display();
+
+                    if (this.newRec) {
+                        this.expand();
+                        this.editMode();
                     }
                 });
             });
@@ -73,7 +69,7 @@ class RecModal {
     }
 
     // adds all buttons, which attaches click handlers
-    attachButtons() {
+    attachEventHandlers() {
         this.buttons['expand'] = new ExpandRecButton(this);
         this.buttons['save'] = new SaveRecButton(this);
         this.buttons['locate'] = new LocateRecButton(this);
@@ -85,7 +81,11 @@ class RecModal {
         this.buttons['saveEdit'] = new SaveEditRecButton(this);
         this.buttons['discardEdit'] = new DiscardEditRecButton(this);
         this.buttons['revertEdit'] = new RevertEditRecButton(this);
+
+        this.editableTexts = RecTextFactory.createAllEditableText(this);
     }
+
+    getRecId() { return this.recId; }
 
     // saves updated rec info
     saveInfo() {
@@ -98,6 +98,8 @@ class RecModal {
         this.updateMap();
         this.updateImage();
         this.updateIcon();
+
+        DatabaseUpdater.putRec(this.rec);
     }
 
     // updates the rec information currently displayed
@@ -113,12 +115,16 @@ class RecModal {
         this.updateIcon();
     }
 
+    expand() {
+        this.buttons['expand'].click();
+    }
+
     // updates the rec icon based on its tags
     updateIcon() {
         let tags = this.rec.getTags();
 
-        if (tags.length > 0 && tags[0] in this.tagIconMap) {
-            let tagClasses = this.tagIconMap[tags[0]]; // for now it just picks the first tag
+        if (tags.length > 0 && tags[0] in Categories.icons) {
+            let tagClasses = Categories.icons[tags[0]]; // for now it just picks the first tag
 
             $("#" + this.recId + " .rec_item_image i").removeClass().addClass(tagClasses);
         }
@@ -182,6 +188,8 @@ class RecModal {
 
         $("#" + this.recId).addClass("rec_item_editable");
 
+        $("#" + this.recId + " .rec_item_rsvp").fadeOut(this.displaySpeed);
+
         for (let key in this.editableTexts) {
             if (this.editableTexts.hasOwnProperty(key)) {
                 this.editableTexts[key].editMode();
@@ -196,6 +204,8 @@ class RecModal {
         this.editing = false;
 
         $("#" + this.recId).removeClass("rec_item_editable");
+
+        $("#" + this.recId + " .rec_item_rsvp").fadeIn(this.displaySpeed);
 
         for (let key in this.editableTexts) {
             if (this.editableTexts.hasOwnProperty(key)) {

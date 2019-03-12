@@ -1,25 +1,30 @@
 import RecModal from "./RecModal.js";
 import Rec from "../Model/Rec.js";
-
-const REC_IMPORTS = {
-    ALL: 0,
-    RECOMMENDED: 1,
-    WATCHLIST: 2,
-    OWNED: 3,
-    TEST: 4
-};
+import DatabaseRetriever from '../Database/DatabaseRetriever.js';
+import RecFilter from './RecFilter.js';
 
 class RecListModal {
+    static REC_IMPORTS = {
+        ALL: 0,
+        RECOMMENDED: 1,
+        WATCHLIST: 2,
+        OWNED: 3,
+        TEST: 4
+    };
+
     constructor(
         title = "Upcoming Recs",
-        importType = REC_IMPORTS.ALL
+        importType = RecListModal.REC_IMPORTS.ALL
     ) {
         this.title = title;
         this.importType = importType;
         this.currentRecs = [];
         this.currentRecModals = [];
+        this.checkboxes = [];
         this.displaySpeed = 200;
         this.didScroll = false;
+
+        if (test) this.importType = RecListModal.REC_IMPORTS.TEST;
 
         this.attach();
 
@@ -33,7 +38,7 @@ class RecListModal {
                 $("#scene").append($(data));
                 $("#rec_list_container").hide();
 
-                this.attachFunctions();
+                this.attachEventHandlers();
                 this.setName();
                 this.display();
 
@@ -42,34 +47,20 @@ class RecListModal {
         });
     }
 
-    attachFunctions() {
+    attachEventHandlers() {
         // update didScroll when window scrolls
         $(window).scroll( () => { this.didScroll = true } );
 
-        $(".rec_list_filter_checkbox").click( (e) => {
-            let $checkbox = $(e.currentTarget).children(".rec_list_filter_checkbox_button");
+        this.filter = new RecFilter(this);
 
-            this.toggleCheckBox($checkbox);
-        });
-    }
-
-    // toggles whether a checkbox is checked
-    toggleCheckBox($checkbox) {
-        if ($checkbox.attr("checked") !== undefined) {
-            $checkbox.removeAttr("checked");
-        } else {
-            $checkbox.attr("checked", true);
-        }
+        $("#rec_list_add_button").click( () => { this.addNewRec(); })
     }
 
     // sets the name of this rec list
     setName(title = this.title) { $("#rec_list_title_text").text(title); }
 
-    // sets the rec items import type
-    setImportType(importType) {
-        if (importType in REC_IMPORTS)
-            this.importType = importType
-    }
+    getRecs() { return this.currentRecs; }
+    getRecModals() { return this.currentRecModals; }
 
     // displays the rec list
     display(callback = () => {}) {
@@ -106,10 +97,31 @@ class RecListModal {
         this.hide(removeScene);
     }
 
+    addNewRec() {
+        let rec = new Rec();
+        let recModal = new RecModal(rec, true);
+
+        this.currentRecModals.push(recModal);
+    }
+
     // imports recs into the rec list
     importRecs() {
-        //TODO: pull right recs from db
-        if (test) this.currentRecs = testRecs;
+        switch (this.importType) {
+            case RecListModal.REC_IMPORTS.WATCHLIST:
+                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                break;
+            case RecListModal.REC_IMPORTS.OWNED:
+                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                break;
+            case RecListModal.REC_IMPORTS.RECOMMENDED:
+                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                break;
+            case RecListModal.REC_IMPORTS.TEST:
+                this.currentRecs = testRecs;
+                break;
+            default:
+                this.currentRecs = DatabaseRetriever.getRecs();
+        }
 
         // remove recs currently displayed
         this.removeRecs();
@@ -130,11 +142,6 @@ class RecListModal {
         $("#rec_items").empty();
 
         this.currentRecModals = [];
-    }
-
-    // filters rec list based on search and checkboxes
-    filter() {
-        //TODO: filter recs based on filters
     }
 
     // animates border shadow on navbar increasing when scrolled
@@ -168,7 +175,7 @@ let testRecs = [
         "18:00:00",
         "21:00:00",
         ['Farmers Market'],
-        true,
+        false,
         "For more information about Downtown SLO Farmers’ Market please contact our Market Manager at (805) 541-0286 ext. 2 or farmers@DowntownSLO.com",
         "https://downtownslo.com/farmers-market/",
         'https://downtownslo.com/wp-content/uploads/2019/02/2.21.19-821x1024.jpg',
@@ -185,7 +192,7 @@ let testRecs = [
         "11:00:00",
         "13:00:00",
         ['Speech'],
-        true,
+        false,
         "For more information, contact Professor Patrick Lin, Philosophy Department: palin@calpoly.edu",
         "https://www.microsoft.com/en-us/research/people/mlg/",
         'https://www.pacslo.org/ArticleMedia/Images/PAC/Site/PAC_SLO_logo.jpg',
@@ -202,7 +209,7 @@ let testRecs = [
         "19:00:00",
         "21:00:00",
         ['Open Mic'],
-        true,
+        false,
         "To learn more about her journey, upcoming shows, and debut EP release, you may as follow Cassi Nicholls on Facebook (@CassiNMusic) and Instagram (@thegirlmusic). (bio by Ivy Cayden)",
         "https://www.7sistersbrewing.com/events-page",
         'https://static1.squarespace.com/static/595591b09f7456c3e0135686/59df60232994caa6a873399c/5c5eee8853450a883a16d178/1549725383822/cassi+nichols.jpg',
@@ -219,7 +226,7 @@ let testRecs = [
         "19:00:00",
         "22:00:00",
         ['Sports'],
-        true,
+        false,
         "None Specified",
         "https://www.gopoly.com/sports/mbkb/2018-19/schedule#",
         "https://sportsfly.cbsistatic.com/bundles/sportsmediacss/images/team-logos/ncaa/CPOLY.svg",
@@ -236,34 +243,31 @@ let testRecs = [
         "12:00:00",
         "13:30:00",
         ['Charity'],
-        true,
+        false,
         "None Specified",
         "https://www.eventbrite.com/e/lyceum-mental-health-awards-education-luncheon-tickets-55295189400?aff=ebdssbdestsearch",
         "https://storage.googleapis.com/cccslo-org/uploads/lyceum2.png",
         "Tickets: $50.00",
         "1000000",
         {}
-    ),
-    new Rec(
-        "0000006",
-        "Name",
-        "Desc",
-        "Location",
-        "2019-02-20",
-        "19:00:00",
-        "21:00:00",
-        ['Tag'],
-        true,
-        "Contact",
-        "Website",
-        "Image",
-        "Rules",
-        "1000000",
-        {}
     )
+    // new Rec(
+    //     "0000006",
+    //     "Name",
+    //     "Desc",
+    //     "Location",
+    //     "2019-02-20",
+    //     "19:00:00",
+    //     "21:00:00",
+    //     ['Tag'],
+    //     true,
+    //     "Contact",
+    //     "Website",
+    //     "Image",
+    //     "Rules",
+    //     "1000000",
+    //     {}
+    // )
 ];
 
-export {
-    RecListModal,
-    REC_IMPORTS
-};
+export default RecListModal;

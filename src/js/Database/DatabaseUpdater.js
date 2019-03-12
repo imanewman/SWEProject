@@ -14,29 +14,76 @@ class PrivateDatabaseUpdater {
     putRec(rec) {
         let recObject = this.converter.convertRec(rec);
 
-        this.database.put("Rec", recObject);
+        $.ajax({
+            url: `//localhost:4000/Recs`,
+            type: 'PUT',
+            data: recObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
-    deleteRec(recId) {
-        this.database.delete("Rec", recId);
+    deleteRec(rec) {
+        let recId = rec.getId();
+
+        $.ajax({
+            url: `//localhost:4000/Recs`,
+            type: 'DELETE',
+            data: recId,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
     putUser(user) {
         let userObject = this.converter.convertUser(user);
 
-        this.database.put("User", userObject);
+        $.ajax({
+            url: `//localhost:4000/Users`,
+            type: 'PUT',
+            data: userObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
-    deleteUser(userId) {
-        this.database.delete("User", userId);
+    putRecToUserWatchlist(rec, user) {
+        let recId = rec.getId();
+        let userId = user.getId();
+        let watchlistObject = {
+            'userId': userId,
+            'recId': recId
+        };
+
+        $.ajax({
+            url: `//localhost:4000/Watchlist`,
+            type: 'PUT',
+            data: watchlistObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
-    putPendingOrganizer(pendingOrganizerId) {
-        this.database.put("PendingOrganizer", pendingOrganizerId);
-    }
+    deleteRecFromUserWatchlist(rec, user) {
+        let recId = rec.getId();
+        let userId = user.getId();
+        let watchlistObject = {
+            'userId': userId,
+            'recId': recId
+        };
 
-    deletePendingOrgaizer(userId) {
-        this.database.delete("PendingOrganizer", userId);
+        $.ajax({
+            url: `//localhost:4000/Watchlist`,
+            type: 'DELETE',
+            data: watchlistObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 }
 

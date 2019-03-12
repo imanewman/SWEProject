@@ -16,11 +16,10 @@ class Navbar {
                 // attach navbar to body of page
                 $("body").append($(data));
 
-                // store current pages name
-                this.currentPage = $(".nav_button-current");
+                this.goToHomePage();
 
                 // attach controller functions to elements
-                this.attachFunctions();
+                this.attachEventHandlers();
 
                 //TODO: show account buttons if logged in
             });
@@ -28,7 +27,7 @@ class Navbar {
     }
 
     // attaches controller functions to elements
-    attachFunctions() {
+    attachEventHandlers() {
         // redirect to home page if logo is clicked
         $("#rec_logo").click( () => {
             this.goToHomePage();
@@ -44,19 +43,20 @@ class Navbar {
             this.animateChangePage($element)
         });
 
-        // toggle account menu when clicked
         $("#nav_account").click( () => {
             this.toggleAccountMenu();
         });
 
-        // go to account page when clicked
         $("#my_account_button").click( () => {
             this.goToAccountPage();
         });
 
-        // log out when clicked
         $("#log_out_button").click( () => {
             this.logOut();
+        });
+
+        $("#log_in_button").click( () => {
+            this.logIn();
         });
 
         // update didScroll when window scrolls
@@ -87,7 +87,9 @@ class Navbar {
 
     // goes to home page when logo is clicked
     goToHomePage() {
-        let $element = $("#home_button");
+        let $element = $("#my_recs_button");
+
+        this.currentPage = $element;
 
         // change page and animate change
         this.main.changePage($element);
@@ -100,7 +102,7 @@ class Navbar {
     }
 
     logIn() {
-
+        this.main.login.display();
     }
 
     // logs out when option is clicked

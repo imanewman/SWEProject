@@ -1,4 +1,5 @@
 import RecButton from "./RecButton.js";
+import DatabaseUpdater from '../../Database/DatabaseUpdater.js';
 
 class DeleteRecButton extends RecButton {
     constructor(rec) {
@@ -13,7 +14,9 @@ class DeleteRecButton extends RecButton {
     }
 
     click() {
+        this.recModal.remove();
 
+        // DatabaseUpdater.deleteRec(this.rec);
     }
 }
 

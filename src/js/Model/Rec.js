@@ -25,7 +25,7 @@ class Rec {
 		this.startTime = startTime || '00:00:00';
 		this.endTime = endTime || '00:00:00';
 		this.tags = tags || [];
-		this.draft = draft || true;
+		this.draft = (draft === undefined) ? true : draft;
 		this.contactInfo = contactInfo || '';
 		this.websiteLink = websiteLink || '';
         this.imageLink = imageLink || '';
@@ -124,7 +124,7 @@ class Rec {
         let dateParts = dateStr.split('-');
 
         var year = dateParts[0];
-        var monthNum = parseInt(dateParts[1]);
+        var monthNum = parseInt(dateParts[1]) - 1;
         var day = dateParts[2];
 
         var month = monthList[monthNum];
@@ -137,11 +137,12 @@ class Rec {
 
 	    var hour = timeParts[0];
 	    let min = timeParts[1];
-	    var partOfDay = 'AM';
+        var partOfDay = 'AM';
 
-	    if (hour > 12) {
-	        hour -= 12;
-	        partOfDay = 'PM';
+	    if (hour >= 12) {
+            partOfDay = 'PM';
+            if (hour > 12)
+                hour = hour - 12;
         }
 
 	    return hour + ':' + min + ' ' + partOfDay;

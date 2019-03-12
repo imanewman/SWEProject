@@ -13,6 +13,7 @@ class DiscardEditRecButton extends RecButton {
     }
 
     click() {
+        this.recModal.updateInfo();
         this.recModal.displayMode();
     }
 }
