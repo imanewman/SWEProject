@@ -21,14 +21,14 @@ class PrivateObjectFactory {
             recObject.Date,
             recObject.StartTime,
             recObject.EndTime,
-            recObject.tags,
-            recObject.draft,
-            recObject.contactInfo,
-            recObject.websiteLink,
-            recObject.imageLink,
-            recObject.rules,
-            recObject.ownerId,
-            recObject.newFields
+            recObject.Tags,
+            recObject.Draft,
+            recObject.ContactInfo,
+            recObject.WebsiteLink,
+            recObject.ImageLink,
+            recObject.Rules,
+            recObject.UserID,
+            //recObject.newFields
         );
     }
 

@@ -36,11 +36,12 @@ class PrivateHelper {
           "Date": "2019-02-21",
           "StartTime": "18:00:00",
           "EndTime": "21:00:00",
-          "Tags": ['Farmers Market'],
-          "draft": false,
+          "MajorTags": ['Farmers Market'],
+          "Draft": false,
           "ContactInfo": "Contact Info",
           "WebsiteLink": "https://downtownslo.com/farmers-market/",
-          "Rules": "Rules",
+          "ImageLink": "ImageLink stuff"
+          //"Rules": "Rules",
           "UserID": "1"
       };
       /*{
