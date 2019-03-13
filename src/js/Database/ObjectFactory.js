@@ -39,7 +39,7 @@ class PrivateObjectFactory {
 
                 recList.push(newRec);
 
-                console.log(JSON.stringify(recObject));
+                // console.log(JSON.stringify(recObject));
             }
         }
 

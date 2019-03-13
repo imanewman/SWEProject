@@ -143,7 +143,7 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseUpdater.js">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="289">
@@ -152,11 +152,11 @@
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="637">
-                    <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+                  <state relative-caret-position="756">
+                    <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
                     <folding>
                       <element signature="e#0#47#0" expanded="true" />
                     </folding>
@@ -167,8 +167,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/js/Database/ObjectFactory.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="476">
-                    <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+                  <state relative-caret-position="459">
+                    <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
                     <folding>
                       <element signature="e#0#34#0" expanded="true" />
                     </folding>
@@ -207,8 +207,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/MainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+            <state relative-caret-position="306">
+              <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -219,20 +219,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="113" column="22" lean-forward="true" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1411">
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/Model/User.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/Algorithms/RecGenerator.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -240,13 +246,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="93" column="9" lean-forward="true" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/RestOperations/Recs/recs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -277,7 +295,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>item_buttons</find>
       <find>item_bottom</find>
       <find>search</find>
       <find>nav_button</find>
@@ -307,6 +324,7 @@
       <find>Home</find>
       <find>console.log</find>
       <find>h3</find>
+      <find>put</find>
     </findStrings>
     <replaceStrings>
       <replace>DatabaseConnector</replace>
@@ -328,7 +346,6 @@
         <option value="$PROJECT_DIR$/src/js/Controllers/EditableRecText/RulesRecText.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/EditableRecText/EditableRecText.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/EditableRecText/RecTextFactory.js" />
-        <option value="$PROJECT_DIR$/src/js/Model/User.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecButtons/SaveEditRecButton.js" />
         <option value="$PROJECT_DIR$/src/RunAll.js" />
         <option value="$PROJECT_DIR$/src/css/Navbar.css" />
@@ -349,7 +366,6 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/js/Controllers/Navbar.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/AccountModal.js" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecListFactory.js" />
         <option value="$PROJECT_DIR$/src/html/index.html" />
         <option value="$PROJECT_DIR$/src/css/Main.css" />
         <option value="$PROJECT_DIR$/src/js/Controllers/Observer.js" />
@@ -367,12 +383,14 @@
         <option value="$PROJECT_DIR$/src/js/Controllers/MainController.js" />
         <option value="$PROJECT_DIR$/src/html/RecListModal.html" />
         <option value="$PROJECT_DIR$/src/js/Model/Rec.js" />
-        <option value="$PROJECT_DIR$/src/js/Database/ObjectFactory.js" />
-        <option value="$PROJECT_DIR$/src/js/Algorithms/RecGenerator.js" />
-        <option value="$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js" />
-        <option value="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" />
         <option value="$PROJECT_DIR$/src/js/Database/DatabaseUpdater.js" />
         <option value="$PROJECT_DIR$/src/js/Controllers/RecModal.js" />
+        <option value="$PROJECT_DIR$/src/js/Database/ObjectFactory.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecListModal.js" />
+        <option value="$PROJECT_DIR$/src/js/Controllers/RecListFactory.js" />
+        <option value="$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js" />
+        <option value="$PROJECT_DIR$/src/js/Model/User.js" />
+        <option value="$PROJECT_DIR$/src/js/Algorithms/RecGenerator.js" />
       </list>
     </option>
   </component>
@@ -488,6 +506,21 @@
             <path>
               <item name="SWEProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="SWEProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="RestOperations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SWEProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="RestOperations" type="462c0819:PsiDirectoryNode" />
+              <item name="Recs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SWEProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEProject" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -566,12 +599,12 @@
       <workItem from="1551216269821" duration="4900000" />
       <workItem from="1551381994254" duration="13065000" />
       <workItem from="1551477952156" duration="17262000" />
-      <workItem from="1552346470269" duration="5476000" />
+      <workItem from="1552346470269" duration="6406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244313000" />
+    <option name="totallyTimeSpent" value="245243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,7 +634,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32934132" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21444201" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33369803" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -656,13 +689,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RecButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecButtons/RevertEditRecButton.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -742,20 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Model/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -935,16 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/MainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/Checkbox/Checkbox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -966,13 +968,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Database/ObjectFactory.js">
+    <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseUpdater.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -983,20 +982,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Algorithms/RecGenerator.js">
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        <state relative-caret-position="153">
+          <caret line="93" column="9" lean-forward="true" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/RestOperations/Recs/recs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Database/ObjectFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Controllers/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseRetriever.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
+        <state relative-caret-position="756">
+          <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
@@ -1005,27 +1041,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecListModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="113" column="22" lean-forward="true" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1411">
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Database/DatabaseUpdater.js">
+    <entry file="file://$PROJECT_DIR$/src/js/Model/User.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="136">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Controllers/RecModal.js">
+    <entry file="file://$PROJECT_DIR$/src/js/Algorithms/RecGenerator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

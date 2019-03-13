@@ -16,8 +16,8 @@ class RecGenerator {
 
             // if (checkTimes(rec, times)) {
             for (let tagIdx = 0; tagIdx < tags.length; tagIdx++) {
-                if (tags[tagIdx] in pref) {
-                    userRecs.append(rec);
+                if (pref.indexOf(tags[tagIdx] !== -1)) {
+                    userRecs.push(rec);
                     continue;
                 }
             }

@@ -23,7 +23,7 @@ class PrivateDatabaseRetriever {
             success: (result) => {
                 recObject = result;
 
-                console.log(recObject);
+                // console.log(recObject);
             }
         });
 
@@ -86,7 +86,7 @@ class PrivateDatabaseRetriever {
     getRecsByRecommended(user = new User()) {
         let recs = this.getRecs();
 
-        return RecGenerator.generateUserRecs(user);
+        return RecGenerator.generateUserRecs(user, recs);
     }
 
     getUser(userId) {

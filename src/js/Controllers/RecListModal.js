@@ -13,8 +13,8 @@ class RecListModal {
     };
 
     constructor(
-        title = "Upcoming Recs",
-        importType = RecListModal.REC_IMPORTS.ALL
+        title,
+        importType
     ) {
         this.title = title;
         this.importType = importType;
@@ -24,11 +24,11 @@ class RecListModal {
         this.displaySpeed = 200;
         this.didScroll = false;
 
-        if (test) this.importType = RecListModal.REC_IMPORTS.TEST;
-
         this.attach();
 
         this.animateScroll();
+
+        console.log(importType);
     }
 
     // attaches rec list to body of page
