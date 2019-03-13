@@ -47,6 +47,11 @@ router.get('/', function(req, res) {
       query += ` where userID = ${req.query.id}`;
    }
    
+   if (req.query.userWatch) {
+   	console.log("WATCHLIST QUERY");
+   	query += ` INNER JOIN WatchedEvents WHERE WatchedEvents.RecID = Recs.RecID AND WatchedEvents.UserID = ${req.query.userWatch}`;
+   }
+   
    console.log(query);
    cnn.query(query, handler);
 });
@@ -80,7 +85,7 @@ router.post('/', function(req, res) {
    //cnn.query(`INSERT INTO Recs VALUES (ownerId, title) VALUES (?, ?)`, handler);
 });
 
-// PUT /Recs/{id}
+// PUT /Recs/{id} DONE
 router.put('/:id', function(req, res) {
    console.log('PUT /Recs/{id}');
    
@@ -97,8 +102,8 @@ router.put('/:id', function(req, res) {
    var sql = `UPDATE Recs SET EventName = '${req.body.EventName}', ` +
    			 `Location = '${req.body.Location}', Date = '${req.body.Date}', StartTime = '${req.body.StartTime}', ` +
    			 `EndTime = '${req.body.EndTime}', ImgLink = '${req.body.ImgLink}', WebsiteLink = '${req.body.WebsiteLink}', ` +
-   			 `Description = '${req.body.Description}', Rules = '${req.body.Rules}', ContactInfo = '${req.body.ContactInfo}'` + 
-   			 ` WHERE RecID = ${putId}`
+   			 `Description = '${req.body.Description}', Rules = '${req.body.Rules}', ContactInfo = '${req.body.ContactInfo}' ` + 
+				 `WHERE RecID = ${putId}`;
    
    console.log(sql);
    
