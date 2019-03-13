@@ -9,20 +9,20 @@ class PrivateObjectConverter {
 
     convertRec(rec) {
         return {
-            "RecID": rec.id,
-            "EventName": rec.title,
-            "Description": rec.description,
-            "Location": rec.location,
-            "Date": rec.date,
-            "StartTime": rec.startTime,
-            "EndTime": rec.endTime,
-            "MajorTags": rec.tags,
-            "draft": rec.draft,
-            "ContactInfo": rec.contactInfo,
-            "WebsiteLink": rec.websiteLink,
-            "ImgLink": rec.imageLink,
-            "Rules": rec.rules,
-            "UserID": rec.ownerId
+            "RecID": rec.getId(),
+            "EventName": rec.getTitle(),
+            "Description": rec.getDescription(),
+            "Location": rec.getLocation(),
+            "Date": rec.getDate(),
+            "StartTime": rec.getStartTime(),
+            "EndTime": rec.getEndTime(),
+            "MajorTags": rec.getTags(),
+            "draft": rec.getDraft(),
+            "ContactInfo": rec.getContactInfo(),
+            "WebsiteLink": rec.getWebsiteLink(),
+            "ImgLink": rec.getImageLink(),
+            "Rules": rec.getRules(),
+            "UserID": rec.getOwnerId()
         }
     }
 

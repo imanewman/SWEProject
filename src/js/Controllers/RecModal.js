@@ -97,8 +97,14 @@ class RecModal {
         this.updateImage();
         this.updateIcon();
 
-        console.log(`PUT ${this.recId}`);
-        // DatabaseUpdater.putRec(this.rec);
+        if (this.newRec) {
+            DatabaseUpdater.postRec(this.rec);
+
+            this.newRec = false;
+        } else {
+            DatabaseUpdater.putRec(this.rec);
+        }
+
     }
 
     // updates the rec information currently displayed
