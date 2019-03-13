@@ -44,20 +44,14 @@ class PrivateHelper {
           "Rules": "Rules",
           "UserID": "1"
       };
-      /*{
-          "id": 2,
-          "title": "Junk",
-          "description": "Junk",
-          "location": "Here",
-      }*/
     }
 
     getUserdata()
     {
       return {
-          "UserId": 3,
-          "Email": "Junk",
-          "FullName": "Name"
+          "id": "3",
+          "email": "Junk",
+          "fullName": "Name"
       }
     }
 }

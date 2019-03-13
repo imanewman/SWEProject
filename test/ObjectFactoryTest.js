@@ -8,11 +8,10 @@ describe("ObjectFactory Tests", () => {
     it("Converts the given recObject", (done) => {
       const expected = Helper.getRecdata();
       const recived = ObjectFactory.initializeRec(expected);
-      //console.log(recived.RecID);
-      expect(recived.draft).to.equal(expected.draft);
-      //expect(recived.EventName).to.equal(expected.EventName)
-      //expect(recived.Description).to.equal(expected.Description)
-      //expect(recived.location).to.equal(expected.location)
+      expect(recived.draft).to.equal(expected.Draft);
+      expect(recived.EventName).to.equal(expected.EventName)
+      expect(recived.Description).to.equal(expected.Description)
+      expect(recived.Location).to.equal(expected.Location)
       done();
     });
    });

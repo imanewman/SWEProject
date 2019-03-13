@@ -22,7 +22,7 @@ class PrivateObjectFactory {
             recObject.StartTime,
             recObject.EndTime,
             recObject.MajorTag,
-            recObject.Draft,
+            recObject.draft,
             recObject.ContactInfo,
             recObject.WebsiteLink,
             recObject.ImageLink,

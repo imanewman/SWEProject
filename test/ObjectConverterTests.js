@@ -10,10 +10,16 @@ describe("ObjectConverter Tests", () => {
       const data = Helper.getRecdata();
       const expected = ObjectFactory.initializeRec(data);
       const recived = ObjectConverter.convertRec(expected);
-      expect(recived.Id).to.equal(expected.Id);
-      expect(recived.EventName).to.equal(expected.EventName)
-      expect(recived.Description).to.equal(expected.Description)
-      expect(recived.Location).to.equal(expected.Location)
+
+      for (let key in expected) {
+          if (expected.hasOwnProperty(key)) {
+              expect(expected[key]).to.equal(recived[key]);
+          }
+      }
+      //expect(recived.RecID).to.equal(expected.id);
+      //expect(recived.EventName).to.equal(expected.title)
+      //expect(recived.Description).to.equal(expected.description)
+      //expect(recived.Location).to.equal(expected.location)
       done();
     });
    });

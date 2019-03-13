@@ -9,7 +9,7 @@ class PrivateObjectConverter {
 
     convertRec(rec) {
         return {
-            "RecID": rec.Id,
+            "RecID": rec.id,
             "EventName": rec.title,
             "Description": rec.description,
             "Location": rec.location,
@@ -17,7 +17,7 @@ class PrivateObjectConverter {
             "StartTime": rec.startTime,
             "EndTime": rec.endTime,
             "MajorTags": rec.tags,
-            "Draft": rec.draft,
+            "draft": rec.draft,
             "ContactInfo": rec.contactInfo,
             "WebsiteLink": rec.websiteLink,
             "ImgLink": rec.imageLink,
@@ -28,11 +28,11 @@ class PrivateObjectConverter {
 
     convertUser(user) {
         return {
-            "UserId": user.Id,
-            "Email": user.Email,
-            "FullName": user.fullName,
-            "PasswordHash": user.passwordHash,
-            "PreferredEvents": user.preferredEvents // may need to convert
+            "id": user.id,
+            "email": user.email,
+            "fullName": user.fullName,
+            "passwordHash": user.passwordHash,
+            "preferredEvents": user.preferredEvents // may need to convert
         }
     }
 }
