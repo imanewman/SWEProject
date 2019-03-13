@@ -12,7 +12,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        let recObject = {};
+        var recObject = {};
 
         $.ajax({
             url: `//localhost:4000/Recs/${recId}`,
@@ -31,10 +31,10 @@ class PrivateDatabaseRetriever {
     }
 
     getRecs() {
-        let recList = [];
+        var recList = [];
 
         $.ajax({
-            url: `Recs`,
+            url: `//localhost:4000/Recs`,
             type: 'GET',
             async: false,
             success: (result) => {
@@ -48,10 +48,10 @@ class PrivateDatabaseRetriever {
     }
 
     getUser(userId) {
-        let userObject = {};
+        var userObject = {};
 
         $.ajax({
-            url: `Users/${userId}`,
+            url: `//localhost:4000/Users/${userId}`,
             type: 'GET',
             async: false,
             success: (result) => {
@@ -64,28 +64,27 @@ class PrivateDatabaseRetriever {
         return user;
     }
 
-    getPendingOrgaizers() {
-        let pendingOrganizersObject = {};
+    authenticateUser(user) {
+        let userObject = this.converter.convertUser(user);
+        var authenticated = false;
 
         $.ajax({
-            url: `PendingOrganizers`,
-            type: 'GET',
+            url: `//localhost:4000/Users/${userId}/verify`, //TODO: set this up
+            type: 'PUT',
             async: false,
             success: (result) => {
-                pendingOrganizersObject = result;
+                authenticated = result;
             }
         });
 
-        let pendingOrganizers = this.factory.initializePendingOrganizerList(pendingOrganizersObject);
-
-        return pendingOrganizers;
+        return authenticated;
     }
 
     getTags(recId) {
-        let tagList = [];
+        var tagList = [];
 
         $.ajax({
-            url: `Tags/${recId}`,
+            url: `//localhost:4000/Tags/${recId}`,
             type: 'GET',
             async: false,
             success: (result) => {

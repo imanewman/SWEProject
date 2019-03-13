@@ -91,3 +91,7 @@
 #create_account_button {
     margin-left: 14em;
 }
+
+.invalid_text {
+    margin-bottom:0.2em;
+}

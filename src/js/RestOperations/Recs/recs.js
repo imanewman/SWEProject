@@ -38,9 +38,17 @@ router.get('/', function(req, res) {
       res.send(result);  
    };
    
-   console.log('GET /Recs');
+   //console.log('GET /Recs');
    
-   cnn.query("SELECT * FROM Recs", handler);
+   var query = 'SELECT * FROM Recs';
+   
+   if (req.query.id) {
+   	console.log("QUERY FOUND");
+      query += ` where userID = ${req.query.id}`;
+   }
+   
+   console.log(query);
+   cnn.query(query, handler);
 });
 
 // GET /Recs/id
