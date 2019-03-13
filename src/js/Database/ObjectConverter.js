@@ -16,7 +16,7 @@ class PrivateObjectConverter {
             "Date": rec.date,
             "StartTime": rec.startTime,
             "EndTime": rec.endTime,
-            "Tags": rec.tags, //TODO: not the way to do this
+            "MajorTags": rec.tags,
             "draft": rec.draft,
             "ContactInfo": rec.contactInfo,
             "WebsiteLink": rec.websiteLink,

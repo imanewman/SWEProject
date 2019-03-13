@@ -19,7 +19,7 @@ class PrivateObjectFactory {
             recObject.Date,
             recObject.StartTime,
             recObject.EndTime,
-            [recObject.MajorTag],
+            recObject.MajorTag,
             recObject.Draft,
             recObject.ContactInfo,
             recObject.WebsiteLink,
