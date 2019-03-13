@@ -14,32 +14,34 @@ class PrivateObjectFactory {
 
     initializeRec(recObject) {
         return new Rec(
-            recObject.id,
-            recObject.title,
-            recObject.description,
-            recObject.location,
-            recObject.date,
-            recObject.startTime,
-            recObject.endTime,
-            recObject.tags,
-            recObject.draft,
-            recObject.contactInfo,
-            recObject.websiteLink,
-            recObject.imageLink,
-            recObject.rules,
-            recObject.ownerId,
-            recObject.newFields
+            recObject.RecID,
+            recObject.EventName,
+            recObject.Description.replace(/[^\x00-\x7F]/g, ""),
+            recObject.Location,
+            recObject.Date,
+            recObject.StartTime,
+            recObject.EndTime,
+            [recObject.MajorTag],
+            recObject.Draft,
+            recObject.ContactInfo,
+            recObject.WebsiteLink,
+            recObject.ImgLink,
+            recObject.Rules.replace(/[^\x00-\x7F]/g, ""),
+            recObject.UserID
         );
     }
 
     initializeRecList(recListObject) {
         let recList = [];
 
-        for (let recObject in recListObject) {
+        for (let key in recListObject) {
             if (recListObject.hasOwnProperty(key)) {
+                let recObject = recListObject[key];
                 let newRec = this.initializeRec(recObject);
 
-                recList.append(newRec);
+                recList.push(newRec);
+
+                // console.log(JSON.stringify(recObject));
             }
         }
 

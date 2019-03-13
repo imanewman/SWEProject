@@ -15,7 +15,7 @@ class PrivateDatabaseUpdater {
         let recObject = this.converter.convertRec(rec);
 
         $.ajax({
-            url: `//localhost:4000/Recs`,
+            url: `//localhost:4000/Recs/${rec.getId()}`,
             type: 'PUT',
             data: recObject,
             success: (result) => {
@@ -24,8 +24,17 @@ class PrivateDatabaseUpdater {
         });
     }
 
-    deleteRec(recId) {
-        //TODO
+    deleteRec(rec) {
+        let recId = rec.getId();
+
+        $.ajax({
+            url: `//localhost:4000/Recs`,
+            type: 'DELETE',
+            data: recId,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
     putUser(user) {
@@ -41,16 +50,40 @@ class PrivateDatabaseUpdater {
         });
     }
 
-    deleteUser(userId) {
-        //TODO
+    putRecToUserWatchlist(rec, user) {
+        let recId = rec.getId();
+        let userId = user.getId();
+        let watchlistObject = {
+            'userId': userId,
+            'recId': recId
+        };
+
+        $.ajax({
+            url: `//localhost:4000/Watchlist`,
+            type: 'PUT',
+            data: watchlistObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 
-    putPendingOrganizer(pendingOrganizerId) {
-        //TODO
-    }
+    deleteRecFromUserWatchlist(rec, user) {
+        let recId = rec.getId();
+        let userId = user.getId();
+        let watchlistObject = {
+            'userId': userId,
+            'recId': recId
+        };
 
-    deletePendingOrgaizer(userId) {
-        //TODO
+        $.ajax({
+            url: `//localhost:4000/Watchlist`,
+            type: 'DELETE',
+            data: watchlistObject,
+            success: (result) => {
+                console.log(result);
+            }
+        });
     }
 }
 

@@ -13,8 +13,8 @@ class RecListModal {
     };
 
     constructor(
-        title = "Upcoming Recs",
-        importType = RecListModal.REC_IMPORTS.ALL
+        title,
+        importType
     ) {
         this.title = title;
         this.importType = importType;
@@ -27,6 +27,8 @@ class RecListModal {
         this.attach();
 
         this.animateScroll();
+
+        console.log(importType);
     }
 
     // attaches rec list to body of page
@@ -56,12 +58,6 @@ class RecListModal {
 
     // sets the name of this rec list
     setName(title = this.title) { $("#rec_list_title_text").text(title); }
-
-    // sets the rec items import type
-    setImportType(importType) {
-        if (importType in RecListModal.REC_IMPORTS)
-            this.importType = importType
-    }
 
     getRecs() { return this.currentRecs; }
     getRecModals() { return this.currentRecModals; }
@@ -110,8 +106,24 @@ class RecListModal {
 
     // imports recs into the rec list
     importRecs() {
-        //TODO: pull right recs from db
-        this.currentRecs = (test) ? testRecs : DatabaseRetriever.getRecs();
+        let userID = localStorage.getItem("userId");
+
+        switch (this.importType) {
+            case RecListModal.REC_IMPORTS.WATCHLIST:
+                this.currentRecs = DatabaseRetriever.getRecsByWatchList(userID);
+                break;
+            case RecListModal.REC_IMPORTS.OWNED:
+                this.currentRecs = DatabaseRetriever.getRecsByUserId(userID);
+                break;
+            case RecListModal.REC_IMPORTS.RECOMMENDED:
+                this.currentRecs = DatabaseRetriever.getRecsByRecommended();
+                break;
+            case RecListModal.REC_IMPORTS.TEST:
+                this.currentRecs = testRecs;
+                break;
+            default:
+                this.currentRecs = DatabaseRetriever.getRecs();
+        }
 
         // remove recs currently displayed
         this.removeRecs();
@@ -134,11 +146,6 @@ class RecListModal {
         this.currentRecModals = [];
     }
 
-    // filters rec list based on search and checkboxes
-    filter() {
-        //TODO: filter recs based on filters
-    }
-
     // animates border shadow on navbar increasing when scrolled
     animateScroll() {
         //TODO: make transition in box shadow increase based on distance from top?
@@ -158,7 +165,11 @@ class RecListModal {
     }
 }
 
-let test = true;
+let test = false;
+
+if (test) {
+    localStorage.setItem("userId", "5");
+}
 
 let testRecs = [
     new Rec(
