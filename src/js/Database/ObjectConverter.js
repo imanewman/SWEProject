@@ -9,22 +9,6 @@ class PrivateObjectConverter {
 
     convertRec(rec) {
         return {
-<<<<<<< HEAD
-            "RecID": rec.RecID,
-            "EventName": rec.EventName,
-            "Description": rec.Description,
-            "Location": rec.Location,
-            "Date": rec.Date,
-            "StartTime": rec.StartTime,
-            "EndTime": rec.EndTime,
-            "Tags": rec.MajorTags, //TODO: not the way to do this
-            "draft": rec.Draft,
-            "ContactInfo": rec.ContactInfo,
-            "WebsiteLink": rec.WebsiteLink,
-            "ImgLink": rec.ImageLink,
-            "Rules": rec.Rules,
-            "UserID": rec.UserId
-=======
             "RecID": rec.id,
             "EventName": rec.title,
             "Description": rec.description,
@@ -39,7 +23,6 @@ class PrivateObjectConverter {
             "ImgLink": rec.imageLink,
             "Rules": rec.rules,
             "UserID": rec.ownerId
->>>>>>> master
         }
     }
 

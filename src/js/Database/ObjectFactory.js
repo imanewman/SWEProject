@@ -21,11 +21,7 @@ class PrivateObjectFactory {
             recObject.Date,
             recObject.StartTime,
             recObject.EndTime,
-<<<<<<< HEAD
-            recObject.Tags,
-=======
             recObject.MajorTag,
->>>>>>> master
             recObject.Draft,
             recObject.ContactInfo,
             recObject.WebsiteLink,
@@ -43,13 +39,9 @@ class PrivateObjectFactory {
             if (recListObject.hasOwnProperty(key)) {
                 let newRec = this.initializeRec(recObject);
 
-<<<<<<< HEAD
-                recList.append(newRec);
-=======
                 recList.push(newRec);
 
                 // console.log(JSON.stringify(recObject));
->>>>>>> master
             }
         }
 
