@@ -16,7 +16,7 @@ class PrivateObjectFactory {
         return new Rec(
             recObject.RecID,
             recObject.EventName,
-            recObject.Description,
+            recObject.Description.replace(/[^\x00-\x7F]/g, ""),
             recObject.Location,
             recObject.Date,
             recObject.StartTime,
@@ -26,9 +26,8 @@ class PrivateObjectFactory {
             recObject.ContactInfo,
             recObject.WebsiteLink,
             recObject.ImageLink,
-            recObject.Rules,
+            recObject.Rules.replace(/[^\x00-\x7F]/g, ""),
             recObject.UserID,
-            //recObject.newFields
         );
     }
 

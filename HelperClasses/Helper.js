@@ -41,8 +41,8 @@ class PrivateHelper {
           "ContactInfo": "Contact Info",
           "WebsiteLink": "https://downtownslo.com/farmers-market/",
           "ImageLink": "ImageLink stuff",
-          //"Rules": "Rules",
-          //"UserID": "1"
+          "Rules": "Rules",
+          "UserID": "1"
       };
       /*{
           "id": 2,
