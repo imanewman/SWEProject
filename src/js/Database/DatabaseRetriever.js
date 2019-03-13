@@ -34,7 +34,7 @@ class PrivateDatabaseRetriever {
         var recList = [];
 
         $.ajax({
-            url: `Recs`,
+            url: `//localhost:4000/Recs`,
             type: 'GET',
             async: false,
             success: (result) => {
@@ -51,7 +51,7 @@ class PrivateDatabaseRetriever {
         var userObject = {};
 
         $.ajax({
-            url: `Users/${userId}`,
+            url: `//localhost:4000/Users/${userId}`,
             type: 'GET',
             async: false,
             success: (result) => {
@@ -69,7 +69,7 @@ class PrivateDatabaseRetriever {
         var authenticated = false;
 
         $.ajax({
-            url: `Users/${userId}/verify`, //TODO: set this up
+            url: `//localhost:4000/Users/${userId}/verify`, //TODO: set this up
             type: 'PUT',
             async: false,
             success: (result) => {
@@ -84,7 +84,7 @@ class PrivateDatabaseRetriever {
         var tagList = [];
 
         $.ajax({
-            url: `Tags/${recId}`,
+            url: `//localhost:4000/Tags/${recId}`,
             type: 'GET',
             async: false,
             success: (result) => {

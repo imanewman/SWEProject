@@ -36,7 +36,6 @@ class RecGenerator {
         for (let tIdx = 0; tIdx < times.length; tIdx++) {
             let time = times[tIdx];
 
-            // Check this: make sure formatting of fields is correct for comparison
             if ((dt.getDay() in time.day) && (time.start <= rec.getStartTime()) && (time.end >= rec.getEndTime()))
                 return true;
         }

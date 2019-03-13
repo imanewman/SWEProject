@@ -125,7 +125,7 @@ class Rec {
 
         var year = dateParts[0];
         var monthNum = parseInt(dateParts[1]) - 1;
-        var day = dateParts[2];
+        var day = dateParts[2].substring(0, 2);
 
         var month = monthList[monthNum];
 
