@@ -99,8 +99,7 @@ class RecModal {
         this.updateImage();
         this.updateIcon();
 
-        //TODO: update the rec in the database
-        //DatabaseUpdater.putRec(this.rec);
+        DatabaseUpdater.putRec(this.rec);
     }
 
     // updates the rec information currently displayed

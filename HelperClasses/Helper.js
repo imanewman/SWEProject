@@ -29,19 +29,20 @@ class PrivateHelper {
     getRecdata()
     {
       return {
-          "RecID": 0,
+          "RecID": "2",
           "EventName": "Downtown SLO Farmers Market",
           "Description": "Description",
           "Location": "Higuera Street, San Luis Obispo, CA",
           "Date": "2019-02-21",
           "StartTime": "18:00:00",
           "EndTime": "21:00:00",
-          "Tags": ['Farmers Market'],
-          "draft": false,
+          "MajorTags": ['Farmers Market'],
+          "Draft": false,
           "ContactInfo": "Contact Info",
           "WebsiteLink": "https://downtownslo.com/farmers-market/",
-          "Rules": "Rules",
-          "UserID": "0001000"
+          "ImageLink": "ImageLink stuff",
+          //"Rules": "Rules",
+          //"UserID": "1"
       };
       /*{
           "id": 2,
@@ -54,9 +55,9 @@ class PrivateHelper {
     getUserdata()
     {
       return {
-          "id": 3,
-          "email": "Junk",
-          "fullName": "Name"
+          "UserId": 3,
+          "Email": "Junk",
+          "FullName": "Name"
       }
     }
 }

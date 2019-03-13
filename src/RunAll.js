@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Static paths to be served like index.html and all client side js
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'html')));
 
 app.use(function(req, res, next) {
    console.log("Handling " + req.path + '/' + req.method);

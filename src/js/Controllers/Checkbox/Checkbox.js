@@ -38,8 +38,9 @@ class Checkbox extends Observable {
 
     animateToggleCheckBox() {
         let $checkbox = $("#" + this.id + " .rec_list_filter_checkbox_button");
+        let checkedAttr = $checkbox.attr("checked");
 
-        if ($checkbox.attr("checked") !== undefined) {
+        if (checkedAttr !== undefined) {
             $checkbox.removeAttr("checked");
         } else {
             $checkbox.attr("checked", true);

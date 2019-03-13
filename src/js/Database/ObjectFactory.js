@@ -14,21 +14,21 @@ class PrivateObjectFactory {
 
     initializeRec(recObject) {
         return new Rec(
-            recObject.id,
-            recObject.title,
-            recObject.description,
-            recObject.location,
-            recObject.date,
-            recObject.startTime,
-            recObject.endTime,
-            recObject.tags,
-            recObject.draft,
-            recObject.contactInfo,
-            recObject.websiteLink,
-            recObject.imageLink,
-            recObject.rules,
-            recObject.ownerId,
-            recObject.newFields
+            recObject.RecID,
+            recObject.EventName,
+            recObject.Description,
+            recObject.Location,
+            recObject.Date,
+            recObject.StartTime,
+            recObject.EndTime,
+            recObject.Tags,
+            recObject.Draft,
+            recObject.ContactInfo,
+            recObject.WebsiteLink,
+            recObject.ImageLink,
+            recObject.Rules,
+            recObject.UserID,
+            //recObject.newFields
         );
     }
 

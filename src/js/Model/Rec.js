@@ -16,21 +16,21 @@ class Rec {
         ownerId,
         newFields
     ) {
-        this.id = id || '1';
-        this.title = title || 'Rec Title';
-        this.description = description || 'No Description';
-        this.rules = rules || '';
-		this.location = location || '';
-		this.date = date || '';
-		this.startTime = startTime || '00:00:00';
-		this.endTime = endTime || '00:00:00';
-		this.tags = tags || [];
-		this.draft = (draft === undefined) ? true : draft;
-		this.contactInfo = contactInfo || '';
-		this.websiteLink = websiteLink || '';
-        this.imageLink = imageLink || '';
-        this.ownerId = ownerId || '';
-		this.newFields = newFields || {};
+        this.RecID = id || '1';
+        this.EventName = title || 'Rec EventName';
+        this.Description = description || 'No Description';
+        this.Rules = rules || '';
+		this.Location = location || '';
+		this.Date = date || '';
+		this.StartTime = startTime || '00:00:00';
+		this.EndTime = endTime || '00:00:00';
+		this.MajorTags = tags || [];
+		this.Draft = (draft === undefined) ? true : draft;
+		this.ContactInfo = contactInfo || '';
+		this.WebsiteLink = websiteLink || '';
+        this.ImageLink = imageLink || '';
+        this.UserId = ownerId || '';
+		//this.newFields = newFields || {};
 	}
 
     getId() { return this.id; }
@@ -125,7 +125,7 @@ class Rec {
 
         var year = dateParts[0];
         var monthNum = parseInt(dateParts[1]) - 1;
-        var day = dateParts[2];
+        var day = dateParts[2].substring(0, 2);
 
         var month = monthList[monthNum];
 
