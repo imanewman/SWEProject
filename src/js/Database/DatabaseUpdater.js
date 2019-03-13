@@ -15,7 +15,7 @@ class PrivateDatabaseUpdater {
         let recObject = this.converter.convertRec(rec);
 
         $.ajax({
-            url: `//localhost:4000/Recs`,
+            url: `//localhost:4000/Recs/${rec.getId()}`,
             type: 'PUT',
             data: recObject,
             success: (result) => {

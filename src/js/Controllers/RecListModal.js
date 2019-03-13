@@ -106,15 +106,17 @@ class RecListModal {
 
     // imports recs into the rec list
     importRecs() {
+        let userID = localStorage.getItem("userId");
+
         switch (this.importType) {
             case RecListModal.REC_IMPORTS.WATCHLIST:
-                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                this.currentRecs = DatabaseRetriever.getRecsByWatchList(userID);
                 break;
             case RecListModal.REC_IMPORTS.OWNED:
-                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                this.currentRecs = DatabaseRetriever.getRecsByUserId(userID);
                 break;
             case RecListModal.REC_IMPORTS.RECOMMENDED:
-                this.currentRecs = DatabaseRetriever.getRecs(); //TODO
+                this.currentRecs = DatabaseRetriever.getRecsByRecommended();
                 break;
             case RecListModal.REC_IMPORTS.TEST:
                 this.currentRecs = testRecs;
@@ -164,6 +166,10 @@ class RecListModal {
 }
 
 let test = false;
+
+if (test) {
+    localStorage.setItem("userId", "5");
+}
 
 let testRecs = [
     new Rec(

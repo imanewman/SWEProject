@@ -1,4 +1,6 @@
 import ObjectFactory from "./ObjectFactory.js";
+import RecGenerator from "../Algorithms/RecGenerator.js";
+import User from "../Model/User.js";
 
 class PrivateDatabaseRetriever {
     constructor() {
@@ -45,6 +47,46 @@ class PrivateDatabaseRetriever {
         let recs = this.factory.initializeRecList(recList);
 
         return recs;
+    }
+
+    getRecsByWatchList(userId) {
+        var recList = [];
+
+        $.ajax({
+            url: `//localhost:4000/Recs?userWatch=${userId}`,
+            type: 'GET',
+            async: false,
+            success: (result) => {
+                recList = result;
+            }
+        });
+
+        let recs = this.factory.initializeRecList(recList);
+
+        return recs;
+    }
+
+    getRecsByUserId(userId) {
+        var recList = [];
+
+        $.ajax({
+            url: `//localhost:4000/Recs?id=${userId}`,
+            type: 'GET',
+            async: false,
+            success: (result) => {
+                recList = result;
+            }
+        });
+
+        let recs = this.factory.initializeRecList(recList);
+
+        return recs;
+    }
+
+    getRecsByRecommended(user = new User()) {
+        let recs = this.getRecs();
+
+        return RecGenerator.generateUserRecs(user);
     }
 
     getUser(userId) {
