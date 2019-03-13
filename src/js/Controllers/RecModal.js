@@ -13,7 +13,6 @@ import RecTextFactory from './EditableRecText/RecTextFactory.js';
 import DatabaseUpdater from '../Database/DatabaseUpdater.js';
 import Categories from './Categories.js';
 
-//TODO: add owner info, tags
 class RecModal {
     constructor(rec, newRec = false) {
         this.rec = rec;
@@ -51,8 +50,7 @@ class RecModal {
                     // update the rec info
                     this.updateInfo();
 
-                    //TODO: put user id in local storage
-                    if (localStorage.getItem("userId") === this.rec.getOwnerId()) {
+                    if (localStorage.getItem("userId") == this.rec.getOwnerId()) {
                         this.showOtherButtons("owner");
                     }
 
@@ -99,7 +97,7 @@ class RecModal {
         this.updateImage();
         this.updateIcon();
 
-        DatabaseUpdater.putRec(this.rec);
+        // DatabaseUpdater.putRec(this.rec);
     }
 
     // updates the rec information currently displayed
@@ -223,12 +221,6 @@ class RecModal {
         $("#" + this.recId + " .rec_item_buttons_type").removeClass("rec_item_buttons_type_active");
         $("#" + this.recId + " .rec_item_buttons_" + type).addClass("rec_item_buttons_type_active");
     }
-}
-
-let testOwner = true;
-
-if (testOwner) {
-    localStorage.setItem("userId", "1000000");
 }
 
 export default RecModal;

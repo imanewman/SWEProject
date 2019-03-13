@@ -47,6 +47,11 @@ router.get('/', function(req, res) {
       query += ` where userID = ${req.query.id}`;
    }
    
+   if (req.query.userWatch) {
+   	console.log("WATCHLIST QUERY");
+   	query += ` INNER JOIN WatchedEvents WHERE WatchedEvents.RecID = Recs.RecID AND WatchedEvents.UserID = ${req.query.userWatch}`;
+   }
+   
    console.log(query);
    cnn.query(query, handler);
 });
@@ -75,12 +80,15 @@ router.post('/', function(req, res) {
    
    console.log(req.body);
    
-   handler();
+   var sql = `INSERT INTO Recs (UserID, EventName, Location, Date, StartTime, EndTime, ImgLink, WebsiteLink, Description, Rules, ContactInfo, MajorTag)` + 
+   		    ` VALUES ("${req.body.UserID}", "${req.body.EventName}", "${req.body.Location}", "${req.body.Date}", "${req.body.StartTime}", ` +
+   			 `"${req.body.EndTime}", "${req.body.ImgLink}", "${req.body.WebsiteLink}", ` +
+   			 `"${req.body.Description}", "${req.body.Rules}", "${req.body.ContactInfo}", "${req.body.MajorTag}")`;
    
-   //cnn.query(`INSERT INTO Recs VALUES (ownerId, title) VALUES (?, ?)`, handler);
+   cnn.query(sql, handler);
 });
 
-// PUT /Recs/{id}
+// PUT /Recs/{id} DONE
 router.put('/:id', function(req, res) {
    console.log('PUT /Recs/{id}');
    
@@ -94,11 +102,11 @@ router.put('/:id', function(req, res) {
    
    console.log(req.body); 
    
-   var sql = `UPDATE Recs SET EventName = '${req.body.EventName}', ` +
-   			 `Location = '${req.body.Location}', Date = '${req.body.Date}', StartTime = '${req.body.StartTime}', ` +
-   			 `EndTime = '${req.body.EndTime}', ImgLink = '${req.body.ImgLink}', WebsiteLink = '${req.body.WebsiteLink}', ` +
-   			 `Description = '${req.body.Description}', Rules = '${req.body.Rules}', ContactInfo = '${req.body.ContactInfo}'` + 
-   			 ` WHERE RecID = ${putId}`
+   var sql = `UPDATE Recs SET EventName = "${req.body.EventName}", ` +
+   			 `Location = "${req.body.Location}", Date = "${req.body.Date}", StartTime = "${req.body.StartTime}", ` +
+   			 `EndTime = "${req.body.EndTime}", ImgLink = "${req.body.ImgLink}", WebsiteLink = "${req.body.WebsiteLink}", ` +
+   			 `Description = "${req.body.Description}", Rules = "${req.body.Rules}", ContactInfo = "${req.body.ContactInfo}" ` + 
+				 `WHERE RecID = ${putId}`;
    
    console.log(sql);
    
