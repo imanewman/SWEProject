@@ -17,26 +17,9 @@ class PrivateDatabaseUpdater {
         $.ajax({
             url: `//localhost:4000/Recs/${rec.getId()}`,
             type: 'PUT',
-            data: JSON.stringify(recObject),
-            contentType: "application/json",
+            data: recObject,
             success: (result) => {
                 console.log(result);
-            }
-        });
-    }
-
-    postRec(rec) {
-        let recObject = this.converter.convertRec(rec);
-
-        $.ajax({
-            url: `//localhost:4000/Recs`,
-            type: 'POST',
-            data: JSON.stringify(recObject),
-            contentType: "application/json",
-            success: (result) => {
-                console.log(result);
-
-
             }
         });
     }
@@ -48,7 +31,6 @@ class PrivateDatabaseUpdater {
             url: `//localhost:4000/Recs`,
             type: 'DELETE',
             data: recId,
-            contentType: "application/json",
             success: (result) => {
                 console.log(result);
             }
@@ -61,8 +43,7 @@ class PrivateDatabaseUpdater {
         $.ajax({
             url: `//localhost:4000/Users`,
             type: 'PUT',
-            data: JSON.stringify(userObject),
-            contentType: "application/json",
+            data: userObject,
             success: (result) => {
                 console.log(result);
             }
@@ -81,7 +62,6 @@ class PrivateDatabaseUpdater {
             url: `//localhost:4000/Watchlist`,
             type: 'PUT',
             data: watchlistObject,
-            contentType: "application/json",
             success: (result) => {
                 console.log(result);
             }
@@ -100,7 +80,6 @@ class PrivateDatabaseUpdater {
             url: `//localhost:4000/Watchlist`,
             type: 'DELETE',
             data: watchlistObject,
-            contentType: "application/json",
             success: (result) => {
                 console.log(result);
             }

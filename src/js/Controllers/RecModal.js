@@ -97,14 +97,7 @@ class RecModal {
         this.updateImage();
         this.updateIcon();
 
-        if (this.newRec) {
-            DatabaseUpdater.postRec(this.rec);
-
-            this.newRec = false;
-        } else {
-            DatabaseUpdater.putRec(this.rec);
-        }
-
+        // DatabaseUpdater.putRec(this.rec);
     }
 
     // updates the rec information currently displayed
@@ -126,10 +119,10 @@ class RecModal {
 
     // updates the rec icon based on its tags
     updateIcon() {
-        let tag = this.rec.getTags();
+        let tags = this.rec.getTags();
 
-        if (Categories.icons.hasOwnProperty(tag)) {
-            let tagClasses = Categories.icons[tag]; // for now it just picks the first tag
+        if (tags.length > 0 && tags[0] in Categories.icons) {
+            let tagClasses = Categories.icons[tags[0]]; // for now it just picks the first tag
 
             $("#" + this.recId + " .rec_item_image i").removeClass().addClass(tagClasses);
         }
