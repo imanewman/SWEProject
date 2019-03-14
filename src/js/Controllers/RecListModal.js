@@ -132,16 +132,10 @@ class RecListModal {
 
         // add all recs into displayed list
         for (let i = 0; i < this.currentRecs.length; i++) {
-            setTimeout(() => {
-                let currentRec = this.currentRecs[i];
-                let newRecModal = new RecModal(currentRec);
+            let currentRec = this.currentRecs[i];
+            let newRecModal = new RecModal(currentRec);
 
-                this.currentRecModals.push(newRecModal);
-
-                console.log(
-                    JSON.stringify(ObjectConverter.convertRec(currentRec))
-                );
-            }, i * 50);
+            this.currentRecModals.push(newRecModal);
         }
     }
 
@@ -171,7 +165,7 @@ class RecListModal {
     }
 }
 
-let test = true;
+let test = false;
 
 if (test) {
     localStorage.setItem("userId", "5");

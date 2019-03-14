@@ -20,6 +20,8 @@ class HideRecButton extends RecButton {
         this.hidden = (!this.hidden);
 
         this.updateHidden();
+
+        this.recModal.saveInfo();
     }
 
     updateHidden() {
@@ -28,8 +30,6 @@ class HideRecButton extends RecButton {
         this.toggleIcon();
 
         this.toggleOpacity();
-
-        this.recModal.saveInfo();
     }
 
     toggleIcon() {
