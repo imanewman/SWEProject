@@ -6,7 +6,7 @@ class User {
 		this.fullName = fullName;
 		this.passwordHash = passwordHash;
 		this.adminPrivilege = false;
-		this.preferredEvents = preferredEvents || ['Charity'];
+		this.preferredEvents = preferredEvents || ['Charity', 'Open Mic'];
 		this.createdRecIds = createdRecIds;
 		this.ratings = rating;
 		this.ratingNum = ratingNum;
