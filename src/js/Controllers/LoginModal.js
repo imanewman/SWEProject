@@ -79,12 +79,22 @@ class LoginModal {
         let password = $("#signup_password input").val();
         let passwordVerify = $("#signup_password_confirm input").val();
 
-        let invalidPWElement = $("#invalid_create_text");
+        let invalidPWMismatch = $("#invalid_create_text_mismatch");
+        let invalidPWSafety = $("#invalid_create_text_safety");
+
+        let passwordRegex = RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$|~=[\]'_+@.-])[a-zA-Z0-9$|~=[\]'_+@.-]{8,}$")
+        let isPasswordSafe = passwordRegex.test(password);
 
         if (password !== passwordVerify) {
-            invalidPWElement.removeClass("hidden");
+            invalidPWMismatch.removeClass("hidden");
         } else {
-            invalidPWElement.addClass("hidden");
+            invalidPWMismatch.addClass("hidden");
+        }
+
+        if (isPasswordSafe) {
+            invalidPWSafety.addClass("hidden");
+        } else {
+            invalidPWSafety.removeClass("hidden");
         }
 
         //TODO: handle sign up

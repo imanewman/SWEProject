@@ -1,6 +1,3 @@
-import User from '../Model/User.js';
-import Rec from '../Model/Rec.js';
-
 // 0 = Sunday, 1 = Monday, etc.
 
 class RecGenerator {
@@ -12,7 +9,7 @@ class RecGenerator {
 
         for (let idx = 0; idx < recList.length; idx++) {
             let rec = recList[idx];
-            let tag =  rec.getTags();
+            let tag = rec.getTags();
 
             // if (checkTimes(rec, times)) {
             if (pref.indexOf(tag) !== -1) {
