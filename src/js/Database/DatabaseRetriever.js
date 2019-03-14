@@ -39,7 +39,6 @@ class PrivateDatabaseRetriever {
             }
         });
 
-        console.log(recObject);
         let rec = this.factory.initializeRec(recObject);
 
         return rec;
