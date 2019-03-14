@@ -16,7 +16,7 @@ class PrivateObjectConverter {
             "Date": rec.getDate(),
             "StartTime": rec.getStartTime(),
             "EndTime": rec.getEndTime(),
-            "MajorTags": rec.getTags(),
+            "MajorTag": rec.getTags(),
             "draft": rec.getDraft(),
             "ContactInfo": rec.getContactInfo(),
             "WebsiteLink": rec.getWebsiteLink(),

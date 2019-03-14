@@ -82,7 +82,7 @@ class LoginModal {
         let invalidPWMismatch = $("#invalid_create_text_mismatch");
         let invalidPWSafety = $("#invalid_create_text_safety");
 
-        let passwordRegex = RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$|~=[\]'_+@.-])[a-zA-Z0-9$|~=[\]'_+@.-]{8,}$")
+        let passwordRegex = RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$|~=[\]'_+@.-])[a-zA-Z0-9$|~=[\]'_+@.-]{8,}$");
         let isPasswordSafe = passwordRegex.test(password);
 
         if (password !== passwordVerify) {

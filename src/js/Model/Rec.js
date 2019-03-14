@@ -37,6 +37,8 @@ class Rec {
 
     getOwnerId() { return this.ownerId; }
 
+    setOwnerId(userId) { this.ownerId = userId; }
+
     getTitle() { return this.title; }
 
     setTitle(title) { this.title = title; }
@@ -67,7 +69,7 @@ class Rec {
 
     getTags() { return this.tags; }
 
-    addTags(tags) { this.tags = tags; }
+    setTags(tags) { this.tags = tags; }
 
     removeTag(tagName) { this.tags.remove(tagName); }
 

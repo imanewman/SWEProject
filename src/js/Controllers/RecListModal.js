@@ -100,6 +100,8 @@ class RecListModal {
 
     addNewRec() {
         let rec = new Rec();
+        rec.setOwnerId(localStorage.getItem("userId"));
+        rec.setTags('Default');
         let recModal = new RecModal(rec, true);
 
         this.currentRecModals.push(recModal);
