@@ -53,11 +53,21 @@ class RecFilter extends Observer {
         let recList = this.recListModal.getRecs();
         let recModals = this.recListModal.getRecModals();
 
+        // console.log('Pre Filter:');
+        // console.log(JSON.stringify(recList));
+        // console.log(recList.length);
+
         let filteredRecList = this.filterCategories(recList);
+
+        // console.log('Categories:');
+        // console.log(JSON.stringify(this.categories));
+        // console.log('Post Category Filter:');
+        // console.log(filteredRecList);
 
         let results = this.filterSearchString(filteredRecList);
 
-        // console.log(results);
+        // console.log('Post String Filter:');
+        // console.log(JSON.stringify(results));
 
         let ids = [];
 
@@ -88,16 +98,12 @@ class RecFilter extends Observer {
 
         for (let idx = 0; idx < recList.length; idx++) {
             let rec = recList[idx];
-            let tags = rec.getTags();
+            let tag = rec.getTags();
 
-            for (let tagIdx = 0; tagIdx < tags.length; tagIdx++) {
-                let tag = tags[tagIdx];
+            console.log(tag);
 
-                if (this.categories.includes(tag)) {
-                    filteredRecList.push(rec);
-
-                    continue;
-                }
+            if (this.categories.includes(tag)) {
+                filteredRecList.push(rec);
             }
         }
 
@@ -140,6 +146,7 @@ class RecFilter extends Observer {
                     let tag = Categories.nameToTag[name];
 
                     this.categories.push(tag);
+                    this.categories.push(name);
                 }
             }
         }
