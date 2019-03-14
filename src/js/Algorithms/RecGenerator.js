@@ -1,5 +1,7 @@
-import User from '../Model/User.js';
-import Rec from '../Model/Rec.js';
+//import User from '../Model/User.js';
+//import Rec from '../Model/Rec.js';
+const User = require("../Model/User.js");
+const Rec = require("../Model/Rec.js");
 
 // 0 = Sunday, 1 = Monday, etc.
 
@@ -44,4 +46,5 @@ class RecGenerator {
     }
 }
 
-export default RecGenerator;
+module.exports = RecGenerator;
+//export default RecGenerator;

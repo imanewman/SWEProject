@@ -1,6 +1,9 @@
-import ObjectFactory from "./ObjectFactory.js";
-import RecGenerator from "../Algorithms/RecGenerator.js";
-import User from "../Model/User.js";
+//import ObjectFactory from "./ObjectFactory.js";
+//import RecGenerator from "../Algorithms/RecGenerator.js";
+//import User from "../Model/User.js";
+const ObjectFactory = require("./ObjectFactory.js");
+const RecGenerator = require("../Algorithms/RecGenerator.js");
+const User = require("../Model/User.js");
 
 class PrivateDatabaseRetriever {
     constructor() {
@@ -144,6 +147,6 @@ const DatabaseRetriever = new PrivateDatabaseRetriever();
 
 Object.freeze(DatabaseRetriever);
 
-// module.exports = DatabaseRetriever;
+module.exports = DatabaseRetriever;
 
-export default DatabaseRetriever;
+//export default DatabaseRetriever;

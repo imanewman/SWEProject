@@ -15,12 +15,7 @@ class PrivateHelper {
           let resultRow = result[idx];
           let expectedRow = expected[idx];
 
-          //console.log(`all keys: ${Object.keys(expectedRow)}`);
-
           Object.keys(expectedRow).forEach( (key) => {
-              // console.log(`key: ${key}`);
-              // console.log(`-> ${JSON.stringify(resultRow[key])}`);
-              // console.log(`-> ${JSON.stringify(resultRow[key])}`);
               expect(resultRow[key]).to.equal(expectedRow[key]); // check each value matches
           });
       }
@@ -29,26 +24,21 @@ class PrivateHelper {
     getRecdata()
     {
       return {
-          "RecID": 0,
+          "RecID": 2,
           "EventName": "Downtown SLO Farmers Market",
           "Description": "Description",
           "Location": "Higuera Street, San Luis Obispo, CA",
           "Date": "2019-02-21",
           "StartTime": "18:00:00",
           "EndTime": "21:00:00",
-          "Tags": ['Farmers Market'],
-          "draft": false,
+          "MajorTag": ['Farmers Market'],
+          "Draft": false,
           "ContactInfo": "Contact Info",
           "WebsiteLink": "https://downtownslo.com/farmers-market/",
+          "ImgLink": "ImageLink stuff",
           "Rules": "Rules",
-          "UserID": "0001000"
+          "UserID": 1
       };
-      /*{
-          "id": 2,
-          "title": "Junk",
-          "description": "Junk",
-          "location": "Here",
-      }*/
     }
 
     getUserdata()
@@ -56,7 +46,9 @@ class PrivateHelper {
       return {
           "id": 3,
           "email": "Junk",
-          "fullName": "Name"
+          "fullName": "Name",
+          "passwordHash": "password1",
+          "preferredEvents": ['Event1', 'Event2']
       }
     }
 }

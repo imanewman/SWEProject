@@ -16,21 +16,21 @@ class Rec {
         ownerId,
         newFields
     ) {
-        this.id = id || '1';
-        this.title = title || 'Rec Title';
-        this.description = description || 'No Description';
-        this.rules = rules || '';
-		this.location = location || '';
-		this.date = date || '';
-		this.startTime = startTime || '00:00:00';
-		this.endTime = endTime || '00:00:00';
-		this.tags = tags || [];
-		this.draft = (draft === undefined) ? true : draft;
-		this.contactInfo = contactInfo || '';
-		this.websiteLink = websiteLink || '';
+    	this.id = id || '1';
+      this.title = title || 'Rec EventName';
+      this.description = description || 'No Description';
+      this.rules = rules || '';
+							this.location = location || '';
+							this.date = date || '';
+							this.startTime = startTime || '00:00:00';
+							this.endTime = endTime || '00:00:00';
+							this.tags = tags || [];
+							this.draft = (draft === undefined) ? true : draft;
+							this.contactInfo = contactInfo || '';
+							this.websiteLink = websiteLink || '';
         this.imageLink = imageLink || '';
         this.ownerId = ownerId || '';
-		this.newFields = newFields || {};
+												 this.newFields = newFields || {};
 	}
 
     getId() { return this.id; }

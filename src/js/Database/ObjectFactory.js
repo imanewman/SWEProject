@@ -27,16 +27,15 @@ class PrivateObjectFactory {
             recObject.WebsiteLink,
             recObject.ImgLink,
             recObject.Rules.replace(/[^\x00-\x7F]/g, ""),
-            recObject.UserID
+            recObject.UserID,
         );
     }
 
     initializeRecList(recListObject) {
         let recList = [];
 
-        for (let key in recListObject) {
+        for (let recObject in recListObject) {
             if (recListObject.hasOwnProperty(key)) {
-                let recObject = recListObject[key];
                 let newRec = this.initializeRec(recObject);
 
                 recList.push(newRec);
