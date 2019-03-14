@@ -10,6 +10,28 @@ class PrivateHelper {
         return PrivateHelper.instance;
     }
 
+    checkRecFields(recived, expected)
+    {
+      expect(recived.id).to.equal(expected.RecID);
+      expect(recived.title).to.equal(expected.EventName);
+      expect(recived.location).to.equal(expected.Location);
+      expect(recived.date).to.equal(expected.Date);
+      expect(recived.startTime).to.equal(expected.StartTime);
+      expect(recived.endTime).to.equal(expected.EndTime);
+      expect(recived.tags).to.equal(expected.MajorTag);
+      expect(recived.draft).to.equal(expected.draft);
+      expect(recived.contactInfo).to.equal(expected.ContactInfo);
+      expect(recived.websiteLink).to.equal(expected.WebsiteLink);
+      expect(recived.imageLink).to.equal(expected.ImgLink);
+      expect(recived.rules).to.equal(expected.Rules);
+      expect(recived.ownerId).to.equal(expected.UserID);
+    }
+
+    checkUserFields(recived, expected)
+    {
+
+    }
+
     IterateFields(result, expected){
       expect(result.length).to.equal(expected.length); // check that result is one row
 
@@ -26,20 +48,19 @@ class PrivateHelper {
     getRecdata()
     {
       return {
-          "RecID": 2,
-          "EventName": "Downtown SLO Farmers Market",
-          "Description": "Description",
-          "Location": "Higuera Street, San Luis Obispo, CA",
-          "Date": "2019-02-21",
-          "StartTime": "18:00:00",
-          "EndTime": "21:00:00",
-          "MajorTag": ['Farmers Market'],
-          "Draft": false,
-          "ContactInfo": "Contact Info",
-          "WebsiteLink": "https://downtownslo.com/farmers-market/",
-          "ImgLink": "ImageLink stuff",
-          "Rules": "Rules",
-          "UserID": 1
+          "RecID":"2",
+          "EventName":"When Social Media Companies, Research Ethics, and Human Rights Collide",
+          "Description":"As social media and other tech companies face serious ethical criticismabout privacy, algorithmic bias, emotional manipulation, and other concernsthis talk offers a new human data research paradigm for technologys next wave of social worlds.  Most of these ethical dilemmas arise not because badintentioned actors, but because methods of investigation and innovation are pushed to capacity and failing us.  For instance, traditional principles of human subject research arent suited for online environments today, which are at once familiar software (like a spreadsheet), but also controlled settings (like a lab) and deeply social and dynamic (like a backyard BBQ).  The path forward isnt in listing an abstract set of principles but hammering out a new, shared course of action that seeks to respect the rights/freedoms of individuals and society in these new online environments.  Researchers and industry need to earn the publics trust in order to protect their own future.",
+          "Location":"Performing Arts Center, 1 Grand Ave, San Luis Obispo, CA",
+          "Date":"2019-02-19","StartTime":"11:00:00",
+          "EndTime":"13:00:00",
+          "MajorTag":"Speech",
+          "draft":false,
+          "ContactInfo":"For more information, contact Professor Patrick Lin, Philosophy Department: palin@calpoly.edu",
+          "WebsiteLink":"https://www.microsoft.com/en-us/research/people/mlg/",
+          "ImgLink":"https://www.pacslo.org/ArticleMedia/Images/PAC/Site/PAC_SLO_logo.jpg",
+          "Rules":"None Specified",
+          "UserID":"1"
       };
     }
 

@@ -2,14 +2,16 @@ const expect = require("chai").expect;
 const DatabaseConnector = require("../src/Database.js");
 const Retriever = require("../src/js/Database/DatabaseRetriever.js");
 const Rec = require("../src/js/Model/Rec");
-
-//DatabaseConnector.connect();
+const Helper = require("../HelperClasses/Helper.js");
 
 describe("DatabaseRetriever Tests", () => {
     describe("Test getRec function", () => {
-        it("Returns Rec", (done) => {
-          const recived = Retriever.getRec(2);
-          console.log(recived.id);
+        it("Returns Rec for the given ID", (done) => {
+          const expected = Helper.getRecdata();
+          const recived = Retriever.getRec("2");
+
+          Helper.checkRecFields(recived, expected);
+        
           done();
         });
     });

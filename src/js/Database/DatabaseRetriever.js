@@ -26,7 +26,7 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        var recObject = {"RecID":"2","EventName":"When Social Media Companies, Research Ethics, and Human Rights Collide","Description":"As social media and other tech companies face serious ethical criticism—about privacy, algorithmic bias, emotional manipulation, and other concerns—this talk offers a new “human data research” paradigm for technology’s next wave of social worlds.  Most of these “ethical dilemmas” arise not because bad-intentioned actors, but because methods of investigation and innovation are pushed to capacity and failing us.  For instance, traditional principles of human subject research aren’t suited for online environments today, which are at once familiar software (like a spreadsheet), but also controlled settings (like a lab) and deeply social and dynamic (like a backyard BBQ).  The path forward isn’t in listing an abstract set of principles but hammering out a new, shared course of action that seeks to respect the rights/freedoms of individuals and society in these new online environments.  Researchers and industry need to earn the public’s trust in order to protect their own future.","Location":"Performing Arts Center, 1 Grand Ave, San Luis Obispo, CA","Date":"2019-02-19","StartTime":"11:00:00","EndTime":"13:00:00","MajorTags":"Speech","draft":false,"ContactInfo":"For more information, contact Professor Patrick Lin, Philosophy Department: palin@calpoly.edu","WebsiteLink":"https://www.microsoft.com/en-us/research/people/mlg/","ImgLink":"https://www.pacslo.org/ArticleMedia/Images/PAC/Site/PAC_SLO_logo.jpg","Rules":"None Specified","UserID":"1"};
+        var recObject = {"RecID":"2","EventName":"When Social Media Companies, Research Ethics, and Human Rights Collide","Description":"As social media and other tech companies face serious ethical criticism—about privacy, algorithmic bias, emotional manipulation, and other concerns—this talk offers a new “human data research” paradigm for technology’s next wave of social worlds.  Most of these “ethical dilemmas” arise not because bad-intentioned actors, but because methods of investigation and innovation are pushed to capacity and failing us.  For instance, traditional principles of human subject research aren’t suited for online environments today, which are at once familiar software (like a spreadsheet), but also controlled settings (like a lab) and deeply social and dynamic (like a backyard BBQ).  The path forward isn’t in listing an abstract set of principles but hammering out a new, shared course of action that seeks to respect the rights/freedoms of individuals and society in these new online environments.  Researchers and industry need to earn the public’s trust in order to protect their own future.","Location":"Performing Arts Center, 1 Grand Ave, San Luis Obispo, CA","Date":"2019-02-19","StartTime":"11:00:00","EndTime":"13:00:00","MajorTag":"Speech","draft":false,"ContactInfo":"For more information, contact Professor Patrick Lin, Philosophy Department: palin@calpoly.edu","WebsiteLink":"https://www.microsoft.com/en-us/research/people/mlg/","ImgLink":"https://www.pacslo.org/ArticleMedia/Images/PAC/Site/PAC_SLO_logo.jpg","Rules":"None Specified","UserID":"1"};
         $.ajax({
             url: `//localhost:4000/Recs/${recId}`,
             type: 'GET',
@@ -35,7 +35,7 @@ class PrivateDatabaseRetriever {
                 recObject = result;
 
 
-                //console.log(recObject);
+                console.log(recObject);
             }
         });
 

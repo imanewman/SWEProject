@@ -34,11 +34,9 @@ describe("ObjectConverter Tests", () => {
       const data = Helper.getUserdata();
       const expected = ObjectFactory.initializeUser(data);
       const recived = ObjectConverter.convertUser(expected);
-      expect(recived.id).to.equal(expected.id);
-      expect(recived.email).to.equal(expected.email);
-      expect(recived.fullName).to.equal(expected.fullName);
-      expect(recived.passwordHash).to.equal(expected.passwordHash);
-      expect(recived.preferredEvents).to.equal(expected.preferredEvents);
+
+      Helper.checkUserFields(recived, expected);
+      
       done();
     })
   });
