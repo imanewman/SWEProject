@@ -9,7 +9,7 @@ describe("RecGenerator Tests", () => {
           const data = Helper.getRecListData();
           const new_User = new User();
           const recived = Generator.generateUserRecs(new_User, data);
-          console.log(recived);
+          //console.log(recived);
           Helper.IterateFields(recived, [data[2]]);
           done();
         });

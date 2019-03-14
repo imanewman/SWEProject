@@ -6,6 +6,14 @@ const ObjectFactory = require("./ObjectFactory.js");
 const RecGenerator = require("../Algorithms/RecGenerator.js");
 const User = require("../Model/User.js");
 
+var jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const { document } = (new JSDOM('')).window;
+global.document = document;
+
+var $ = jQuery = require('jquery')(window);
+
 class PrivateDatabaseRetriever {
     constructor() {
         this.factory = ObjectFactory;
@@ -18,21 +26,20 @@ class PrivateDatabaseRetriever {
     }
 
     getRec(recId) {
-        var recObject = {};
-
-        request({
+        var recObject = {"RecID":"2","EventName":"When Social Media Companies, Research Ethics, and Human Rights Collide","Description":"As social media and other tech companies face serious ethical criticism—about privacy, algorithmic bias, emotional manipulation, and other concerns—this talk offers a new “human data research” paradigm for technology’s next wave of social worlds.  Most of these “ethical dilemmas” arise not because bad-intentioned actors, but because methods of investigation and innovation are pushed to capacity and failing us.  For instance, traditional principles of human subject research aren’t suited for online environments today, which are at once familiar software (like a spreadsheet), but also controlled settings (like a lab) and deeply social and dynamic (like a backyard BBQ).  The path forward isn’t in listing an abstract set of principles but hammering out a new, shared course of action that seeks to respect the rights/freedoms of individuals and society in these new online environments.  Researchers and industry need to earn the public’s trust in order to protect their own future.","Location":"Performing Arts Center, 1 Grand Ave, San Luis Obispo, CA","Date":"2019-02-19","StartTime":"11:00:00","EndTime":"13:00:00","MajorTags":"Speech","draft":false,"ContactInfo":"For more information, contact Professor Patrick Lin, Philosophy Department: palin@calpoly.edu","WebsiteLink":"https://www.microsoft.com/en-us/research/people/mlg/","ImgLink":"https://www.pacslo.org/ArticleMedia/Images/PAC/Site/PAC_SLO_logo.jpg","Rules":"None Specified","UserID":"1"};
+        $.ajax({
             url: `//localhost:4000/Recs/${recId}`,
             type: 'GET',
-            async: false
-          }, (err, resp, body) => {
-                recObject = body;
+            async: false,
+            success: (result) => {
+                recObject = result;
 
-                console.log(err);
-                console.log(resp);
-                console.log(body);
-                console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+                //console.log(recObject);
+            }
         });
 
+        console.log(recObject);
         let rec = this.factory.initializeRec(recObject);
 
         return rec;
@@ -41,7 +48,7 @@ class PrivateDatabaseRetriever {
     getRecs() {
         var recList = [];
 
-        request({
+        $.ajax({
             url: `//localhost:4000/Recs`,
             type: 'GET',
             async: false,
@@ -58,7 +65,7 @@ class PrivateDatabaseRetriever {
     getRecsByWatchList(userId) {
         var recList = [];
 
-        request({
+        $.ajax({
             url: `//localhost:4000/Recs?userWatch=${userId}`,
             type: 'GET',
             async: false,
@@ -75,7 +82,7 @@ class PrivateDatabaseRetriever {
     getRecsByUserId(userId) {
         var recList = [];
 
-        request({
+        $.ajax({
             url: `//localhost:4000/Recs?id=${userId}`,
             type: 'GET',
             async: false,
@@ -98,7 +105,7 @@ class PrivateDatabaseRetriever {
     getUser(userId) {
         var userObject = {};
 
-        request({
+        $.ajax({
             url: `//localhost:4000/Users/${userId}`,
             type: 'GET',
             async: false,
@@ -116,7 +123,7 @@ class PrivateDatabaseRetriever {
         let userObject = this.converter.convertUser(user);
         var authenticated = false;
 
-        request({
+        $.ajax({
             url: `//localhost:4000/Users/${userId}/verify`, //TODO: set this up
             type: 'PUT',
             async: false,
@@ -131,7 +138,7 @@ class PrivateDatabaseRetriever {
     getTags(recId) {
         var tagList = [];
 
-        request({
+        $.ajax({
             url: `//localhost:4000/Tags/${recId}`,
             type: 'GET',
             async: false,

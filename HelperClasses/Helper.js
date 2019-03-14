@@ -1,6 +1,7 @@
 const expect = require("chai").expect;
 const Rec = require("../src/js/Model/Rec");
 class PrivateHelper {
+
     constructor() {
         if(! PrivateHelper.instance){
             PrivateHelper.instance = this;
