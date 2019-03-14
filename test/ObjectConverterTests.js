@@ -11,15 +11,20 @@ describe("ObjectConverter Tests", () => {
       const expected = ObjectFactory.initializeRec(data);
       const recived = ObjectConverter.convertRec(expected);
 
-      for (let key in expected) {
-          if (expected.hasOwnProperty(key)) {
-              expect(expected[key]).to.equal(recived[key]);
-          }
-      }
-      //expect(recived.RecID).to.equal(expected.id);
-      //expect(recived.EventName).to.equal(expected.title)
-      //expect(recived.Description).to.equal(expected.description)
-      //expect(recived.Location).to.equal(expected.location)
+      expect(recived.RecID).to.equal(expected.id);
+      expect(recived.EventName).to.equal(expected.title);
+      expect(recived.Description).to.equal(expected.description);
+      expect(recived.Location).to.equal(expected.location);
+      expect(recived.Date).to.equal(expected.date);
+      expect(recived.StartTime).to.equal(expected.startTime);
+      expect(recived.EndTime).to.equal(expected.endTime);
+      expect(recived.MajorTags).to.equal(expected.tags);
+      expect(recived.draft).to.equal(expected.draft);
+      expect(recived.ContactInfo).to.equal(expected.contactInfo);
+      expect(recived.WebsiteLink).to.equal(expected.websiteLink);
+      expect(recived.ImgLink).to.equal(expected.imageLink);
+      expect(recived.Rules).to.equal(expected.rules);
+      expect(recived.UserID).to.equal(expected.ownerId);
       done();
     });
    });
@@ -32,6 +37,8 @@ describe("ObjectConverter Tests", () => {
       expect(recived.id).to.equal(expected.id);
       expect(recived.email).to.equal(expected.email);
       expect(recived.fullName).to.equal(expected.fullName);
+      expect(recived.passwordHash).to.equal(expected.passwordHash);
+      expect(recived.preferredEvents).to.equal(expected.preferredEvents);
       done();
     })
   });

@@ -15,12 +15,7 @@ class PrivateHelper {
           let resultRow = result[idx];
           let expectedRow = expected[idx];
 
-          //console.log(`all keys: ${Object.keys(expectedRow)}`);
-
           Object.keys(expectedRow).forEach( (key) => {
-              // console.log(`key: ${key}`);
-              // console.log(`-> ${JSON.stringify(resultRow[key])}`);
-              // console.log(`-> ${JSON.stringify(resultRow[key])}`);
               expect(resultRow[key]).to.equal(expectedRow[key]); // check each value matches
           });
       }
@@ -36,11 +31,11 @@ class PrivateHelper {
           "Date": "2019-02-21",
           "StartTime": "18:00:00",
           "EndTime": "21:00:00",
-          "MajorTags": ['Farmers Market'],
+          "MajorTag": ['Farmers Market'],
           "Draft": false,
           "ContactInfo": "Contact Info",
           "WebsiteLink": "https://downtownslo.com/farmers-market/",
-          "ImageLink": "ImageLink stuff",
+          "ImgLink": "ImageLink stuff",
           "Rules": "Rules",
           "UserID": "1"
       };
@@ -51,7 +46,9 @@ class PrivateHelper {
       return {
           "id": "3",
           "email": "Junk",
-          "fullName": "Name"
+          "fullName": "Name",
+          "passwordHash": "password1",
+          "preferredEvents": ['Event1', 'Event2']
       }
     }
 }

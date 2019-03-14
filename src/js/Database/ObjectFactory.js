@@ -22,10 +22,10 @@ class PrivateObjectFactory {
             recObject.StartTime,
             recObject.EndTime,
             recObject.MajorTag,
-            recObject.draft,
+            recObject.Draft,
             recObject.ContactInfo,
             recObject.WebsiteLink,
-            recObject.ImageLink,
+            recObject.ImgLink,
             recObject.Rules.replace(/[^\x00-\x7F]/g, ""),
             recObject.UserID,
         );
