@@ -97,6 +97,7 @@ class RecModal {
         this.updateImage();
         this.updateIcon();
 
+        console.log(`PUT ${this.recId}`);
         // DatabaseUpdater.putRec(this.rec);
     }
 
@@ -119,10 +120,10 @@ class RecModal {
 
     // updates the rec icon based on its tags
     updateIcon() {
-        let tags = this.rec.getTags();
+        let tag = this.rec.getTags();
 
-        if (tags.length > 0 && tags[0] in Categories.icons) {
-            let tagClasses = Categories.icons[tags[0]]; // for now it just picks the first tag
+        if (Categories.icons.hasOwnProperty(tag)) {
+            let tagClasses = Categories.icons[tag]; // for now it just picks the first tag
 
             $("#" + this.recId + " .rec_item_image i").removeClass().addClass(tagClasses);
         }
