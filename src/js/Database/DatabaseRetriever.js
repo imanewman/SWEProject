@@ -1,6 +1,7 @@
 //import ObjectFactory from "./ObjectFactory.js";
 //import RecGenerator from "../Algorithms/RecGenerator.js";
 //import User from "../Model/User.js";
+const request = require("ajax-request");
 const ObjectFactory = require("./ObjectFactory.js");
 const RecGenerator = require("../Algorithms/RecGenerator.js");
 const User = require("../Model/User.js");
@@ -19,15 +20,17 @@ class PrivateDatabaseRetriever {
     getRec(recId) {
         var recObject = {};
 
-        $.ajax({
+        request({
             url: `//localhost:4000/Recs/${recId}`,
             type: 'GET',
-            async: false,
-            success: (result) => {
-                recObject = result;
+            async: false
+          }, (err, resp, body) => {
+                recObject = body;
 
-                // console.log(recObject);
-            }
+                console.log(err);
+                console.log(resp);
+                console.log(body);
+                console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         });
 
         let rec = this.factory.initializeRec(recObject);
@@ -38,7 +41,7 @@ class PrivateDatabaseRetriever {
     getRecs() {
         var recList = [];
 
-        $.ajax({
+        request({
             url: `//localhost:4000/Recs`,
             type: 'GET',
             async: false,
@@ -55,7 +58,7 @@ class PrivateDatabaseRetriever {
     getRecsByWatchList(userId) {
         var recList = [];
 
-        $.ajax({
+        request({
             url: `//localhost:4000/Recs?userWatch=${userId}`,
             type: 'GET',
             async: false,
@@ -72,7 +75,7 @@ class PrivateDatabaseRetriever {
     getRecsByUserId(userId) {
         var recList = [];
 
-        $.ajax({
+        request({
             url: `//localhost:4000/Recs?id=${userId}`,
             type: 'GET',
             async: false,
@@ -95,7 +98,7 @@ class PrivateDatabaseRetriever {
     getUser(userId) {
         var userObject = {};
 
-        $.ajax({
+        request({
             url: `//localhost:4000/Users/${userId}`,
             type: 'GET',
             async: false,
@@ -113,7 +116,7 @@ class PrivateDatabaseRetriever {
         let userObject = this.converter.convertUser(user);
         var authenticated = false;
 
-        $.ajax({
+        request({
             url: `//localhost:4000/Users/${userId}/verify`, //TODO: set this up
             type: 'PUT',
             async: false,
@@ -128,7 +131,7 @@ class PrivateDatabaseRetriever {
     getTags(recId) {
         var tagList = [];
 
-        $.ajax({
+        request({
             url: `//localhost:4000/Tags/${recId}`,
             type: 'GET',
             async: false,

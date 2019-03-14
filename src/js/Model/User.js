@@ -6,7 +6,7 @@ class User {
 		this.fullName = fullName;
 		this.passwordHash = passwordHash;
 		this.adminPrivilege = false;
-		this.preferredEvents = preferredEvents || ['Charity'];
+		this.preferredEvents = preferredEvents || ['Open Mic'];
 		this.createdRecIds = createdRecIds;
 		this.ratings = rating;
 		this.ratingNum = ratingNum;
@@ -65,7 +65,7 @@ class User {
 	getPreferredEvents() {
 		return this.preferredEvents;
     }
-    
+
     getPreferredTimes() {
         // TODO, currently filler
         return [{start:6, end:10, day:[0,1,2,3]}, {start:12, end:20, day:[4,5,6]}];

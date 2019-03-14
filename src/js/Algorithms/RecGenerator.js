@@ -14,15 +14,12 @@ class RecGenerator {
 
         for (let idx = 0; idx < recList.length; idx++) {
             let rec = recList[idx];
-            let tags =  rec.getTags();
+            let tag =  rec.getTags()[0];
 
             // if (checkTimes(rec, times)) {
-            for (let tagIdx = 0; tagIdx < tags.length; tagIdx++) {
-                if (pref.indexOf(tags[tagIdx] !== -1)) {
-                    userRecs.push(rec);
-                    continue;
-                }
-            }
+            if (pref.indexOf(tag) !== -1) {
+               userRecs.push(rec);
+           }
             // }
         }
 
