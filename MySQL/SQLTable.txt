@@ -1,0 +1,25 @@
+Info
+User
+- Permission (TypeID) - Integer
+- Username - String
+- Password - String (Will salt it)
+- Email - String
+- prefferedEventTypes - String (tokenize with a comma) or a list of strings ??
+- Ratings - Integer (Only for organizer)
+- RecIDs - List of String (Only for organizer)
+- WatchedEvents - List of RecIDs (Only for Consumer)
+
+Recs
+- RecID - String
+- Name - String
+- Date - String
+- Time - Time / Date Object
+- Description - String
+- ImageID - Integer (to Reference 3rd party image host)
+- Tags ? - See preferredEventTypes 
+- Foreign Key for User (Specifically Organizer)
+- 
+
+
+??
+- Pictures?
